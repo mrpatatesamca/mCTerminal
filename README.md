@@ -4,14 +4,20 @@ mCTerminal Cosmos Takımı için hazırlanan ve Berke Aydin tarafından gelişti
 
 ## Kurulum
 
-GitHub'dan indirilen sürüm için kuruluma ihtiyaç yoktur, doğrudan indirdiğiniz arşivdeki "Start mCTerminal" kısayolundan veya "mCTerminal\bin\Debug\mCTerminal.exe" dizinindeki *.exe dosyasından başlatabilirsiniz.
+GitHub'dan indirilen sürüm için kuruluma ihtiyaç yoktur.
+
+ - **GitHub Repository klonlayarak bütün kaynak kodlarıyla beraber indirdiyseniz:**
+Klonladığınız klasörün içindeki "Start mCTerminal" kısayolundan veya "mCTerminal\bin\Debug\mCTerminal.exe" dizinindeki "*.exe" dosyasından başlatabilirsiniz.
+
+- **Release sayfasından "*.zip" veya "*.7z" arşivi olarak indirdiyseniz:**
+İndirdiğiniz arşivin içindeki *mCTerminal.exe uygulamasını başlatarak kullanabilirsiniz.
 
 
 ## Kullanım
 
-1- "Start mCTerminal" kısayoluyla veya "mCTerminal\bin\Debug\mCTerminal.exe" dizinindeki *.exe dosyasından programı başlatın.
+1. Programı çalıştırın.
 
-2- Sizi bir grafik arayüzü (GUI) karşılayacaktır, buradan istediğiniz gibi programı kullanabilirsiniz.
+2. Sizi bir grafik arayüzü (GUI) karşılayacaktır, buradan istediğiniz gibi programı kullanabilirsiniz.
 
 ## Bana Destek Olma
 Bulduğunuz hataları GitHub üzerinden ya da [Gmail](mailto:berkeaydin618@gmail.com) / [iCloud](mailto:berke_aydin61@icloud.com) üzerinden bana iletebilir ve eğer nasıl çözüleceğini biliyorsanız onu da bana iletebilirsiniz.
