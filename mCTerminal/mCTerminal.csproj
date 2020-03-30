@@ -146,19 +146,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -169,22 +169,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="mCTerminal_files\pngs\wifi_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="mCTerminal_files\pngs\cosmosTextLogoSpaceK.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="mCTerminal_files\pngs\cosmosTextLogoBB.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="mCTerminal_files\gifs\COSMOSLogoTextGif.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="mCTerminal_files\pngs\problem.png" />
-    <None Include="mCTerminal_files\pngs\guc_durum.png" />
-    <None Include="mCTerminal_files\pngs\uydu.png" />
-    <None Include="mCTerminal_files\pngs\snr_seviye.png" />
     <Content Include="terminal_logo_2.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +182,9 @@
       <ProductName>.NET Framework 3.5 SP1 </ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

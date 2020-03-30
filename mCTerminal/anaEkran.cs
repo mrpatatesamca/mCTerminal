@@ -150,9 +150,12 @@ namespace mCTerminal
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            //Form kapatılmadan önce ilk başta gözüken yükleme ekranını kapatır daha sonra ise yürütülen işlemi tamamen durdurur.
+            //Form kapatılmadan önce ilk başta gözüken yükleme ekranını kapatır 
+            //daha sonra ise yürütülen işlemi tamamen durdurur.
             baslangic_splash baslangic_splashfrm = new baslangic_splash();
             baslangic_splashfrm.Close();
+            harita haritafrm = new harita();
+            haritafrm.Close();
             Application.Exit();
         }
 
@@ -165,9 +168,12 @@ namespace mCTerminal
 
         private void anaEkran_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //Form kapatılmadan önce ilk başta gözüken yükleme ekranını kapatır daha sonra ise yürütülen işlemi tamamen durdurur.
+            //Form kapatılmadan önce ilk başta gözüken yükleme ekranını ve harita ekranını kapatır 
+            //daha sonra ise yürütülen işlemi tamamen durdurur.
             baslangic_splash baslangic_splashfrm = new baslangic_splash();
             baslangic_splashfrm.Close();
+            harita haritafrm = new harita();
+            haritafrm.Close();
             Application.Exit();
         }
 

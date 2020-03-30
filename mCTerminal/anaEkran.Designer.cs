@@ -63,14 +63,10 @@
             this.aliciModeli_label = new System.Windows.Forms.Label();
             this.baglantiGrup = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sinyalGucuLabel = new System.Windows.Forms.Label();
             this.uyduSayiLabel = new System.Windows.Forms.Label();
             this.snrSeviyesiLabel = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.voltajLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -93,11 +89,7 @@
             this.toolStrip1.SuspendLayout();
             this.baglantiGrup.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.voltajGrafik)).BeginInit();
@@ -405,9 +397,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pictureBox3);
-            this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.sinyalGucuLabel);
             this.groupBox1.Controls.Add(this.uyduSayiLabel);
             this.groupBox1.Controls.Add(this.snrSeviyesiLabel);
@@ -416,36 +405,6 @@
             this.groupBox1.Size = new System.Drawing.Size(250, 70);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::mCTerminal.Properties.Resources.uydu;
-            this.pictureBox3.Location = new System.Drawing.Point(228, 44);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 14;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::mCTerminal.Properties.Resources.snr_seviye;
-            this.pictureBox2.Location = new System.Drawing.Point(228, 29);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::mCTerminal.Properties.Resources.wifi_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(228, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
             // 
             // sinyalGucuLabel
             // 
@@ -485,7 +444,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.pictureBox4);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.voltajLabel);
             this.groupBox2.Controls.Add(this.label5);
@@ -495,16 +453,6 @@
             this.groupBox2.Size = new System.Drawing.Size(250, 84);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::mCTerminal.Properties.Resources.guc_durum;
-            this.pictureBox4.Location = new System.Drawing.Point(228, 14);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 15;
-            this.pictureBox4.TabStop = false;
             // 
             // label7
             // 
@@ -800,11 +748,7 @@
             this.toolStrip1.PerformLayout();
             this.baglantiGrup.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.voltajGrafik)).EndInit();
@@ -864,10 +808,6 @@
         private System.Windows.Forms.ToolStripMenuItem haritayıGösterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uzakGörüntüyüGösterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tamEkranToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.ToolStripMenuItem hamVeriyiGösterToolStripMenuItem;
     }
 }

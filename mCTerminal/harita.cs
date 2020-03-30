@@ -136,6 +136,10 @@ namespace mCTerminal
             }
             
         }
-        
+
+        private void harita_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
     }
 }
