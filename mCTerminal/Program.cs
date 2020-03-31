@@ -16,7 +16,7 @@ namespace mCTerminal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new baslangic_splash());
+            Application.Run(new anaEkran());
         }
     }
 }

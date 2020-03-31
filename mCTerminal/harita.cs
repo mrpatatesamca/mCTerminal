@@ -20,6 +20,7 @@ namespace mCTerminal
 
         private void üstteGösterToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Üstte göster - gösterme butonu için
             if (this.TopMost == true)
             {
                 üstteGösterToolStripMenuItem.CheckState = CheckState.Unchecked;
@@ -36,6 +37,7 @@ namespace mCTerminal
 
         private void tamEkranToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Tam Ekran - Küçük Ekran butonu
             if (this.FormBorderStyle == FormBorderStyle.Sizable)
             {
                 this.FormBorderStyle = FormBorderStyle.None;
@@ -72,7 +74,7 @@ namespace mCTerminal
             harita1.ReloadMap();
         }
 
-        private void turkeyMapProviderToolStripMenuItem_Click(object sender, EventArgs e)
+        private void turkeyMapProviderToolStripMenuItem_Click(object sender, EventArgs e) //Bu çalışmıyor ama Türkiye dediği için bırakıyorum, Easter Egg gibi düşünün siz.
         {
             harita1.MapProvider = GMap.NET.MapProviders.TurkeyMapProvider.Instance;
             harita1.ReloadMap();

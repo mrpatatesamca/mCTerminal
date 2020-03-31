@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // denetlenir. Bütünleştirilmiş kod ile ilişkili bilgileri değiştirmek için
 // bu öznitelik değerlerini değiştirin.
 [assembly: AssemblyTitle("mCTerminal")]
-[assembly: AssemblyDescription("mCTerminal - Cosmos Takımı Test Sistemi")]
+[assembly: AssemblyDescription("mCTerminal Telemetri Programı")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Berke AYDİN")]
 [assembly: AssemblyProduct("mCTerminal")]
@@ -33,6 +33,6 @@ using System.Runtime.InteropServices;
 // Tüm değerleri belirtebilir veya varsayılan Derleme ve Düzeltme Numaralarını kullanmak için
 // aşağıda gösterildiği gibi '*' kullanabilirsiniz:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.1.0.0")]
-[assembly: AssemblyFileVersion("0.1.0.0")]
+[assembly: AssemblyVersion("0.0.0.2")]
+[assembly: AssemblyFileVersion("0.0.0.2")]
 [assembly: NeutralResourcesLanguage("tr")]

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(hamveriekrani));
             this.verikontrol = new System.Windows.Forms.Timer(this.components);
             this.hamveritextbox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -50,7 +51,8 @@
             this.hamveritextbox.Location = new System.Drawing.Point(1, 1);
             this.hamveritextbox.Multiline = true;
             this.hamveritextbox.Name = "hamveritextbox";
-            this.hamveritextbox.Size = new System.Drawing.Size(726, 278);
+            this.hamveritextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.hamveritextbox.Size = new System.Drawing.Size(473, 181);
             this.hamveritextbox.TabIndex = 0;
             this.hamveritextbox.Text = "@$$ --> Veri Bekleniyor...";
             // 
@@ -59,9 +61,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(727, 278);
+            this.ClientSize = new System.Drawing.Size(474, 181);
             this.Controls.Add(this.hamveritextbox);
             this.ForeColor = System.Drawing.Color.Lime;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(490, 220);
             this.Name = "hamveriekrani";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mCTerminal Ham Veri";

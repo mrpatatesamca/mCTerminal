@@ -26,8 +26,10 @@ namespace mCTerminal
         public anaEkran()
         {
             InitializeComponent();
+            hamVeriTextBox1.AppendText("@@$ --> COM Portları Taranıyor..." + Environment.NewLine);
             mCTerminal.Properties.Settings.Default.Reset();
             string[] portlar = SerialPort.GetPortNames(); //portlar listesine COM portları alındı.
+            hamVeriTextBox1.AppendText("@@$ --> COM Portları Tarandı!" + Environment.NewLine);
             serialPort1.BaudRate = 9600; //baudrate ayarlama
             Control.CheckForIllegalCrossThreadCalls = false; //Serial portlarda oluşabilecek hataları kontrol etmemesi için ayarladık.
             foreach (string port in portlar)
@@ -38,7 +40,14 @@ namespace mCTerminal
                 baudRatePortList.SelectedIndex = 0;
             }
             serialPort1.DataReceived += new SerialDataReceivedEventHandler(serialPort1_DataReceived);
-
+            //-----------------------------------------------------------------------------------------------
+            hamVeriTextBox1.AppendText("@@$ --> #--------------------------#" + Environment.NewLine);
+            hamVeriTextBox1.AppendText("@@$ --> #   www.cosmostakimi.com   #" + Environment.NewLine);
+            hamVeriTextBox1.AppendText("@@$ --> #--------------------------#" + Environment.NewLine);
+            hamVeriTextBox1.AppendText("@@$ --> Program Yüklendi ve Kullanıma Hazır!" + Environment.NewLine);
+            int line = hamVeriTextBox1.GetLineFromCharIndex(hamVeriTextBox1.SelectionStart);
+            int column = hamVeriTextBox1.SelectionStart - hamVeriTextBox1.GetFirstCharIndexFromLine(line);
+            //------------------------------------------------------------------------------------------------
         }
 
         private void anaEkran_Load(object sender, EventArgs e)
@@ -116,7 +125,9 @@ namespace mCTerminal
                 if (COMPortList.SelectedIndex < 0) //Bağlantı noktası boş olduğu zaman program çöküyor bu yüzden kullanıcıyı bilgilendiriyorum ve çökmesini engelliyorum.
                 {
                     MessageBox.Show("Hata! Alıcı sistem ile bağlantı kurulamadı! Lütfen alıcıyı bilgisayarınıza bağladığınızdan emin olunuz, eğer zaten bağlıysa kabloları kontrol ediniz.", "Alıcı Sistem Bulunamadı!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    hamVeriTextBox1.AppendText("@@$ --> Bağlantı noktası ile iletişim kurulamadı! (Muhtemel Liste Boşluğu)" + Environment.NewLine);
                 }
+               
                 else
                 {
                     serialPort1.PortName = COMPortList.Text;
@@ -133,6 +144,7 @@ namespace mCTerminal
                     catch (Exception ex)
                     {
                         MessageBox.Show("Hata! Alıcıdan veri alınırken bir problem oluştu. Detay: " + ex.Message.ToString(), "Alıcı sistem algılanamadı !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        hamVeriTextBox1.AppendText("@@$ --> Alıcıdan veri alırken bir problem oluştu! (" + ex.Message.ToString() + ")" + Environment.NewLine);
                     }
 
                 }
@@ -150,10 +162,8 @@ namespace mCTerminal
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            //Form kapatılmadan önce ilk başta gözüken yükleme ekranını kapatır 
+            //Form kapatılmadan önce ilk başta gözüken yükleme ekranını ve harita ekranını kapatır 
             //daha sonra ise yürütülen işlemi tamamen durdurur.
-            baslangic_splash baslangic_splashfrm = new baslangic_splash();
-            baslangic_splashfrm.Close();
             harita haritafrm = new harita();
             haritafrm.Close();
             Application.Exit();
@@ -170,8 +180,6 @@ namespace mCTerminal
         {
             //Form kapatılmadan önce ilk başta gözüken yükleme ekranını ve harita ekranını kapatır 
             //daha sonra ise yürütülen işlemi tamamen durdurur.
-            baslangic_splash baslangic_splashfrm = new baslangic_splash();
-            baslangic_splashfrm.Close();
             harita haritafrm = new harita();
             haritafrm.Close();
             Application.Exit();
@@ -200,15 +208,55 @@ namespace mCTerminal
             }
         }
 
-        private void destekSayfasınaGitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://www.cosmostakimi.com");
-        }
-
         private void hamVeriyiGösterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             hamveriekrani hamveriekranifrm = new hamveriekrani();
             hamveriekranifrm.Show();
+        }
+
+        private void destekSayfasınaGitToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.cosmostakimi.com/indirmeler/mcterminal/");
+        }
+
+        private void güncelleştirmeleriKontrolEtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/mrpatatesamca/mCTerminal");
+        }
+
+        private void uzakGörüntüyüGösterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            kamera kamerafrm = new kamera();
+            kamerafrm.Show();
+        }
+
+        private void tumselKontrolleriAcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //bütün gerekli pencereleri özel boyutta ve konumda açar
+            hamveriekrani hamveriekranifrm = new hamveriekrani();
+            hamveriekranifrm.Show();
+            hamveriekranifrm.Location = new Point(Screen.PrimaryScreen.Bounds.Width - hamveriekranifrm.Width, Screen.PrimaryScreen.Bounds.Height - hamveriekranifrm.Height);
+            
+            kamera kamerafrm = new kamera();
+            kamerafrm.Show();
+            kamerafrm.Location = new Point(Screen.PrimaryScreen.Bounds.Width - kamerafrm.Width, 0);
+
+            harita haritafrm = new harita();
+            haritafrm.Show();
+            haritafrm.Location = new Point(0, Screen.PrimaryScreen.Bounds.Height - haritafrm.Height);
+
+            if (this.FormBorderStyle == FormBorderStyle.Sizable)
+            {
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Maximized;
+                tamEkranToolStripMenuItem.Text = "Küçültülmüş Ekran";
+            }
+            else
+            {
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+                this.WindowState = FormWindowState.Normal;
+                tamEkranToolStripMenuItem.Text = "Tam Ekran";
+            }
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)

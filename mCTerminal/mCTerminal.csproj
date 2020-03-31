@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -51,9 +51,24 @@
     <StartupObject>mCTerminal.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>terminal_logo_2.ico</ApplicationIcon>
+    <ApplicationIcon>terminal_logo2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="GMap.NET.Core, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
       <HintPath>..\packages\GMap.NET.WindowsForms.1.7.5\lib\net40\GMap.NET.Core.dll</HintPath>
     </Reference>
@@ -91,12 +106,6 @@
     <Compile Include="ayarlar.Designer.cs">
       <DependentUpon>ayarlar.cs</DependentUpon>
     </Compile>
-    <Compile Include="baslangic_splash.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="baslangic_splash.Designer.cs">
-      <DependentUpon>baslangic_splash.cs</DependentUpon>
-    </Compile>
     <Compile Include="hakkinda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,9 +137,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ayarlar.resx">
       <DependentUpon>ayarlar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="baslangic_splash.resx">
-      <DependentUpon>baslangic_splash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="hakkinda.resx">
       <DependentUpon>hakkinda.cs</DependentUpon>
@@ -169,7 +175,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="terminal_logo_2.ico" />
+    <None Include="Resources\pin.png" />
+    <None Include="Resources\cosmosTextLogoBB.png" />
+    <None Include="Resources\COSMOSLogoTextGif.gif" />
+    <None Include="Resources\wallpaper1.jpg" />
+    <None Include="Resources\play.png" />
+    <None Include="Resources\map.png" />
+    <None Include="Resources\cctv.png" />
+    <None Include="Resources\binary.png" />
+    <None Include="Resources\circle_loading2D.gif" />
+    <None Include="Resources\circle_loading3D.gif" />
+    <None Include="Resources\windows_xp3D.gif" />
+    <Content Include="terminal_logo2.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -183,8 +200,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
