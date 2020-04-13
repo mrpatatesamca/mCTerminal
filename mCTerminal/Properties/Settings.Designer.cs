@@ -73,7 +73,7 @@ namespace mCTerminal.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("v0.3-alpha")]
+        [global::System.Configuration.DefaultSettingValueAttribute("v0.4-alpha")]
         public string prog_surum {
             get {
                 return ((string)(this["prog_surum"]));

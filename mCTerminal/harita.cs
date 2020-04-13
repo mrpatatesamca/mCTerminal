@@ -209,19 +209,28 @@ namespace mCTerminal
 
         private void haritaRoketEsle_Tick(object sender, EventArgs e) 
         {
-            if (haritaortala_checkbox.CheckState == CheckState.Checked) //eğer haritayı ortala seçeneğine tik atılmışsa
+            if (mCTerminal.Properties.Settings.Default.serialportdurum == true) //bağlantı kurulmuş ve veri geliyorsa
             {
-                //önce enlem ve boylam adında değişkenler oluşturuyoruz ve bu değişkenlerdeki "." karakterini ";" ile değiştiriyoruz
-                //çünkü haritamız nokta (".") ile belirtilen koordinatlara gidemiyor, virgül (",") ile belirtilmesi lazım
-                string enlem = mCTerminal.Properties.Settings.Default.enlem.Replace(".", ",");
-                string boylam = mCTerminal.Properties.Settings.Default.boylam.Replace(".", ",");
-                //şimdi ise string formatındaki koordinat bilgilerimizi double formatına çevirip haritada göstertiyoruz.
-                try
+                if (haritaortala_checkbox.CheckState == CheckState.Checked) //eğer haritayı ortala seçeneğine tik atılmışsa
                 {
-                    harita1.Position = new GMap.NET.PointLatLng(Convert.ToDouble(enlem), Convert.ToDouble(boylam));
+                    //önce enlem ve boylam adında değişkenler oluşturuyoruz ve bu değişkenlerdeki "." karakterini ";" ile değiştiriyoruz
+                    //çünkü haritamız nokta (".") ile belirtilen koordinatlara gidemiyor, virgül (",") ile belirtilmesi lazım
+                    string enlem = mCTerminal.Properties.Settings.Default.enlem.Replace(".", ",");
+                    string boylam = mCTerminal.Properties.Settings.Default.boylam.Replace(".", ",");
+                    //şimdi ise string formatındaki koordinat bilgilerimizi double formatına çevirip haritada göstertiyoruz.
+                    try
+                    {
+                        harita1.Position = new GMap.NET.PointLatLng(Convert.ToDouble(enlem), Convert.ToDouble(boylam));
+                    }
+                    catch
+                    {
+                        
+                    }
                 }
-                catch
-                { 
+                else
+                {
+
+
                 }
 
                 

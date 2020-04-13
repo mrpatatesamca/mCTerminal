@@ -11,6 +11,7 @@ using System.IO;
 using System.IO.Ports;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Diagnostics;
 
 namespace mCTerminal
 {
@@ -174,7 +175,9 @@ namespace mCTerminal
             //programın dizaynı sebebiyle bazen bu ayar true iken kaydedilebiliyor (tema değiştirilirken meydana gelen bir durum) bu sebeple her açılışta bu ayarı sıfırlıyorum.
             mCTerminal.Properties.Settings.Default.serialportdurum = false;
 
-            
+            //harita konumunu Iğdır yapar. Yurttaki kardeşlerime selam olsun <3
+            mCTerminal.Properties.Settings.Default.enlem = "";
+            mCTerminal.Properties.Settings.Default.boylam = "";
         }
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -289,6 +292,7 @@ namespace mCTerminal
                     {
                         serialPort1.Open();
                         mCTerminal.Properties.Settings.Default.serialportdurum = true;
+
                         bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kes";
                         hamVeriTextBox1.AppendText(Environment.NewLine);
                         hamVeriTextBox1.AppendText("@$$ --> Bağlantı " + COMPortList.Text + " üzerinden " + sadece_tarih + "</>" + sadece_saat + " tarihinde başlatıldı!");
@@ -318,6 +322,7 @@ namespace mCTerminal
             {
                 serialPort1.Close();
                 mCTerminal.Properties.Settings.Default.serialportdurum = false;
+                
                 bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kur";
                 hamVeriTextBox1.AppendText("@$$ --> " + COMPortList.Text + " üzerindeki bağlantı " + sadece_tarih + "</>" + sadece_saat + " tarihinde sonlandırıldı!");
                 hamVeriTextBox1.AppendText(Environment.NewLine);
@@ -385,12 +390,22 @@ namespace mCTerminal
 
         private void destekSayfasınaGitToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.cosmostakimi.com/indirmeler/mcterminal/");
+            System.Diagnostics.Process.Start("https://www.cosmostakimi.com/");
         }
 
         private void güncelleştirmeleriKontrolEtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/mrpatatesamca/mCTerminal");
+            try
+            {
+                string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
+                Process.Start(programyolu + @"\mCTerminal-Updater.exe");
+            }
+            catch
+            {
+                MessageBox.Show("mCTerminal-Updater.exe bulunamadı! Lütfen dosyaların konumunu kontrol edin.", "Program başlatılamadı!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
         }
 
         private void uzakGörüntüyüGösterToolStripMenuItem_Click(object sender, EventArgs e)
