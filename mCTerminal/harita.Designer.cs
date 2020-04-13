@@ -31,14 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(harita));
             this.haritaAracMenu = new System.Windows.Forms.ToolStrip();
-            this.boylamTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.enlemTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.harita1 = new GMap.NET.WindowsForms.GMapControl();
-            this.haritaRoketEsle = new System.Windows.Forms.Timer(this.components);
-            this.haritaortala_checkbox = new System.Windows.Forms.CheckBox();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.tamEkranToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gitButon = new System.Windows.Forms.ToolStripButton();
+            this.boylamTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.enlemTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.üstteGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.haritaSağlayıcısıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +46,9 @@
             this.bingHaritaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wikiMapiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turkeyMapProviderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.harita1 = new GMap.NET.WindowsForms.GMapControl();
+            this.haritaRoketEsle = new System.Windows.Forms.Timer(this.components);
+            this.haritaortala_checkbox = new System.Windows.Forms.CheckBox();
             this.haritaAracMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +71,45 @@
             this.haritaAracMenu.ShowItemToolTips = false;
             this.haritaAracMenu.Size = new System.Drawing.Size(516, 25);
             this.haritaAracMenu.TabIndex = 0;
+            // 
+            // toolStripDropDownButton2
+            // 
+            this.toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tamEkranToolStripMenuItem});
+            this.toolStripDropDownButton2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
+            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton2.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
+            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(71, 22);
+            this.toolStripDropDownButton2.Text = "Görünüm";
+            // 
+            // tamEkranToolStripMenuItem
+            // 
+            this.tamEkranToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.tamEkranToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tamEkranToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tamEkranToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.fullscreen;
+            this.tamEkranToolStripMenuItem.Name = "tamEkranToolStripMenuItem";
+            this.tamEkranToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F2)));
+            this.tamEkranToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.tamEkranToolStripMenuItem.Text = "Tam Ekran";
+            this.tamEkranToolStripMenuItem.Click += new System.EventHandler(this.tamEkranToolStripMenuItem_Click);
+            // 
+            // gitButon
+            // 
+            this.gitButon.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.gitButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.gitButon.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.gitButon.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.gitButon.Image = global::mCTerminal.Properties.Resources.pin;
+            this.gitButon.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.gitButon.Margin = new System.Windows.Forms.Padding(1, 0, 2, 0);
+            this.gitButon.Name = "gitButon";
+            this.gitButon.Size = new System.Drawing.Size(23, 25);
+            this.gitButon.Text = "Git";
+            this.gitButon.Click += new System.EventHandler(this.gitButon_Click);
             // 
             // boylamTextBox
             // 
@@ -96,95 +135,6 @@
             this.enlemTextBox.Size = new System.Drawing.Size(120, 23);
             this.enlemTextBox.Text = "45.67890";
             // 
-            // harita1
-            // 
-            this.harita1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.harita1.Bearing = 0F;
-            this.harita1.CanDragMap = true;
-            this.harita1.EmptyTileColor = System.Drawing.Color.Indigo;
-            this.harita1.GrayScaleMode = false;
-            this.harita1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
-            this.harita1.LevelsKeepInMemmory = 5;
-            this.harita1.Location = new System.Drawing.Point(0, 25);
-            this.harita1.MarkersEnabled = true;
-            this.harita1.MaxZoom = 18;
-            this.harita1.MinZoom = 4;
-            this.harita1.MouseWheelZoomEnabled = true;
-            this.harita1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionWithoutCenter;
-            this.harita1.Name = "harita1";
-            this.harita1.NegativeMode = false;
-            this.harita1.PolygonsEnabled = true;
-            this.harita1.RetryLoadTile = 0;
-            this.harita1.RoutesEnabled = true;
-            this.harita1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
-            this.harita1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
-            this.harita1.ShowTileGridLines = false;
-            this.harita1.Size = new System.Drawing.Size(515, 332);
-            this.harita1.TabIndex = 1;
-            this.harita1.Zoom = 0D;
-            this.harita1.OnPositionChanged += new GMap.NET.PositionChanged(this.harita1_OnPositionChanged);
-            this.harita1.OnMapZoomChanged += new GMap.NET.MapZoomChanged(this.harita1_OnMapZoomChanged);
-            // 
-            // haritaRoketEsle
-            // 
-            this.haritaRoketEsle.Enabled = true;
-            this.haritaRoketEsle.Interval = 1000;
-            this.haritaRoketEsle.Tick += new System.EventHandler(this.haritaRoketEsle_Tick);
-            // 
-            // haritaortala_checkbox
-            // 
-            this.haritaortala_checkbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.haritaortala_checkbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.haritaortala_checkbox.Checked = true;
-            this.haritaortala_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.haritaortala_checkbox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.haritaortala_checkbox.Location = new System.Drawing.Point(152, 0);
-            this.haritaortala_checkbox.Name = "haritaortala_checkbox";
-            this.haritaortala_checkbox.Size = new System.Drawing.Size(93, 24);
-            this.haritaortala_checkbox.TabIndex = 2;
-            this.haritaortala_checkbox.Text = "Haritayı Ortala";
-            this.haritaortala_checkbox.UseVisualStyleBackColor = false;
-            // 
-            // toolStripDropDownButton2
-            // 
-            this.toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tamEkranToolStripMenuItem});
-            this.toolStripDropDownButton2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
-            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton2.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
-            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            this.toolStripDropDownButton2.Size = new System.Drawing.Size(71, 22);
-            this.toolStripDropDownButton2.Text = "Görünüm";
-            // 
-            // tamEkranToolStripMenuItem
-            // 
-            this.tamEkranToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.tamEkranToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tamEkranToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.tamEkranToolStripMenuItem.Name = "tamEkranToolStripMenuItem";
-            this.tamEkranToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F12)));
-            this.tamEkranToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.tamEkranToolStripMenuItem.Text = "Tam Ekran";
-            this.tamEkranToolStripMenuItem.Click += new System.EventHandler(this.tamEkranToolStripMenuItem_Click);
-            // 
-            // gitButon
-            // 
-            this.gitButon.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.gitButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.gitButon.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.gitButon.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.gitButon.Image = global::mCTerminal.Properties.Resources.pin;
-            this.gitButon.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.gitButon.Margin = new System.Windows.Forms.Padding(1, 0, 2, 0);
-            this.gitButon.Name = "gitButon";
-            this.gitButon.Size = new System.Drawing.Size(23, 25);
-            this.gitButon.Text = "Git";
-            this.gitButon.Click += new System.EventHandler(this.gitButon_Click);
-            // 
             // toolStripDropDownButton1
             // 
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -206,8 +156,8 @@
             this.üstteGösterToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.üstteGösterToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.üstteGösterToolStripMenuItem.Name = "üstteGösterToolStripMenuItem";
-            this.üstteGösterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F11)));
-            this.üstteGösterToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.üstteGösterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F1)));
+            this.üstteGösterToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.üstteGösterToolStripMenuItem.Text = "Üstte Göster";
             this.üstteGösterToolStripMenuItem.Click += new System.EventHandler(this.üstteGösterToolStripMenuItem_Click);
             // 
@@ -220,8 +170,9 @@
             this.wikiMapiaToolStripMenuItem,
             this.turkeyMapProviderToolStripMenuItem});
             this.haritaSağlayıcısıToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.haritaSağlayıcısıToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.provider;
             this.haritaSağlayıcısıToolStripMenuItem.Name = "haritaSağlayıcısıToolStripMenuItem";
-            this.haritaSağlayıcısıToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.haritaSağlayıcısıToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.haritaSağlayıcısıToolStripMenuItem.Text = "Harita Sağlayıcısı";
             // 
             // googleHaritalarToolStripMenuItem
@@ -289,6 +240,57 @@
             this.turkeyMapProviderToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.turkeyMapProviderToolStripMenuItem.Text = "TurkeyMapProvider";
             this.turkeyMapProviderToolStripMenuItem.Click += new System.EventHandler(this.turkeyMapProviderToolStripMenuItem_Click);
+            // 
+            // harita1
+            // 
+            this.harita1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.harita1.Bearing = 0F;
+            this.harita1.CanDragMap = true;
+            this.harita1.EmptyTileColor = System.Drawing.Color.Indigo;
+            this.harita1.GrayScaleMode = false;
+            this.harita1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.harita1.LevelsKeepInMemmory = 5;
+            this.harita1.Location = new System.Drawing.Point(0, 25);
+            this.harita1.MarkersEnabled = true;
+            this.harita1.MaxZoom = 18;
+            this.harita1.MinZoom = 4;
+            this.harita1.MouseWheelZoomEnabled = true;
+            this.harita1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionWithoutCenter;
+            this.harita1.Name = "harita1";
+            this.harita1.NegativeMode = false;
+            this.harita1.PolygonsEnabled = true;
+            this.harita1.RetryLoadTile = 0;
+            this.harita1.RoutesEnabled = true;
+            this.harita1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.harita1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.harita1.ShowTileGridLines = false;
+            this.harita1.Size = new System.Drawing.Size(515, 332);
+            this.harita1.TabIndex = 1;
+            this.harita1.Zoom = 0D;
+            this.harita1.OnPositionChanged += new GMap.NET.PositionChanged(this.harita1_OnPositionChanged);
+            this.harita1.OnMapZoomChanged += new GMap.NET.MapZoomChanged(this.harita1_OnMapZoomChanged);
+            // 
+            // haritaRoketEsle
+            // 
+            this.haritaRoketEsle.Enabled = true;
+            this.haritaRoketEsle.Interval = 1000;
+            this.haritaRoketEsle.Tick += new System.EventHandler(this.haritaRoketEsle_Tick);
+            // 
+            // haritaortala_checkbox
+            // 
+            this.haritaortala_checkbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.haritaortala_checkbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.haritaortala_checkbox.Checked = true;
+            this.haritaortala_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.haritaortala_checkbox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.haritaortala_checkbox.Location = new System.Drawing.Point(152, 0);
+            this.haritaortala_checkbox.Name = "haritaortala_checkbox";
+            this.haritaortala_checkbox.Size = new System.Drawing.Size(93, 24);
+            this.haritaortala_checkbox.TabIndex = 2;
+            this.haritaortala_checkbox.Text = "Haritayı Ortala";
+            this.haritaortala_checkbox.UseVisualStyleBackColor = false;
             // 
             // harita
             // 

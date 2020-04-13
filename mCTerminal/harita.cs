@@ -56,6 +56,96 @@ namespace mCTerminal
 
         private void harita_Load(object sender, EventArgs e)
         {
+            //-----------------------------temalar için ayrılmış bölüm---------------------------------
+
+            if (mCTerminal.Properties.Settings.Default.program_tema == "tema_varsayilan")
+            {
+                this.BackColor = Color.FromArgb(30, 30, 30);
+                this.ForeColor = Color.WhiteSmoke;
+                haritaAracMenu.BackColor = Color.FromArgb(50, 50, 50);
+                toolStripDropDownButton1.ForeColor = Color.WhiteSmoke;
+                toolStripDropDownButton2.ForeColor = Color.WhiteSmoke;
+                haritaortala_checkbox.ForeColor = Color.WhiteSmoke;
+                enlemTextBox.ForeColor = Color.WhiteSmoke;
+                boylamTextBox.ForeColor = Color.WhiteSmoke;
+                haritaortala_checkbox.BackColor = haritaAracMenu.BackColor;
+                enlemTextBox.BackColor = haritaAracMenu.BackColor;
+                boylamTextBox.BackColor = haritaAracMenu.BackColor;
+                gitButon.BackColor = haritaAracMenu.BackColor;
+            }
+
+            if (mCTerminal.Properties.Settings.Default.program_tema == "tema_matrix")
+            {
+                this.BackColor = Color.Black;
+                this.ForeColor = Color.DarkOliveGreen;
+                haritaAracMenu.BackColor = Color.Black;
+                toolStripDropDownButton1.ForeColor = Color.LimeGreen;
+                toolStripDropDownButton2.ForeColor = Color.LimeGreen;
+                haritaortala_checkbox.ForeColor = Color.LimeGreen;
+                enlemTextBox.ForeColor = Color.LimeGreen;
+                boylamTextBox.ForeColor = Color.LimeGreen;
+                haritaortala_checkbox.BackColor = haritaAracMenu.BackColor;
+                enlemTextBox.BackColor = haritaAracMenu.BackColor;
+                boylamTextBox.BackColor = haritaAracMenu.BackColor;
+                gitButon.BackColor = haritaAracMenu.BackColor;
+            }
+
+            if (mCTerminal.Properties.Settings.Default.program_tema == "tema_dondurma")
+            {
+                this.BackColor = Color.FromArgb(220, 229, 225);
+                this.ForeColor = Color.IndianRed;
+                haritaAracMenu.BackColor = Color.DarkSlateGray;
+                toolStripDropDownButton1.ForeColor = Color.FromArgb(255, 230, 230);
+                toolStripDropDownButton2.ForeColor = Color.FromArgb(255, 230, 230);
+                haritaortala_checkbox.ForeColor = Color.FromArgb(255, 230, 230);
+                enlemTextBox.ForeColor = Color.FromArgb(255, 230, 230);
+                boylamTextBox.ForeColor = Color.FromArgb(255, 230, 230);
+                haritaortala_checkbox.BackColor = haritaAracMenu.BackColor;
+                enlemTextBox.BackColor = haritaAracMenu.BackColor;
+                boylamTextBox.BackColor = haritaAracMenu.BackColor;
+                gitButon.BackColor = haritaAracMenu.BackColor;
+            }
+
+            if (mCTerminal.Properties.Settings.Default.program_tema == "tema_cosmos")
+            {
+                this.BackColor = Color.FromArgb(26, 16, 122);
+                this.ForeColor = Color.FromArgb(245, 228, 183);
+                haritaAracMenu.BackColor = Color.FromArgb(11, 75, 183);
+                toolStripDropDownButton1.ForeColor = Color.FromArgb(245, 228, 183);
+                toolStripDropDownButton2.ForeColor = Color.FromArgb(245, 228, 183);
+                haritaortala_checkbox.ForeColor = Color.FromArgb(245, 228, 183);
+                enlemTextBox.ForeColor = Color.FromArgb(245, 228, 183);
+                boylamTextBox.ForeColor = Color.FromArgb(245, 228, 183);
+                haritaortala_checkbox.BackColor = haritaAracMenu.BackColor;
+                enlemTextBox.BackColor = haritaAracMenu.BackColor;
+                boylamTextBox.BackColor = haritaAracMenu.BackColor;
+                gitButon.BackColor = haritaAracMenu.BackColor;
+            }
+
+            if (mCTerminal.Properties.Settings.Default.program_tema == "tema_material")
+            {
+                this.BackColor = Color.FromArgb(47, 79, 79);
+                this.ForeColor = Color.FromArgb(251, 235, 235);
+                haritaAracMenu.BackColor = Color.FromArgb(29, 61, 61);
+                toolStripDropDownButton1.ForeColor = Color.WhiteSmoke;
+                toolStripDropDownButton2.ForeColor = Color.WhiteSmoke;
+                haritaortala_checkbox.ForeColor = Color.WhiteSmoke;
+                enlemTextBox.ForeColor = Color.WhiteSmoke;
+                boylamTextBox.ForeColor = Color.WhiteSmoke;
+                haritaortala_checkbox.BackColor = haritaAracMenu.BackColor;
+                enlemTextBox.BackColor = haritaAracMenu.BackColor;
+                boylamTextBox.BackColor = haritaAracMenu.BackColor;
+                gitButon.BackColor = haritaAracMenu.BackColor;
+            }
+            //-------------------------------TEMA BÖLÜMÜ SON----------------------------------------
+
+
+
+
+
+
+
+
             harita1.MapProvider = GMap.NET.MapProviders.GoogleHybridMapProvider.Instance;
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerAndCache;
             harita1.Position = new GMap.NET.PointLatLng(39.9179769, 44.0351519);

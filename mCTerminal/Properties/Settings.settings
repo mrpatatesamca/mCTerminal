@@ -14,5 +14,14 @@
     <Setting Name="serialportdurum" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="prog_surum" Type="System.String" Scope="User">
+      <Value Profile="(Default)">v0.3-alpha</Value>
+    </Setting>
+    <Setting Name="hamveriEkran_tema" Type="System.String" Scope="User">
+      <Value Profile="(Default)">tema_varsayilan</Value>
+    </Setting>
+    <Setting Name="program_tema" Type="System.String" Scope="User">
+      <Value Profile="(Default)">tema_varsayilan</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -70,5 +70,41 @@ namespace mCTerminal.Properties {
                 this["serialportdurum"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("v0.3-alpha")]
+        public string prog_surum {
+            get {
+                return ((string)(this["prog_surum"]));
+            }
+            set {
+                this["prog_surum"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("tema_varsayilan")]
+        public string hamveriEkran_tema {
+            get {
+                return ((string)(this["hamveriEkran_tema"]));
+            }
+            set {
+                this["hamveriEkran_tema"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("tema_varsayilan")]
+        public string program_tema {
+            get {
+                return ((string)(this["program_tema"]));
+            }
+            set {
+                this["program_tema"] = value;
+            }
+        }
     }
 }

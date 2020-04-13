@@ -32,26 +32,19 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(anaEkran));
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.bağlantıyıBaşlatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.ayarlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tumselKontrolleriAcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.üstteGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton4 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.tamEkranToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.destekSayfasınaGitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.güncelleştirmeleriKontrolEtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hakkındaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.COMPortList = new System.Windows.Forms.ToolStripComboBox();
             this.baudRatePortList = new System.Windows.Forms.ToolStripComboBox();
             this.hamVeriTextBox1 = new System.Windows.Forms.TextBox();
@@ -59,41 +52,63 @@
             this.baglantiHizi_label = new System.Windows.Forms.Label();
             this.aliciModeli_label = new System.Windows.Forms.Label();
             this.baglantiGrup = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.sinyalGrup = new System.Windows.Forms.GroupBox();
             this.sinyalGucuLabel = new System.Windows.Forms.Label();
             this.uyduSayiLabel = new System.Windows.Forms.Label();
             this.snrSeviyesiLabel = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gucGrup = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.voltajLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.fizikselGrup = new System.Windows.Forms.GroupBox();
+            this.irtifafarkLabel = new System.Windows.Forms.Label();
             this.gkuvvetLabel = new System.Windows.Forms.Label();
             this.irtifaLabel = new System.Windows.Forms.Label();
             this.irtifaBaroLabel = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.dikeyhizLabel = new System.Windows.Forms.Label();
             this.enlemLabel = new System.Windows.Forms.Label();
             this.yatayHizLabel = new System.Windows.Forms.Label();
             this.boylamLabel = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.bilesenGrup = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.voltajGrafik = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.gkuvvetGrafik = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.gucdurumPictureBox = new System.Windows.Forms.PictureBox();
+            this.uydusayiPictureBox = new System.Windows.Forms.PictureBox();
+            this.snrseviyePictureBox = new System.Windows.Forms.PictureBox();
+            this.baglantiseviyePictureBox = new System.Windows.Forms.PictureBox();
+            this.kayitdurumPictureBox = new System.Windows.Forms.PictureBox();
+            this.bağlantıyıBaşlatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verikaydetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ayarlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tumselKontrolleriAcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.haritayıGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uzakGörüntüyüGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hamVeriyiGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tamEkranToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.destekSayfasınaGitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.güncelleştirmeleriKontrolEtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hakkındaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.baglantiGrup.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.sinyalGrup.SuspendLayout();
+            this.gucGrup.SuspendLayout();
+            this.fizikselGrup.SuspendLayout();
+            this.bilesenGrup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.voltajGrafik)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gkuvvetGrafik)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gucdurumPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uydusayiPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.snrseviyePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baglantiseviyePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kayitdurumPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // serialPort1
@@ -106,10 +121,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.toolStrip1.AutoSize = false;
             this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.toolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripDropDownButton2,
             this.toolStripDropDownButton1,
@@ -117,108 +130,53 @@
             this.toolStripDropDownButton3,
             this.COMPortList,
             this.baudRatePortList});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(-1, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.toolStrip1.ShowItemToolTips = false;
-            this.toolStrip1.Size = new System.Drawing.Size(566, 26);
+            this.toolStrip1.Size = new System.Drawing.Size(568, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripDropDownButton2
             // 
-            this.toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton2.BackColor = System.Drawing.Color.Transparent;
             this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bağlantıyıBaşlatToolStripMenuItem,
-            this.toolStripMenuItem1,
+            this.verikaydetToolStripMenuItem,
             this.toolStripMenuItem2,
             this.toolStripMenuItem3});
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton2.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            this.toolStripDropDownButton2.Size = new System.Drawing.Size(52, 23);
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(52, 22);
             this.toolStripDropDownButton2.Text = "Dosya";
-            // 
-            // bağlantıyıBaşlatToolStripMenuItem
-            // 
-            this.bağlantıyıBaşlatToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.bağlantıyıBaşlatToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.bağlantıyıBaşlatToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.bağlantıyıBaşlatToolStripMenuItem.Name = "bağlantıyıBaşlatToolStripMenuItem";
-            this.bağlantıyıBaşlatToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.bağlantıyıBaşlatToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Başlat";
-            this.bağlantıyıBaşlatToolStripMenuItem.Click += new System.EventHandler(this.bağlantıyıBaşlatToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.toolStripMenuItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(201, 22);
-            this.toolStripMenuItem1.Text = "Kaydet";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.toolStripMenuItem2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripMenuItem2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(201, 22);
-            this.toolStripMenuItem2.Text = "Yenile";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.toolStripMenuItem3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripMenuItem3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(201, 22);
-            this.toolStripMenuItem3.Text = "Çık";
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // toolStripDropDownButton1
             // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.BackColor = System.Drawing.Color.Transparent;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ayarlarToolStripMenuItem,
-            this.tumselKontrolleriAcToolStripMenuItem});
+            this.tumselKontrolleriAcToolStripMenuItem,
+            this.üstteGösterToolStripMenuItem});
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(57, 23);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(57, 22);
             this.toolStripDropDownButton1.Text = "Araçlar";
             // 
-            // ayarlarToolStripMenuItem
+            // üstteGösterToolStripMenuItem
             // 
-            this.ayarlarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ayarlarToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.ayarlarToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.ayarlarToolStripMenuItem.Name = "ayarlarToolStripMenuItem";
-            this.ayarlarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.ayarlarToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
-            this.ayarlarToolStripMenuItem.Text = "Ayarlar";
-            this.ayarlarToolStripMenuItem.Click += new System.EventHandler(this.ayarlarToolStripMenuItem_Click);
-            // 
-            // tumselKontrolleriAcToolStripMenuItem
-            // 
-            this.tumselKontrolleriAcToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.tumselKontrolleriAcToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tumselKontrolleriAcToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.tumselKontrolleriAcToolStripMenuItem.Name = "tumselKontrolleriAcToolStripMenuItem";
-            this.tumselKontrolleriAcToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.F2)));
-            this.tumselKontrolleriAcToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
-            this.tumselKontrolleriAcToolStripMenuItem.Text = "Tümsel Kontrolleri Aç";
-            this.tumselKontrolleriAcToolStripMenuItem.Click += new System.EventHandler(this.tumselKontrolleriAcToolStripMenuItem_Click);
+            this.üstteGösterToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.üstteGösterToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.üstteGösterToolStripMenuItem.Name = "üstteGösterToolStripMenuItem";
+            this.üstteGösterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F1)));
+            this.üstteGösterToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.üstteGösterToolStripMenuItem.Text = "Üstte Göster";
+            this.üstteGösterToolStripMenuItem.Click += new System.EventHandler(this.üstteGösterToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton4
             // 
-            this.toolStripDropDownButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton4.BackColor = System.Drawing.Color.Transparent;
             this.toolStripDropDownButton4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.haritayıGösterToolStripMenuItem,
             this.uzakGörüntüyüGösterToolStripMenuItem,
@@ -226,62 +184,20 @@
             this.tamEkranToolStripMenuItem});
             this.toolStripDropDownButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton4.Name = "toolStripDropDownButton4";
-            this.toolStripDropDownButton4.Size = new System.Drawing.Size(62, 23);
+            this.toolStripDropDownButton4.Size = new System.Drawing.Size(62, 22);
             this.toolStripDropDownButton4.Text = "Pencere";
-            // 
-            // tamEkranToolStripMenuItem
-            // 
-            this.tamEkranToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.tamEkranToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tamEkranToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.tamEkranToolStripMenuItem.Name = "tamEkranToolStripMenuItem";
-            this.tamEkranToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F12)));
-            this.tamEkranToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.tamEkranToolStripMenuItem.Text = "Tam Ekran";
-            this.tamEkranToolStripMenuItem.Click += new System.EventHandler(this.tamEkranToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton3
             // 
-            this.toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton3.BackColor = System.Drawing.Color.Transparent;
             this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.destekSayfasınaGitToolStripMenuItem,
             this.güncelleştirmeleriKontrolEtToolStripMenuItem,
             this.hakkındaToolStripMenuItem});
             this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
-            this.toolStripDropDownButton3.Size = new System.Drawing.Size(57, 23);
+            this.toolStripDropDownButton3.Size = new System.Drawing.Size(57, 22);
             this.toolStripDropDownButton3.Text = "Yardım";
-            // 
-            // destekSayfasınaGitToolStripMenuItem
-            // 
-            this.destekSayfasınaGitToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.destekSayfasınaGitToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.destekSayfasınaGitToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.destekSayfasınaGitToolStripMenuItem.Name = "destekSayfasınaGitToolStripMenuItem";
-            this.destekSayfasınaGitToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.destekSayfasınaGitToolStripMenuItem.Text = "Destek Sayfasına Git";
-            this.destekSayfasınaGitToolStripMenuItem.Click += new System.EventHandler(this.destekSayfasınaGitToolStripMenuItem_Click_1);
-            // 
-            // güncelleştirmeleriKontrolEtToolStripMenuItem
-            // 
-            this.güncelleştirmeleriKontrolEtToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.güncelleştirmeleriKontrolEtToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.güncelleştirmeleriKontrolEtToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.güncelleştirmeleriKontrolEtToolStripMenuItem.Name = "güncelleştirmeleriKontrolEtToolStripMenuItem";
-            this.güncelleştirmeleriKontrolEtToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.güncelleştirmeleriKontrolEtToolStripMenuItem.Text = "Güncelleştirmeleri Kontrol Et";
-            this.güncelleştirmeleriKontrolEtToolStripMenuItem.Click += new System.EventHandler(this.güncelleştirmeleriKontrolEtToolStripMenuItem_Click);
-            // 
-            // hakkındaToolStripMenuItem
-            // 
-            this.hakkındaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.hakkındaToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.hakkındaToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.hakkındaToolStripMenuItem.Name = "hakkındaToolStripMenuItem";
-            this.hakkındaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
-            this.hakkındaToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.hakkındaToolStripMenuItem.Text = "Hakkında";
-            this.hakkındaToolStripMenuItem.Click += new System.EventHandler(this.hakkındaToolStripMenuItem_Click);
             // 
             // COMPortList
             // 
@@ -293,6 +209,7 @@
             this.COMPortList.Margin = new System.Windows.Forms.Padding(1, 0, 10, 0);
             this.COMPortList.Name = "COMPortList";
             this.COMPortList.Size = new System.Drawing.Size(75, 23);
+            this.COMPortList.SelectedIndexChanged += new System.EventHandler(this.COMPortList_SelectedIndexChanged);
             // 
             // baudRatePortList
             // 
@@ -312,7 +229,7 @@
             this.hamVeriTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.hamVeriTextBox1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.hamVeriTextBox1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.hamVeriTextBox1.Location = new System.Drawing.Point(1, 271);
+            this.hamVeriTextBox1.Location = new System.Drawing.Point(0, 271);
             this.hamVeriTextBox1.Multiline = true;
             this.hamVeriTextBox1.Name = "hamVeriTextBox1";
             this.hamVeriTextBox1.ReadOnly = true;
@@ -324,7 +241,9 @@
             // 
             this.baglantiNoktasi_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.baglantiNoktasi_label.BackColor = System.Drawing.Color.Transparent;
             this.baglantiNoktasi_label.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.baglantiNoktasi_label.ForeColor = System.Drawing.Color.Transparent;
             this.baglantiNoktasi_label.Location = new System.Drawing.Point(6, 15);
             this.baglantiNoktasi_label.Name = "baglantiNoktasi_label";
             this.baglantiNoktasi_label.Size = new System.Drawing.Size(238, 14);
@@ -336,7 +255,9 @@
             // 
             this.baglantiHizi_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.baglantiHizi_label.BackColor = System.Drawing.Color.Transparent;
             this.baglantiHizi_label.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.baglantiHizi_label.ForeColor = System.Drawing.Color.Transparent;
             this.baglantiHizi_label.Location = new System.Drawing.Point(6, 31);
             this.baglantiHizi_label.Name = "baglantiHizi_label";
             this.baglantiHizi_label.Size = new System.Drawing.Size(238, 14);
@@ -348,41 +269,49 @@
             // 
             this.aliciModeli_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.aliciModeli_label.BackColor = System.Drawing.Color.Transparent;
             this.aliciModeli_label.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.aliciModeli_label.ForeColor = System.Drawing.Color.Transparent;
             this.aliciModeli_label.Location = new System.Drawing.Point(6, 46);
             this.aliciModeli_label.Name = "aliciModeli_label";
             this.aliciModeli_label.Size = new System.Drawing.Size(238, 14);
             this.aliciModeli_label.TabIndex = 8;
-            this.aliciModeli_label.Text = "Alıcı Modeli: ORIONID";
+            this.aliciModeli_label.Text = "Alıcı Modeli: N/A";
             this.aliciModeli_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // baglantiGrup
             // 
+            this.baglantiGrup.BackColor = System.Drawing.Color.Transparent;
             this.baglantiGrup.Controls.Add(this.baglantiNoktasi_label);
             this.baglantiGrup.Controls.Add(this.aliciModeli_label);
             this.baglantiGrup.Controls.Add(this.baglantiHizi_label);
+            this.baglantiGrup.ForeColor = System.Drawing.Color.Transparent;
             this.baglantiGrup.Location = new System.Drawing.Point(12, 29);
             this.baglantiGrup.Name = "baglantiGrup";
             this.baglantiGrup.Size = new System.Drawing.Size(250, 70);
             this.baglantiGrup.TabIndex = 9;
             this.baglantiGrup.TabStop = false;
             // 
-            // groupBox1
+            // sinyalGrup
             // 
-            this.groupBox1.Controls.Add(this.sinyalGucuLabel);
-            this.groupBox1.Controls.Add(this.uyduSayiLabel);
-            this.groupBox1.Controls.Add(this.snrSeviyesiLabel);
-            this.groupBox1.Location = new System.Drawing.Point(12, 105);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(250, 70);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
+            this.sinyalGrup.BackColor = System.Drawing.Color.Transparent;
+            this.sinyalGrup.Controls.Add(this.sinyalGucuLabel);
+            this.sinyalGrup.Controls.Add(this.uyduSayiLabel);
+            this.sinyalGrup.Controls.Add(this.snrSeviyesiLabel);
+            this.sinyalGrup.ForeColor = System.Drawing.Color.Transparent;
+            this.sinyalGrup.Location = new System.Drawing.Point(12, 105);
+            this.sinyalGrup.Name = "sinyalGrup";
+            this.sinyalGrup.Size = new System.Drawing.Size(250, 70);
+            this.sinyalGrup.TabIndex = 10;
+            this.sinyalGrup.TabStop = false;
             // 
             // sinyalGucuLabel
             // 
             this.sinyalGucuLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.sinyalGucuLabel.BackColor = System.Drawing.Color.Transparent;
             this.sinyalGucuLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.sinyalGucuLabel.ForeColor = System.Drawing.Color.Transparent;
             this.sinyalGucuLabel.Location = new System.Drawing.Point(6, 15);
             this.sinyalGucuLabel.Name = "sinyalGucuLabel";
             this.sinyalGucuLabel.Size = new System.Drawing.Size(238, 14);
@@ -394,7 +323,9 @@
             // 
             this.uyduSayiLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.uyduSayiLabel.BackColor = System.Drawing.Color.Transparent;
             this.uyduSayiLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.uyduSayiLabel.ForeColor = System.Drawing.Color.Transparent;
             this.uyduSayiLabel.Location = new System.Drawing.Point(6, 45);
             this.uyduSayiLabel.Name = "uyduSayiLabel";
             this.uyduSayiLabel.Size = new System.Drawing.Size(238, 14);
@@ -406,7 +337,9 @@
             // 
             this.snrSeviyesiLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.snrSeviyesiLabel.BackColor = System.Drawing.Color.Transparent;
             this.snrSeviyesiLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.snrSeviyesiLabel.ForeColor = System.Drawing.Color.Transparent;
             this.snrSeviyesiLabel.Location = new System.Drawing.Point(6, 30);
             this.snrSeviyesiLabel.Name = "snrSeviyesiLabel";
             this.snrSeviyesiLabel.Size = new System.Drawing.Size(238, 14);
@@ -414,23 +347,27 @@
             this.snrSeviyesiLabel.Text = "SNR Seviyesi: -15.99dB";
             this.snrSeviyesiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // groupBox2
+            // gucGrup
             // 
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.voltajLabel);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(12, 181);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(250, 84);
-            this.groupBox2.TabIndex = 10;
-            this.groupBox2.TabStop = false;
+            this.gucGrup.BackColor = System.Drawing.Color.Transparent;
+            this.gucGrup.Controls.Add(this.label7);
+            this.gucGrup.Controls.Add(this.voltajLabel);
+            this.gucGrup.Controls.Add(this.label5);
+            this.gucGrup.Controls.Add(this.label6);
+            this.gucGrup.ForeColor = System.Drawing.Color.Transparent;
+            this.gucGrup.Location = new System.Drawing.Point(12, 181);
+            this.gucGrup.Name = "gucGrup";
+            this.gucGrup.Size = new System.Drawing.Size(250, 84);
+            this.gucGrup.TabIndex = 10;
+            this.gucGrup.TabStop = false;
             // 
             // label7
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.ForeColor = System.Drawing.Color.Transparent;
             this.label7.Location = new System.Drawing.Point(6, 59);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(238, 14);
@@ -442,7 +379,9 @@
             // 
             this.voltajLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.voltajLabel.BackColor = System.Drawing.Color.Transparent;
             this.voltajLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.voltajLabel.ForeColor = System.Drawing.Color.Transparent;
             this.voltajLabel.Location = new System.Drawing.Point(6, 15);
             this.voltajLabel.Name = "voltajLabel";
             this.voltajLabel.Size = new System.Drawing.Size(206, 14);
@@ -454,7 +393,9 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.ForeColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(6, 45);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(206, 14);
@@ -466,7 +407,9 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.ForeColor = System.Drawing.Color.Transparent;
             this.label6.Location = new System.Drawing.Point(6, 30);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(206, 14);
@@ -474,26 +417,44 @@
             this.label6.Text = "Akım: 2.99A";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // groupBox3
+            // fizikselGrup
             // 
-            this.groupBox3.Controls.Add(this.gkuvvetLabel);
-            this.groupBox3.Controls.Add(this.irtifaLabel);
-            this.groupBox3.Controls.Add(this.irtifaBaroLabel);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.enlemLabel);
-            this.groupBox3.Controls.Add(this.yatayHizLabel);
-            this.groupBox3.Controls.Add(this.boylamLabel);
-            this.groupBox3.Location = new System.Drawing.Point(268, 29);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(284, 125);
-            this.groupBox3.TabIndex = 11;
-            this.groupBox3.TabStop = false;
+            this.fizikselGrup.BackColor = System.Drawing.Color.Transparent;
+            this.fizikselGrup.Controls.Add(this.irtifafarkLabel);
+            this.fizikselGrup.Controls.Add(this.gkuvvetLabel);
+            this.fizikselGrup.Controls.Add(this.irtifaLabel);
+            this.fizikselGrup.Controls.Add(this.irtifaBaroLabel);
+            this.fizikselGrup.Controls.Add(this.dikeyhizLabel);
+            this.fizikselGrup.Controls.Add(this.enlemLabel);
+            this.fizikselGrup.Controls.Add(this.yatayHizLabel);
+            this.fizikselGrup.Controls.Add(this.boylamLabel);
+            this.fizikselGrup.ForeColor = System.Drawing.Color.Transparent;
+            this.fizikselGrup.Location = new System.Drawing.Point(268, 29);
+            this.fizikselGrup.Name = "fizikselGrup";
+            this.fizikselGrup.Size = new System.Drawing.Size(284, 125);
+            this.fizikselGrup.TabIndex = 11;
+            this.fizikselGrup.TabStop = false;
+            // 
+            // irtifafarkLabel
+            // 
+            this.irtifafarkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.irtifafarkLabel.BackColor = System.Drawing.Color.Transparent;
+            this.irtifafarkLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.irtifafarkLabel.Location = new System.Drawing.Point(133, 58);
+            this.irtifafarkLabel.Name = "irtifafarkLabel";
+            this.irtifafarkLabel.Size = new System.Drawing.Size(145, 14);
+            this.irtifafarkLabel.TabIndex = 13;
+            this.irtifafarkLabel.Text = "Fark: -200m";
+            this.irtifafarkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // gkuvvetLabel
             // 
             this.gkuvvetLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gkuvvetLabel.BackColor = System.Drawing.Color.Transparent;
             this.gkuvvetLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gkuvvetLabel.ForeColor = System.Drawing.Color.Transparent;
             this.gkuvvetLabel.Location = new System.Drawing.Point(6, 43);
             this.gkuvvetLabel.Name = "gkuvvetLabel";
             this.gkuvvetLabel.Size = new System.Drawing.Size(272, 14);
@@ -505,7 +466,9 @@
             // 
             this.irtifaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.irtifaLabel.BackColor = System.Drawing.Color.Transparent;
             this.irtifaLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.irtifaLabel.ForeColor = System.Drawing.Color.Transparent;
             this.irtifaLabel.Location = new System.Drawing.Point(6, 58);
             this.irtifaLabel.Name = "irtifaLabel";
             this.irtifaLabel.Size = new System.Drawing.Size(272, 14);
@@ -517,7 +480,9 @@
             // 
             this.irtifaBaroLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.irtifaBaroLabel.BackColor = System.Drawing.Color.Transparent;
             this.irtifaBaroLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.irtifaBaroLabel.ForeColor = System.Drawing.Color.Transparent;
             this.irtifaBaroLabel.Location = new System.Drawing.Point(6, 72);
             this.irtifaBaroLabel.Name = "irtifaBaroLabel";
             this.irtifaBaroLabel.Size = new System.Drawing.Size(272, 14);
@@ -525,23 +490,27 @@
             this.irtifaBaroLabel.Text = "İrtifa (Barometrik): 3200m";
             this.irtifaBaroLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label8
+            // dikeyhizLabel
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.dikeyhizLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(6, 100);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(272, 14);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Dikey Hız: 200m/h";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dikeyhizLabel.BackColor = System.Drawing.Color.Transparent;
+            this.dikeyhizLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dikeyhizLabel.ForeColor = System.Drawing.Color.Transparent;
+            this.dikeyhizLabel.Location = new System.Drawing.Point(6, 100);
+            this.dikeyhizLabel.Name = "dikeyhizLabel";
+            this.dikeyhizLabel.Size = new System.Drawing.Size(272, 14);
+            this.dikeyhizLabel.TabIndex = 9;
+            this.dikeyhizLabel.Text = "Dikey Hız: 200m/s";
+            this.dikeyhizLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // enlemLabel
             // 
             this.enlemLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.enlemLabel.BackColor = System.Drawing.Color.Transparent;
             this.enlemLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.enlemLabel.ForeColor = System.Drawing.Color.Transparent;
             this.enlemLabel.Location = new System.Drawing.Point(6, 15);
             this.enlemLabel.Name = "enlemLabel";
             this.enlemLabel.Size = new System.Drawing.Size(272, 14);
@@ -553,19 +522,23 @@
             // 
             this.yatayHizLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.yatayHizLabel.BackColor = System.Drawing.Color.Transparent;
             this.yatayHizLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.yatayHizLabel.ForeColor = System.Drawing.Color.Transparent;
             this.yatayHizLabel.Location = new System.Drawing.Point(6, 86);
             this.yatayHizLabel.Name = "yatayHizLabel";
             this.yatayHizLabel.Size = new System.Drawing.Size(272, 14);
             this.yatayHizLabel.TabIndex = 8;
-            this.yatayHizLabel.Text = "Yatay Hız: 15m/h";
+            this.yatayHizLabel.Text = "Yatay Hız: 15m/s";
             this.yatayHizLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // boylamLabel
             // 
             this.boylamLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.boylamLabel.BackColor = System.Drawing.Color.Transparent;
             this.boylamLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.boylamLabel.ForeColor = System.Drawing.Color.Transparent;
             this.boylamLabel.Location = new System.Drawing.Point(6, 29);
             this.boylamLabel.Name = "boylamLabel";
             this.boylamLabel.Size = new System.Drawing.Size(272, 14);
@@ -573,23 +546,27 @@
             this.boylamLabel.Text = "Boylam: 34.56789";
             this.boylamLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // groupBox4
+            // bilesenGrup
             // 
-            this.groupBox4.Controls.Add(this.label15);
-            this.groupBox4.Controls.Add(this.label16);
-            this.groupBox4.Controls.Add(this.label17);
-            this.groupBox4.Controls.Add(this.label18);
-            this.groupBox4.Location = new System.Drawing.Point(268, 160);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(284, 84);
-            this.groupBox4.TabIndex = 11;
-            this.groupBox4.TabStop = false;
+            this.bilesenGrup.BackColor = System.Drawing.Color.Transparent;
+            this.bilesenGrup.Controls.Add(this.label15);
+            this.bilesenGrup.Controls.Add(this.label16);
+            this.bilesenGrup.Controls.Add(this.label17);
+            this.bilesenGrup.Controls.Add(this.label18);
+            this.bilesenGrup.ForeColor = System.Drawing.Color.Transparent;
+            this.bilesenGrup.Location = new System.Drawing.Point(268, 160);
+            this.bilesenGrup.Name = "bilesenGrup";
+            this.bilesenGrup.Size = new System.Drawing.Size(284, 84);
+            this.bilesenGrup.TabIndex = 11;
+            this.bilesenGrup.TabStop = false;
             // 
             // label15
             // 
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label15.ForeColor = System.Drawing.Color.Transparent;
             this.label15.Location = new System.Drawing.Point(6, 59);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(272, 14);
@@ -601,7 +578,9 @@
             // 
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label16.ForeColor = System.Drawing.Color.Transparent;
             this.label16.Location = new System.Drawing.Point(6, 15);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(272, 14);
@@ -613,7 +592,9 @@
             // 
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label17.ForeColor = System.Drawing.Color.Transparent;
             this.label17.Location = new System.Drawing.Point(6, 45);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(272, 14);
@@ -625,7 +606,9 @@
             // 
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label18.ForeColor = System.Drawing.Color.Transparent;
             this.label18.Location = new System.Drawing.Point(6, 30);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(272, 14);
@@ -662,25 +645,30 @@
             this.voltajGrafik.Size = new System.Drawing.Size(200, 200);
             this.voltajGrafik.TabIndex = 10;
             this.voltajGrafik.Text = "voltajGrafik";
+            title1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            title1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            title1.Name = "Title1";
+            title1.Text = "Voltaj Grafiği";
+            this.voltajGrafik.Titles.Add(title1);
             // 
-            // chart1
+            // gkuvvetGrafik
             // 
-            this.chart1.BackColor = System.Drawing.Color.Transparent;
-            this.chart1.BorderlineColor = System.Drawing.Color.WhiteSmoke;
-            this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            this.gkuvvetGrafik.BackColor = System.Drawing.Color.Transparent;
+            this.gkuvvetGrafik.BorderlineColor = System.Drawing.Color.WhiteSmoke;
+            this.gkuvvetGrafik.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             chartArea2.AxisX.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
             chartArea2.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             chartArea2.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             chartArea2.BorderColor = System.Drawing.Color.WhiteSmoke;
             chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            this.gkuvvetGrafik.ChartAreas.Add(chartArea2);
             legend2.Enabled = false;
             legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(770, 35);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.gkuvvetGrafik.Legends.Add(legend2);
+            this.gkuvvetGrafik.Location = new System.Drawing.Point(770, 35);
+            this.gkuvvetGrafik.Name = "gkuvvetGrafik";
+            this.gkuvvetGrafik.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -688,10 +676,148 @@
             series2.LabelForeColor = System.Drawing.Color.WhiteSmoke;
             series2.Legend = "Legend1";
             series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(200, 200);
-            this.chart1.TabIndex = 12;
-            this.chart1.Text = "chart1";
+            this.gkuvvetGrafik.Series.Add(series2);
+            this.gkuvvetGrafik.Size = new System.Drawing.Size(200, 200);
+            this.gkuvvetGrafik.TabIndex = 12;
+            this.gkuvvetGrafik.Text = "gkuvvetGrafik";
+            title2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            title2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            title2.Name = "Title1";
+            title2.Text = "G Kuvveti Grafiği";
+            this.gkuvvetGrafik.Titles.Add(title2);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Bilgilendirme!";
+            // 
+            // gucdurumPictureBox
+            // 
+            this.gucdurumPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.gucdurumPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gucdurumPictureBox.Image = global::mCTerminal.Properties.Resources.guc_durum;
+            this.gucdurumPictureBox.Location = new System.Drawing.Point(340, 247);
+            this.gucdurumPictureBox.Name = "gucdurumPictureBox";
+            this.gucdurumPictureBox.Size = new System.Drawing.Size(18, 18);
+            this.gucdurumPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gucdurumPictureBox.TabIndex = 17;
+            this.gucdurumPictureBox.TabStop = false;
+            // 
+            // uydusayiPictureBox
+            // 
+            this.uydusayiPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.uydusayiPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uydusayiPictureBox.Image = global::mCTerminal.Properties.Resources.uydu;
+            this.uydusayiPictureBox.Location = new System.Drawing.Point(316, 247);
+            this.uydusayiPictureBox.Name = "uydusayiPictureBox";
+            this.uydusayiPictureBox.Size = new System.Drawing.Size(18, 18);
+            this.uydusayiPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.uydusayiPictureBox.TabIndex = 16;
+            this.uydusayiPictureBox.TabStop = false;
+            // 
+            // snrseviyePictureBox
+            // 
+            this.snrseviyePictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.snrseviyePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.snrseviyePictureBox.Image = global::mCTerminal.Properties.Resources.snr_seviye;
+            this.snrseviyePictureBox.Location = new System.Drawing.Point(292, 247);
+            this.snrseviyePictureBox.Name = "snrseviyePictureBox";
+            this.snrseviyePictureBox.Size = new System.Drawing.Size(18, 18);
+            this.snrseviyePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.snrseviyePictureBox.TabIndex = 15;
+            this.snrseviyePictureBox.TabStop = false;
+            // 
+            // baglantiseviyePictureBox
+            // 
+            this.baglantiseviyePictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.baglantiseviyePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.baglantiseviyePictureBox.Image = global::mCTerminal.Properties.Resources.wifi_icon;
+            this.baglantiseviyePictureBox.Location = new System.Drawing.Point(268, 247);
+            this.baglantiseviyePictureBox.Name = "baglantiseviyePictureBox";
+            this.baglantiseviyePictureBox.Size = new System.Drawing.Size(18, 18);
+            this.baglantiseviyePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.baglantiseviyePictureBox.TabIndex = 14;
+            this.baglantiseviyePictureBox.TabStop = false;
+            // 
+            // kayitdurumPictureBox
+            // 
+            this.kayitdurumPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.kayitdurumPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.kayitdurumPictureBox.Image = global::mCTerminal.Properties.Resources.download_kirmizi;
+            this.kayitdurumPictureBox.Location = new System.Drawing.Point(545, 252);
+            this.kayitdurumPictureBox.Name = "kayitdurumPictureBox";
+            this.kayitdurumPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.kayitdurumPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.kayitdurumPictureBox.TabIndex = 13;
+            this.kayitdurumPictureBox.TabStop = false;
+            this.toolTip1.SetToolTip(this.kayitdurumPictureBox, "Veri kayıtı yapılmıyor!");
+            // 
+            // bağlantıyıBaşlatToolStripMenuItem
+            // 
+            this.bağlantıyıBaşlatToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.bağlantıyıBaşlatToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.bağlantıyıBaşlatToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.connect;
+            this.bağlantıyıBaşlatToolStripMenuItem.Name = "bağlantıyıBaşlatToolStripMenuItem";
+            this.bağlantıyıBaşlatToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
+            this.bağlantıyıBaşlatToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Başlat";
+            this.bağlantıyıBaşlatToolStripMenuItem.Click += new System.EventHandler(this.bağlantıyıBaşlatToolStripMenuItem_Click);
+            // 
+            // verikaydetToolStripMenuItem
+            // 
+            this.verikaydetToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.verikaydetToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.verikaydetToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.save;
+            this.verikaydetToolStripMenuItem.Name = "verikaydetToolStripMenuItem";
+            this.verikaydetToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.verikaydetToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.verikaydetToolStripMenuItem.Text = "Veri Çıktısını Kaydet";
+            this.verikaydetToolStripMenuItem.Click += new System.EventHandler(this.verikaydetToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.toolStripMenuItem2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.toolStripMenuItem2.Image = global::mCTerminal.Properties.Resources.refresh;
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(243, 22);
+            this.toolStripMenuItem2.Text = "Programı Yeniden Başlat";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.toolStripMenuItem3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.toolStripMenuItem3.Image = global::mCTerminal.Properties.Resources.exit;
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(243, 22);
+            this.toolStripMenuItem3.Text = "Çık";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            // 
+            // ayarlarToolStripMenuItem
+            // 
+            this.ayarlarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.ayarlarToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.ayarlarToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.setting;
+            this.ayarlarToolStripMenuItem.Name = "ayarlarToolStripMenuItem";
+            this.ayarlarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.ayarlarToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.ayarlarToolStripMenuItem.Text = "Ayarlar";
+            this.ayarlarToolStripMenuItem.Click += new System.EventHandler(this.ayarlarToolStripMenuItem_Click);
+            // 
+            // tumselKontrolleriAcToolStripMenuItem
+            // 
+            this.tumselKontrolleriAcToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.tumselKontrolleriAcToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tumselKontrolleriAcToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.select_all;
+            this.tumselKontrolleriAcToolStripMenuItem.Name = "tumselKontrolleriAcToolStripMenuItem";
+            this.tumselKontrolleriAcToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.F2)));
+            this.tumselKontrolleriAcToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.tumselKontrolleriAcToolStripMenuItem.Text = "Tümsel Kontrolleri Aç";
+            this.tumselKontrolleriAcToolStripMenuItem.Click += new System.EventHandler(this.tumselKontrolleriAcToolStripMenuItem_Click);
             // 
             // haritayıGösterToolStripMenuItem
             // 
@@ -726,18 +852,65 @@
             this.hamVeriyiGösterToolStripMenuItem.Text = "Ham Veriyi Göster";
             this.hamVeriyiGösterToolStripMenuItem.Click += new System.EventHandler(this.hamVeriyiGösterToolStripMenuItem_Click);
             // 
+            // tamEkranToolStripMenuItem
+            // 
+            this.tamEkranToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.tamEkranToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tamEkranToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.fullscreen;
+            this.tamEkranToolStripMenuItem.Name = "tamEkranToolStripMenuItem";
+            this.tamEkranToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F2)));
+            this.tamEkranToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.tamEkranToolStripMenuItem.Text = "Tam Ekran";
+            this.tamEkranToolStripMenuItem.Click += new System.EventHandler(this.tamEkranToolStripMenuItem_Click);
+            // 
+            // destekSayfasınaGitToolStripMenuItem
+            // 
+            this.destekSayfasınaGitToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.destekSayfasınaGitToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.destekSayfasınaGitToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.internet;
+            this.destekSayfasınaGitToolStripMenuItem.Name = "destekSayfasınaGitToolStripMenuItem";
+            this.destekSayfasınaGitToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.destekSayfasınaGitToolStripMenuItem.Text = "Destek Sayfasına Git";
+            this.destekSayfasınaGitToolStripMenuItem.Click += new System.EventHandler(this.destekSayfasınaGitToolStripMenuItem_Click_1);
+            // 
+            // güncelleştirmeleriKontrolEtToolStripMenuItem
+            // 
+            this.güncelleştirmeleriKontrolEtToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.güncelleştirmeleriKontrolEtToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.güncelleştirmeleriKontrolEtToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.update;
+            this.güncelleştirmeleriKontrolEtToolStripMenuItem.Name = "güncelleştirmeleriKontrolEtToolStripMenuItem";
+            this.güncelleştirmeleriKontrolEtToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.güncelleştirmeleriKontrolEtToolStripMenuItem.Text = "Güncelleştirmeleri Kontrol Et";
+            this.güncelleştirmeleriKontrolEtToolStripMenuItem.Click += new System.EventHandler(this.güncelleştirmeleriKontrolEtToolStripMenuItem_Click);
+            // 
+            // hakkındaToolStripMenuItem
+            // 
+            this.hakkındaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.hakkındaToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.hakkındaToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.info;
+            this.hakkındaToolStripMenuItem.Name = "hakkındaToolStripMenuItem";
+            this.hakkındaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
+            this.hakkındaToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.hakkındaToolStripMenuItem.Text = "Hakkında";
+            this.hakkındaToolStripMenuItem.Click += new System.EventHandler(this.hakkındaToolStripMenuItem_Click);
+            // 
             // anaEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(564, 361);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.gucdurumPictureBox);
+            this.Controls.Add(this.uydusayiPictureBox);
+            this.Controls.Add(this.snrseviyePictureBox);
+            this.Controls.Add(this.baglantiseviyePictureBox);
+            this.Controls.Add(this.kayitdurumPictureBox);
+            this.Controls.Add(this.gkuvvetGrafik);
             this.Controls.Add(this.voltajGrafik);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.bilesenGrup);
+            this.Controls.Add(this.fizikselGrup);
+            this.Controls.Add(this.gucGrup);
+            this.Controls.Add(this.sinyalGrup);
             this.Controls.Add(this.baglantiGrup);
             this.Controls.Add(this.hamVeriTextBox1);
             this.Controls.Add(this.toolStrip1);
@@ -746,18 +919,23 @@
             this.MinimumSize = new System.Drawing.Size(580, 400);
             this.Name = "anaEkran";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "mCTerminal v0.2";
+            this.Text = "mCTerminal $PROGRAM_SURUM | [@PC ADI]";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.anaEkran_FormClosing);
             this.Load += new System.EventHandler(this.anaEkran_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.baglantiGrup.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
+            this.sinyalGrup.ResumeLayout(false);
+            this.gucGrup.ResumeLayout(false);
+            this.fizikselGrup.ResumeLayout(false);
+            this.bilesenGrup.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.voltajGrafik)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gkuvvetGrafik)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gucdurumPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uydusayiPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.snrseviyePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baglantiseviyePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kayitdurumPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -770,7 +948,7 @@
         private System.Windows.Forms.ToolStripComboBox baudRatePortList;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem verikaydetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
@@ -785,34 +963,42 @@
         private System.Windows.Forms.Label baglantiHizi_label;
         private System.Windows.Forms.Label aliciModeli_label;
         private System.Windows.Forms.GroupBox baglantiGrup;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox sinyalGrup;
         private System.Windows.Forms.Label sinyalGucuLabel;
         private System.Windows.Forms.Label uyduSayiLabel;
         private System.Windows.Forms.Label snrSeviyesiLabel;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gucGrup;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label voltajLabel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox fizikselGrup;
         private System.Windows.Forms.Label irtifaBaroLabel;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label dikeyhizLabel;
         private System.Windows.Forms.Label enlemLabel;
         private System.Windows.Forms.Label yatayHizLabel;
         private System.Windows.Forms.Label boylamLabel;
         private System.Windows.Forms.Label irtifaLabel;
         private System.Windows.Forms.Label gkuvvetLabel;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox bilesenGrup;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ToolStripMenuItem hakkındaToolStripMenuItem;
         private System.Windows.Forms.DataVisualization.Charting.Chart voltajGrafik;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart gkuvvetGrafik;
         private System.Windows.Forms.ToolStripMenuItem haritayıGösterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uzakGörüntüyüGösterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tamEkranToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hamVeriyiGösterToolStripMenuItem;
+        private System.Windows.Forms.Label irtifafarkLabel;
+        private System.Windows.Forms.ToolStripMenuItem üstteGösterToolStripMenuItem;
+        private System.Windows.Forms.PictureBox kayitdurumPictureBox;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.PictureBox baglantiseviyePictureBox;
+        private System.Windows.Forms.PictureBox snrseviyePictureBox;
+        private System.Windows.Forms.PictureBox uydusayiPictureBox;
+        private System.Windows.Forms.PictureBox gucdurumPictureBox;
     }
 }

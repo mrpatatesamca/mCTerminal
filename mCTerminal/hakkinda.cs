@@ -17,9 +17,26 @@ namespace mCTerminal
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void githubadresLabel_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/mrpatatesamca/mCTerminal");
+        }
+
+        private void websiteadresLabel_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.cosmostakimi.com");
+        }
+
+        private void instagramadresLabel_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.instagram.com/mrpatatesamca");
+        }
+
+        private void hakkinda_Load(object sender, EventArgs e)
+        {
+            this.Text = "mCTerminal " + mCTerminal.Properties.Settings.Default.prog_surum + " Hakkında";
+            sistembilgiLabel.Text = "@" + Environment.MachineName + "/" + Environment.UserName + " | " + Environment.OSVersion;
+            programSurumSayiLabel.Text = "mCTerminal " + mCTerminal.Properties.Settings.Default.prog_surum;       
         }
     }
 }

@@ -176,16 +176,31 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pin.png" />
-    <None Include="Resources\cosmosTextLogoBB.png" />
     <None Include="Resources\COSMOSLogoTextGif.gif" />
-    <None Include="Resources\wallpaper1.jpg" />
     <None Include="Resources\play.png" />
     <None Include="Resources\map.png" />
     <None Include="Resources\cctv.png" />
     <None Include="Resources\binary.png" />
     <None Include="Resources\circle_loading2D.gif" />
-    <None Include="Resources\circle_loading3D.gif" />
-    <None Include="Resources\windows_xp3D.gif" />
+    <None Include="Resources\fullscreen.png" />
+    <None Include="Resources\resolution.png" />
+    <None Include="Resources\connect.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\setting.png" />
+    <None Include="Resources\select-all.png" />
+    <None Include="Resources\internet.png" />
+    <None Include="Resources\update.png" />
+    <None Include="Resources\provider.png" />
+    <None Include="Resources\wallpaper1.jpg" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\download_kirmizi.png" />
+    <None Include="Resources\download_yesil.png" />
+    <None Include="Resources\wifi_icon.png" />
+    <None Include="Resources\snr_seviye.png" />
+    <None Include="Resources\uydu.png" />
+    <None Include="Resources\guc_durum.png" />
     <Content Include="terminal_logo2.ico" />
   </ItemGroup>
   <ItemGroup>
