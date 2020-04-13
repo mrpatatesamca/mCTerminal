@@ -7,14 +7,14 @@ mCTerminal Cosmos Takımı için hazırlanan ve Berke Aydin tarafından gelişti
 
 ## Bilgilendirme!
 
-Bu program sadece Windows işletim sisteminde çalışır ve Microsoft .NET Framework kurulu olması gerekir!
+Bu program sadece Windows işletim sisteminde çalışır ve Microsoft .NET Framework 4.7.2 kurulu olması gerekir! (.NET Framework diğer sürümlerle de çalışır ama problem olmaması için 4.7.2 önerilir.)
 
 ## Kurulum
 
 GitHub'dan indirilen sürüm için kuruluma ihtiyaç yoktur.
 
  - **GitHub Repository klonlayarak bütün kaynak kodlarıyla beraber indirdiyseniz:**
-Klonladığınız klasörün içindeki `*Start mCTerminal.lnk` kısayolundan veya `mCTerminal\bin\Debug\` dizinindeki `mCTerminal.exe` dosyasından başlatabilirsiniz.
+Klonladığınız klasörün içindeki `*Start mCTerminal.lnk` kısayolundan veya `mCTerminal\bin\Debug\` dizinindeki `*mCTerminal.exe` dosyasından başlatabilirsiniz.
 
 - **Release sayfasından .zip veya .7z arşivi olarak indirdiyseniz:**
 İndirdiğiniz arşivin içindeki `*mCTerminal.exe` uygulamasını başlatarak kullanabilirsiniz.
