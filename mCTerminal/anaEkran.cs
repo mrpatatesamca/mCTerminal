@@ -60,9 +60,64 @@ namespace mCTerminal
 
         private void anaEkran_Load(object sender, EventArgs e)
         {
+            //----------Gerekli dosyaları kontrol et----------------------
+            int eksikdosyasayi = 0;
 
-            //temalar için ayrılmış bölüm
+
+            if (!File.Exists("AForge.dll"))
+            {
+                eksikdosyasayi += 1;
+            }
+            //----------
+            if (!File.Exists("AForge.Video.DirectShow.dll"))
+            {
+                eksikdosyasayi += 1;
+            }
+            //----------
+            if (!File.Exists("AForge.Video.dll"))
+            {
+                eksikdosyasayi += 1;
+            }
+            //----------
+            if (!File.Exists("GMap.NET.Core.dll"))
+            {
+                eksikdosyasayi += 1;
+            }
+            //----------
+            if (!File.Exists("GMap.NET.WindowsForms.dll"))
+            {
+                eksikdosyasayi += 1;
+            }
+            //----------
+            if (!File.Exists("DotNetZip.dll"))
+            {
+                eksikdosyasayi += 1;
+            }
+            //----------
+            if (!File.Exists("mCTerminal-updater.exe"))
+            {
+                eksikdosyasayi += 1;
+            }
+            //----------
+            if (!Directory.Exists("logs"))
+            {
+                eksikdosyasayi += 1;
+            }
+
+            if (eksikdosyasayi >= 1) //eğer bu sayı 1 veya 1'e eşit ise eksik dosyalar var demektir.
+            {
+                eksikdosyaForm eksikdosyafrm = new eksikdosyaForm();
+                eksikdosyafrm.ShowDialog();
+            }
+
+
+
+
+            //-----------Gerekli dosyaları kontrol et sonu---------------
+
             
+            
+            //temalar için ayrılmış bölüm
             if (mCTerminal.Properties.Settings.Default.program_tema == "tema_varsayilan")
             {
                 this.BackColor = Color.FromArgb(30 ,30 ,30);
@@ -77,7 +132,7 @@ namespace mCTerminal
                 voltajGrafik.Titles[0].ForeColor = Color.WhiteSmoke;
                 gkuvvetGrafik.Titles[0].ForeColor = Color.WhiteSmoke;
             }
-
+            //---------------------
             if (mCTerminal.Properties.Settings.Default.program_tema == "tema_matrix")
             {
                 this.BackColor = Color.Black;
@@ -92,7 +147,7 @@ namespace mCTerminal
                 voltajGrafik.Titles[0].ForeColor = Color.DarkOliveGreen;
                 gkuvvetGrafik.Titles[0].ForeColor = Color.DarkOliveGreen;
             }
-
+            //---------------------
             if (mCTerminal.Properties.Settings.Default.program_tema == "tema_dondurma")
             {
                 this.BackColor = Color.FromArgb(220, 229, 225);
@@ -107,7 +162,7 @@ namespace mCTerminal
                 voltajGrafik.Titles[0].ForeColor = Color.IndianRed;
                 gkuvvetGrafik.Titles[0].ForeColor = Color.IndianRed;
             }
-
+            //---------------------
             if (mCTerminal.Properties.Settings.Default.program_tema == "tema_cosmos")
             {
                 this.BackColor = Color.FromArgb(26, 16, 122);
@@ -122,7 +177,7 @@ namespace mCTerminal
                 voltajGrafik.Titles[0].ForeColor = Color.FromArgb(245, 228, 183);
                 gkuvvetGrafik.Titles[0].ForeColor = Color.FromArgb(245, 228, 183);
             }
-
+            //---------------------
             if (mCTerminal.Properties.Settings.Default.program_tema == "tema_material")
             {
                 this.BackColor = Color.FromArgb(47, 79, 79);
@@ -246,8 +301,8 @@ namespace mCTerminal
                     string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
                     string sadece_saat = DateTime.Now.ToString("hh:mm:ss");
                     string sadece_tarih = DateTime.Now.ToString("dd-MM-yyyy");
-
-                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(programyolu + @"logs\" + "roketLog-" + sadece_tarih.ToString() + ".txt", true)) //Log yerine kullanılabilecek Türkçe bir karşılık bulamadım, belki Veri çıktısı diyebiliriz ama Log kavramı daha evrensel olduğu için böyle yazdım.
+                    string kayitformati = mCTerminal.Properties.Settings.Default.vericikti_formati;
+                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(programyolu + @"logs\" + "roketLog-" + sadece_tarih.ToString() + kayitformati, true)) //Log yerine kullanılabilecek Türkçe bir karşılık bulamadım, belki Veri çıktısı diyebiliriz ama Log kavramı daha evrensel olduğu için böyle yazdım.
                     {
                         file.WriteLine(sadece_saat + " --> " + data);
                     }
@@ -297,12 +352,12 @@ namespace mCTerminal
                         hamVeriTextBox1.AppendText(Environment.NewLine);
                         hamVeriTextBox1.AppendText("@$$ --> Bağlantı " + COMPortList.Text + " üzerinden " + sadece_tarih + "</>" + sadece_saat + " tarihinde başlatıldı!");
                         hamVeriTextBox1.AppendText(Environment.NewLine);
-                        //log kayıtlarında da karışıklık olmasın diye eğer kayıt etme açıksa bir kaç bilgi yazılır txt dosyasına
+                        //log kayıtlarında da karışıklık olmasın diye eğer kayıt etme açıksa bir kaç bilgi yazılır kayıt dosyasına
                         if (verikaydetToolStripMenuItem.CheckState == CheckState.Checked)
                         {
                             string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
-                            
-                            using (System.IO.StreamWriter file = new System.IO.StreamWriter(programyolu + @"logs\" + "roketLog-" + sadece_tarih.ToString() + ".txt", true)) //Log yerine kullanılabilecek Türkçe bir karşılık bulamadım, belki Veri çıktısı diyebiliriz ama Log kavramı daha evrensel olduğu için böyle yazdım.
+                            string kayitformati = mCTerminal.Properties.Settings.Default.vericikti_formati;
+                            using (System.IO.StreamWriter file = new System.IO.StreamWriter(programyolu + @"logs\" + "roketLog-" + sadece_tarih.ToString() + kayitformati, true)) //Log yerine kullanılabilecek Türkçe bir karşılık bulamadım, belki Veri çıktısı diyebiliriz ama Log kavramı daha evrensel olduğu için böyle yazdım.
                             {
                                 file.WriteLine("----------------------------------------------------------------------------------------------------------------------" + Environment.NewLine);
                                 file.WriteLine("@$$ --> Bağlantı " + COMPortList.Text + " üzerinden " + sadece_tarih + "</>" + sadece_saat + " tarihinde başlatıldı!" + Environment.NewLine);
@@ -326,11 +381,12 @@ namespace mCTerminal
                 bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kur";
                 hamVeriTextBox1.AppendText("@$$ --> " + COMPortList.Text + " üzerindeki bağlantı " + sadece_tarih + "</>" + sadece_saat + " tarihinde sonlandırıldı!");
                 hamVeriTextBox1.AppendText(Environment.NewLine);
-                //log kayıtlarında da karışıklık olmasın diye eğer kayıt etme açıksa bir kaç bilgi yazılır txt dosyasına
+                //log kayıtlarında da karışıklık olmasın diye eğer kayıt etme açıksa bir kaç bilgi yazılır kayıt dosyasına
                 if (verikaydetToolStripMenuItem.CheckState == CheckState.Checked)
                 {
                     string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
-                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(programyolu + @"logs\" + "roketLog-" + sadece_tarih.ToString() + ".txt", true)) //Log yerine kullanılabilecek Türkçe bir karşılık bulamadım, belki Veri çıktısı diyebiliriz ama Log kavramı daha evrensel olduğu için böyle yazdım.
+                    string kayitformati = mCTerminal.Properties.Settings.Default.vericikti_formati;
+                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(programyolu + @"logs\" + "roketLog-" + sadece_tarih.ToString() + kayitformati, true)) //Log yerine kullanılabilecek Türkçe bir karşılık bulamadım, belki Veri çıktısı diyebiliriz ama Log kavramı daha evrensel olduğu için böyle yazdım.
                     {
                         file.WriteLine("----------------------------------------------------------------------------------------------------------------------" + Environment.NewLine);
                         file.WriteLine("@$$ --> " + COMPortList.Text + " üzerindeki bağlantı " + sadece_tarih + "</>" + sadece_saat + " tarihinde sonlandırıldı!" + Environment.NewLine);
@@ -390,7 +446,7 @@ namespace mCTerminal
 
         private void destekSayfasınaGitToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.cosmostakimi.com/");
+            System.Diagnostics.Process.Start("https://github.com/mrpatatesamca/mCTerminal");
         }
 
         private void güncelleştirmeleriKontrolEtToolStripMenuItem_Click(object sender, EventArgs e)
@@ -398,11 +454,11 @@ namespace mCTerminal
             try
             {
                 string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
-                Process.Start(programyolu + @"\mCTerminal-Updater.exe");
+                Process.Start(programyolu + @"\mCTerminal-updater.exe");
             }
             catch
             {
-                MessageBox.Show("mCTerminal-Updater.exe bulunamadı! Lütfen dosyaların konumunu kontrol edin.", "Program başlatılamadı!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("mCTerminal-updater.exe bulunamadı! Lütfen dosyaların konumunu kontrol edin.", "Program başlatılamadı!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             
@@ -480,6 +536,12 @@ namespace mCTerminal
                 toolTip1.SetToolTip(kayitdurumPictureBox, "Veri kayıtı yapılmıyor!");
                 toolTip1.ToolTipIcon = ToolTipIcon.Warning;
             }
+        }
+
+        private void hataGidermeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            eksikdosyaForm eksikdosyafrm = new eksikdosyaForm();
+            eksikdosyafrm.Show();
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)

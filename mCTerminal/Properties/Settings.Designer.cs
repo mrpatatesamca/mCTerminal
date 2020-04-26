@@ -73,7 +73,7 @@ namespace mCTerminal.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("v0.4-alpha")]
+        [global::System.Configuration.DefaultSettingValueAttribute("v0.5-alpha")]
         public string prog_surum {
             get {
                 return ((string)(this["prog_surum"]));
@@ -104,6 +104,18 @@ namespace mCTerminal.Properties {
             }
             set {
                 this["program_tema"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".log")]
+        public string vericikti_formati {
+            get {
+                return ((string)(this["vericikti_formati"]));
+            }
+            set {
+                this["vericikti_formati"] = value;
             }
         }
     }

@@ -32,6 +32,11 @@ namespace mCTerminal
             System.Diagnostics.Process.Start("https://www.instagram.com/mrpatatesamca");
         }
 
+        private void twitterLabel_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.twitter.com/mrpatatesamca");
+        }
+
         private void hakkinda_Load(object sender, EventArgs e)
         {
             this.Text = "mCTerminal " + mCTerminal.Properties.Settings.Default.prog_surum + " Hakkında";

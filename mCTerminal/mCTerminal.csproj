@@ -106,6 +106,12 @@
     <Compile Include="ayarlar.Designer.cs">
       <DependentUpon>ayarlar.cs</DependentUpon>
     </Compile>
+    <Compile Include="eksikdosyaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eksikdosyaForm.Designer.cs">
+      <DependentUpon>eksikdosyaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="hakkinda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ayarlar.resx">
       <DependentUpon>ayarlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eksikdosyaForm.resx">
+      <DependentUpon>eksikdosyaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="hakkinda.resx">
       <DependentUpon>hakkinda.cs</DependentUpon>
@@ -201,6 +210,7 @@
     <None Include="Resources\snr_seviye.png" />
     <None Include="Resources\uydu.png" />
     <None Include="Resources\guc_durum.png" />
+    <None Include="Resources\toolbox.png" />
     <Content Include="terminal_logo2.ico" />
   </ItemGroup>
   <ItemGroup>

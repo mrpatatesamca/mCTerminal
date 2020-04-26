@@ -25,8 +25,7 @@ namespace mCTerminal
 
         private void uygulamaTemaComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Temalar için böyle bir yöntem kullanıyorum, aslında bir xml dosyasına renk bilgilerini ve tema isimlerini
-            //yazabilirim ama böyle ekstra bir dosya olmadan halledebiliyorum.
+            //Temalar için böyle bir yöntem kullanıyorum, aslında bir xml dosyasına renk bilgilerini ve tema isimlerini yazabilirim ama böyle ekstra bir dosya olmadan halledebiliyorum.
             
             if (uygulamaTemaComboBox.SelectedItem.ToString() == "Varsayılan Tema")
             {
@@ -54,8 +53,34 @@ namespace mCTerminal
             }
         }
 
+        private void vericiktikayitformatComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //veri çıktısı dosyasının uzantısını böyle ayarlıyorum
+
+            if (vericiktikayitformatComboBox.SelectedItem.ToString() == "Log Dosyası (*.log)")
+            {
+                mCTerminal.Properties.Settings.Default.vericikti_formati = ".log";
+            }
+
+            if (vericiktikayitformatComboBox.SelectedItem.ToString() == "Text Dosyası (*.txt)")
+            {
+                mCTerminal.Properties.Settings.Default.vericikti_formati = ".txt";
+            }
+
+            if (vericiktikayitformatComboBox.SelectedItem.ToString() == "eXtensible Markup Language Dosyası (*.xml)")
+            {
+                mCTerminal.Properties.Settings.Default.vericikti_formati = ".xml";
+            }
+
+            if (vericiktikayitformatComboBox.SelectedItem.ToString() == "Verilog Dosyası (*.vs)")
+            {
+                mCTerminal.Properties.Settings.Default.vericikti_formati = ".vs";
+            }
+        }
+
         private void ayarlar_Load(object sender, EventArgs e)
         {
+            //----------------------program teması ayarları------------------------------
             if (mCTerminal.Properties.Settings.Default.program_tema == "tema_varsayilan")
             {
                 uygulamaTemaComboBox.SelectedItem = "Varsayılan Tema";
@@ -80,6 +105,31 @@ namespace mCTerminal
             {
                 uygulamaTemaComboBox.SelectedItem = "Material Tema";
             }
+            //----------------------------------------------------------------------------
+
+            //------------------veri çıktısı kayıt formatı ayarları-----------------------
+            if (mCTerminal.Properties.Settings.Default.vericikti_formati == ".log")
+            {
+                vericiktikayitformatComboBox.SelectedItem = "Log Dosyası (*.log)";
+            }
+
+            if (mCTerminal.Properties.Settings.Default.vericikti_formati == ".txt")
+            {
+                vericiktikayitformatComboBox.SelectedItem = "Text Dosyası (*.txt)";
+            }
+
+            if (mCTerminal.Properties.Settings.Default.vericikti_formati == ".xml")
+            {
+                vericiktikayitformatComboBox.SelectedItem = "eXtensible Markup Language Dosyası (*.xml)";
+            }
+
+            if (mCTerminal.Properties.Settings.Default.vericikti_formati == ".vs")
+            {
+                vericiktikayitformatComboBox.SelectedItem = "Verilog Dosyası (*.vs)";
+            }
+
+
+
         }
 
         private void kaydetButton_Click(object sender, EventArgs e)

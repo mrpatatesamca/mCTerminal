@@ -15,13 +15,16 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="prog_surum" Type="System.String" Scope="User">
-      <Value Profile="(Default)">v0.4-alpha</Value>
+      <Value Profile="(Default)">v0.5-alpha</Value>
     </Setting>
     <Setting Name="hamveriEkran_tema" Type="System.String" Scope="User">
       <Value Profile="(Default)">tema_varsayilan</Value>
     </Setting>
     <Setting Name="program_tema" Type="System.String" Scope="User">
       <Value Profile="(Default)">tema_varsayilan</Value>
+    </Setting>
+    <Setting Name="vericikti_formati" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.log</Value>
     </Setting>
   </Settings>
 </SettingsFile>

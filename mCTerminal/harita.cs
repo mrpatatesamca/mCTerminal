@@ -32,7 +32,6 @@ namespace mCTerminal
                 this.TopMost = true;
 
             }
-
         }
 
         private void tamEkranToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,8 +49,6 @@ namespace mCTerminal
                 this.WindowState = FormWindowState.Normal;
                 tamEkranToolStripMenuItem.Text = "Tam Ekran";
             }
-            
-
         }
 
         private void harita_Load(object sender, EventArgs e)
@@ -141,11 +138,6 @@ namespace mCTerminal
 
 
 
-
-
-
-
-
             harita1.MapProvider = GMap.NET.MapProviders.GoogleHybridMapProvider.Instance;
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerAndCache;
             harita1.Position = new GMap.NET.PointLatLng(39.9179769, 44.0351519);
@@ -164,25 +156,19 @@ namespace mCTerminal
             harita1.ReloadMap();
         }
 
-        private void turkeyMapProviderToolStripMenuItem_Click(object sender, EventArgs e) //Bu çalışmıyor ama Türkiye dediği için bırakıyorum, Easter Egg gibi düşünün siz.
-        {
-            harita1.MapProvider = GMap.NET.MapProviders.TurkeyMapProvider.Instance;
-            harita1.ReloadMap();
-        }
-
         private void uyduHaritasıToolStripMenuItem_Click(object sender, EventArgs e) //HARİTA SAĞLAYICISINI GOOGLE UYDU GÖRÜNTÜSÜ YAP
         {
             harita1.MapProvider = GMap.NET.MapProviders.GoogleHybridMapProvider.Instance;
             harita1.ReloadMap();
         }
 
-        private void şehirHaritasıToolStripMenuItem_Click(object sender, EventArgs e)
+        private void şehirHaritasıToolStripMenuItem_Click(object sender, EventArgs e) //HARİTA SAĞLAYICISI GOOGLE ŞEHİR HARİTASI
         {
             harita1.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
             harita1.ReloadMap();
         }
 
-        private void araziHaritasıToolStripMenuItem_Click(object sender, EventArgs e)
+        private void araziHaritasıToolStripMenuItem_Click(object sender, EventArgs e) //HARİTA SAĞLAYICISI GOOGLE ARAZİ HARİTASI
         {
             harita1.MapProvider = GMap.NET.MapProviders.GoogleTerrainMapProvider.Instance;
             harita1.ReloadMap();
@@ -199,7 +185,7 @@ namespace mCTerminal
             enlemTextBox.Text = harita1.Position.Lat.ToString();
             boylamTextBox.Text = harita1.Position.Lng.ToString();
         }
-
+        //--------------------------------------------------------------------------------
         private void gitButon_Click(object sender, EventArgs e)
         {
             double enlem = Convert.ToDouble(enlemTextBox.Text);
@@ -224,23 +210,10 @@ namespace mCTerminal
                     }
                     catch
                     {
-                        
+                        //bir şey olmamış gibi devam :D
                     }
                 }
-                else
-                {
-
-
-                }
-
-                
-            }
-            
-        }
-
-        private void harita_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
+            } 
         }
     }
 }
