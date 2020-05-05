@@ -13,9 +13,6 @@ Bu program sadece Windows işletim sisteminde çalışır ve Microsoft .NET Fram
 
 GitHub'dan indirilen sürüm için kuruluma ihtiyaç yoktur.
 
- - **GitHub Repository klonlayarak bütün kaynak kodlarıyla beraber indirdiyseniz:**
-Klonladığınız klasörün içindeki `*Start mCTerminal.lnk` kısayolundan veya `mCTerminal\bin\Debug\` dizinindeki `*mCTerminal.exe` dosyasından başlatabilirsiniz.
-
 - **Release sayfasından .zip veya .7z arşivi olarak indirdiyseniz:**
 İndirdiğiniz arşivin içindeki `*mCTerminal.exe` uygulamasını başlatarak kullanabilirsiniz.
 
