@@ -211,6 +211,10 @@
     <None Include="Resources\uydu.png" />
     <None Include="Resources\guc_durum.png" />
     <None Include="Resources\toolbox.png" />
+    <None Include="Resources\folder.png" />
+    <None Include="Resources\bug.png" />
+    <None Include="Resources\window.png" />
+    <None Include="Resources\lifebuoy.png" />
     <Content Include="terminal_logo2.ico" />
   </ItemGroup>
   <ItemGroup>

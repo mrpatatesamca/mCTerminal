@@ -73,6 +73,16 @@ namespace mCTerminal.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap bug {
+            get {
+                object obj = ResourceManager.GetObject("bug", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap cctv {
             get {
                 object obj = ResourceManager.GetObject("cctv", resourceCulture);
@@ -143,6 +153,16 @@ namespace mCTerminal.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap folder {
+            get {
+                object obj = ResourceManager.GetObject("folder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap fullscreen {
             get {
                 object obj = ResourceManager.GetObject("fullscreen", resourceCulture);
@@ -176,6 +196,16 @@ namespace mCTerminal.Properties {
         internal static System.Drawing.Bitmap internet {
             get {
                 object obj = ResourceManager.GetObject("internet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap lifebuoy {
+            get {
+                object obj = ResourceManager.GetObject("lifebuoy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -326,6 +356,16 @@ namespace mCTerminal.Properties {
         internal static System.Drawing.Bitmap wifi_icon {
             get {
                 object obj = ResourceManager.GetObject("wifi_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap window {
+            get {
+                object obj = ResourceManager.GetObject("window", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

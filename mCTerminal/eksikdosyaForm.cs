@@ -14,6 +14,8 @@ namespace mCTerminal
 {
     public partial class eksikdosyaForm : Form
     {
+        static string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
+
         public eksikdosyaForm()
         {
             InitializeComponent();
@@ -22,9 +24,6 @@ namespace mCTerminal
         private void eksikdosyaForm_Load(object sender, EventArgs e)
         {
             dosyabilgiTextBox2.Text = "";
-
-
-            
         }
 
         private void tamamButon_Click(object sender, EventArgs e)
@@ -36,7 +35,6 @@ namespace mCTerminal
         {
             try
             {
-                string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
                 Process.Start(programyolu + @"\mCTerminal-updater.exe");
                 this.Close();
             }
@@ -121,7 +119,15 @@ namespace mCTerminal
             {
                 dosyabilgiTextBox2.AppendText("EKSİK" + Environment.NewLine);
             }
-
+            //------------
+            if (File.Exists(programyolu + @"\res\settings.xml"))
+            {
+                dosyabilgiTextBox2.AppendText("TAMAM" + Environment.NewLine);
+            }
+            else
+            {
+                dosyabilgiTextBox2.AppendText("EKSİK" + Environment.NewLine);
+            }
             //-----------Gerekli dosyaları kontrol et sonu---------------
 
             if (dosyabilgiTextBox2.Text.Contains("EKSİK"))

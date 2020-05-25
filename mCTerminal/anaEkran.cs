@@ -12,17 +12,33 @@ using System.IO.Ports;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Diagnostics;
+using System.Windows.Media.Animation;
+using System.Xml;
 
 namespace mCTerminal
 {
     
     public partial class anaEkran : Form
     {
+        XmlTextReader xtr = new XmlTextReader(programyolu + @"\res\settings.xml"); //XML dosyasını okumak için hazırlık yap
+
         //--------tablo grafiği için gerekli---------
         int maksm = 20, minm = 0;
         int gkuvvetmin = 0, gkuvvetmaks = 20;
         //-------------------------------------------
 
+        //global değişkenler
+        public string data;
+        public bool serialportdurum = false;
+        public string enlem;
+        public string boylam;
+        string xmlAyarIsim;
+        string xmlAyarDeger;
+        public string programTema;
+        public string programVeriFormat;
+        public string programSurum;
+        static string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
+        string sadece_saat = DateTime.Now.ToString("hh:mm:ss");
 
         public anaEkran()
         {
@@ -46,19 +62,55 @@ namespace mCTerminal
 
 
             //-------------------------Formda altta bulunan yere yazdırılacak yazılar-------------------------
-            hamVeriTextBox1.AppendText("@@$ --> COM Portları Taranıyor..." + Environment.NewLine);
-            hamVeriTextBox1.AppendText("@@$ --> COM Portları Tarandı!" + Environment.NewLine);
-            hamVeriTextBox1.AppendText("@@$ --> #--------------------------#" + Environment.NewLine);
-            hamVeriTextBox1.AppendText("@@$ --> #   www.cosmostakimi.com   #" + Environment.NewLine);
-            hamVeriTextBox1.AppendText("@@$ --> #--------------------------#" + Environment.NewLine);
-            hamVeriTextBox1.AppendText("@@$ --> Program Yüklendi ve Kullanıma Hazır!" + Environment.NewLine);
+            hamVeriTextBox1.AppendText(sadece_saat + " --> COM Portları Taranıyor..." + Environment.NewLine);
+            hamVeriTextBox1.AppendText(sadece_saat + " --> COM Portları Tarandı!" + Environment.NewLine);
+            hamVeriTextBox1.AppendText(sadece_saat + " --> #--------------------------#" + Environment.NewLine);
+            hamVeriTextBox1.AppendText(sadece_saat + " --> #   www.cosmostakimi.com   #" + Environment.NewLine);
+            hamVeriTextBox1.AppendText(sadece_saat + " --> #--------------------------#" + Environment.NewLine);
+            hamVeriTextBox1.AppendText(sadece_saat + " --> Program Yüklendi ve Kullanıma Hazır!" + Environment.NewLine);
             
             int line = hamVeriTextBox1.GetLineFromCharIndex(hamVeriTextBox1.SelectionStart); //textbox'ı otomatik olarak en aşağı kaydırıyor
             int column = hamVeriTextBox1.SelectionStart - hamVeriTextBox1.GetFirstCharIndexFromLine(line); //böylece en son gelen veriyi görebiliyoruz.
             //------------------------------------------------------------------------------------------------
         }
 
-        private void anaEkran_Load(object sender, EventArgs e)
+        public void editorAyarYukle()
+        {
+            try
+            {
+                while (xtr.Read())
+                {
+                    if (xtr.NodeType == XmlNodeType.Element && xtr.Name == "name") //xml içindeki name elementini al
+                    {
+                        xmlAyarIsim += xtr.ReadElementContentAsString() + "*";
+                    }
+                    if (xtr.NodeType == XmlNodeType.Element && xtr.Name == "value") //xml içindeki value elementini al
+                    {
+                        xmlAyarDeger += xtr.ReadElementContentAsString() + "*";
+                    }
+                }
+                string data1;
+                string data2;
+                string[] splitted_data1;
+                string[] splitted_data2;
+                data1 = xmlAyarIsim;
+                data2 = xmlAyarDeger;
+                splitted_data1 = data1.Split('*');
+                splitted_data2 = data2.Split('*');
+                //değerleri gerekli değişkenlere ata.
+                programTema = splitted_data2[0];
+                programSurum = splitted_data2[1];
+                programVeriFormat = splitted_data2[2];
+                xtr.Close();
+            }
+            catch
+            {
+                MessageBox.Show(@"Ayarlar diskten okunamadı! Lütfen programı yeniden indirin! (res\settings.xml dosyası bozuk veya değiştirilmiş!)", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
+        }
+
+        private void dosyaKontrolEt()
         {
             //----------Gerekli dosyaları kontrol et----------------------
             int eksikdosyasayi = 0;
@@ -103,82 +155,94 @@ namespace mCTerminal
             {
                 eksikdosyasayi += 1;
             }
+            if (!File.Exists(programyolu + @"\res\settings.xml"))
+            {
+                eksikdosyasayi += 1;
+            }
 
             if (eksikdosyasayi >= 1) //eğer bu sayı 1 veya 1'e eşit ise eksik dosyalar var demektir.
             {
                 eksikdosyaForm eksikdosyafrm = new eksikdosyaForm();
                 eksikdosyafrm.ShowDialog();
             }
+        }
 
-
-
-
-            //-----------Gerekli dosyaları kontrol et sonu---------------
-
-            
-            
+        private void temaYukle()
+        {
             //temalar için ayrılmış bölüm
-            if (mCTerminal.Properties.Settings.Default.program_tema == "tema_varsayilan")
+            if (programTema == "tema_varsayilan")
             {
-                this.BackColor = Color.FromArgb(30 ,30 ,30);
+                this.BackColor = Color.FromArgb(30, 30, 30);
                 this.ForeColor = Color.WhiteSmoke;
-                hamVeriTextBox1.BackColor = Color.FromArgb(20 ,20 ,20);
+                hamVeriTextBox1.BackColor = Color.FromArgb(20, 20, 20);
                 hamVeriTextBox1.ForeColor = Color.WhiteSmoke;
                 toolStrip1.BackColor = Color.FromArgb(50, 50, 50);
                 toolStripDropDownButton1.ForeColor = Color.WhiteSmoke;
                 toolStripDropDownButton2.ForeColor = Color.WhiteSmoke;
                 toolStripDropDownButton3.ForeColor = Color.WhiteSmoke;
                 toolStripDropDownButton4.ForeColor = Color.WhiteSmoke;
-                voltajGrafik.Titles[0].ForeColor = Color.WhiteSmoke;
+                ortagovdeDurumLabel.ForeColor = Color.WhiteSmoke;
+                irtifaMaxLabel.ForeColor = Color.WhiteSmoke;
+                irtifaAnlıkLabel.ForeColor = Color.WhiteSmoke;
+                anlikİrtifaGrafik.Titles[0].ForeColor = Color.WhiteSmoke;
                 gkuvvetGrafik.Titles[0].ForeColor = Color.WhiteSmoke;
             }
             //---------------------
-            if (mCTerminal.Properties.Settings.Default.program_tema == "tema_matrix")
+            if (programTema == "tema_matrix")
             {
                 this.BackColor = Color.Black;
                 this.ForeColor = Color.DarkOliveGreen;
-                hamVeriTextBox1.BackColor = Color.FromArgb(10 ,12 ,10);
+                hamVeriTextBox1.BackColor = Color.FromArgb(10, 12, 10);
                 hamVeriTextBox1.ForeColor = Color.LimeGreen;
                 toolStrip1.BackColor = Color.Black;
                 toolStripDropDownButton1.ForeColor = Color.LimeGreen;
                 toolStripDropDownButton2.ForeColor = Color.LimeGreen;
                 toolStripDropDownButton3.ForeColor = Color.LimeGreen;
                 toolStripDropDownButton4.ForeColor = Color.LimeGreen;
-                voltajGrafik.Titles[0].ForeColor = Color.DarkOliveGreen;
+                ortagovdeDurumLabel.ForeColor = Color.DarkOliveGreen;
+                irtifaMaxLabel.ForeColor = Color.DarkOliveGreen;
+                irtifaAnlıkLabel.ForeColor = Color.DarkOliveGreen;
+                anlikİrtifaGrafik.Titles[0].ForeColor = Color.DarkOliveGreen;
                 gkuvvetGrafik.Titles[0].ForeColor = Color.DarkOliveGreen;
             }
             //---------------------
-            if (mCTerminal.Properties.Settings.Default.program_tema == "tema_dondurma")
+            if (programTema == "tema_dondurma")
             {
                 this.BackColor = Color.FromArgb(220, 229, 225);
                 this.ForeColor = Color.IndianRed;
                 hamVeriTextBox1.BackColor = Color.LightSlateGray;
                 hamVeriTextBox1.ForeColor = Color.NavajoWhite;
+                irtifaAnlıkLabel.ForeColor = Color.IndianRed;
+                irtifaMaxLabel.ForeColor = Color.IndianRed;
+                ortagovdeDurumLabel.ForeColor = Color.IndianRed;
                 toolStrip1.BackColor = Color.DarkSlateGray;
                 toolStripDropDownButton1.ForeColor = Color.FromArgb(255, 230, 230);
                 toolStripDropDownButton2.ForeColor = Color.FromArgb(255, 230, 230);
                 toolStripDropDownButton3.ForeColor = Color.FromArgb(255, 230, 230);
                 toolStripDropDownButton4.ForeColor = Color.FromArgb(255, 230, 230);
-                voltajGrafik.Titles[0].ForeColor = Color.IndianRed;
+                anlikİrtifaGrafik.Titles[0].ForeColor = Color.IndianRed;
                 gkuvvetGrafik.Titles[0].ForeColor = Color.IndianRed;
             }
             //---------------------
-            if (mCTerminal.Properties.Settings.Default.program_tema == "tema_cosmos")
+            if (programTema == "tema_cosmos")
             {
                 this.BackColor = Color.FromArgb(26, 16, 122);
                 this.ForeColor = Color.FromArgb(245, 228, 183);
                 hamVeriTextBox1.BackColor = Color.FromArgb(6, 0, 102);
                 hamVeriTextBox1.ForeColor = Color.BurlyWood;
+                ortagovdeDurumLabel.ForeColor = Color.FromArgb(245, 228, 183);
+                irtifaMaxLabel.ForeColor = Color.FromArgb(245, 228, 183);
+                irtifaAnlıkLabel.ForeColor = Color.FromArgb(245, 228, 183);
                 toolStrip1.BackColor = Color.FromArgb(11, 75, 183);
                 toolStripDropDownButton1.ForeColor = Color.FromArgb(245, 228, 183);
                 toolStripDropDownButton2.ForeColor = Color.FromArgb(245, 228, 183);
                 toolStripDropDownButton3.ForeColor = Color.FromArgb(245, 228, 183);
                 toolStripDropDownButton4.ForeColor = Color.FromArgb(245, 228, 183);
-                voltajGrafik.Titles[0].ForeColor = Color.FromArgb(245, 228, 183);
+                anlikİrtifaGrafik.Titles[0].ForeColor = Color.FromArgb(245, 228, 183);
                 gkuvvetGrafik.Titles[0].ForeColor = Color.FromArgb(245, 228, 183);
             }
             //---------------------
-            if (mCTerminal.Properties.Settings.Default.program_tema == "tema_material")
+            if (programTema == "tema_material")
             {
                 this.BackColor = Color.FromArgb(47, 79, 79);
                 this.ForeColor = Color.FromArgb(251, 235, 235);
@@ -189,55 +253,45 @@ namespace mCTerminal
                 toolStripDropDownButton2.ForeColor = Color.WhiteSmoke;
                 toolStripDropDownButton3.ForeColor = Color.WhiteSmoke;
                 toolStripDropDownButton4.ForeColor = Color.WhiteSmoke;
-                voltajGrafik.Titles[0].ForeColor = Color.FromArgb(251, 235, 235);
+                ortagovdeDurumLabel.ForeColor = Color.FromArgb(251, 235, 235);
+                irtifaMaxLabel.ForeColor = Color.FromArgb(251, 235, 235);
+                irtifaAnlıkLabel.ForeColor = Color.FromArgb(251, 235, 235);
+                anlikİrtifaGrafik.Titles[0].ForeColor = Color.FromArgb(251, 235, 235);
                 gkuvvetGrafik.Titles[0].ForeColor = Color.FromArgb(251, 235, 235);
             }
             baglantiNoktasi_label.ForeColor = this.ForeColor;
             baglantiHizi_label.ForeColor = this.ForeColor;
             aliciModeli_label.ForeColor = this.ForeColor;
-            sinyalGucuLabel.ForeColor = this.ForeColor;
-            snrSeviyesiLabel.ForeColor = this.ForeColor;
             uyduSayiLabel.ForeColor = this.ForeColor;
-            voltajLabel.ForeColor = this.ForeColor;
-            label6.ForeColor = this.ForeColor;
-            label5.ForeColor = this.ForeColor;
-            label7.ForeColor = this.ForeColor;
+            AciXLabel.ForeColor = this.ForeColor;
+            aciYLabel.ForeColor = this.ForeColor;
             enlemLabel.ForeColor = this.ForeColor;
             boylamLabel.ForeColor = this.ForeColor;
             gkuvvetLabel.ForeColor = this.ForeColor;
             irtifaLabel.ForeColor = this.ForeColor;
-            irtifaBaroLabel.ForeColor = this.ForeColor;
-            irtifafarkLabel.ForeColor = this.ForeColor;
+            barometrikİrtifaMaksLabel.ForeColor = this.ForeColor;
             yatayHizLabel.ForeColor = this.ForeColor;
-            dikeyhizLabel.ForeColor = this.ForeColor;
-            label15.ForeColor = this.ForeColor;
-            label16.ForeColor = this.ForeColor;
-            label17.ForeColor = this.ForeColor;
-            label18.ForeColor = this.ForeColor;
+            koniDurumLabel.ForeColor = this.ForeColor;
+            kameraDurumLabel.ForeColor = this.ForeColor;
 
             //-----------------------------------------------------------
+        }
 
-
-
-
+        private void anaEkran_Load(object sender, EventArgs e)
+        {
+            dosyaKontrolEt();
+            editorAyarYukle();
+            temaYukle();
 
             //Form adını ayarlar
-            this.Text = "mCTerminal " + mCTerminal.Properties.Settings.Default.prog_surum + " | [@" + Environment.MachineName + "]";
+            this.Text = "mCTerminal " + programSurum + " | [@" + Environment.MachineName + "]";
 
             //Ham veri'nin yazıldığı textbox'ın düzgün gözükmesi için
             hamVeriTextBox1.SelectionStart = hamVeriTextBox1.Text.Length;
-
-            //programın dizaynı sebebiyle bazen bu ayar true iken kaydedilebiliyor (tema değiştirilirken meydana gelen bir durum) bu sebeple her açılışta bu ayarı sıfırlıyorum.
-            mCTerminal.Properties.Settings.Default.serialportdurum = false;
-
-            //harita konumunu Iğdır yapar. Yurttaki kardeşlerime selam olsun <3
-            mCTerminal.Properties.Settings.Default.enlem = "";
-            mCTerminal.Properties.Settings.Default.boylam = "";
         }
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            string data;
             string[] splitted_data;
 
             try
@@ -245,48 +299,44 @@ namespace mCTerminal
                 data = serialPort1.ReadLine();
                 splitted_data = data.Split('*');
 
-                boylamLabel.Text = "Enlem: " + splitted_data[0] + "°"; //enlem
-                Properties.Settings.Default.enlem = splitted_data[0]; //enlem verisini ayar olarak da yazıyor böylece her yerden erişilebilir oluyor.
-                enlemLabel.Text = "Boylam: " + splitted_data[1] + "°"; //boylam
-                Properties.Settings.Default.boylam = splitted_data[1]; //boylam verisini ayar olarak da yazıyor böylece her yerden erişebiliyorum.
-                yatayHizLabel.Text = "Yatay Hız: " + splitted_data[2] + "km/s"; //yatay hız
-                irtifaLabel.Text = "İrtifa: " + splitted_data[3] + "m"; //irtifa
-                uyduSayiLabel.Text = "Bağlanılan Uydu Sayısı: " + splitted_data[4]; //uydu
-                voltajLabel.Text = "Voltaj: " + splitted_data[5] + "v"; //voltaj
-                gkuvvetLabel.Text = "G Kuvveti: " + splitted_data[6] + "g"; //g kuvvet
-                // textBox8.Text = splitted_data[7]; //anahtar
-                // textBox9.Text = splitted_data[8]; //video
-                // textBox10.Text = splitted_data[9]; //yedek aviyoik
-                irtifaBaroLabel.Text = "İrtifa (Barometrik): " + splitted_data[10] + "m"; //barometrik irtifa
-                int irtifafarkSayiNormal = Int32.Parse(splitted_data[3]); //irtifa verisini integer'a yani sayı verisine dönüştürüyorum.
-                int irtifafarkSayiBarometrik = Int32.Parse(splitted_data[10]); //barometrik irtifa verisini integer'a yani sayı verisine dönüştürüyorum.
-                int irtifafarkSayi = irtifafarkSayiNormal - irtifafarkSayiBarometrik; //sayılar arasındaki farkı buluyorum.
-                sinyalGucuLabel.Text = "Sinyal Seviyesi: " + splitted_data[11] + "dB"; //sinyal seviyesi
-                snrSeviyesiLabel.Text = "SNR Seviyesi: " + splitted_data[12] + "dB"; //snr seviyesi
-                irtifafarkLabel.Text = "Fark: " + irtifafarkSayi.ToString() + "m"; //irtifa farkı
+                uyduSayiLabel.Text = "Bağlanılan Uydu Sayısı " + splitted_data[0] + "°"; //gps uydu sayısı
+                hdopLabel.Text = "HDOP: " + splitted_data[1]; //hdop sapması
+                enlemLabel.Text = "Enlem: " + splitted_data[2] + "°"; //enlem
+                enlem = splitted_data[2]; //global değişkene de yaz enşlemi
+                boylamLabel.Text = "Boylam: " + splitted_data[3] + "°"; //boylam
+                boylam = splitted_data[3]; //global değikene de yaz boylamı
+                irtifaLabel.Text = "İrtifa: " + splitted_data[4] + "m"; //gps irtifa
+                irtifaMaxLabel.Text = "Maks İrtifa: " + splitted_data[5] + "m"; //gps maks irtifa
+                yatayHizLabel.Text = "Yatay Hız: " + splitted_data[6] + "m/s"; //yatay hız
+                kameraDurumLabel.Text = "Video Yayını: " + splitted_data[7]; //kamera durumu
+                AciXLabel.Text = "X Açısı: " + splitted_data[8] + "°"; //x açısı
+                aciYLabel.Text = "Y Açısı: " + splitted_data[9] + "°"; //y açısı
+                gkuvvetLabel.Text = "G Kuvveti: " + splitted_data[10] + "g"; //g kuvveti
+                barometrikİrtifaMaksLabel.Text = "Barometrik Maksimum İrtifa: " + splitted_data[11] + "m"; //baro irtifa maks
+                irtifaAnlıkLabel.Text = "Anlık İrtifa: " + splitted_data[12] + "m"; //anlık irtifa
+                koniDurumLabel.Text = "Koni Durumu: " + splitted_data[13]; //koni durum
+                ortagovdeDurumLabel.Text = "Orta Gövde Durumu: " + splitted_data[14]; //orta gövde durum
 
-                //Ham Veri ekranında da veriler gözüksün diye gelen verileri ayar olarak yazıyorum böylece her yerden erişilebilir oluyor.
-                mCTerminal.Properties.Settings.Default.hamveri = data;
                 //Gelen veriyi formun altında gözüken siyah yere (TextBox) yazıyorum.
-                hamVeriTextBox1.AppendText(data + Environment.NewLine);
+                hamVeriTextBox1.AppendText(sadece_saat + " --> " + data + Environment.NewLine);
                 int line = hamVeriTextBox1.GetLineFromCharIndex(hamVeriTextBox1.SelectionStart); //otomatik en aşağı kaydırması için
                 int column = hamVeriTextBox1.SelectionStart - hamVeriTextBox1.GetFirstCharIndexFromLine(line); //otomatik en aşağı kaydırması için
 
                 //---------------------------------GRAFİK KUTULARI-----------------------------------
-                //-----------------------------------VOLTAJ GRAFİĞİ----------------------------------
-                voltajGrafik.ChartAreas[0].AxisX.Minimum = minm;
-                voltajGrafik.ChartAreas[0].AxisX.Maximum = maksm;
-                voltajGrafik.ChartAreas[0].AxisY.Minimum = 0;
-                voltajGrafik.ChartAreas[0].AxisY.Maximum = 5;
-                voltajGrafik.ChartAreas[0].AxisX.ScaleView.Zoom(minm, maksm);
-                this.voltajGrafik.Series[0].Points.AddXY((minm + maksm) / 2, splitted_data[5]);
+                //-----------------------------------ANLIK İRTİFA GRAFİĞİ----------------------------------
+                anlikİrtifaGrafik.ChartAreas[0].AxisX.Minimum = minm;
+                anlikİrtifaGrafik.ChartAreas[0].AxisX.Maximum = maksm;
+                anlikİrtifaGrafik.ChartAreas[0].AxisY.Minimum = 0;
+                anlikİrtifaGrafik.ChartAreas[0].AxisY.Maximum = 5;
+                anlikİrtifaGrafik.ChartAreas[0].AxisX.ScaleView.Zoom(minm, maksm);
+                this.anlikİrtifaGrafik.Series[0].Points.AddXY((minm + maksm) / 2, splitted_data[12]);
                 //---------------------------------G KUVVETİ GRAFİĞİ---------------------------------
                 gkuvvetGrafik.ChartAreas[0].AxisX.Minimum = gkuvvetmin;
                 gkuvvetGrafik.ChartAreas[0].AxisX.Maximum = gkuvvetmaks;
                 gkuvvetGrafik.ChartAreas[0].AxisY.Minimum = 0;
                 gkuvvetGrafik.ChartAreas[0].AxisY.Maximum = 20;
                 gkuvvetGrafik.ChartAreas[0].AxisX.ScaleView.Zoom(gkuvvetmin, gkuvvetmaks);
-                this.gkuvvetGrafik.Series[0].Points.AddXY((gkuvvetmin + gkuvvetmaks) / 2, splitted_data[6]);
+                this.gkuvvetGrafik.Series[0].Points.AddXY((gkuvvetmin + gkuvvetmaks) / 2, splitted_data[10]);
                 //-----------------------------------------------------------------------------------
                 gkuvvetmin++;
                 gkuvvetmaks++;
@@ -301,7 +351,7 @@ namespace mCTerminal
                     string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
                     string sadece_saat = DateTime.Now.ToString("hh:mm:ss");
                     string sadece_tarih = DateTime.Now.ToString("dd-MM-yyyy");
-                    string kayitformati = mCTerminal.Properties.Settings.Default.vericikti_formati;
+                    string kayitformati = programVeriFormat;
                     using (System.IO.StreamWriter file = new System.IO.StreamWriter(programyolu + @"logs\" + "roketLog-" + sadece_tarih.ToString() + kayitformati, true)) //Log yerine kullanılabilecek Türkçe bir karşılık bulamadım, belki Veri çıktısı diyebiliriz ama Log kavramı daha evrensel olduğu için böyle yazdım.
                     {
                         file.WriteLine(sadece_saat + " --> " + data);
@@ -338,7 +388,7 @@ namespace mCTerminal
                 if (COMPortList.SelectedIndex < 0) //Bağlantı noktası boş olduğu zaman program çöküyor bu yüzden kullanıcıyı bilgilendiriyorum ve çökmesini engelliyorum.
                 {
                     MessageBox.Show("Hata! Alıcı sistem ile bağlantı kurulamadı! Lütfen alıcıyı bilgisayarınıza bağladığınızdan emin olunuz, eğer zaten bağlıysa kabloları kontrol ediniz. (Detay: Muhtemel Liste Boşluğu)", "Alıcı Sistem Bulunamadı!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    hamVeriTextBox1.AppendText("@@$ --> Bağlantı noktası ile iletişim kurulamadı! (Muhtemel Liste Boşluğu)" + Environment.NewLine);
+                    hamVeriTextBox1.AppendText(sadece_saat + " --> Bağlantı noktası ile iletişim kurulamadı! (Muhtemel Liste Boşluğu)" + Environment.NewLine);
                 }
                 else
                 {
@@ -346,21 +396,21 @@ namespace mCTerminal
                     try
                     {
                         serialPort1.Open();
-                        mCTerminal.Properties.Settings.Default.serialportdurum = true;
+                        serialportdurum = true;
 
                         bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kes";
                         hamVeriTextBox1.AppendText(Environment.NewLine);
-                        hamVeriTextBox1.AppendText("@$$ --> Bağlantı " + COMPortList.Text + " üzerinden " + sadece_tarih + "</>" + sadece_saat + " tarihinde başlatıldı!");
+                        hamVeriTextBox1.AppendText(sadece_saat + " --> Bağlantı " + COMPortList.Text + " üzerinden " + sadece_tarih + "</>" + sadece_saat + " tarihinde başlatıldı!");
                         hamVeriTextBox1.AppendText(Environment.NewLine);
                         //log kayıtlarında da karışıklık olmasın diye eğer kayıt etme açıksa bir kaç bilgi yazılır kayıt dosyasına
                         if (verikaydetToolStripMenuItem.CheckState == CheckState.Checked)
                         {
                             string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
-                            string kayitformati = mCTerminal.Properties.Settings.Default.vericikti_formati;
+                            string kayitformati = programVeriFormat;
                             using (System.IO.StreamWriter file = new System.IO.StreamWriter(programyolu + @"logs\" + "roketLog-" + sadece_tarih.ToString() + kayitformati, true)) //Log yerine kullanılabilecek Türkçe bir karşılık bulamadım, belki Veri çıktısı diyebiliriz ama Log kavramı daha evrensel olduğu için böyle yazdım.
                             {
                                 file.WriteLine("----------------------------------------------------------------------------------------------------------------------" + Environment.NewLine);
-                                file.WriteLine("@$$ --> Bağlantı " + COMPortList.Text + " üzerinden " + sadece_tarih + "</>" + sadece_saat + " tarihinde başlatıldı!" + Environment.NewLine);
+                                file.WriteLine(sadece_saat + " --> Bağlantı " + COMPortList.Text + " üzerinden " + sadece_tarih + "</>" + sadece_saat + " tarihinde başlatıldı!" + Environment.NewLine);
                                 file.WriteLine("----------------------------------------------------------------------------------------------------------------------" + Environment.NewLine);
                             }
                         }
@@ -369,27 +419,27 @@ namespace mCTerminal
                     catch (Exception ex)
                     {
                         MessageBox.Show("Hata! Alıcıdan veri alınırken bir problem oluştu. (Detay: " + ex.Message.ToString() + ")", "Alıcı sistem algılanamadı !", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        hamVeriTextBox1.AppendText("@@$ --> Alıcıdan veri alırken bir problem oluştu! (" + ex.Message.ToString() + ")" + Environment.NewLine);
+                        hamVeriTextBox1.AppendText(sadece_saat + " --> Alıcıdan veri alırken bir problem oluştu! (" + ex.Message.ToString() + ")" + Environment.NewLine);
                     }
                 }
             }
             else //Eğer bağlantı zaten kurulmuşsa bağlantıyı kes.
             {
                 serialPort1.Close();
-                mCTerminal.Properties.Settings.Default.serialportdurum = false;
+                serialportdurum = false;
                 
                 bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kur";
-                hamVeriTextBox1.AppendText("@$$ --> " + COMPortList.Text + " üzerindeki bağlantı " + sadece_tarih + "</>" + sadece_saat + " tarihinde sonlandırıldı!");
+                hamVeriTextBox1.AppendText(sadece_saat + " --> " + COMPortList.Text + " üzerindeki bağlantı " + sadece_tarih + "</>" + sadece_saat + " tarihinde sonlandırıldı!");
                 hamVeriTextBox1.AppendText(Environment.NewLine);
                 //log kayıtlarında da karışıklık olmasın diye eğer kayıt etme açıksa bir kaç bilgi yazılır kayıt dosyasına
                 if (verikaydetToolStripMenuItem.CheckState == CheckState.Checked)
                 {
                     string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
-                    string kayitformati = mCTerminal.Properties.Settings.Default.vericikti_formati;
+                    string kayitformati = programVeriFormat;
                     using (System.IO.StreamWriter file = new System.IO.StreamWriter(programyolu + @"logs\" + "roketLog-" + sadece_tarih.ToString() + kayitformati, true)) //Log yerine kullanılabilecek Türkçe bir karşılık bulamadım, belki Veri çıktısı diyebiliriz ama Log kavramı daha evrensel olduğu için böyle yazdım.
                     {
                         file.WriteLine("----------------------------------------------------------------------------------------------------------------------" + Environment.NewLine);
-                        file.WriteLine("@$$ --> " + COMPortList.Text + " üzerindeki bağlantı " + sadece_tarih + "</>" + sadece_saat + " tarihinde sonlandırıldı!" + Environment.NewLine);
+                        file.WriteLine(sadece_saat + " --> " + COMPortList.Text + " üzerindeki bağlantı " + sadece_tarih + "</>" + sadece_saat + " tarihinde sonlandırıldı!" + Environment.NewLine);
                         file.WriteLine("----------------------------------------------------------------------------------------------------------------------" + Environment.NewLine);
                     }
                 }

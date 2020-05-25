@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AForge.Video.DirectShow;
 using AForge.Video;
+using System.Xml;
 
 
 namespace mCTerminal
@@ -19,14 +20,61 @@ namespace mCTerminal
         {
             InitializeComponent();
         }
+        XmlTextReader xtr = new XmlTextReader(programyolu + @"\res\settings.xml"); //XML dosyasını okumak için hazırlık yap
         FilterInfoCollection filterInfoCollection;
         VideoCaptureDevice videoCaptureDevice;
+        anaEkran anaEkranfrm = new anaEkran();
+        string xmlAyarIsim;
+        string xmlAyarDeger;
+        public string programTema;
+        public string programVeriFormat;
+        public string programSurum;
+        static string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
+
+
+        public void editorAyarYukle()
+        {
+            try
+            {
+                while (xtr.Read())
+                {
+                    if (xtr.NodeType == XmlNodeType.Element && xtr.Name == "name") //xml içindeki name elementini al
+                    {
+                        xmlAyarIsim += xtr.ReadElementContentAsString() + "*";
+                    }
+                    if (xtr.NodeType == XmlNodeType.Element && xtr.Name == "value") //xml içindeki value elementini al
+                    {
+                        xmlAyarDeger += xtr.ReadElementContentAsString() + "*";
+                    }
+                }
+                string data1;
+                string data2;
+                string[] splitted_data1;
+                string[] splitted_data2;
+                data1 = xmlAyarIsim;
+                data2 = xmlAyarDeger;
+                splitted_data1 = data1.Split('*');
+                splitted_data2 = data2.Split('*');
+                //değerleri gerekli değişkenlere ata.
+                programTema = splitted_data2[0];
+                programSurum = splitted_data2[1];
+                programVeriFormat = splitted_data2[2];
+                xtr.Close();
+            }
+            catch
+            {
+                MessageBox.Show(@"Ayarlar diskten okunamadı! Lütfen programı yeniden indirin! (res\settings.xml dosyası bozuk veya değiştirilmiş!)", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
+        }
 
         private void kamera_Load(object sender, EventArgs e)
         {
+            editorAyarYukle();
+
             //-----------------------------temalar için ayrılmış bölüm---------------------------------
 
-            if (mCTerminal.Properties.Settings.Default.program_tema == "tema_varsayilan")
+            if (programTema == "tema_varsayilan")
             {
                 this.BackColor = Color.FromArgb(30, 30, 30);
                 this.ForeColor = Color.WhiteSmoke;
@@ -35,7 +83,7 @@ namespace mCTerminal
                 toolStripDropDownButton2.ForeColor = Color.WhiteSmoke;
             }
 
-            if (mCTerminal.Properties.Settings.Default.program_tema == "tema_matrix")
+            if (programTema == "tema_matrix")
             {
                 this.BackColor = Color.Black;
                 this.ForeColor = Color.DarkOliveGreen;
@@ -44,7 +92,7 @@ namespace mCTerminal
                 toolStripDropDownButton2.ForeColor = Color.LimeGreen;
             }
 
-            if (mCTerminal.Properties.Settings.Default.program_tema == "tema_dondurma")
+            if (programTema == "tema_dondurma")
             {
                 this.BackColor = Color.FromArgb(220, 229, 225);
                 this.ForeColor = Color.IndianRed;
@@ -53,7 +101,7 @@ namespace mCTerminal
                 toolStripDropDownButton2.ForeColor = Color.FromArgb(255, 230, 230);
             }
 
-            if (mCTerminal.Properties.Settings.Default.program_tema == "tema_cosmos")
+            if (programTema == "tema_cosmos")
             {
                 this.BackColor = Color.FromArgb(26, 16, 122);
                 this.ForeColor = Color.FromArgb(245, 228, 183);
@@ -62,7 +110,7 @@ namespace mCTerminal
                 toolStripDropDownButton2.ForeColor = Color.FromArgb(245, 228, 183);
             }
 
-            if (mCTerminal.Properties.Settings.Default.program_tema == "tema_material")
+            if (programTema == "tema_material")
             {
                 this.BackColor = Color.FromArgb(47, 79, 79);
                 this.ForeColor = Color.FromArgb(251, 235, 235);

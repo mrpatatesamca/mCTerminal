@@ -12,6 +12,7 @@ namespace mCTerminal
 {
     public partial class hakkinda : Form
     {
+        anaEkran anaEkranfrm = new anaEkran();
         public hakkinda()
         {
             InitializeComponent();
@@ -39,9 +40,8 @@ namespace mCTerminal
 
         private void hakkinda_Load(object sender, EventArgs e)
         {
-            this.Text = "mCTerminal " + mCTerminal.Properties.Settings.Default.prog_surum + " Hakkında";
-            sistembilgiLabel.Text = "@" + Environment.MachineName + "/" + Environment.UserName + " | " + Environment.OSVersion;
-            programSurumSayiLabel.Text = "mCTerminal " + mCTerminal.Properties.Settings.Default.prog_surum;       
+            this.Text = "mCTerminal v0.6-alpha Hakkında";
+            sistembilgiLabel.Text = "@" + Environment.MachineName + "/" + Environment.UserName + " | " + Environment.OSVersion;       
         }
     }
 }
