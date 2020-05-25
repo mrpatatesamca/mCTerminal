@@ -13,9 +13,6 @@ Bu program sadece Windows işletim sisteminde çalışır ve Microsoft .NET Fram
 
 GitHub'dan indirilen sürüm için kuruluma ihtiyaç yoktur.
 
- - **GitHub Repository klonlayarak bütün kaynak kodlarıyla beraber indirdiyseniz:**
-Klonladığınız klasörün içindeki `*Start mCTerminal.lnk` kısayolundan veya `mCTerminal\bin\Debug\` dizinindeki `*mCTerminal.exe` dosyasından başlatabilirsiniz.
-
 - **Release sayfasından .zip veya .7z arşivi olarak indirdiyseniz:**
 İndirdiğiniz arşivin içindeki `*mCTerminal.exe` uygulamasını başlatarak kullanabilirsiniz.
 
@@ -30,6 +27,6 @@ Klonladığınız klasörün içindeki `*Start mCTerminal.lnk` kısayolundan vey
 Bulduğunuz hataları GitHub üzerinden ya da [Gmail](mailto:berkeaydin618@gmail.com) / [iCloud](mailto:berke_aydin61@icloud.com) üzerinden bana iletebilir ve eğer nasıl çözüleceğini biliyorsanız onu da bana iletebilirsiniz.
 
 ## Lisans
-Bu yazılım aşağıda adı belirtilen Apache v2.0 lisansı ile korunmaktadır.
+Bu yazılım aşağıda adı belirtilen Creative Commons Zero v1.0 Universal Lisansı ile korunmaktadır.
 
-[Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+[Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
