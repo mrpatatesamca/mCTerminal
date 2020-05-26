@@ -33,14 +33,23 @@ namespace mCTerminal
 
         private void eksikdosyaindirButon_Click(object sender, EventArgs e)
         {
+            //yeni sürümü varsa güncelleme aracının yeni sürümünü başlat.
             try
             {
-                Process.Start(programyolu + @"\mCTerminal-updater.exe");
+                if (File.Exists("mCTerminal-updater2.exe"))
+                {
+                    Process.Start(programyolu + @"\mCTerminal-updater2.exe");
+                    File.Delete("mCTerminal-updater.exe");
+                }
+                else
+                {
+                    Process.Start(programyolu + @"\mCTerminal-updater.exe");
+                }
                 this.Close();
             }
             catch
             {
-                MessageBox.Show("mCTerminal-updater.exe bulunamadı! Eksik dosyaları indirme bu haldeyken gerçekleştirilemez, lütfen mCTerminal programını kendiniz internetten indiriniz. Güncelleyici program ile indirme gerçekleştirilemez şu anda!", "Eksik dosyaları indirme işlemi başlatılıyor!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Güncelleme aracı başlatılamadı! Lütfen dosyaların konumunu kontrol edin.", "Program başlatılamadı!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -102,7 +111,7 @@ namespace mCTerminal
                 dosyabilgiTextBox2.AppendText("EKSİK" + Environment.NewLine);
             }
             //----------
-            if (File.Exists("mCTerminal-updater.exe"))
+            if (File.Exists("mCTerminal-updater.exe") || File.Exists("mCTerminal-updater2.exe"))
             {
                 dosyabilgiTextBox2.AppendText("TAMAM" + Environment.NewLine);
             }

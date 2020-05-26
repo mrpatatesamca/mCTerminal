@@ -146,7 +146,11 @@ namespace mCTerminal
                 eksikdosyasayi += 1;
             }
             //----------
-            if (!File.Exists("mCTerminal-updater.exe"))
+            if (File.Exists("mCTerminal-updater.exe") || File.Exists("mCTerminal-updater2.exe"))
+            {
+
+            }
+            else
             {
                 eksikdosyasayi += 1;
             }
@@ -501,14 +505,22 @@ namespace mCTerminal
 
         private void güncelleştirmeleriKontrolEtToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //yeni sürümü varsa güncelleme aracının yeni sürümünü başlat.
             try
             {
-                string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
-                Process.Start(programyolu + @"\mCTerminal-updater.exe");
+                if (File.Exists("mCTerminal-updater2.exe"))
+                {
+                    Process.Start(programyolu + @"\mCTerminal-updater2.exe");
+                    File.Delete("mCTerminal-updater.exe");
+                }
+                else
+                {
+                    Process.Start(programyolu + @"\mCTerminal-updater.exe");
+                } 
             }
             catch
             {
-                MessageBox.Show("mCTerminal-updater.exe bulunamadı! Lütfen dosyaların konumunu kontrol edin.", "Program başlatılamadı!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Güncelleme aracı başlatılamadı! Lütfen dosyaların konumunu kontrol edin.", "Program başlatılamadı!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             
