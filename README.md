@@ -3,6 +3,7 @@
 mCTerminal Cosmos Takımı için hazırlanan ve Berke Aydin tarafından geliştirilen bir telemetri yazılımıdır.
 ###### Instagram: [@mrpatatesamca](https://www.instagram.com/mrpatatesamca)
 ###### Proje Websitesi: [www.cosmostakimi.com](https://www.cosmostakimi.com)
+###### mCTerminal Güncelleme Aracı GitHub Sayfası: [GitHub-mCTerminal-updater](https://github.com/mrpatatesamca/mCTerminal-updater)
 
 
 ## Bilgilendirme!
