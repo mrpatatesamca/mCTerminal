@@ -143,7 +143,7 @@ namespace mCTerminal
             {
                 durumLabel.Text = "Eksik dosyalar tespit edildi!";
                 durumLabel.ForeColor = Color.Red;
-                MessageBox.Show("Dikkat! Eksik dosyalar tespit edildi! Programın ve programın özelliklerinin düzgün çalışabilmesi için bu dosyalara gerek vardır, \"Eksik Dosyaları İndir\" butonuna basarak bu dosyaları indirebilirsiniz! (mCTerminal Güncelleyici Programına yönlendirileceksiniz, program için güncelleme var ise güncellemeyi yaparak eksik dosyaları indirebilirsiniz eğer güncelleme yok ise \"İndirmeye Zorla\" butonuna basarak indirmeye başlayabilirsiniz!)", "Eksik dosyalar bulundu!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Dikkat! Eksik dosyalar tespit edildi! Programın ve programın özelliklerinin düzgün çalışabilmesi için bu dosyalara gerek vardır, \"Kurtarma Modu\" butonuna basarak bu dosyaları indirebilirsiniz! (mCTerminal Güncelleyici Programına yönlendirileceksiniz, \"Kurtarma Modu\"butonuna basarak indirmeye başlayabilirsiniz!)", "Eksik dosyalar bulundu!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {

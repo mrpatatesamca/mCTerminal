@@ -125,7 +125,7 @@
             this.programSurumSayiLabel.Name = "programSurumSayiLabel";
             this.programSurumSayiLabel.Size = new System.Drawing.Size(312, 15);
             this.programSurumSayiLabel.TabIndex = 8;
-            this.programSurumSayiLabel.Text = "mCTerminal v0.6-alpha";
+            this.programSurumSayiLabel.Text = "mCTerminal v0.6.1-alpha";
             this.programSurumSayiLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // sistembilgiLabel

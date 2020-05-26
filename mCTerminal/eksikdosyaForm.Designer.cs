@@ -47,7 +47,7 @@
             this.eksikdosyaindirButon.Name = "eksikdosyaindirButon";
             this.eksikdosyaindirButon.Size = new System.Drawing.Size(110, 23);
             this.eksikdosyaindirButon.TabIndex = 0;
-            this.eksikdosyaindirButon.Text = "Eksik Dosyaları İndir";
+            this.eksikdosyaindirButon.Text = "Kurtarma Modu";
             this.eksikdosyaindirButon.UseVisualStyleBackColor = true;
             this.eksikdosyaindirButon.Click += new System.EventHandler(this.eksikdosyaindirButon_Click);
             // 
