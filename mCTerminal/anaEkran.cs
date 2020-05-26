@@ -508,10 +508,10 @@ namespace mCTerminal
             //yeni sürümü varsa güncelleme aracının yeni sürümünü başlat.
             try
             {
-                if (File.Exists("mCTerminal-updater2.exe"))
+                if (File.Exists(programyolu + @"\mCTerminal-updater2.exe"))
                 {
                     Process.Start(programyolu + @"\mCTerminal-updater2.exe");
-                    File.Delete("mCTerminal-updater.exe");
+                    
                 }
                 else
                 {
