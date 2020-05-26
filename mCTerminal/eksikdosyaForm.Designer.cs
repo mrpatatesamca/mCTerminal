@@ -107,7 +107,7 @@
             this.dosyabilgiTextBox2.ReadOnly = true;
             this.dosyabilgiTextBox2.Size = new System.Drawing.Size(65, 147);
             this.dosyabilgiTextBox2.TabIndex = 4;
-            this.dosyabilgiTextBox2.Text = "TAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM";
+            this.dosyabilgiTextBox2.Text = "TAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM";
             this.dosyabilgiTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // fakebaslikTextBox
@@ -165,6 +165,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "eksikdosyaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mCTerminal Hata Giderme";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.eksikdosyaForm_Load);

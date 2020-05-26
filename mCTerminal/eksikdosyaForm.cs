@@ -111,7 +111,7 @@ namespace mCTerminal
                 dosyabilgiTextBox2.AppendText("EKSİK" + Environment.NewLine);
             }
             //----------
-            if (File.Exists("mCTerminal-updater.exe") || File.Exists("mCTerminal-updater2.exe"))
+            if (File.Exists("mCTerminal-updater.exe"))
             {
                 dosyabilgiTextBox2.AppendText("TAMAM" + Environment.NewLine);
             }
@@ -130,6 +130,15 @@ namespace mCTerminal
             }
             //------------
             if (File.Exists(programyolu + @"\res\settings.xml"))
+            {
+                dosyabilgiTextBox2.AppendText("TAMAM" + Environment.NewLine);
+            }
+            else
+            {
+                dosyabilgiTextBox2.AppendText("EKSİK" + Environment.NewLine);
+            }
+            //------------
+            if (File.Exists(programyolu + @"\res\chiptune2.mp3"))
             {
                 dosyabilgiTextBox2.AppendText("TAMAM" + Environment.NewLine);
             }

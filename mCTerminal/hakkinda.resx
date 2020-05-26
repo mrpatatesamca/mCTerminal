@@ -118,8 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="anaTextLabel.Text" xml:space="preserve">
-    <value>Bu program Berke "MRpatatesAmca" AYDİN tarafından Cosmos Takımı için yazılmıştır.
-mCTerminal programı bir açık kaynak kodlu "Roket Telemetri" programıdır. Teknofest Yarışması için hazırlamış olduğumuz roketlerle beraber kullanılmak üzere kodlandı ama çok kolay bir şekilde başka sistemlere de uyarlanabilir. Her ne kadar bu program açık kaynak kodlu olsa da bu proje Apache Lisansı 2.0 ile korunmaktadır.</value>
+    <value>mCTerminal programı Berke AYDİN tarafından yazılmış bir telemetri programıdır. Profesyonel kullanım odaklı bir anlayışa sahiptir, açık kaynak kodlu ve Creative Commons Zero v1.0 lisansı ile korunmaktadır.</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

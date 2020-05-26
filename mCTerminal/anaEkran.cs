@@ -146,11 +146,7 @@ namespace mCTerminal
                 eksikdosyasayi += 1;
             }
             //----------
-            if (File.Exists("mCTerminal-updater.exe") || File.Exists("mCTerminal-updater2.exe"))
-            {
-
-            }
-            else
+            if (!File.Exists("mCTerminal-updater.exe"))
             {
                 eksikdosyasayi += 1;
             }
@@ -159,10 +155,18 @@ namespace mCTerminal
             {
                 eksikdosyasayi += 1;
             }
+            //----------
             if (!File.Exists(programyolu + @"\res\settings.xml"))
             {
                 eksikdosyasayi += 1;
             }
+            //--------------
+            if (!File.Exists(programyolu + @"\res\chiptune2.mp3"))
+            {
+                eksikdosyasayi += 1;
+            }
+
+
 
             if (eksikdosyasayi >= 1) //eğer bu sayı 1 veya 1'e eşit ise eksik dosyalar var demektir.
             {
@@ -188,6 +192,7 @@ namespace mCTerminal
                 ortagovdeDurumLabel.ForeColor = Color.WhiteSmoke;
                 irtifaMaxLabel.ForeColor = Color.WhiteSmoke;
                 irtifaAnlıkLabel.ForeColor = Color.WhiteSmoke;
+                hdopLabel.ForeColor = Color.WhiteSmoke;
                 anlikİrtifaGrafik.Titles[0].ForeColor = Color.WhiteSmoke;
                 gkuvvetGrafik.Titles[0].ForeColor = Color.WhiteSmoke;
             }
@@ -206,6 +211,7 @@ namespace mCTerminal
                 ortagovdeDurumLabel.ForeColor = Color.DarkOliveGreen;
                 irtifaMaxLabel.ForeColor = Color.DarkOliveGreen;
                 irtifaAnlıkLabel.ForeColor = Color.DarkOliveGreen;
+                hdopLabel.ForeColor = Color.DarkOliveGreen;
                 anlikİrtifaGrafik.Titles[0].ForeColor = Color.DarkOliveGreen;
                 gkuvvetGrafik.Titles[0].ForeColor = Color.DarkOliveGreen;
             }
@@ -218,6 +224,7 @@ namespace mCTerminal
                 hamVeriTextBox1.ForeColor = Color.NavajoWhite;
                 irtifaAnlıkLabel.ForeColor = Color.IndianRed;
                 irtifaMaxLabel.ForeColor = Color.IndianRed;
+                hdopLabel.ForeColor = Color.IndianRed;
                 ortagovdeDurumLabel.ForeColor = Color.IndianRed;
                 toolStrip1.BackColor = Color.DarkSlateGray;
                 toolStripDropDownButton1.ForeColor = Color.FromArgb(255, 230, 230);
@@ -237,6 +244,7 @@ namespace mCTerminal
                 ortagovdeDurumLabel.ForeColor = Color.FromArgb(245, 228, 183);
                 irtifaMaxLabel.ForeColor = Color.FromArgb(245, 228, 183);
                 irtifaAnlıkLabel.ForeColor = Color.FromArgb(245, 228, 183);
+                hdopLabel.ForeColor = Color.FromArgb(245, 228, 183);
                 toolStrip1.BackColor = Color.FromArgb(11, 75, 183);
                 toolStripDropDownButton1.ForeColor = Color.FromArgb(245, 228, 183);
                 toolStripDropDownButton2.ForeColor = Color.FromArgb(245, 228, 183);
@@ -258,6 +266,7 @@ namespace mCTerminal
                 toolStripDropDownButton3.ForeColor = Color.WhiteSmoke;
                 toolStripDropDownButton4.ForeColor = Color.WhiteSmoke;
                 ortagovdeDurumLabel.ForeColor = Color.FromArgb(251, 235, 235);
+                hdopLabel.ForeColor = Color.FromArgb(251, 235, 235);
                 irtifaMaxLabel.ForeColor = Color.FromArgb(251, 235, 235);
                 irtifaAnlıkLabel.ForeColor = Color.FromArgb(251, 235, 235);
                 anlikİrtifaGrafik.Titles[0].ForeColor = Color.FromArgb(251, 235, 235);
@@ -508,22 +517,14 @@ namespace mCTerminal
             //yeni sürümü varsa güncelleme aracının yeni sürümünü başlat.
             try
             {
-                if (File.Exists(programyolu + @"\mCTerminal-updater2.exe"))
-                {
-                    Process.Start(programyolu + @"\mCTerminal-updater2.exe");
-                    
-                }
-                else
-                {
-                    Process.Start(programyolu + @"\mCTerminal-updater.exe");
-                } 
+
+                Process.Start(programyolu + @"\mCTerminal-updater.exe");
+
             }
             catch
             {
                 MessageBox.Show("Güncelleme aracı başlatılamadı! Lütfen dosyaların konumunu kontrol edin.", "Program başlatılamadı!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            
+            } 
         }
 
         private void uzakGörüntüyüGösterToolStripMenuItem_Click(object sender, EventArgs e)
