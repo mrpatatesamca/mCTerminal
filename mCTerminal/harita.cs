@@ -242,14 +242,14 @@ namespace mCTerminal
 
         private void haritaRoketEsle_Tick(object sender, EventArgs e) 
         {
-            if (anaEkranfrm.serialportdurum == true) //bağlantı kurulmuş ve veri geliyorsa
+            if (Properties.Settings.Default.serialportdurum == true) //bağlantı kurulmuş ve veri geliyorsa
             {
                 if (haritaortala_checkbox.CheckState == CheckState.Checked) //eğer haritayı ortala seçeneğine tik atılmışsa
                 {
                     //önce enlem ve boylam adında değişkenler oluşturuyoruz ve bu değişkenlerdeki "." karakterini ";" ile değiştiriyoruz
                     //çünkü haritamız nokta (".") ile belirtilen koordinatlara gidemiyor, virgül (",") ile belirtilmesi lazım
-                    string enlem = anaEkranfrm.enlem.Replace(".", ",");
-                    string boylam = anaEkranfrm.boylam.Replace(".", ",");
+                    string enlem = Properties.Settings.Default.enlem.Replace(".", ",");
+                    string boylam = Properties.Settings.Default.boylam.Replace(".", ",");
                     try //string formatından double formatına çevir
                     {
                         harita1.Position = new GMap.NET.PointLatLng(Convert.ToDouble(enlem), Convert.ToDouble(boylam));

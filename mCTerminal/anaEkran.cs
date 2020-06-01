@@ -21,6 +21,7 @@ namespace mCTerminal
     public partial class anaEkran : Form
     {
         XmlTextReader xtr = new XmlTextReader(programyolu + @"\res\settings.xml"); //XML dosyasını okumak için hazırlık yap
+        
 
         //--------tablo grafiği için gerekli---------
         int maksm = 20, minm = 0;
@@ -28,10 +29,6 @@ namespace mCTerminal
         //-------------------------------------------
 
         //global değişkenler
-        public string data;
-        public bool serialportdurum = false;
-        public string enlem;
-        public string boylam;
         string xmlAyarIsim;
         string xmlAyarDeger;
         public string programTema;
@@ -39,6 +36,7 @@ namespace mCTerminal
         public string programSurum;
         static string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
         string sadece_saat = DateTime.Now.ToString("hh:mm:ss");
+        
 
         public anaEkran()
         {
@@ -295,6 +293,7 @@ namespace mCTerminal
             dosyaKontrolEt();
             editorAyarYukle();
             temaYukle();
+            
 
             //Form adını ayarlar
             this.Text = "mCTerminal " + programSurum + " | [@" + Environment.MachineName + "]";
@@ -306,48 +305,79 @@ namespace mCTerminal
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             string[] splitted_data;
-
+            string data;
             try
             {
                 data = serialPort1.ReadLine();
                 splitted_data = data.Split('*');
+                Properties.Settings.Default.data = data;
 
-                uyduSayiLabel.Text = "Bağlanılan Uydu Sayısı " + splitted_data[0] + "°"; //gps uydu sayısı
+                uyduSayiLabel.Text = "Bağlanılan Uydu Sayısı " + splitted_data[0]; //gps uydu sayısı
                 hdopLabel.Text = "HDOP: " + splitted_data[1]; //hdop sapması
                 enlemLabel.Text = "Enlem: " + splitted_data[2] + "°"; //enlem
-                enlem = splitted_data[2]; //global değişkene de yaz enşlemi
+                Properties.Settings.Default.enlem = splitted_data[2]; //global değişkene de yaz enlemi
                 boylamLabel.Text = "Boylam: " + splitted_data[3] + "°"; //boylam
-                boylam = splitted_data[3]; //global değikene de yaz boylamı
+                Properties.Settings.Default.boylam = splitted_data[3]; //global değikene de yaz boylamı
                 irtifaLabel.Text = "İrtifa: " + splitted_data[4] + "m"; //gps irtifa
                 irtifaMaxLabel.Text = "Maks İrtifa: " + splitted_data[5] + "m"; //gps maks irtifa
                 yatayHizLabel.Text = "Yatay Hız: " + splitted_data[6] + "m/s"; //yatay hız
-                kameraDurumLabel.Text = "Video Yayını: " + splitted_data[7]; //kamera durumu
                 AciXLabel.Text = "X Açısı: " + splitted_data[8] + "°"; //x açısı
                 aciYLabel.Text = "Y Açısı: " + splitted_data[9] + "°"; //y açısı
                 gkuvvetLabel.Text = "G Kuvveti: " + splitted_data[10] + "g"; //g kuvveti
                 barometrikİrtifaMaksLabel.Text = "Barometrik Maksimum İrtifa: " + splitted_data[11] + "m"; //baro irtifa maks
                 irtifaAnlıkLabel.Text = "Anlık İrtifa: " + splitted_data[12] + "m"; //anlık irtifa
-                koniDurumLabel.Text = "Koni Durumu: " + splitted_data[13]; //koni durum
-                ortagovdeDurumLabel.Text = "Orta Gövde Durumu: " + splitted_data[14]; //orta gövde durum
+                
+                
 
                 //Gelen veriyi formun altında gözüken siyah yere (TextBox) yazıyorum.
                 hamVeriTextBox1.AppendText(sadece_saat + " --> " + data + Environment.NewLine);
                 int line = hamVeriTextBox1.GetLineFromCharIndex(hamVeriTextBox1.SelectionStart); //otomatik en aşağı kaydırması için
                 int column = hamVeriTextBox1.SelectionStart - hamVeriTextBox1.GetFirstCharIndexFromLine(line); //otomatik en aşağı kaydırması için
 
+                if (splitted_data[7] == "1") //kamera durumu 1 ise
+                {
+                    kameraDurumLabel.Text = "Video Yayını: Aktif!";
+                }
+                else
+                {
+                    kameraDurumLabel.Text = "Video Yayını: Aktif Değil!";
+                }
+
+                if (splitted_data[13] == "1") //koni ayrılmış ise
+                {
+                    koniDurumLabel.Text = "Koni Durumu: Ayrıldı!";
+                }
+                else
+                {
+                    koniDurumLabel.Text = "Koni Durumu: Ayrılmadı!";
+                }
+
+                if (splitted_data[14] == "1") //orta göve ayrılmış ise
+                {
+                    ortagovdeDurumLabel.Text = "Orta Gövde Durumu: Ayrıldı!";
+                }
+                else
+                {
+                    ortagovdeDurumLabel.Text = "Orta Gövde Durumu: Ayrılmadı!";
+                }
+
+
+
+
+                
                 //---------------------------------GRAFİK KUTULARI-----------------------------------
                 //-----------------------------------ANLIK İRTİFA GRAFİĞİ----------------------------------
                 anlikİrtifaGrafik.ChartAreas[0].AxisX.Minimum = minm;
                 anlikİrtifaGrafik.ChartAreas[0].AxisX.Maximum = maksm;
                 anlikİrtifaGrafik.ChartAreas[0].AxisY.Minimum = 0;
-                anlikİrtifaGrafik.ChartAreas[0].AxisY.Maximum = 5;
+                anlikİrtifaGrafik.ChartAreas[0].AxisY.Maximum = 3500;
                 anlikİrtifaGrafik.ChartAreas[0].AxisX.ScaleView.Zoom(minm, maksm);
                 this.anlikİrtifaGrafik.Series[0].Points.AddXY((minm + maksm) / 2, splitted_data[12]);
                 //---------------------------------G KUVVETİ GRAFİĞİ---------------------------------
                 gkuvvetGrafik.ChartAreas[0].AxisX.Minimum = gkuvvetmin;
                 gkuvvetGrafik.ChartAreas[0].AxisX.Maximum = gkuvvetmaks;
                 gkuvvetGrafik.ChartAreas[0].AxisY.Minimum = 0;
-                gkuvvetGrafik.ChartAreas[0].AxisY.Maximum = 20;
+                gkuvvetGrafik.ChartAreas[0].AxisY.Maximum = 5;
                 gkuvvetGrafik.ChartAreas[0].AxisX.ScaleView.Zoom(gkuvvetmin, gkuvvetmaks);
                 this.gkuvvetGrafik.Series[0].Points.AddXY((gkuvvetmin + gkuvvetmaks) / 2, splitted_data[10]);
                 //-----------------------------------------------------------------------------------
@@ -356,6 +386,14 @@ namespace mCTerminal
                 maksm++;
                 minm++;
                 //----------------------------------GRAFİK KUTULARI SON------------------------------
+
+                //--------------------------İBRE KUTULARI--------------------------------
+                gKuvvetGauge.Value = Convert.ToInt32(splitted_data[10]); //gkuvvet
+                yatayHizGauge.Value = Convert.ToInt32(splitted_data[6]); //yatay hız
+                irtifaGauge.Value = Convert.ToInt32(splitted_data[4]); //gps irtifa
+                AciXGauge.Value = Convert.ToInt32(splitted_data[8]); //x açısı
+                AciYGauge.Value = Convert.ToInt32(splitted_data[9]); //y açısı
+                //-------------------------İBRE KUTULARI SON-------------------------------
 
 
                 //VERİ ÇIKTISINI KAYDETMEK İÇİN VERİ KAYDET BUTONUNU KONTROL EDER VE ONA GÖRE VERİYİ YAZAR
@@ -409,12 +447,13 @@ namespace mCTerminal
                     try
                     {
                         serialPort1.Open();
-                        serialportdurum = true;
+                        Properties.Settings.Default.serialportdurum = true;
 
                         bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kes";
                         hamVeriTextBox1.AppendText(Environment.NewLine);
                         hamVeriTextBox1.AppendText(sadece_saat + " --> Bağlantı " + COMPortList.Text + " üzerinden " + sadece_tarih + "</>" + sadece_saat + " tarihinde başlatıldı!");
                         hamVeriTextBox1.AppendText(Environment.NewLine);
+                        
                         //log kayıtlarında da karışıklık olmasın diye eğer kayıt etme açıksa bir kaç bilgi yazılır kayıt dosyasına
                         if (verikaydetToolStripMenuItem.CheckState == CheckState.Checked)
                         {
@@ -439,11 +478,12 @@ namespace mCTerminal
             else //Eğer bağlantı zaten kurulmuşsa bağlantıyı kes.
             {
                 serialPort1.Close();
-                serialportdurum = false;
+                Properties.Settings.Default.serialportdurum = false;
                 
                 bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kur";
                 hamVeriTextBox1.AppendText(sadece_saat + " --> " + COMPortList.Text + " üzerindeki bağlantı " + sadece_tarih + "</>" + sadece_saat + " tarihinde sonlandırıldı!");
                 hamVeriTextBox1.AppendText(Environment.NewLine);
+                
                 //log kayıtlarında da karışıklık olmasın diye eğer kayıt etme açıksa bir kaç bilgi yazılır kayıt dosyasına
                 if (verikaydetToolStripMenuItem.CheckState == CheckState.Checked)
                 {

@@ -22,5 +22,53 @@ namespace mCTerminal.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string data {
+            get {
+                return ((string)(this["data"]));
+            }
+            set {
+                this["data"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool serialportdurum {
+            get {
+                return ((bool)(this["serialportdurum"]));
+            }
+            set {
+                this["serialportdurum"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string enlem {
+            get {
+                return ((string)(this["enlem"]));
+            }
+            set {
+                this["enlem"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string boylam {
+            get {
+                return ((string)(this["boylam"]));
+            }
+            set {
+                this["boylam"] = value;
+            }
+        }
     }
 }

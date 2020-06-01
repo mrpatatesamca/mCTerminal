@@ -53,7 +53,7 @@
             this.hamveritextbox.Name = "hamveritextbox";
             this.hamveritextbox.ReadOnly = true;
             this.hamveritextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.hamveritextbox.Size = new System.Drawing.Size(562, 239);
+            this.hamveritextbox.Size = new System.Drawing.Size(612, 261);
             this.hamveritextbox.TabIndex = 0;
             this.hamveritextbox.Text = "hh:mm:ss --> Veri Bekleniyor...";
             // 
@@ -62,7 +62,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(562, 238);
+            this.ClientSize = new System.Drawing.Size(612, 260);
             this.Controls.Add(this.hamveritextbox);
             this.ForeColor = System.Drawing.Color.Lime;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

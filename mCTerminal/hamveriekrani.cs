@@ -113,10 +113,10 @@ namespace mCTerminal
 
         private void verikontrol_Tick(object sender, EventArgs e)
         {
-            if (anaEkranfrm.serialportdurum == true)
+            if (Properties.Settings.Default.serialportdurum == true)
             {
                 string sadece_saat = DateTime.Now.ToString("hh:mm:ss");
-                hamveritextbox.AppendText(sadece_saat + " --> " + anaEkranfrm.data + Environment.NewLine);
+                hamveritextbox.AppendText(sadece_saat + " --> " + Properties.Settings.Default.data + Environment.NewLine);
                 int line = hamveritextbox.GetLineFromCharIndex(hamveritextbox.SelectionStart);
                 int column = hamveritextbox.SelectionStart - hamveritextbox.GetFirstCharIndexFromLine(line);
             }
