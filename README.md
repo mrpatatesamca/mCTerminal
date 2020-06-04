@@ -1,6 +1,6 @@
 # mCTerminal - a.k.a MRCosmosTerminal
 
-![mCTerminal - Ana Ekran](/images/anaekran.png)
+![mCTerminal - Ana Ekran](/tree/master/.github/images/anaekran.PNG)
 
 mCTerminal Cosmos Takımı için hazırlanan ve Berke Aydin tarafından geliştirilen bir telemetri yazılımıdır.
 ###### Instagram: [@mrpatatesamca](https://www.instagram.com/mrpatatesamca)
