@@ -49,11 +49,11 @@
             this.ayarlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tumselKontrolleriAcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.üstteGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tamEkranToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton4 = new System.Windows.Forms.ToolStripDropDownButton();
             this.haritayıGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uzakGörüntüyüGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hamVeriyiGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tamEkranToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.destekSayfasınaGitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.güncelleştirmeleriKontrolEtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,10 +99,10 @@
             this.dikeyHizGaugeBaslikLabel = new System.Windows.Forms.Label();
             this.irtifaGaugeBaslikLabel = new System.Windows.Forms.Label();
             this.gostergeGrup = new System.Windows.Forms.GroupBox();
-            this.AciXGaugeBaslikLabel = new System.Windows.Forms.Label();
-            this.AciXGauge = new System.Windows.Forms.AGauge();
             this.AciYGaugeBaslikLabel = new System.Windows.Forms.Label();
             this.AciYGauge = new System.Windows.Forms.AGauge();
+            this.AciXGaugeBaslikLabel = new System.Windows.Forms.Label();
+            this.AciXGauge = new System.Windows.Forms.AGauge();
             this.toolStrip1.SuspendLayout();
             this.baglantiGrup.SuspendLayout();
             this.fizikselGrup.SuspendLayout();
@@ -138,7 +138,7 @@
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.toolStrip1.ShowItemToolTips = false;
-            this.toolStrip1.Size = new System.Drawing.Size(623, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(629, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -207,7 +207,8 @@
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ayarlarToolStripMenuItem,
             this.tumselKontrolleriAcToolStripMenuItem,
-            this.üstteGösterToolStripMenuItem});
+            this.üstteGösterToolStripMenuItem,
+            this.tamEkranToolStripMenuItem});
             this.toolStripDropDownButton1.Image = global::mCTerminal.Properties.Resources.toolbox;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -221,7 +222,7 @@
             this.ayarlarToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.setting;
             this.ayarlarToolStripMenuItem.Name = "ayarlarToolStripMenuItem";
             this.ayarlarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.ayarlarToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
+            this.ayarlarToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.ayarlarToolStripMenuItem.Text = "Ayarlar";
             this.ayarlarToolStripMenuItem.Click += new System.EventHandler(this.ayarlarToolStripMenuItem_Click);
             // 
@@ -231,9 +232,8 @@
             this.tumselKontrolleriAcToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.tumselKontrolleriAcToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.select_all;
             this.tumselKontrolleriAcToolStripMenuItem.Name = "tumselKontrolleriAcToolStripMenuItem";
-            this.tumselKontrolleriAcToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.Z)));
-            this.tumselKontrolleriAcToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
+            this.tumselKontrolleriAcToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F3)));
+            this.tumselKontrolleriAcToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.tumselKontrolleriAcToolStripMenuItem.Text = "Tümsel Kontrolleri Aç";
             this.tumselKontrolleriAcToolStripMenuItem.Click += new System.EventHandler(this.tumselKontrolleriAcToolStripMenuItem_Click);
             // 
@@ -241,11 +241,23 @@
             // 
             this.üstteGösterToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.üstteGösterToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.üstteGösterToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.eye;
             this.üstteGösterToolStripMenuItem.Name = "üstteGösterToolStripMenuItem";
             this.üstteGösterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F1)));
-            this.üstteGösterToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
+            this.üstteGösterToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.üstteGösterToolStripMenuItem.Text = "Üstte Göster";
             this.üstteGösterToolStripMenuItem.Click += new System.EventHandler(this.üstteGösterToolStripMenuItem_Click);
+            // 
+            // tamEkranToolStripMenuItem
+            // 
+            this.tamEkranToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.tamEkranToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tamEkranToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.fullscreen;
+            this.tamEkranToolStripMenuItem.Name = "tamEkranToolStripMenuItem";
+            this.tamEkranToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F2)));
+            this.tamEkranToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.tamEkranToolStripMenuItem.Text = "Tam Ekran";
+            this.tamEkranToolStripMenuItem.Click += new System.EventHandler(this.tamEkranToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton4
             // 
@@ -253,8 +265,7 @@
             this.toolStripDropDownButton4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.haritayıGösterToolStripMenuItem,
             this.uzakGörüntüyüGösterToolStripMenuItem,
-            this.hamVeriyiGösterToolStripMenuItem,
-            this.tamEkranToolStripMenuItem});
+            this.hamVeriyiGösterToolStripMenuItem});
             this.toolStripDropDownButton4.Image = global::mCTerminal.Properties.Resources.window;
             this.toolStripDropDownButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton4.Name = "toolStripDropDownButton4";
@@ -294,17 +305,6 @@
             this.hamVeriyiGösterToolStripMenuItem.Text = "Ham Veriyi Göster";
             this.hamVeriyiGösterToolStripMenuItem.Click += new System.EventHandler(this.hamVeriyiGösterToolStripMenuItem_Click);
             // 
-            // tamEkranToolStripMenuItem
-            // 
-            this.tamEkranToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.tamEkranToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.tamEkranToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.fullscreen;
-            this.tamEkranToolStripMenuItem.Name = "tamEkranToolStripMenuItem";
-            this.tamEkranToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F2)));
-            this.tamEkranToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
-            this.tamEkranToolStripMenuItem.Text = "Tam Ekran";
-            this.tamEkranToolStripMenuItem.Click += new System.EventHandler(this.tamEkranToolStripMenuItem_Click);
-            // 
             // toolStripDropDownButton3
             // 
             this.toolStripDropDownButton3.BackColor = System.Drawing.Color.Transparent;
@@ -336,7 +336,7 @@
             this.güncelleştirmeleriKontrolEtToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.güncelleştirmeleriKontrolEtToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.update;
             this.güncelleştirmeleriKontrolEtToolStripMenuItem.Name = "güncelleştirmeleriKontrolEtToolStripMenuItem";
-            this.güncelleştirmeleriKontrolEtToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F3)));
+            this.güncelleştirmeleriKontrolEtToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F5)));
             this.güncelleştirmeleriKontrolEtToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.güncelleştirmeleriKontrolEtToolStripMenuItem.Text = "Güncelleştirmeleri Kontrol Et";
             this.güncelleştirmeleriKontrolEtToolStripMenuItem.Click += new System.EventHandler(this.güncelleştirmeleriKontrolEtToolStripMenuItem_Click);
@@ -393,12 +393,12 @@
             this.hamVeriTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.hamVeriTextBox1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.hamVeriTextBox1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.hamVeriTextBox1.Location = new System.Drawing.Point(0, 326);
+            this.hamVeriTextBox1.Location = new System.Drawing.Point(0, 289);
             this.hamVeriTextBox1.Multiline = true;
             this.hamVeriTextBox1.Name = "hamVeriTextBox1";
             this.hamVeriTextBox1.ReadOnly = true;
             this.hamVeriTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.hamVeriTextBox1.Size = new System.Drawing.Size(619, 90);
+            this.hamVeriTextBox1.Size = new System.Drawing.Size(625, 127);
             this.hamVeriTextBox1.TabIndex = 5;
             // 
             // baglantiNoktasi_label
@@ -780,7 +780,7 @@
             this.kayitdurumPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.kayitdurumPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.kayitdurumPictureBox.Image = global::mCTerminal.Properties.Resources.download_kirmizi;
-            this.kayitdurumPictureBox.Location = new System.Drawing.Point(600, 307);
+            this.kayitdurumPictureBox.Location = new System.Drawing.Point(606, 267);
             this.kayitdurumPictureBox.Name = "kayitdurumPictureBox";
             this.kayitdurumPictureBox.Size = new System.Drawing.Size(16, 16);
             this.kayitdurumPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1044,60 +1044,6 @@
             this.gostergeGrup.TabIndex = 16;
             this.gostergeGrup.TabStop = false;
             // 
-            // AciXGaugeBaslikLabel
-            // 
-            this.AciXGaugeBaslikLabel.BackColor = System.Drawing.Color.DimGray;
-            this.AciXGaugeBaslikLabel.Location = new System.Drawing.Point(12, 317);
-            this.AciXGaugeBaslikLabel.Name = "AciXGaugeBaslikLabel";
-            this.AciXGaugeBaslikLabel.Size = new System.Drawing.Size(100, 16);
-            this.AciXGaugeBaslikLabel.TabIndex = 26;
-            this.AciXGaugeBaslikLabel.Text = "X Açısı";
-            this.AciXGaugeBaslikLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // AciXGauge
-            // 
-            this.AciXGauge.BackColor = System.Drawing.SystemColors.Control;
-            this.AciXGauge.BaseArcColor = System.Drawing.Color.Gray;
-            this.AciXGauge.BaseArcRadius = 30;
-            this.AciXGauge.BaseArcStart = 180;
-            this.AciXGauge.BaseArcSweep = 180;
-            this.AciXGauge.BaseArcWidth = 2;
-            this.AciXGauge.Center = new System.Drawing.Point(50, 50);
-            this.AciXGauge.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.AciXGauge.Location = new System.Drawing.Point(12, 232);
-            this.AciXGauge.MaxValue = 90F;
-            this.AciXGauge.MinValue = -90F;
-            this.AciXGauge.Name = "AciXGauge";
-            this.AciXGauge.NeedleColor1 = System.Windows.Forms.AGaugeNeedleColor.Gray;
-            this.AciXGauge.NeedleColor2 = System.Drawing.Color.DimGray;
-            this.AciXGauge.NeedleRadius = 30;
-            this.AciXGauge.NeedleType = System.Windows.Forms.NeedleType.Simple;
-            this.AciXGauge.NeedleWidth = 2;
-            this.AciXGauge.ScaleLinesInterColor = System.Drawing.Color.Black;
-            this.AciXGauge.ScaleLinesInterInnerRadius = 35;
-            this.AciXGauge.ScaleLinesInterOuterRadius = 40;
-            this.AciXGauge.ScaleLinesInterWidth = 1;
-            this.AciXGauge.ScaleLinesMajorColor = System.Drawing.Color.Black;
-            this.AciXGauge.ScaleLinesMajorInnerRadius = 35;
-            this.AciXGauge.ScaleLinesMajorOuterRadius = 30;
-            this.AciXGauge.ScaleLinesMajorStepValue = 20F;
-            this.AciXGauge.ScaleLinesMajorWidth = 2;
-            this.AciXGauge.ScaleLinesMinorColor = System.Drawing.Color.Gray;
-            this.AciXGauge.ScaleLinesMinorInnerRadius = 35;
-            this.AciXGauge.ScaleLinesMinorOuterRadius = 30;
-            this.AciXGauge.ScaleLinesMinorTicks = 2;
-            this.AciXGauge.ScaleLinesMinorWidth = 1;
-            this.AciXGauge.ScaleNumbersColor = System.Drawing.Color.Black;
-            this.AciXGauge.ScaleNumbersFormat = null;
-            this.AciXGauge.ScaleNumbersRadius = 40;
-            this.AciXGauge.ScaleNumbersRotation = 0;
-            this.AciXGauge.ScaleNumbersStartScaleLine = 0;
-            this.AciXGauge.ScaleNumbersStepScaleLines = 1;
-            this.AciXGauge.Size = new System.Drawing.Size(100, 100);
-            this.AciXGauge.TabIndex = 25;
-            this.AciXGauge.Text = "aGauge1";
-            this.AciXGauge.Value = 0F;
-            // 
             // AciYGaugeBaslikLabel
             // 
             this.AciYGaugeBaslikLabel.BackColor = System.Drawing.Color.DimGray;
@@ -1152,12 +1098,66 @@
             this.AciYGauge.Text = "aGauge2";
             this.AciYGauge.Value = 0F;
             // 
+            // AciXGaugeBaslikLabel
+            // 
+            this.AciXGaugeBaslikLabel.BackColor = System.Drawing.Color.DimGray;
+            this.AciXGaugeBaslikLabel.Location = new System.Drawing.Point(12, 317);
+            this.AciXGaugeBaslikLabel.Name = "AciXGaugeBaslikLabel";
+            this.AciXGaugeBaslikLabel.Size = new System.Drawing.Size(100, 16);
+            this.AciXGaugeBaslikLabel.TabIndex = 26;
+            this.AciXGaugeBaslikLabel.Text = "X Açısı";
+            this.AciXGaugeBaslikLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // AciXGauge
+            // 
+            this.AciXGauge.BackColor = System.Drawing.SystemColors.Control;
+            this.AciXGauge.BaseArcColor = System.Drawing.Color.Gray;
+            this.AciXGauge.BaseArcRadius = 30;
+            this.AciXGauge.BaseArcStart = 180;
+            this.AciXGauge.BaseArcSweep = 180;
+            this.AciXGauge.BaseArcWidth = 2;
+            this.AciXGauge.Center = new System.Drawing.Point(50, 50);
+            this.AciXGauge.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.AciXGauge.Location = new System.Drawing.Point(12, 232);
+            this.AciXGauge.MaxValue = 90F;
+            this.AciXGauge.MinValue = -90F;
+            this.AciXGauge.Name = "AciXGauge";
+            this.AciXGauge.NeedleColor1 = System.Windows.Forms.AGaugeNeedleColor.Gray;
+            this.AciXGauge.NeedleColor2 = System.Drawing.Color.DimGray;
+            this.AciXGauge.NeedleRadius = 30;
+            this.AciXGauge.NeedleType = System.Windows.Forms.NeedleType.Simple;
+            this.AciXGauge.NeedleWidth = 2;
+            this.AciXGauge.ScaleLinesInterColor = System.Drawing.Color.Black;
+            this.AciXGauge.ScaleLinesInterInnerRadius = 35;
+            this.AciXGauge.ScaleLinesInterOuterRadius = 40;
+            this.AciXGauge.ScaleLinesInterWidth = 1;
+            this.AciXGauge.ScaleLinesMajorColor = System.Drawing.Color.Black;
+            this.AciXGauge.ScaleLinesMajorInnerRadius = 35;
+            this.AciXGauge.ScaleLinesMajorOuterRadius = 30;
+            this.AciXGauge.ScaleLinesMajorStepValue = 20F;
+            this.AciXGauge.ScaleLinesMajorWidth = 2;
+            this.AciXGauge.ScaleLinesMinorColor = System.Drawing.Color.Gray;
+            this.AciXGauge.ScaleLinesMinorInnerRadius = 35;
+            this.AciXGauge.ScaleLinesMinorOuterRadius = 30;
+            this.AciXGauge.ScaleLinesMinorTicks = 2;
+            this.AciXGauge.ScaleLinesMinorWidth = 1;
+            this.AciXGauge.ScaleNumbersColor = System.Drawing.Color.Black;
+            this.AciXGauge.ScaleNumbersFormat = null;
+            this.AciXGauge.ScaleNumbersRadius = 40;
+            this.AciXGauge.ScaleNumbersRotation = 0;
+            this.AciXGauge.ScaleNumbersStartScaleLine = 0;
+            this.AciXGauge.ScaleNumbersStepScaleLines = 1;
+            this.AciXGauge.Size = new System.Drawing.Size(100, 100);
+            this.AciXGauge.TabIndex = 25;
+            this.AciXGauge.Text = "aGauge1";
+            this.AciXGauge.Value = 0F;
+            // 
             // anaEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(619, 416);
+            this.ClientSize = new System.Drawing.Size(625, 416);
             this.Controls.Add(this.kayitdurumPictureBox);
             this.Controls.Add(this.hamVeriTextBox1);
             this.Controls.Add(this.gostergeGrup);
@@ -1171,7 +1171,7 @@
             this.Controls.Add(this.toolStrip1);
             this.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(635, 455);
+            this.MinimumSize = new System.Drawing.Size(641, 455);
             this.Name = "anaEkran";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mCTerminal $PROGRAM_SURUM | [@PC ADI]";
@@ -1232,7 +1232,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart gkuvvetGrafik;
         private System.Windows.Forms.ToolStripMenuItem haritayıGösterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uzakGörüntüyüGösterToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tamEkranToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hamVeriyiGösterToolStripMenuItem;
         private System.Windows.Forms.Label barometrikİrtifaMaksLabel;
         private System.Windows.Forms.ToolStripMenuItem üstteGösterToolStripMenuItem;
@@ -1259,5 +1258,6 @@
         private System.Windows.Forms.AGauge AciYGauge;
         private System.Windows.Forms.Label AciXGaugeBaslikLabel;
         private System.Windows.Forms.AGauge AciXGauge;
+        private System.Windows.Forms.ToolStripMenuItem tamEkranToolStripMenuItem;
     }
 }

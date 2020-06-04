@@ -20,8 +20,15 @@ namespace mCTerminal
     
     public partial class anaEkran : Form
     {
+        
+        
+        
+        
         XmlTextReader xtr = new XmlTextReader(programyolu + @"\res\settings.xml"); //XML dosyasını okumak için hazırlık yap
         
+
+
+
 
         //--------tablo grafiği için gerekli---------
         int maksm = 20, minm = 0;
@@ -35,7 +42,6 @@ namespace mCTerminal
         public string programVeriFormat;
         public string programSurum;
         static string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
-        string sadece_saat = DateTime.Now.ToString("hh:mm:ss");
         
 
         public anaEkran()
@@ -58,10 +64,10 @@ namespace mCTerminal
 
             serialPort1.DataReceived += new SerialDataReceivedEventHandler(serialPort1_DataReceived);
 
-
+            string sadece_saat = DateTime.Now.ToString("hh:mm:ss");
             //-------------------------Formda altta bulunan yere yazdırılacak yazılar-------------------------
-            hamVeriTextBox1.AppendText(sadece_saat + " --> COM Portları Taranıyor..." + Environment.NewLine);
-            hamVeriTextBox1.AppendText(sadece_saat + " --> COM Portları Tarandı!" + Environment.NewLine);
+            hamVeriTextBox1.AppendText(sadece_saat + " --> Program başlatılıyor..." + Environment.NewLine);
+            hamVeriTextBox1.AppendText(sadece_saat + " --> Gerekli ayarlamalar yapılıyor..." + Environment.NewLine);
             hamVeriTextBox1.AppendText(sadece_saat + " --> #--------------------------#" + Environment.NewLine);
             hamVeriTextBox1.AppendText(sadece_saat + " --> #   www.cosmostakimi.com   #" + Environment.NewLine);
             hamVeriTextBox1.AppendText(sadece_saat + " --> #--------------------------#" + Environment.NewLine);
@@ -304,6 +310,7 @@ namespace mCTerminal
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
+            string sadece_saat = DateTime.Now.ToString("hh:mm:ss");
             string[] splitted_data;
             string data;
             try
@@ -400,7 +407,6 @@ namespace mCTerminal
                 if (verikaydetToolStripMenuItem.CheckState == CheckState.Checked)
                 {
                     string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
-                    string sadece_saat = DateTime.Now.ToString("hh:mm:ss");
                     string sadece_tarih = DateTime.Now.ToString("dd-MM-yyyy");
                     string kayitformati = programVeriFormat;
                     using (System.IO.StreamWriter file = new System.IO.StreamWriter(programyolu + @"logs\" + "roketLog-" + sadece_tarih.ToString() + kayitformati, true)) //Log yerine kullanılabilecek Türkçe bir karşılık bulamadım, belki Veri çıktısı diyebiliriz ama Log kavramı daha evrensel olduğu için böyle yazdım.
@@ -523,24 +529,6 @@ namespace mCTerminal
             haritafrm.Show();
         }
 
-        private void tamEkranToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //Form'un o anki durumuna göre değişen pencere ayarı.
-            if (this.FormBorderStyle == FormBorderStyle.Sizable)
-            {
-                this.FormBorderStyle = FormBorderStyle.None;
-                this.WindowState = FormWindowState.Maximized;
-                tamEkranToolStripMenuItem.Text = "Küçültülmüş Ekran";
-            }
-            else
-            {
-                this.FormBorderStyle = FormBorderStyle.Sizable;
-                this.WindowState = FormWindowState.Normal;
-                tamEkranToolStripMenuItem.Text = "Tam Ekran";
-            }
-            //----------------------------------------------------------
-        }
-
         private void hamVeriyiGösterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             hamveriekrani hamveriekranifrm = new hamveriekrani();
@@ -576,17 +564,20 @@ namespace mCTerminal
         private void tumselKontrolleriAcToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //bütün gerekli pencereleri özel boyutta ve konumda açar
-            hamveriekrani hamveriekranifrm = new hamveriekrani();
-            hamveriekranifrm.Show();
-            hamveriekranifrm.Location = new Point(Screen.PrimaryScreen.Bounds.Width - hamveriekranifrm.Width, Screen.PrimaryScreen.Bounds.Height - hamveriekranifrm.Height);
-            
             kamera kamerafrm = new kamera();
-            kamerafrm.Show();
-            kamerafrm.Location = new Point(Screen.PrimaryScreen.Bounds.Width - kamerafrm.Width, 0);
-
+            hamveriekrani hamveriekranifrm = new hamveriekrani();
             harita haritafrm = new harita();
+
+            hamveriekranifrm.Show();
+            hamveriekranifrm.Height = 230;
+            hamveriekranifrm.Location = new Point(0, Screen.PrimaryScreen.Bounds.Height - kamerafrm.Height + 90);
+            
+            kamerafrm.Show();
+            kamerafrm.Location = new Point(0, Screen.PrimaryScreen.Bounds.Height - kamerafrm.Height - hamveriekranifrm.Height);
+
             haritafrm.Show();
-            haritafrm.Location = new Point(0, Screen.PrimaryScreen.Bounds.Height - haritafrm.Height);
+            haritafrm.Height = 530;
+            haritafrm.Location = new Point(Screen.PrimaryScreen.Bounds.Width - haritafrm.Width, Screen.PrimaryScreen.Bounds.Height - haritafrm.Height);
 
             if (this.FormBorderStyle == FormBorderStyle.Sizable)
             {
@@ -645,6 +636,24 @@ namespace mCTerminal
         {
             eksikdosyaForm eksikdosyafrm = new eksikdosyaForm();
             eksikdosyafrm.Show();
+        }
+
+        private void tamEkranToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Form'un o anki durumuna göre değişen pencere ayarı.
+            if (this.FormBorderStyle == FormBorderStyle.Sizable)
+            {
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Maximized;
+                tamEkranToolStripMenuItem.Text = "Küçültülmüş Ekran";
+            }
+            else
+            {
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+                this.WindowState = FormWindowState.Normal;
+                tamEkranToolStripMenuItem.Text = "Tam Ekran";
+            }
+            //----------------------------------------------------------
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
