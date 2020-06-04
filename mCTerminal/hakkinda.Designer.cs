@@ -46,7 +46,7 @@
             this.anaTextLabel.BackColor = System.Drawing.Color.Transparent;
             this.anaTextLabel.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.anaTextLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.anaTextLabel.Location = new System.Drawing.Point(12, 137);
+            this.anaTextLabel.Location = new System.Drawing.Point(12, 138);
             this.anaTextLabel.Name = "anaTextLabel";
             this.anaTextLabel.Size = new System.Drawing.Size(299, 61);
             this.anaTextLabel.TabIndex = 0;
@@ -61,7 +61,7 @@
             this.githubadresLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.githubadresLabel.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.githubadresLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.githubadresLabel.Location = new System.Drawing.Point(4, 355);
+            this.githubadresLabel.Location = new System.Drawing.Point(4, 356);
             this.githubadresLabel.Name = "githubadresLabel";
             this.githubadresLabel.Size = new System.Drawing.Size(137, 13);
             this.githubadresLabel.TabIndex = 2;
@@ -88,7 +88,7 @@
             this.programSurumSayiLabel.BackColor = System.Drawing.Color.Transparent;
             this.programSurumSayiLabel.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.programSurumSayiLabel.ForeColor = System.Drawing.Color.OrangeRed;
-            this.programSurumSayiLabel.Location = new System.Drawing.Point(12, 104);
+            this.programSurumSayiLabel.Location = new System.Drawing.Point(12, 105);
             this.programSurumSayiLabel.Name = "programSurumSayiLabel";
             this.programSurumSayiLabel.Size = new System.Drawing.Size(299, 15);
             this.programSurumSayiLabel.TabIndex = 8;
@@ -101,7 +101,7 @@
             this.sistembilgiLabel.BackColor = System.Drawing.Color.Transparent;
             this.sistembilgiLabel.Font = new System.Drawing.Font("Calibri", 6.95F);
             this.sistembilgiLabel.ForeColor = System.Drawing.Color.Yellow;
-            this.sistembilgiLabel.Location = new System.Drawing.Point(0, 118);
+            this.sistembilgiLabel.Location = new System.Drawing.Point(0, 119);
             this.sistembilgiLabel.Name = "sistembilgiLabel";
             this.sistembilgiLabel.Size = new System.Drawing.Size(323, 15);
             this.sistembilgiLabel.TabIndex = 9;
@@ -131,7 +131,7 @@
             this.takimUyelerLabel.BackColor = System.Drawing.Color.Transparent;
             this.takimUyelerLabel.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.takimUyelerLabel.ForeColor = System.Drawing.Color.Orange;
-            this.takimUyelerLabel.Location = new System.Drawing.Point(12, 220);
+            this.takimUyelerLabel.Location = new System.Drawing.Point(12, 221);
             this.takimUyelerLabel.Name = "takimUyelerLabel";
             this.takimUyelerLabel.Size = new System.Drawing.Size(299, 117);
             this.takimUyelerLabel.TabIndex = 11;
@@ -146,7 +146,7 @@
             this.takimUyelerBaslikLabel.BackColor = System.Drawing.Color.Transparent;
             this.takimUyelerBaslikLabel.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.takimUyelerBaslikLabel.ForeColor = System.Drawing.Color.Fuchsia;
-            this.takimUyelerBaslikLabel.Location = new System.Drawing.Point(12, 202);
+            this.takimUyelerBaslikLabel.Location = new System.Drawing.Point(12, 203);
             this.takimUyelerBaslikLabel.Name = "takimUyelerBaslikLabel";
             this.takimUyelerBaslikLabel.Size = new System.Drawing.Size(299, 16);
             this.takimUyelerBaslikLabel.TabIndex = 12;

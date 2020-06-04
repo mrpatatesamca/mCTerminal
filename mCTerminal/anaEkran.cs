@@ -424,12 +424,8 @@ namespace mCTerminal
                 //-------------------------------------------VERİ KAYIT SON------------------------------------------
 
 
-
-
-
-
             }
-            catch (Exception ex)
+            catch
             {
 
             }
