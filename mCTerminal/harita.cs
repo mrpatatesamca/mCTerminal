@@ -1,8 +1,10 @@
-﻿using System;
+﻿using GMap.NET;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -242,17 +244,25 @@ namespace mCTerminal
 
         private void haritaRoketEsle_Tick(object sender, EventArgs e) 
         {
-            if (Properties.Settings.Default.serialportdurum == true) //bağlantı kurulmuş ve veri geliyorsa
+            //bağlantı kurulmuş ve veri geliyorsa
+            if (Properties.Settings.Default.serialportdurum == true) 
             {
-                if (haritaortala_checkbox.CheckState == CheckState.Checked) //eğer haritayı ortala seçeneğine tik atılmışsa
+                //eğer haritayı ortala seçeneğine tik atılmışsa
+                if (haritaortala_checkbox.CheckState == CheckState.Checked) 
                 {
-                    //önce enlem ve boylam adında değişkenler oluşturuyoruz ve bu değişkenlerdeki "." karakterini ";" ile değiştiriyoruz
-                    //çünkü haritamız nokta (".") ile belirtilen koordinatlara gidemiyor, virgül (",") ile belirtilmesi lazım
-                    string enlem = Properties.Settings.Default.enlem.Replace(".", ",");
-                    string boylam = Properties.Settings.Default.boylam.Replace(".", ",");
-                    try //string formatından double formatına çevir
+                    //öncelikle enlem ve boylam verisini haritada gösterebilmek için bir takım dönüşümler yapmalıyız.
+                    //1-enlem ve boylam verisini string formatından double formatına çevir.
+                    //2-verileri çevirebilmek için öncelikle string içindeki '.' ve ',' işaretlerinin ne anlama geldiğini belirtmemiz lazım.
+                    //3-eğer bu belirtmeyi yapmazsak string formatından double döndürürken '.' ve ',' işaretleri görmezden gelinir.
+                    //4-bu da haritanın hatalı yeri göstermesine neden olur.
+                    NumberFormatInfo provider = new NumberFormatInfo();
+                    provider.NumberDecimalSeparator = ".";
+                    provider.NumberGroupSeparator = ",";
+                    double enlemDouble = Convert.ToDouble(Properties.Settings.Default.enlem, provider);
+                    double boylamDouble = Convert.ToDouble(Properties.Settings.Default.boylam, provider);
+                    try
                     {
-                        harita1.Position = new GMap.NET.PointLatLng(Convert.ToDouble(enlem), Convert.ToDouble(boylam));
+                        harita1.Position = new PointLatLng(enlemDouble, boylamDouble);
                     }
                     catch
                     {

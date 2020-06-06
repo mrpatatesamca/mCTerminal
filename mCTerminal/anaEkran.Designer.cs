@@ -43,8 +43,8 @@
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.bağlantıyıBaşlatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verikaydetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.programiyenidenbaslatStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ciktoolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.ayarlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tumselKontrolleriAcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -148,8 +148,8 @@
             this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bağlantıyıBaşlatToolStripMenuItem,
             this.verikaydetToolStripMenuItem,
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3});
+            this.programiyenidenbaslatStripMenuItem2,
+            this.ciktoolStripMenuItem3});
             this.toolStripDropDownButton2.Image = global::mCTerminal.Properties.Resources.folder;
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton2.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
@@ -179,27 +179,27 @@
             this.verikaydetToolStripMenuItem.Text = "Veri Çıktısını Kaydet";
             this.verikaydetToolStripMenuItem.Click += new System.EventHandler(this.verikaydetToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem2
+            // programiyenidenbaslatStripMenuItem2
             // 
-            this.toolStripMenuItem2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.toolStripMenuItem2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.toolStripMenuItem2.Image = global::mCTerminal.Properties.Resources.refresh;
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(243, 22);
-            this.toolStripMenuItem2.Text = "Programı Yeniden Başlat";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            this.programiyenidenbaslatStripMenuItem2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.programiyenidenbaslatStripMenuItem2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.programiyenidenbaslatStripMenuItem2.Image = global::mCTerminal.Properties.Resources.refresh;
+            this.programiyenidenbaslatStripMenuItem2.Name = "programiyenidenbaslatStripMenuItem2";
+            this.programiyenidenbaslatStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.programiyenidenbaslatStripMenuItem2.Size = new System.Drawing.Size(243, 22);
+            this.programiyenidenbaslatStripMenuItem2.Text = "Programı Yeniden Başlat";
+            this.programiyenidenbaslatStripMenuItem2.Click += new System.EventHandler(this.programiyenidenbaslatStripMenuItem2_Click);
             // 
-            // toolStripMenuItem3
+            // ciktoolStripMenuItem3
             // 
-            this.toolStripMenuItem3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.toolStripMenuItem3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.toolStripMenuItem3.Image = global::mCTerminal.Properties.Resources.exit;
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(243, 22);
-            this.toolStripMenuItem3.Text = "Çık";
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            this.ciktoolStripMenuItem3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.ciktoolStripMenuItem3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.ciktoolStripMenuItem3.Image = global::mCTerminal.Properties.Resources.exit;
+            this.ciktoolStripMenuItem3.Name = "ciktoolStripMenuItem3";
+            this.ciktoolStripMenuItem3.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.ciktoolStripMenuItem3.Size = new System.Drawing.Size(243, 22);
+            this.ciktoolStripMenuItem3.Text = "Çık";
+            this.ciktoolStripMenuItem3.Click += new System.EventHandler(this.ciktoolStripMenuItem3_Click);
             // 
             // toolStripDropDownButton1
             // 
@@ -1201,8 +1201,8 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
         private System.Windows.Forms.ToolStripMenuItem verikaydetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem programiyenidenbaslatStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem ciktoolStripMenuItem3;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
         private System.Windows.Forms.ToolStripMenuItem ayarlarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tumselKontrolleriAcToolStripMenuItem;

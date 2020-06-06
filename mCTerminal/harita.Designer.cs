@@ -152,8 +152,8 @@
             this.üstteGösterToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.üstteGösterToolStripMenuItem.Checked = true;
             this.üstteGösterToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.üstteGösterToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.üstteGösterToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.üstteGösterToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.eye;
             this.üstteGösterToolStripMenuItem.Name = "üstteGösterToolStripMenuItem";
             this.üstteGösterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F1)));
             this.üstteGösterToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
@@ -182,7 +182,7 @@
             this.araziHaritasıToolStripMenuItem});
             this.googleHaritalarToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.googleHaritalarToolStripMenuItem.Name = "googleHaritalarToolStripMenuItem";
-            this.googleHaritalarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.googleHaritalarToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.googleHaritalarToolStripMenuItem.Text = "Google Haritalar";
             // 
             // uyduHaritasıToolStripMenuItem
@@ -190,7 +190,7 @@
             this.uyduHaritasıToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.uyduHaritasıToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.uyduHaritasıToolStripMenuItem.Name = "uyduHaritasıToolStripMenuItem";
-            this.uyduHaritasıToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.uyduHaritasıToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.uyduHaritasıToolStripMenuItem.Text = "Uydu Haritası";
             this.uyduHaritasıToolStripMenuItem.Click += new System.EventHandler(this.uyduHaritasıToolStripMenuItem_Click);
             // 
@@ -199,7 +199,7 @@
             this.şehirHaritasıToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.şehirHaritasıToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.şehirHaritasıToolStripMenuItem.Name = "şehirHaritasıToolStripMenuItem";
-            this.şehirHaritasıToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.şehirHaritasıToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.şehirHaritasıToolStripMenuItem.Text = "Şehir Haritası";
             this.şehirHaritasıToolStripMenuItem.Click += new System.EventHandler(this.şehirHaritasıToolStripMenuItem_Click);
             // 
@@ -208,7 +208,7 @@
             this.araziHaritasıToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.araziHaritasıToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.araziHaritasıToolStripMenuItem.Name = "araziHaritasıToolStripMenuItem";
-            this.araziHaritasıToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.araziHaritasıToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.araziHaritasıToolStripMenuItem.Text = "Arazi Haritası";
             this.araziHaritasıToolStripMenuItem.Click += new System.EventHandler(this.araziHaritasıToolStripMenuItem_Click);
             // 
@@ -217,7 +217,7 @@
             this.bingHaritaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.bingHaritaToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.bingHaritaToolStripMenuItem.Name = "bingHaritaToolStripMenuItem";
-            this.bingHaritaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bingHaritaToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.bingHaritaToolStripMenuItem.Text = "Bing Haritalar";
             this.bingHaritaToolStripMenuItem.Click += new System.EventHandler(this.bingHaritaToolStripMenuItem_Click);
             // 
@@ -226,7 +226,7 @@
             this.wikiMapiaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.wikiMapiaToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.wikiMapiaToolStripMenuItem.Name = "wikiMapiaToolStripMenuItem";
-            this.wikiMapiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.wikiMapiaToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.wikiMapiaToolStripMenuItem.Text = "Wiki Mapia ";
             this.wikiMapiaToolStripMenuItem.Click += new System.EventHandler(this.wikiMapiaToolStripMenuItem_Click);
             // 

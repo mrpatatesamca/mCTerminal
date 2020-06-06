@@ -91,7 +91,7 @@
             this.tamEkranToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.fullscreen;
             this.tamEkranToolStripMenuItem.Name = "tamEkranToolStripMenuItem";
             this.tamEkranToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F2)));
-            this.tamEkranToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tamEkranToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.tamEkranToolStripMenuItem.Text = "Tam Ekran";
             this.tamEkranToolStripMenuItem.Click += new System.EventHandler(this.tamEkranToolStripMenuItem_Click);
             // 
@@ -130,8 +130,8 @@
             this.üstteGösterToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.üstteGösterToolStripMenuItem.Checked = true;
             this.üstteGösterToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.üstteGösterToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.üstteGösterToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.üstteGösterToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.eye;
             this.üstteGösterToolStripMenuItem.Name = "üstteGösterToolStripMenuItem";
             this.üstteGösterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F1)));
             this.üstteGösterToolStripMenuItem.Size = new System.Drawing.Size(184, 22);

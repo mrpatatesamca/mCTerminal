@@ -501,11 +501,6 @@ namespace mCTerminal
             }
         }
 
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void hakkındaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Hakkında ekranını gösterir.
@@ -515,8 +510,8 @@ namespace mCTerminal
 
         private void anaEkran_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
-            serialPort1.Close();
+
+            Environment.Exit(0);
         }
 
         private void haritayıGösterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -538,7 +533,6 @@ namespace mCTerminal
 
         private void güncelleştirmeleriKontrolEtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //yeni sürümü varsa güncelleme aracının yeni sürümünü başlat.
             try
             {
 
@@ -652,10 +646,16 @@ namespace mCTerminal
             //----------------------------------------------------------
         }
 
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        private void programiyenidenbaslatStripMenuItem2_Click(object sender, EventArgs e)
         {
-            Application.Restart(); 
+            Application.Restart();
         }
+
+        private void ciktoolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
 
         private void ayarlarToolStripMenuItem_Click(object sender, EventArgs e)
         {
