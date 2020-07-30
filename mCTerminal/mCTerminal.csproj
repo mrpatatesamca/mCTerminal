@@ -207,8 +207,6 @@
     <None Include="Resources\provider.png" />
     <None Include="Resources\wallpaper1.jpg" />
     <None Include="Resources\info.png" />
-    <None Include="Resources\download_kirmizi.png" />
-    <None Include="Resources\download_yesil.png" />
     <None Include="Resources\wifi_icon.png" />
     <None Include="Resources\snr_seviye.png" />
     <None Include="Resources\uydu.png" />
@@ -219,6 +217,19 @@
     <None Include="Resources\window.png" />
     <None Include="Resources\lifebuoy.png" />
     <None Include="Resources\eye.png" />
+    <None Include="Resources\snr_seviye_sari.png" />
+    <None Include="Resources\snr_seviye_yesil.png" />
+    <None Include="Resources\uydu_sari.png" />
+    <None Include="Resources\uydu_yesil.png" />
+    <None Include="Resources\snr_seviye_kirmizi.png" />
+    <None Include="Resources\uydu_kirmizi.png" />
+    <None Include="Resources\pen_drive_kirmizi.png" />
+    <None Include="Resources\pen_drive_yesil.png" />
+    <None Include="Resources\dot.png" />
+    <None Include="Resources\dot_sari.png" />
+    <None Include="Resources\dot_yesil.png" />
+    <None Include="Resources\dot_kirmizi.png" />
+    <None Include="Resources\reload.png" />
     <Content Include="terminal_logo2.ico" />
   </ItemGroup>
   <ItemGroup>

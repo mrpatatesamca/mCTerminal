@@ -136,7 +136,7 @@
             this.takimUyelerLabel.Size = new System.Drawing.Size(299, 117);
             this.takimUyelerLabel.TabIndex = 11;
             this.takimUyelerLabel.Text = "Emrah Can UÇAR\r\nKubilay Eren ŞENER\r\nAhmet Kerem PEHLİVAN\r\nBerke AYDİN\r\nİrem PINAR" +
-    "\r\nMustafa Önder ÇÖVEN\r\nTalha Buğra YILMAZ\r\nTuana TAŞDEMİR\r\nUtku KOCA";
+    "\r\nMustafa Önder ÇÖVEN\r\nTalha Buğra YILMAZ\r\nTuana TAŞDEMİR";
             this.takimUyelerLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // takimUyelerBaslikLabel
@@ -150,7 +150,7 @@
             this.takimUyelerBaslikLabel.Name = "takimUyelerBaslikLabel";
             this.takimUyelerBaslikLabel.Size = new System.Drawing.Size(299, 16);
             this.takimUyelerBaslikLabel.TabIndex = 12;
-            this.takimUyelerBaslikLabel.Text = "Çok Değerli Cosmos Takımı Üyeleri Sunar:";
+            this.takimUyelerBaslikLabel.Text = "Çok Değerli Cosmos Takımı Üyeleri Sunar";
             this.takimUyelerBaslikLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // hakkinda

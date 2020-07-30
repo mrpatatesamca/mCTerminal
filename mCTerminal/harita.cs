@@ -22,6 +22,7 @@ namespace mCTerminal
         public string programTema;
         public string programVeriFormat;
         public string programSurum;
+        public string programHaritaDataKonum = programyolu + @"\map_datab\";
         static string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
 
         public harita()
@@ -189,6 +190,7 @@ namespace mCTerminal
 
             harita1.MapProvider = GMap.NET.MapProviders.GoogleHybridMapProvider.Instance;
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerAndCache;
+            harita1.CacheLocation = programHaritaDataKonum;
             harita1.Position = new GMap.NET.PointLatLng(39.9179769, 44.0351519);
             harita1.Zoom = 10;
 

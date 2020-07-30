@@ -41,7 +41,7 @@
             // 
             this.kaydetButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.kaydetButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.kaydetButton.Location = new System.Drawing.Point(134, 168);
+            this.kaydetButton.Location = new System.Drawing.Point(148, 279);
             this.kaydetButton.Name = "kaydetButton";
             this.kaydetButton.Size = new System.Drawing.Size(83, 23);
             this.kaydetButton.TabIndex = 1;
@@ -53,7 +53,7 @@
             // 
             this.iptalButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.iptalButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iptalButton.Location = new System.Drawing.Point(53, 168);
+            this.iptalButton.Location = new System.Drawing.Point(67, 279);
             this.iptalButton.Name = "iptalButton";
             this.iptalButton.Size = new System.Drawing.Size(75, 23);
             this.iptalButton.TabIndex = 2;
@@ -82,7 +82,7 @@
             "Material Tema"});
             this.uygulamaTemaComboBox.Location = new System.Drawing.Point(12, 25);
             this.uygulamaTemaComboBox.Name = "uygulamaTemaComboBox";
-            this.uygulamaTemaComboBox.Size = new System.Drawing.Size(247, 21);
+            this.uygulamaTemaComboBox.Size = new System.Drawing.Size(261, 21);
             this.uygulamaTemaComboBox.TabIndex = 11;
             this.uygulamaTemaComboBox.SelectedIndexChanged += new System.EventHandler(this.uygulamaTemaComboBox_SelectedIndexChanged);
             // 
@@ -97,7 +97,7 @@
             "Verilog Dosyası (*.vs)"});
             this.vericiktikayitformatComboBox.Location = new System.Drawing.Point(12, 75);
             this.vericiktikayitformatComboBox.Name = "vericiktikayitformatComboBox";
-            this.vericiktikayitformatComboBox.Size = new System.Drawing.Size(247, 21);
+            this.vericiktikayitformatComboBox.Size = new System.Drawing.Size(261, 21);
             this.vericiktikayitformatComboBox.TabIndex = 13;
             this.vericiktikayitformatComboBox.SelectedIndexChanged += new System.EventHandler(this.vericiktikayitformatComboBox_SelectedIndexChanged);
             // 
@@ -115,7 +115,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(271, 203);
+            this.ClientSize = new System.Drawing.Size(285, 314);
             this.Controls.Add(this.vericiktikayitformatComboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.uygulamaTemaComboBox);

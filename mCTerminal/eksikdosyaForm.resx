@@ -124,11 +124,15 @@
     <value>    -&gt; AForge.dll 
     -&gt; AForge.Video.DirectShow.dll 
     -&gt; AForge.Video.dll
+    -&gt; AGauge.dll
+    -&gt; AxInterop.WMPLib.dll
+    -&gt; DotNetZip.dll
     -&gt; GMap.NET.Core.dll
     -&gt; GMap.NET.WindowsForms.dll
-    -&gt; DotNetZip.dll
+    -&gt; Interop.WMPLib.dll
     -&gt; mCTerminal-updater.exe
     -&gt; \logs
+    -&gt; \map_datab
     -&gt; \res\settings.xml
     -&gt; \res\chiptune2.mp3</value>
   </data>

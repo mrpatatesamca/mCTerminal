@@ -50,17 +50,32 @@ namespace mCTerminal
             
 
             string[] portlar = SerialPort.GetPortNames(); //portlar listesine COM portları alındı.
-            serialPort1.BaudRate = 9600; //baudrate ayarlama
+            serialPort1.BaudRate = 9600; //baudrate ayarlama (daha sonra arayüz üzerinden değiştirilebilir)
             Control.CheckForIllegalCrossThreadCalls = false;
-            
-            //her bir bağlı olan COM bağlantıları için tek tek listeye ekleme yap
+
+            //her bir bağlı olan COM bağlantıları ve Baud Rate için tek tek listeye ekleme yap
             foreach (string port in portlar)
             {
                 COMPortList.Items.Add(port);
                 COMPortList.SelectedIndex = 0;
-                baudRatePortList.Items.Add("9600");
-                baudRatePortList.SelectedIndex = 0;
             }
+            //baudrate seçeneklerini ekle
+            baudRatePortList.Items.Add("110");
+            baudRatePortList.Items.Add("300");
+            baudRatePortList.Items.Add("600");
+            baudRatePortList.Items.Add("1200");
+            baudRatePortList.Items.Add("2400");
+            baudRatePortList.Items.Add("4800");
+            baudRatePortList.Items.Add("9600");
+            baudRatePortList.Items.Add("14400");
+            baudRatePortList.Items.Add("19200");
+            baudRatePortList.Items.Add("38400");
+            baudRatePortList.Items.Add("57600");
+            baudRatePortList.Items.Add("115200");
+            baudRatePortList.Items.Add("128000");
+            baudRatePortList.Items.Add("256000");
+            baudRatePortList.SelectedIndex = 6; //seçili baudrate'i 9600 yapar (orionid projesi için)
+
 
             serialPort1.DataReceived += new SerialDataReceivedEventHandler(serialPort1_DataReceived);
 
@@ -135,6 +150,21 @@ namespace mCTerminal
                 eksikdosyasayi += 1;
             }
             //----------
+            if (!File.Exists("AGauge.dll"))
+            {
+                eksikdosyasayi += 1;
+            }
+            //----------
+            if (!File.Exists("AxInterop.WMPLib.dll"))
+            {
+                eksikdosyasayi += 1;
+            }
+            //----------
+            if (!File.Exists("DotNetZip.dll"))
+            {
+                eksikdosyasayi += 1;
+            }
+            //----------
             if (!File.Exists("GMap.NET.Core.dll"))
             {
                 eksikdosyasayi += 1;
@@ -145,7 +175,7 @@ namespace mCTerminal
                 eksikdosyasayi += 1;
             }
             //----------
-            if (!File.Exists("DotNetZip.dll"))
+            if (!File.Exists("Interop.WMPLib.dll"))
             {
                 eksikdosyasayi += 1;
             }
@@ -156,6 +186,11 @@ namespace mCTerminal
             }
             //----------
             if (!Directory.Exists("logs"))
+            {
+                eksikdosyasayi += 1;
+            }
+            //----------
+            if (!Directory.Exists("map_datab"))
             {
                 eksikdosyasayi += 1;
             }
@@ -172,7 +207,7 @@ namespace mCTerminal
 
 
 
-            if (eksikdosyasayi >= 1) //eğer bu sayı 1 veya 1'e eşit ise eksik dosyalar var demektir.
+            if (eksikdosyasayi >= 1) //eğer bu sayı 0 veya 1'e eşit ise eksik dosyalar var demektir.
             {
                 eksikdosyaForm eksikdosyafrm = new eksikdosyaForm();
                 eksikdosyafrm.ShowDialog();
@@ -333,8 +368,12 @@ namespace mCTerminal
                 gkuvvetLabel.Text = "G Kuvveti: " + splitted_data[10] + "g"; //g kuvveti
                 barometrikİrtifaMaksLabel.Text = "Barometrik Maksimum İrtifa: " + splitted_data[11] + "m"; //baro irtifa maks
                 irtifaAnlıkLabel.Text = "Anlık İrtifa: " + splitted_data[12] + "m"; //anlık irtifa
-                
-                
+
+
+                //----------bağlantı durumunu gösteren simgenin ayarlanması--------
+                baglantiDurumPictureBox.Image = Properties.Resources.dot_yesil;
+                //-----------------------------------------------------------------
+
 
                 //Gelen veriyi formun altında gözüken siyah yere (TextBox) yazıyorum.
                 hamVeriTextBox1.AppendText(sadece_saat + " --> " + data + Environment.NewLine);
@@ -397,11 +436,46 @@ namespace mCTerminal
                 //--------------------------İBRE KUTULARI--------------------------------
                 gKuvvetGauge.Value = Convert.ToInt32(splitted_data[10]); //gkuvvet
                 yatayHizGauge.Value = Convert.ToInt32(splitted_data[6]); //yatay hız
+                maksİrtifaGauge.Value = Convert.ToInt32(splitted_data[5]); //gps maks irtifa
                 irtifaGauge.Value = Convert.ToInt32(splitted_data[4]); //gps irtifa
                 AciXGauge.Value = Convert.ToInt32(splitted_data[8]); //x açısı
                 AciYGauge.Value = Convert.ToInt32(splitted_data[9]); //y açısı
                 //-------------------------İBRE KUTULARI SON-------------------------------
 
+                //-------------------------------SİMGELERİN DURUMU---------------------------------------
+                int hdop_durum_sayi = Convert.ToInt32(splitted_data[1]);
+                int baglanilan_uydu_sayisi_durum_sayi = Convert.ToInt32(splitted_data[0]);
+                //-----hdop durumu-----
+                if (hdop_durum_sayi <= 2)
+                {
+                    hdopPictureBox.Image = Properties.Resources.snr_seviye_yesil;
+                }
+                if (hdop_durum_sayi > 2 && hdop_durum_sayi <= 4)
+                {
+                    hdopPictureBox.Image = Properties.Resources.snr_seviye_sari;
+                }
+                if (hdop_durum_sayi > 4)
+                {
+                    hdopPictureBox.Image = Properties.Resources.snr_seviye_kirmizi;
+                }
+                //---hdop durumu son---
+
+                //-----gps uydu durumu-----
+                if (baglanilan_uydu_sayisi_durum_sayi <= 4)
+                {
+                    uyduPictureBox.Image = Properties.Resources.uydu_kirmizi;
+                }
+                if (baglanilan_uydu_sayisi_durum_sayi > 4 && hdop_durum_sayi <= 7)
+                {
+                    uyduPictureBox.Image = Properties.Resources.uydu_sari;
+                }
+                if (baglanilan_uydu_sayisi_durum_sayi > 7)
+                {
+                    uyduPictureBox.Image = Properties.Resources.uydu_yesil;
+                }
+                //---gps uydu durumu son---
+
+                //-------------------------------SİMGELERİN DURUMU SON-----------------------------------
 
                 //VERİ ÇIKTISINI KAYDETMEK İÇİN VERİ KAYDET BUTONUNU KONTROL EDER VE ONA GÖRE VERİYİ YAZAR
                 if (verikaydetToolStripMenuItem.CheckState == CheckState.Checked)
@@ -413,17 +487,19 @@ namespace mCTerminal
                     {
                         file.WriteLine(sadece_saat + " --> " + data);
                     }
-                    kayitdurumPictureBox.Image = mCTerminal.Properties.Resources.download_yesil;
+                    kayitdurumPictureBox.Image = mCTerminal.Properties.Resources.pen_drive_yesil;
                     
                 }
                 else
                 {
-                    kayitdurumPictureBox.Image = mCTerminal.Properties.Resources.download_kirmizi;
+                    kayitdurumPictureBox.Image = mCTerminal.Properties.Resources.pen_drive_kirmizi;
                     
                 }
                 //-------------------------------------------VERİ KAYIT SON------------------------------------------
 
 
+
+                
             }
             catch
             {
@@ -435,6 +511,7 @@ namespace mCTerminal
         {
             string sadece_saat = DateTime.Now.ToString("hh:mm:ss");
             string sadece_tarih = DateTime.Now.ToString("dd-MM-yyyy");
+            baglantiDurumPictureBox.Image = Properties.Resources.dot_sari;
 
             if (!serialPort1.IsOpen) //Bağlantı kurulmamışsa.
             {
@@ -481,7 +558,7 @@ namespace mCTerminal
             {
                 serialPort1.Close();
                 Properties.Settings.Default.serialportdurum = false;
-                
+                baglantiDurumPictureBox.Image = Properties.Resources.dot_kirmizi;
                 bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kur";
                 hamVeriTextBox1.AppendText(sadece_saat + " --> " + COMPortList.Text + " üzerindeki bağlantı " + sadece_tarih + "</>" + sadece_saat + " tarihinde sonlandırıldı!");
                 hamVeriTextBox1.AppendText(Environment.NewLine);
@@ -587,6 +664,7 @@ namespace mCTerminal
         private void COMPortList_SelectedIndexChanged(object sender, EventArgs e)
         {
             baglantiNoktasi_label.Text = "Bağlantı Noktası: " + COMPortList.SelectedItem.ToString();
+            serialPort1.PortName = COMPortList.Text;
         }
 
         private void üstteGösterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -609,14 +687,14 @@ namespace mCTerminal
             if (verikaydetToolStripMenuItem.CheckState == CheckState.Unchecked)
             {
                 verikaydetToolStripMenuItem.CheckState = CheckState.Checked;
-                kayitdurumPictureBox.Image = mCTerminal.Properties.Resources.download_yesil;
+                kayitdurumPictureBox.Image = mCTerminal.Properties.Resources.pen_drive_yesil;
                 toolTip1.SetToolTip(kayitdurumPictureBox, "Veri kayıtı yapılıyor!");
                 toolTip1.ToolTipIcon = ToolTipIcon.Info;
             }
             else
             {
                 verikaydetToolStripMenuItem.CheckState = CheckState.Unchecked;
-                kayitdurumPictureBox.Image = mCTerminal.Properties.Resources.download_kirmizi;
+                kayitdurumPictureBox.Image = mCTerminal.Properties.Resources.pen_drive_kirmizi;
                 toolTip1.SetToolTip(kayitdurumPictureBox, "Veri kayıtı yapılmıyor!");
                 toolTip1.ToolTipIcon = ToolTipIcon.Warning;
             }
@@ -648,7 +726,46 @@ namespace mCTerminal
 
         private void programiyenidenbaslatStripMenuItem2_Click(object sender, EventArgs e)
         {
-            Application.Restart();
+            System.Diagnostics.Process.Start("mCTerminal.exe");
+            this.Close();
+        }
+
+        private void baglantiListeYenileButton_Click(object sender, EventArgs e)
+        {
+            baudRatePortList.Items.Clear();
+            COMPortList.Items.Clear();
+            string[] portlar = SerialPort.GetPortNames(); //portlar listesine COM portları alındı.
+            serialPort1.BaudRate = 9600; //baudrate ayarlama (daha sonra arayüz üzerinden değiştirilebilir)
+            Control.CheckForIllegalCrossThreadCalls = false;
+
+            //her bir bağlı olan COM bağlantıları ve Baud Rate için tek tek listeye ekleme yap
+            foreach (string port in portlar)
+            {
+                COMPortList.Items.Add(port);
+                COMPortList.SelectedIndex = 0;
+            }
+            //baudrate seçeneklerini ekle
+            baudRatePortList.Items.Add("110");
+            baudRatePortList.Items.Add("300");
+            baudRatePortList.Items.Add("600");
+            baudRatePortList.Items.Add("1200");
+            baudRatePortList.Items.Add("2400");
+            baudRatePortList.Items.Add("4800");
+            baudRatePortList.Items.Add("9600");
+            baudRatePortList.Items.Add("14400");
+            baudRatePortList.Items.Add("19200");
+            baudRatePortList.Items.Add("38400");
+            baudRatePortList.Items.Add("57600");
+            baudRatePortList.Items.Add("115200");
+            baudRatePortList.Items.Add("128000");
+            baudRatePortList.Items.Add("256000");
+            baudRatePortList.SelectedIndex = 6; //seçili baudrate'i 9600 yapar (orionid projesi için)
+        }
+
+        private void baudRatePortList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            baglantiHizi_label.Text = "Bağlantı Hızı: " + baudRatePortList.SelectedItem.ToString();
+            serialPort1.BaudRate = Convert.ToInt32(baudRatePortList.Text);
         }
 
         private void ciktoolStripMenuItem3_Click(object sender, EventArgs e)

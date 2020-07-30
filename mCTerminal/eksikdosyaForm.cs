@@ -84,6 +84,33 @@ namespace mCTerminal
                 dosyabilgiTextBox2.AppendText("EKSİK" + Environment.NewLine);
             }
             //----------
+            if (File.Exists("AGauge.dll"))
+            {
+                dosyabilgiTextBox2.AppendText("TAMAM" + Environment.NewLine);
+            }
+            else
+            {
+                dosyabilgiTextBox2.AppendText("EKSİK" + Environment.NewLine);
+            }
+            //----------
+            if (File.Exists("AxInterop.WMPLib.dll"))
+            {
+                dosyabilgiTextBox2.AppendText("TAMAM" + Environment.NewLine);
+            }
+            else
+            {
+                dosyabilgiTextBox2.AppendText("EKSİK" + Environment.NewLine);
+            }
+            //----------
+            if (File.Exists("DotNetZip.dll"))
+            {
+                dosyabilgiTextBox2.AppendText("TAMAM" + Environment.NewLine);
+            }
+            else
+            {
+                dosyabilgiTextBox2.AppendText("EKSİK" + Environment.NewLine);
+            }
+            //----------
             if (File.Exists("GMap.NET.Core.dll"))
             {
                 dosyabilgiTextBox2.AppendText("TAMAM" + Environment.NewLine);
@@ -102,7 +129,7 @@ namespace mCTerminal
                 dosyabilgiTextBox2.AppendText("EKSİK" + Environment.NewLine);
             }
             //----------
-            if (File.Exists("DotNetZip.dll"))
+            if (File.Exists("Interop.WMPLib.dll"))
             {
                 dosyabilgiTextBox2.AppendText("TAMAM" + Environment.NewLine);
             }
@@ -121,6 +148,15 @@ namespace mCTerminal
             }
             //----------
             if (Directory.Exists("logs"))
+            {
+                dosyabilgiTextBox2.AppendText("TAMAM" + Environment.NewLine);
+            }
+            else
+            {
+                dosyabilgiTextBox2.AppendText("EKSİK" + Environment.NewLine);
+            }
+            //----------
+            if (Directory.Exists("map_datab"))
             {
                 dosyabilgiTextBox2.AppendText("TAMAM" + Environment.NewLine);
             }

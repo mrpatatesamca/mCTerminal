@@ -92,8 +92,9 @@ namespace mCTerminal
                 xtw.WriteElementString("value", programVeriFormat);
                 xtw.WriteEndElement();
                 //-------------------------------------------
+
                 xtw.WriteEndElement();
-                xtw.WriteComment("Bu ayar dosyası program tarafından oluşturuldu. [" + System.DateTime.Now + "]");
+                xtw.WriteComment("Bu ayar dosyası mCTerminal tarafından oluşturuldu. [" + System.DateTime.Now + "]");
                 xtw.WriteEndDocument();
                 xtw.Flush();
                 xtw.Close();
@@ -206,7 +207,6 @@ namespace mCTerminal
                 {
                     vericiktikayitformatComboBox.SelectedItem = "Verilog Dosyası (*.vs)";
                 }
-
             }
             catch
             {
@@ -235,8 +235,6 @@ namespace mCTerminal
                 editorAyarKaydet();
                 this.Close();
             }
-            
-
         }
     }
 }

@@ -59,6 +59,7 @@
             this.güncelleştirmeleriKontrolEtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hataGidermeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hakkındaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.baglantiListeYenileButton = new System.Windows.Forms.ToolStripButton();
             this.COMPortList = new System.Windows.Forms.ToolStripComboBox();
             this.baudRatePortList = new System.Windows.Forms.ToolStripComboBox();
             this.hamVeriTextBox1 = new System.Windows.Forms.TextBox();
@@ -87,13 +88,14 @@
             this.gkuvvetGrafik = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.kayitdurumPictureBox = new System.Windows.Forms.PictureBox();
-            this.hdopPictureBox = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.baglantiDurumPictureBox = new System.Windows.Forms.PictureBox();
+            this.uyduPictureBox = new System.Windows.Forms.PictureBox();
+            this.hdopPictureBox = new System.Windows.Forms.PictureBox();
             this.gKuvvetGauge = new System.Windows.Forms.AGauge();
             this.yatayHizGauge = new System.Windows.Forms.AGauge();
             this.irtifaGauge = new System.Windows.Forms.AGauge();
-            this.dikeyHizGauge = new System.Windows.Forms.AGauge();
+            this.maksİrtifaGauge = new System.Windows.Forms.AGauge();
             this.gKuvvetGaugeBaslikLabel = new System.Windows.Forms.Label();
             this.yatayHizGaugeBaslikLabel = new System.Windows.Forms.Label();
             this.dikeyHizGaugeBaslikLabel = new System.Windows.Forms.Label();
@@ -110,8 +112,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.anlikİrtifaGrafik)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gkuvvetGrafik)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kayitdurumPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baglantiDurumPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uyduPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hdopPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gostergeGrup.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,6 +135,7 @@
             this.toolStripDropDownButton1,
             this.toolStripDropDownButton4,
             this.toolStripDropDownButton3,
+            this.baglantiListeYenileButton,
             this.COMPortList,
             this.baudRatePortList});
             this.toolStrip1.Location = new System.Drawing.Point(-1, 0);
@@ -363,6 +367,20 @@
             this.hakkındaToolStripMenuItem.Text = "Hakkında";
             this.hakkındaToolStripMenuItem.Click += new System.EventHandler(this.hakkındaToolStripMenuItem_Click);
             // 
+            // baglantiListeYenileButton
+            // 
+            this.baglantiListeYenileButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.baglantiListeYenileButton.AutoToolTip = false;
+            this.baglantiListeYenileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.baglantiListeYenileButton.Image = global::mCTerminal.Properties.Resources.reload;
+            this.baglantiListeYenileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.baglantiListeYenileButton.Margin = new System.Windows.Forms.Padding(0, 1, 10, 2);
+            this.baglantiListeYenileButton.Name = "baglantiListeYenileButton";
+            this.baglantiListeYenileButton.Size = new System.Drawing.Size(23, 22);
+            this.baglantiListeYenileButton.Text = "Bağlantıları Yeniden Listele";
+            this.baglantiListeYenileButton.ToolTipText = "Bağlantıları Yeniden Listele";
+            this.baglantiListeYenileButton.Click += new System.EventHandler(this.baglantiListeYenileButton_Click);
+            // 
             // COMPortList
             // 
             this.COMPortList.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -370,7 +388,7 @@
             this.COMPortList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.COMPortList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.COMPortList.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.COMPortList.Margin = new System.Windows.Forms.Padding(3, 0, 10, 0);
+            this.COMPortList.Margin = new System.Windows.Forms.Padding(3, 0, 5, 0);
             this.COMPortList.Name = "COMPortList";
             this.COMPortList.Size = new System.Drawing.Size(80, 23);
             this.COMPortList.SelectedIndexChanged += new System.EventHandler(this.COMPortList_SelectedIndexChanged);
@@ -382,8 +400,10 @@
             this.baudRatePortList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.baudRatePortList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.baudRatePortList.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.baudRatePortList.Margin = new System.Windows.Forms.Padding(1, 0, 3, 0);
             this.baudRatePortList.Name = "baudRatePortList";
             this.baudRatePortList.Size = new System.Drawing.Size(95, 23);
+            this.baudRatePortList.SelectedIndexChanged += new System.EventHandler(this.baudRatePortList_SelectedIndexChanged);
             // 
             // hamVeriTextBox1
             // 
@@ -440,7 +460,7 @@
             this.aliciModeli_label.Name = "aliciModeli_label";
             this.aliciModeli_label.Size = new System.Drawing.Size(264, 14);
             this.aliciModeli_label.TabIndex = 8;
-            this.aliciModeli_label.Text = "Alıcı Modeli: N/A";
+            this.aliciModeli_label.Text = "Alıcı Modeli: ORIONID";
             this.aliciModeli_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // baglantiGrup
@@ -469,7 +489,7 @@
             this.hdopLabel.Name = "hdopLabel";
             this.hdopLabel.Size = new System.Drawing.Size(264, 14);
             this.hdopLabel.TabIndex = 9;
-            this.hdopLabel.Text = "HDOP: 20";
+            this.hdopLabel.Text = "HDOP: 0";
             this.hdopLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uyduSayiLabel
@@ -545,7 +565,7 @@
             this.irtifaAnlıkLabel.Name = "irtifaAnlıkLabel";
             this.irtifaAnlıkLabel.Size = new System.Drawing.Size(170, 14);
             this.irtifaAnlıkLabel.TabIndex = 15;
-            this.irtifaAnlıkLabel.Text = "Anlık İrtifa: 3000m";
+            this.irtifaAnlıkLabel.Text = "Anlık İrtifa: 0m";
             this.irtifaAnlıkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // irtifaMaxLabel
@@ -559,7 +579,7 @@
             this.irtifaMaxLabel.Name = "irtifaMaxLabel";
             this.irtifaMaxLabel.Size = new System.Drawing.Size(301, 14);
             this.irtifaMaxLabel.TabIndex = 14;
-            this.irtifaMaxLabel.Text = "Maks İrtifa: 3000m";
+            this.irtifaMaxLabel.Text = "Maks İrtifa: 0m";
             this.irtifaMaxLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // barometrikİrtifaMaksLabel
@@ -572,7 +592,7 @@
             this.barometrikİrtifaMaksLabel.Name = "barometrikİrtifaMaksLabel";
             this.barometrikİrtifaMaksLabel.Size = new System.Drawing.Size(301, 14);
             this.barometrikİrtifaMaksLabel.TabIndex = 13;
-            this.barometrikİrtifaMaksLabel.Text = "Barometrik Maksimum İrtifa: 3000m";
+            this.barometrikİrtifaMaksLabel.Text = "Barometrik Maksimum İrtifa: 0m";
             this.barometrikİrtifaMaksLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // gkuvvetLabel
@@ -586,7 +606,7 @@
             this.gkuvvetLabel.Name = "gkuvvetLabel";
             this.gkuvvetLabel.Size = new System.Drawing.Size(301, 14);
             this.gkuvvetLabel.TabIndex = 12;
-            this.gkuvvetLabel.Text = "G Kuvveti: 6g";
+            this.gkuvvetLabel.Text = "G Kuvveti: 0g";
             this.gkuvvetLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // irtifaLabel
@@ -600,7 +620,7 @@
             this.irtifaLabel.Name = "irtifaLabel";
             this.irtifaLabel.Size = new System.Drawing.Size(134, 14);
             this.irtifaLabel.TabIndex = 11;
-            this.irtifaLabel.Text = "İrtifa: 3000m";
+            this.irtifaLabel.Text = "İrtifa: 0m";
             this.irtifaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // enlemLabel
@@ -614,7 +634,7 @@
             this.enlemLabel.Name = "enlemLabel";
             this.enlemLabel.Size = new System.Drawing.Size(301, 14);
             this.enlemLabel.TabIndex = 6;
-            this.enlemLabel.Text = "Enlem: 45.67890°";
+            this.enlemLabel.Text = "Enlem: 0°";
             this.enlemLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // yatayHizLabel
@@ -628,7 +648,7 @@
             this.yatayHizLabel.Name = "yatayHizLabel";
             this.yatayHizLabel.Size = new System.Drawing.Size(301, 14);
             this.yatayHizLabel.TabIndex = 8;
-            this.yatayHizLabel.Text = "Yatay Hız: 15m/s";
+            this.yatayHizLabel.Text = "Yatay Hız: 0m/s";
             this.yatayHizLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // boylamLabel
@@ -642,7 +662,7 @@
             this.boylamLabel.Name = "boylamLabel";
             this.boylamLabel.Size = new System.Drawing.Size(301, 14);
             this.boylamLabel.TabIndex = 7;
-            this.boylamLabel.Text = "Boylam: 34.56789°";
+            this.boylamLabel.Text = "Boylam: 0°";
             this.boylamLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // bilesenGrup
@@ -669,7 +689,7 @@
             this.koniDurumLabel.Name = "koniDurumLabel";
             this.koniDurumLabel.Size = new System.Drawing.Size(264, 14);
             this.koniDurumLabel.TabIndex = 6;
-            this.koniDurumLabel.Text = "Koni: Ayrılmadı";
+            this.koniDurumLabel.Text = "Koni: Bekliyor...";
             this.koniDurumLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // kameraDurumLabel
@@ -683,7 +703,7 @@
             this.kameraDurumLabel.Name = "kameraDurumLabel";
             this.kameraDurumLabel.Size = new System.Drawing.Size(264, 14);
             this.kameraDurumLabel.TabIndex = 8;
-            this.kameraDurumLabel.Text = "Video Yayını: Aktif";
+            this.kameraDurumLabel.Text = "Video Yayını: Bekliyor...";
             this.kameraDurumLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ortagovdeDurumLabel
@@ -697,7 +717,7 @@
             this.ortagovdeDurumLabel.Name = "ortagovdeDurumLabel";
             this.ortagovdeDurumLabel.Size = new System.Drawing.Size(264, 14);
             this.ortagovdeDurumLabel.TabIndex = 7;
-            this.ortagovdeDurumLabel.Text = "Orta Gövde: Ayrılmadı";
+            this.ortagovdeDurumLabel.Text = "Orta Gövde: Bekliyor...";
             this.ortagovdeDurumLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // anlikİrtifaGrafik
@@ -777,38 +797,52 @@
             // 
             // kayitdurumPictureBox
             // 
-            this.kayitdurumPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.kayitdurumPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.kayitdurumPictureBox.Image = global::mCTerminal.Properties.Resources.download_kirmizi;
-            this.kayitdurumPictureBox.Location = new System.Drawing.Point(606, 267);
+            this.kayitdurumPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.kayitdurumPictureBox.Image = global::mCTerminal.Properties.Resources.pen_drive_kirmizi;
+            this.kayitdurumPictureBox.Location = new System.Drawing.Point(38, 206);
             this.kayitdurumPictureBox.Name = "kayitdurumPictureBox";
-            this.kayitdurumPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.kayitdurumPictureBox.Size = new System.Drawing.Size(20, 20);
             this.kayitdurumPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.kayitdurumPictureBox.TabIndex = 13;
             this.kayitdurumPictureBox.TabStop = false;
             this.toolTip1.SetToolTip(this.kayitdurumPictureBox, "Veri kaydı yapılmıyor!");
             // 
+            // baglantiDurumPictureBox
+            // 
+            this.baglantiDurumPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.baglantiDurumPictureBox.Image = global::mCTerminal.Properties.Resources.dot;
+            this.baglantiDurumPictureBox.Location = new System.Drawing.Point(12, 206);
+            this.baglantiDurumPictureBox.Name = "baglantiDurumPictureBox";
+            this.baglantiDurumPictureBox.Size = new System.Drawing.Size(20, 20);
+            this.baglantiDurumPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.baglantiDurumPictureBox.TabIndex = 17;
+            this.baglantiDurumPictureBox.TabStop = false;
+            this.toolTip2.SetToolTip(this.baglantiDurumPictureBox, "Program durumu");
+            // 
+            // uyduPictureBox
+            // 
+            this.uyduPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uyduPictureBox.Image = global::mCTerminal.Properties.Resources.uydu;
+            this.uyduPictureBox.Location = new System.Drawing.Point(64, 206);
+            this.uyduPictureBox.Name = "uyduPictureBox";
+            this.uyduPictureBox.Size = new System.Drawing.Size(20, 20);
+            this.uyduPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.uyduPictureBox.TabIndex = 16;
+            this.uyduPictureBox.TabStop = false;
+            this.toolTip2.SetToolTip(this.uyduPictureBox, "Bağlanılan uydu sayısı");
+            // 
             // hdopPictureBox
             // 
-            this.hdopPictureBox.Image = global::mCTerminal.Properties.Resources.uydu;
-            this.hdopPictureBox.Location = new System.Drawing.Point(294, 222);
+            this.hdopPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.hdopPictureBox.Image = global::mCTerminal.Properties.Resources.snr_seviye;
+            this.hdopPictureBox.Location = new System.Drawing.Point(90, 206);
             this.hdopPictureBox.Name = "hdopPictureBox";
             this.hdopPictureBox.Size = new System.Drawing.Size(20, 20);
             this.hdopPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.hdopPictureBox.TabIndex = 14;
             this.hdopPictureBox.TabStop = false;
-            this.toolTip2.SetToolTip(this.hdopPictureBox, "Bağlanılan Uydu Sayısı");
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::mCTerminal.Properties.Resources.snr_seviye;
-            this.pictureBox1.Location = new System.Drawing.Point(320, 222);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            this.toolTip2.SetToolTip(this.pictureBox1, "HDOP Değeri");
+            this.toolTip2.SetToolTip(this.hdopPictureBox, "HDOP değeri");
             // 
             // gKuvvetGauge
             // 
@@ -820,7 +854,7 @@
             this.gKuvvetGauge.Center = new System.Drawing.Point(50, 50);
             this.gKuvvetGauge.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.gKuvvetGauge.Location = new System.Drawing.Point(12, 19);
-            this.gKuvvetGauge.MaxValue = 5F;
+            this.gKuvvetGauge.MaxValue = 20F;
             this.gKuvvetGauge.MinValue = 0F;
             this.gKuvvetGauge.Name = "gKuvvetGauge";
             this.gKuvvetGauge.NeedleColor1 = System.Windows.Forms.AGaugeNeedleColor.Gray;
@@ -835,7 +869,7 @@
             this.gKuvvetGauge.ScaleLinesMajorColor = System.Drawing.Color.Black;
             this.gKuvvetGauge.ScaleLinesMajorInnerRadius = 35;
             this.gKuvvetGauge.ScaleLinesMajorOuterRadius = 30;
-            this.gKuvvetGauge.ScaleLinesMajorStepValue = 1F;
+            this.gKuvvetGauge.ScaleLinesMajorStepValue = 2F;
             this.gKuvvetGauge.ScaleLinesMajorWidth = 2;
             this.gKuvvetGauge.ScaleLinesMinorColor = System.Drawing.Color.Gray;
             this.gKuvvetGauge.ScaleLinesMinorInnerRadius = 35;
@@ -939,48 +973,48 @@
             this.irtifaGauge.Text = "aGauge1";
             this.irtifaGauge.Value = 0F;
             // 
-            // dikeyHizGauge
+            // maksİrtifaGauge
             // 
-            this.dikeyHizGauge.BaseArcColor = System.Drawing.Color.Gray;
-            this.dikeyHizGauge.BaseArcRadius = 30;
-            this.dikeyHizGauge.BaseArcStart = 135;
-            this.dikeyHizGauge.BaseArcSweep = 270;
-            this.dikeyHizGauge.BaseArcWidth = 2;
-            this.dikeyHizGauge.Center = new System.Drawing.Point(50, 50);
-            this.dikeyHizGauge.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dikeyHizGauge.Location = new System.Drawing.Point(118, 125);
-            this.dikeyHizGauge.MaxValue = 100F;
-            this.dikeyHizGauge.MinValue = 0F;
-            this.dikeyHizGauge.Name = "dikeyHizGauge";
-            this.dikeyHizGauge.NeedleColor1 = System.Windows.Forms.AGaugeNeedleColor.Gray;
-            this.dikeyHizGauge.NeedleColor2 = System.Drawing.Color.DimGray;
-            this.dikeyHizGauge.NeedleRadius = 30;
-            this.dikeyHizGauge.NeedleType = System.Windows.Forms.NeedleType.Simple;
-            this.dikeyHizGauge.NeedleWidth = 2;
-            this.dikeyHizGauge.ScaleLinesInterColor = System.Drawing.Color.Black;
-            this.dikeyHizGauge.ScaleLinesInterInnerRadius = 35;
-            this.dikeyHizGauge.ScaleLinesInterOuterRadius = 40;
-            this.dikeyHizGauge.ScaleLinesInterWidth = 1;
-            this.dikeyHizGauge.ScaleLinesMajorColor = System.Drawing.Color.Black;
-            this.dikeyHizGauge.ScaleLinesMajorInnerRadius = 35;
-            this.dikeyHizGauge.ScaleLinesMajorOuterRadius = 30;
-            this.dikeyHizGauge.ScaleLinesMajorStepValue = 10F;
-            this.dikeyHizGauge.ScaleLinesMajorWidth = 2;
-            this.dikeyHizGauge.ScaleLinesMinorColor = System.Drawing.Color.Gray;
-            this.dikeyHizGauge.ScaleLinesMinorInnerRadius = 35;
-            this.dikeyHizGauge.ScaleLinesMinorOuterRadius = 30;
-            this.dikeyHizGauge.ScaleLinesMinorTicks = 2;
-            this.dikeyHizGauge.ScaleLinesMinorWidth = 1;
-            this.dikeyHizGauge.ScaleNumbersColor = System.Drawing.Color.Black;
-            this.dikeyHizGauge.ScaleNumbersFormat = null;
-            this.dikeyHizGauge.ScaleNumbersRadius = 40;
-            this.dikeyHizGauge.ScaleNumbersRotation = 0;
-            this.dikeyHizGauge.ScaleNumbersStartScaleLine = 0;
-            this.dikeyHizGauge.ScaleNumbersStepScaleLines = 1;
-            this.dikeyHizGauge.Size = new System.Drawing.Size(100, 100);
-            this.dikeyHizGauge.TabIndex = 20;
-            this.dikeyHizGauge.Text = "aGauge1";
-            this.dikeyHizGauge.Value = 0F;
+            this.maksİrtifaGauge.BaseArcColor = System.Drawing.Color.Gray;
+            this.maksİrtifaGauge.BaseArcRadius = 30;
+            this.maksİrtifaGauge.BaseArcStart = 135;
+            this.maksİrtifaGauge.BaseArcSweep = 270;
+            this.maksİrtifaGauge.BaseArcWidth = 2;
+            this.maksİrtifaGauge.Center = new System.Drawing.Point(50, 50);
+            this.maksİrtifaGauge.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.maksİrtifaGauge.Location = new System.Drawing.Point(118, 125);
+            this.maksİrtifaGauge.MaxValue = 3500F;
+            this.maksİrtifaGauge.MinValue = 0F;
+            this.maksİrtifaGauge.Name = "maksİrtifaGauge";
+            this.maksİrtifaGauge.NeedleColor1 = System.Windows.Forms.AGaugeNeedleColor.Gray;
+            this.maksİrtifaGauge.NeedleColor2 = System.Drawing.Color.DimGray;
+            this.maksİrtifaGauge.NeedleRadius = 30;
+            this.maksİrtifaGauge.NeedleType = System.Windows.Forms.NeedleType.Simple;
+            this.maksİrtifaGauge.NeedleWidth = 2;
+            this.maksİrtifaGauge.ScaleLinesInterColor = System.Drawing.Color.Black;
+            this.maksİrtifaGauge.ScaleLinesInterInnerRadius = 35;
+            this.maksİrtifaGauge.ScaleLinesInterOuterRadius = 40;
+            this.maksİrtifaGauge.ScaleLinesInterWidth = 1;
+            this.maksİrtifaGauge.ScaleLinesMajorColor = System.Drawing.Color.Black;
+            this.maksİrtifaGauge.ScaleLinesMajorInnerRadius = 35;
+            this.maksİrtifaGauge.ScaleLinesMajorOuterRadius = 30;
+            this.maksİrtifaGauge.ScaleLinesMajorStepValue = 500F;
+            this.maksİrtifaGauge.ScaleLinesMajorWidth = 2;
+            this.maksİrtifaGauge.ScaleLinesMinorColor = System.Drawing.Color.Gray;
+            this.maksİrtifaGauge.ScaleLinesMinorInnerRadius = 35;
+            this.maksİrtifaGauge.ScaleLinesMinorOuterRadius = 30;
+            this.maksİrtifaGauge.ScaleLinesMinorTicks = 2;
+            this.maksİrtifaGauge.ScaleLinesMinorWidth = 1;
+            this.maksİrtifaGauge.ScaleNumbersColor = System.Drawing.Color.Black;
+            this.maksİrtifaGauge.ScaleNumbersFormat = null;
+            this.maksİrtifaGauge.ScaleNumbersRadius = 40;
+            this.maksİrtifaGauge.ScaleNumbersRotation = 0;
+            this.maksİrtifaGauge.ScaleNumbersStartScaleLine = 0;
+            this.maksİrtifaGauge.ScaleNumbersStepScaleLines = 1;
+            this.maksİrtifaGauge.Size = new System.Drawing.Size(100, 100);
+            this.maksİrtifaGauge.TabIndex = 20;
+            this.maksİrtifaGauge.Text = "aGauge1";
+            this.maksİrtifaGauge.Value = 0F;
             // 
             // gKuvvetGaugeBaslikLabel
             // 
@@ -1009,7 +1043,7 @@
             this.dikeyHizGaugeBaslikLabel.Name = "dikeyHizGaugeBaslikLabel";
             this.dikeyHizGaugeBaslikLabel.Size = new System.Drawing.Size(100, 16);
             this.dikeyHizGaugeBaslikLabel.TabIndex = 23;
-            this.dikeyHizGaugeBaslikLabel.Text = "Dikey Hız";
+            this.dikeyHizGaugeBaslikLabel.Text = "Maksimum İrtifa";
             this.dikeyHizGaugeBaslikLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // irtifaGaugeBaslikLabel
@@ -1033,7 +1067,7 @@
             this.gostergeGrup.Controls.Add(this.AciXGauge);
             this.gostergeGrup.Controls.Add(this.irtifaGauge);
             this.gostergeGrup.Controls.Add(this.yatayHizGaugeBaslikLabel);
-            this.gostergeGrup.Controls.Add(this.dikeyHizGauge);
+            this.gostergeGrup.Controls.Add(this.maksİrtifaGauge);
             this.gostergeGrup.Controls.Add(this.gKuvvetGaugeBaslikLabel);
             this.gostergeGrup.Controls.Add(this.yatayHizGauge);
             this.gostergeGrup.Controls.Add(this.gKuvvetGauge);
@@ -1158,10 +1192,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(625, 416);
+            this.Controls.Add(this.baglantiDurumPictureBox);
             this.Controls.Add(this.kayitdurumPictureBox);
             this.Controls.Add(this.hamVeriTextBox1);
             this.Controls.Add(this.gostergeGrup);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.uyduPictureBox);
             this.Controls.Add(this.hdopPictureBox);
             this.Controls.Add(this.gkuvvetGrafik);
             this.Controls.Add(this.anlikİrtifaGrafik);
@@ -1185,8 +1220,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.anlikİrtifaGrafik)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gkuvvetGrafik)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kayitdurumPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baglantiDurumPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uyduPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hdopPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gostergeGrup.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1243,12 +1279,12 @@
         private System.Windows.Forms.Label ortagovdeDurumLabel;
         private System.Windows.Forms.Label hdopLabel;
         private System.Windows.Forms.PictureBox hdopPictureBox;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox uyduPictureBox;
         private System.Windows.Forms.ToolTip toolTip2;
         private System.Windows.Forms.AGauge gKuvvetGauge;
         private System.Windows.Forms.AGauge yatayHizGauge;
         private System.Windows.Forms.AGauge irtifaGauge;
-        private System.Windows.Forms.AGauge dikeyHizGauge;
+        private System.Windows.Forms.AGauge maksİrtifaGauge;
         private System.Windows.Forms.Label gKuvvetGaugeBaslikLabel;
         private System.Windows.Forms.Label yatayHizGaugeBaslikLabel;
         private System.Windows.Forms.Label dikeyHizGaugeBaslikLabel;
@@ -1259,5 +1295,7 @@
         private System.Windows.Forms.Label AciXGaugeBaslikLabel;
         private System.Windows.Forms.AGauge AciXGauge;
         private System.Windows.Forms.ToolStripMenuItem tamEkranToolStripMenuItem;
+        private System.Windows.Forms.PictureBox baglantiDurumPictureBox;
+        private System.Windows.Forms.ToolStripButton baglantiListeYenileButton;
     }
 }
