@@ -253,6 +253,16 @@ namespace mCTerminal.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap orionid_rocket_desing {
+            get {
+                object obj = ResourceManager.GetObject("orionid-rocket-desing", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap pen_drive_kirmizi {
             get {
                 object obj = ResourceManager.GetObject("pen_drive_kirmizi", resourceCulture);
@@ -326,6 +336,26 @@ namespace mCTerminal.Properties {
         internal static System.Drawing.Bitmap resolution {
             get {
                 object obj = ResourceManager.GetObject("resolution", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap rgb {
+            get {
+                object obj = ResourceManager.GetObject("rgb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap rolling_gif_90_10_10 {
+            get {
+                object obj = ResourceManager.GetObject("rolling-gif-90-10-10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

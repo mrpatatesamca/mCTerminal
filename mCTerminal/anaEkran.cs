@@ -334,7 +334,7 @@ namespace mCTerminal
             dosyaKontrolEt();
             editorAyarYukle();
             temaYukle();
-            
+            beklemeEkranıAcTimer.Start();
 
             //Form adını ayarlar
             this.Text = "mCTerminal " + programSurum + " | [@" + Environment.MachineName + "]";
@@ -364,10 +364,18 @@ namespace mCTerminal
                 irtifaMaxLabel.Text = "Maks İrtifa: " + splitted_data[5] + "m"; //gps maks irtifa
                 yatayHizLabel.Text = "Yatay Hız: " + splitted_data[6] + "m/s"; //yatay hız
                 AciXLabel.Text = "X Açısı: " + splitted_data[8] + "°"; //x açısı
+                Properties.Settings.Default.aciX = splitted_data[8]; // global değişkene de yaz x açısını
                 aciYLabel.Text = "Y Açısı: " + splitted_data[9] + "°"; //y açısı
+                Properties.Settings.Default.aciY = splitted_data[9]; // global değişkene de yaz y açısını
                 gkuvvetLabel.Text = "G Kuvveti: " + splitted_data[10] + "g"; //g kuvveti
+                Properties.Settings.Default.gkuvvet = splitted_data[10]; //global değişkene de yaz g kuvvetini
                 barometrikİrtifaMaksLabel.Text = "Barometrik Maksimum İrtifa: " + splitted_data[11] + "m"; //baro irtifa maks
                 irtifaAnlıkLabel.Text = "Anlık İrtifa: " + splitted_data[12] + "m"; //anlık irtifa
+
+
+                Properties.Settings.Default.konidurum = splitted_data[13]; //global değişken koni durumu
+                Properties.Settings.Default.ortagovdedurum = splitted_data[14]; //global değişken orta gövde durumu
+                Properties.Settings.Default.ortagovdedurum = splitted_data[7]; //global değişken kamera durumu
 
 
                 //----------bağlantı durumunu gösteren simgenin ayarlanması--------
@@ -391,20 +399,20 @@ namespace mCTerminal
 
                 if (splitted_data[13] == "1") //koni ayrılmış ise
                 {
-                    koniDurumLabel.Text = "Koni Durumu: Ayrıldı!";
+                    koniDurumLabel.Text = "Koni: Ayrıldı!";
                 }
                 else
                 {
-                    koniDurumLabel.Text = "Koni Durumu: Ayrılmadı!";
+                    koniDurumLabel.Text = "Koni: Ayrılmadı!";
                 }
 
                 if (splitted_data[14] == "1") //orta göve ayrılmış ise
                 {
-                    ortagovdeDurumLabel.Text = "Orta Gövde Durumu: Ayrıldı!";
+                    ortagovdeDurumLabel.Text = "Orta Gövde: Ayrıldı!";
                 }
                 else
                 {
-                    ortagovdeDurumLabel.Text = "Orta Gövde Durumu: Ayrılmadı!";
+                    ortagovdeDurumLabel.Text = "Orta Gövde: Ayrılmadı!";
                 }
 
 
@@ -732,6 +740,11 @@ namespace mCTerminal
 
         private void baglantiListeYenileButton_Click(object sender, EventArgs e)
         {
+            //bekleme ekranını açar (sırf hoş gözüksün diye yoksa işlevsellik yok xd)
+            programListeYenileForm programListeYenileFormfrm = new programListeYenileForm();
+            programListeYenileFormfrm.Show();
+
+
             baudRatePortList.Items.Clear();
             COMPortList.Items.Clear();
             string[] portlar = SerialPort.GetPortNames(); //portlar listesine COM portları alındı.
@@ -766,6 +779,22 @@ namespace mCTerminal
         {
             baglantiHizi_label.Text = "Bağlantı Hızı: " + baudRatePortList.SelectedItem.ToString();
             serialPort1.BaudRate = Convert.ToInt32(baudRatePortList.Text);
+        }
+
+        private void roketŞemasıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            roketsema roketsemafrm = new roketsema();
+            roketsemafrm.Show();
+        }
+
+        private void beklemeEkranıAcTimer_Tick(object sender, EventArgs e)
+        {
+            //bekleme ekranını açar (sırf hoş gözüksün diye yoksa işlevsellik yok xd)
+            beklemeEkranıAcTimer.Stop();
+            
+            programListeYenileForm programListeYenileFormfrm = new programListeYenileForm();
+            programListeYenileFormfrm.Show();
+            beklemeEkranıAcTimer.Stop();
         }
 
         private void ciktoolStripMenuItem3_Click(object sender, EventArgs e)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ayarlar));
             this.kaydetButton = new System.Windows.Forms.Button();
             this.iptalButton = new System.Windows.Forms.Button();
@@ -35,13 +36,16 @@
             this.uygulamaTemaComboBox = new System.Windows.Forms.ComboBox();
             this.vericiktikayitformatComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.haritaDataSilButton = new System.Windows.Forms.Button();
+            this.haritaverisilTimer = new System.Windows.Forms.Timer(this.components);
+            this.haritaVeriBoyutuLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // kaydetButton
             // 
-            this.kaydetButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.kaydetButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.kaydetButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.kaydetButton.Location = new System.Drawing.Point(148, 279);
+            this.kaydetButton.Location = new System.Drawing.Point(141, 279);
             this.kaydetButton.Name = "kaydetButton";
             this.kaydetButton.Size = new System.Drawing.Size(83, 23);
             this.kaydetButton.TabIndex = 1;
@@ -51,9 +55,9 @@
             // 
             // iptalButton
             // 
-            this.iptalButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.iptalButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.iptalButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iptalButton.Location = new System.Drawing.Point(67, 279);
+            this.iptalButton.Location = new System.Drawing.Point(60, 279);
             this.iptalButton.Name = "iptalButton";
             this.iptalButton.Size = new System.Drawing.Size(75, 23);
             this.iptalButton.TabIndex = 2;
@@ -95,7 +99,7 @@
             "Text Dosyası (*.txt)",
             "eXtensible Markup Language Dosyası (*.xml)",
             "Verilog Dosyası (*.vs)"});
-            this.vericiktikayitformatComboBox.Location = new System.Drawing.Point(12, 75);
+            this.vericiktikayitformatComboBox.Location = new System.Drawing.Point(12, 80);
             this.vericiktikayitformatComboBox.Name = "vericiktikayitformatComboBox";
             this.vericiktikayitformatComboBox.Size = new System.Drawing.Size(261, 21);
             this.vericiktikayitformatComboBox.TabIndex = 13;
@@ -104,11 +108,37 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 59);
+            this.label2.Location = new System.Drawing.Point(9, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 13);
             this.label2.TabIndex = 12;
             this.label2.Text = "Veri Çıktısı Kayıt Formatı:";
+            // 
+            // haritaDataSilButton
+            // 
+            this.haritaDataSilButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.haritaDataSilButton.Location = new System.Drawing.Point(48, 179);
+            this.haritaDataSilButton.Name = "haritaDataSilButton";
+            this.haritaDataSilButton.Size = new System.Drawing.Size(188, 23);
+            this.haritaDataSilButton.TabIndex = 14;
+            this.haritaDataSilButton.Text = "Harita Verilerini Sil";
+            this.haritaDataSilButton.UseVisualStyleBackColor = true;
+            this.haritaDataSilButton.Click += new System.EventHandler(this.haritaDataSilButton_Click);
+            // 
+            // haritaverisilTimer
+            // 
+            this.haritaverisilTimer.Interval = 1000;
+            this.haritaverisilTimer.Tick += new System.EventHandler(this.haritaverisilTimer_Tick);
+            // 
+            // haritaVeriBoyutuLabel
+            // 
+            this.haritaVeriBoyutuLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.haritaVeriBoyutuLabel.Location = new System.Drawing.Point(30, 205);
+            this.haritaVeriBoyutuLabel.Name = "haritaVeriBoyutuLabel";
+            this.haritaVeriBoyutuLabel.Size = new System.Drawing.Size(225, 13);
+            this.haritaVeriBoyutuLabel.TabIndex = 15;
+            this.haritaVeriBoyutuLabel.Text = "Harita Verisi Boyutu: 0MB";
+            this.haritaVeriBoyutuLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // ayarlar
             // 
@@ -116,6 +146,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(285, 314);
+            this.Controls.Add(this.haritaVeriBoyutuLabel);
+            this.Controls.Add(this.haritaDataSilButton);
             this.Controls.Add(this.vericiktikayitformatComboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.uygulamaTemaComboBox);
@@ -144,5 +176,8 @@
         private System.Windows.Forms.ComboBox uygulamaTemaComboBox;
         private System.Windows.Forms.ComboBox vericiktikayitformatComboBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button haritaDataSilButton;
+        private System.Windows.Forms.Timer haritaverisilTimer;
+        private System.Windows.Forms.Label haritaVeriBoyutuLabel;
     }
 }

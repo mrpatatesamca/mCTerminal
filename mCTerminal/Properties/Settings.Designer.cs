@@ -70,5 +70,77 @@ namespace mCTerminal.Properties {
                 this["boylam"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string gkuvvet {
+            get {
+                return ((string)(this["gkuvvet"]));
+            }
+            set {
+                this["gkuvvet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string aciX {
+            get {
+                return ((string)(this["aciX"]));
+            }
+            set {
+                this["aciX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string aciY {
+            get {
+                return ((string)(this["aciY"]));
+            }
+            set {
+                this["aciY"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string kameradurum {
+            get {
+                return ((string)(this["kameradurum"]));
+            }
+            set {
+                this["kameradurum"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string konidurum {
+            get {
+                return ((string)(this["konidurum"]));
+            }
+            set {
+                this["konidurum"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ortagovdedurum {
+            get {
+                return ((string)(this["ortagovdedurum"]));
+            }
+            set {
+                this["ortagovdedurum"] = value;
+            }
+        }
     }
 }

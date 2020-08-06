@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,10 +22,15 @@ namespace mCTerminal
         public string programTema;
         public string programVeriFormat;
         public string programSurum;
+        public string harita_veri_boyut;
+        static FileInfo fi = new FileInfo(programyolu + @"\map_datab\TileDBv5\en\Data.gmdb");
+        
+
 
         public ayarlar()
         {
             InitializeComponent();
+
         }
 
         private void iptalButton_Click(object sender, EventArgs e)
@@ -217,8 +223,17 @@ namespace mCTerminal
 
         private void ayarlar_Load(object sender, EventArgs e)
         {
-            editorAyarYukle();
             
+            editorAyarYukle();
+            try
+            {
+                long harita_veri_boyut_byte = fi.Length;
+                haritaVeriBoyutuLabel.Text = "Harita Verisi Boyutu: " + harita_veri_boyut_byte + " bayt";
+            }
+            catch
+            {
+
+            }
         }
 
         private void kaydetButton_Click(object sender, EventArgs e)
@@ -228,13 +243,44 @@ namespace mCTerminal
             if (uyarimesaj == DialogResult.Yes)
             {
                 editorAyarKaydet();
-                Application.Restart();
+                //programı yeniden başlatır. (Application.Restart çalışmıyor maalesef)
+                System.Diagnostics.Process.Start(Application.ExecutablePath);
+                Application.Exit();
             }
             else
             {
                 editorAyarKaydet();
                 this.Close();
             }
+        }
+
+        private void haritaDataSilButton_Click(object sender, EventArgs e)
+        {
+            DialogResult uyarimesaj = new DialogResult();
+            uyarimesaj = MessageBox.Show("Dikkat! Haritaya ait verileri (önbellek, uydu görüntüleri vs.) silmek üzeresiniz. Silmek istediğinize emin misiniz?", "Harita Verileri Silinmek Üzere!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (uyarimesaj == DialogResult.Yes)
+            {
+                try
+                {
+                    File.Delete(programyolu + @"\map_datab\TileDBv5\en\Data.gmdb");
+                    haritaverisilTimer.Start();
+                }
+                catch
+                {
+                    MessageBox.Show("Harita verileri silinemedi! Lütfen " + programyolu + @"map_datab\TileDBv5\en\Data.gmdb dosyasının şu anda kullanımda olmadığından emin olun.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+
+            }
+        }
+
+        private void haritaverisilTimer_Tick(object sender, EventArgs e)
+        {
+            haritaverisilTimer.Stop();
+            MessageBox.Show("Harita verileri başarıyla temizlendi!", "Harita Verileri Silindi!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            haritaVeriBoyutuLabel.Text = "Harita Verisi Boyutu: 0 bayt";
         }
     }
 }
