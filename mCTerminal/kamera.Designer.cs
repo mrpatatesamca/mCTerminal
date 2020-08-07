@@ -44,10 +44,8 @@
             this.x240ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.x120ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.videoCaptureComboBox = new System.Windows.Forms.ToolStripComboBox();
-            this.yuklemePictureBox = new System.Windows.Forms.PictureBox();
             this.videoCaptureBox = new System.Windows.Forms.PictureBox();
             this.kameraAracMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.yuklemePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.videoCaptureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -227,20 +225,7 @@
             this.videoCaptureComboBox.Margin = new System.Windows.Forms.Padding(1, 0, 5, 0);
             this.videoCaptureComboBox.MaxDropDownItems = 30;
             this.videoCaptureComboBox.Name = "videoCaptureComboBox";
-            this.videoCaptureComboBox.Size = new System.Drawing.Size(115, 23);
-            // 
-            // yuklemePictureBox
-            // 
-            this.yuklemePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.yuklemePictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.yuklemePictureBox.Image = global::mCTerminal.Properties.Resources.circle_loading2D;
-            this.yuklemePictureBox.Location = new System.Drawing.Point(178, 126);
-            this.yuklemePictureBox.Name = "yuklemePictureBox";
-            this.yuklemePictureBox.Size = new System.Drawing.Size(28, 28);
-            this.yuklemePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.yuklemePictureBox.TabIndex = 2;
-            this.yuklemePictureBox.TabStop = false;
-            this.yuklemePictureBox.Visible = false;
+            this.videoCaptureComboBox.Size = new System.Drawing.Size(160, 23);
             // 
             // videoCaptureBox
             // 
@@ -262,7 +247,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.ClientSize = new System.Drawing.Size(384, 281);
-            this.Controls.Add(this.yuklemePictureBox);
             this.Controls.Add(this.kameraAracMenu);
             this.Controls.Add(this.videoCaptureBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -275,7 +259,6 @@
             this.Load += new System.EventHandler(this.kamera_Load);
             this.kameraAracMenu.ResumeLayout(false);
             this.kameraAracMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.yuklemePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.videoCaptureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -291,7 +274,6 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem üstteGösterToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox videoCaptureComboBox;
-        private System.Windows.Forms.PictureBox yuklemePictureBox;
         private System.Windows.Forms.ToolStripMenuItem çözünürlükToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem x1080ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem x720ToolStripMenuItem;

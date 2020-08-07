@@ -93,16 +93,6 @@ namespace mCTerminal.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap circle_loading2D {
-            get {
-                object obj = ResourceManager.GetObject("circle_loading2D", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
         internal static System.Drawing.Bitmap connect {
             get {
                 object obj = ResourceManager.GetObject("connect", resourceCulture);
@@ -236,6 +226,16 @@ namespace mCTerminal.Properties {
         internal static System.Drawing.Bitmap lifebuoy {
             get {
                 object obj = ResourceManager.GetObject("lifebuoy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap loading_gif_90_10_10 {
+            get {
+                object obj = ResourceManager.GetObject("loading-gif-90-10-10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

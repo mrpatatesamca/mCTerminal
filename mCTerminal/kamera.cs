@@ -132,7 +132,6 @@ namespace mCTerminal
 
                 if (videoCaptureComboBox.Items != null) 
                 {
-                    yuklemePictureBox.Visible = true; //yukleme animasyonu göster
                     //-------------------------DirectShow Cihazları okuma ve görüntü alma-----------------------
                     try
                     {
@@ -140,7 +139,6 @@ namespace mCTerminal
                         videoCaptureDevice.NewFrame += VideoCaptureDevice_NewFrame;
                         videoCaptureDevice.VideoResolution = videoCaptureDevice.VideoCapabilities[0];
                         videoCaptureDevice.Start();
-                        yuklemePictureBox.Visible = false; //yukleme animasyonunu gizle
                     }
                     catch (Exception ex)
                     {
@@ -177,7 +175,6 @@ namespace mCTerminal
 
         private void videoCaptureButton_Click(object sender, EventArgs e)
         {
-            yuklemePictureBox.Visible = true; //yukleme animasyonu göster
             //-------------------------DirectShow Cihazları okuma ve görüntü alma-----------------------
             try
             {
@@ -186,7 +183,6 @@ namespace mCTerminal
                 videoCaptureDevice.NewFrame += VideoCaptureDevice_NewFrame;
                 videoCaptureDevice.VideoResolution = videoCaptureDevice.VideoCapabilities[0];
                 videoCaptureDevice.Start();
-                yuklemePictureBox.Visible = false; //yukleme animasyonunu gizle
                 this.Text = "mCTerminal Uzak Görüntü | (" + videoCaptureComboBox.SelectedItem.ToString() + ")";
             }
             catch (Exception ex)
