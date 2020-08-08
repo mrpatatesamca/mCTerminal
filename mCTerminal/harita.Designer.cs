@@ -261,7 +261,7 @@
             this.harita1.LevelsKeepInMemmory = 5;
             this.harita1.Location = new System.Drawing.Point(0, 25);
             this.harita1.MarkersEnabled = true;
-            this.harita1.MaxZoom = 18;
+            this.harita1.MaxZoom = 22;
             this.harita1.MinZoom = 4;
             this.harita1.MouseWheelZoomEnabled = true;
             this.harita1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionWithoutCenter;
