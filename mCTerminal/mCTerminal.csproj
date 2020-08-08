@@ -211,7 +211,6 @@
     <None Include="Resources\map.png" />
     <None Include="Resources\cctv.png" />
     <None Include="Resources\binary.png" />
-    <None Include="Resources\circle_loading2D.gif" />
     <None Include="Resources\fullscreen.png" />
     <None Include="Resources\resolution.png" />
     <None Include="Resources\connect.png" />
@@ -252,6 +251,7 @@
     <None Include="Resources\rgb.png" />
     <None Include="Resources\rolling-gif-90-10-10.gif" />
     <None Include="Resources\loading-gif-90-10-101.gif" />
+    <None Include="Resources\screenshot.png" />
     <Content Include="terminal_logo2.ico" />
   </ItemGroup>
   <ItemGroup>

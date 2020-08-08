@@ -16,7 +16,7 @@ namespace mCTerminal
     {
         static string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
         anaEkran anaEkranfrm = new anaEkran();
-        XmlTextReader xtr = new XmlTextReader(programyolu + @"\res\settings.xml"); //XML dosyasını okumak için hazırlık yap
+        XmlTextReader xtr = new XmlTextReader(programyolu + @"res\settings.xml"); //XML dosyasını okumak için hazırlık yap
         WindowsMediaPlayer wmp = new WindowsMediaPlayer();
         string xmlAyarIsim;
         string xmlAyarDeger;
@@ -81,7 +81,7 @@ namespace mCTerminal
             this.Text = "mCTerminal " + programSurum + " Hakkında";
             programSurumSayiLabel.Text = "mCTerminal " + programSurum + " | build 20200807";
             sistembilgiLabel.Text = "@" + Environment.MachineName + "/" + Environment.UserName + " | " + Environment.OSVersion;
-            wmp.URL = programyolu + @"\res\chiptune2.mp3";
+            wmp.URL = programyolu + @"res\chiptune2.mp3";
             wmp.controls.play();
         }
 

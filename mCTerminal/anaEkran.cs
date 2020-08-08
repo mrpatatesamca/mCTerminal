@@ -24,7 +24,7 @@ namespace mCTerminal
         
         
         
-        XmlTextReader xtr = new XmlTextReader(programyolu + @"\res\settings.xml"); //XML dosyasını okumak için hazırlık yap
+        XmlTextReader xtr = new XmlTextReader(programyolu + @"res\settings.xml"); //XML dosyasını okumak için hazırlık yap
         
 
 
@@ -129,7 +129,7 @@ namespace mCTerminal
             }
         }
 
-        private void dosyaKontrolEt()
+        private void editorDosyaKontrolEt()
         {
             //----------Gerekli dosyaları kontrol et----------------------
             int eksikdosyasayi = 0;
@@ -195,12 +195,12 @@ namespace mCTerminal
                 eksikdosyasayi += 1;
             }
             //----------
-            if (!File.Exists(programyolu + @"\res\settings.xml"))
+            if (!File.Exists(programyolu + @"res\settings.xml"))
             {
                 eksikdosyasayi += 1;
             }
             //--------------
-            if (!File.Exists(programyolu + @"\res\chiptune2.mp3"))
+            if (!File.Exists(programyolu + @"res\chiptune2.mp3"))
             {
                 eksikdosyasayi += 1;
             }
@@ -214,7 +214,7 @@ namespace mCTerminal
             }
         }
 
-        private void temaYukle()
+        private void editorTemaYukle()
         {
             //temalar için ayrılmış bölüm
             if (programTema == "tema_varsayilan")
@@ -311,6 +311,7 @@ namespace mCTerminal
                 anlikİrtifaGrafik.Titles[0].ForeColor = Color.FromArgb(251, 235, 235);
                 gkuvvetGrafik.Titles[0].ForeColor = Color.FromArgb(251, 235, 235);
             }
+
             baglantiNoktasi_label.ForeColor = this.ForeColor;
             baglantiHizi_label.ForeColor = this.ForeColor;
             aliciModeli_label.ForeColor = this.ForeColor;
@@ -331,9 +332,9 @@ namespace mCTerminal
 
         private void anaEkran_Load(object sender, EventArgs e)
         {
-            dosyaKontrolEt();
+            editorDosyaKontrolEt();
             editorAyarYukle();
-            temaYukle();
+            editorTemaYukle();
             beklemeEkranıAcTimer.Start();
 
             //Form adını ayarlar
@@ -415,10 +416,6 @@ namespace mCTerminal
                     ortagovdeDurumLabel.Text = "Orta Gövde: Ayrılmadı!";
                 }
 
-
-
-
-                
                 //---------------------------------GRAFİK KUTULARI-----------------------------------
                 //-----------------------------------ANLIK İRTİFA GRAFİĞİ----------------------------------
                 anlikİrtifaGrafik.ChartAreas[0].AxisX.Minimum = minm;
@@ -503,11 +500,7 @@ namespace mCTerminal
                     kayitdurumPictureBox.Image = mCTerminal.Properties.Resources.pen_drive_kirmizi;
                     
                 }
-                //-------------------------------------------VERİ KAYIT SON------------------------------------------
-
-
-
-                
+                //-------------------------------------------VERİ KAYIT SON------------------------------------------  
             }
             catch
             {
@@ -517,73 +510,7 @@ namespace mCTerminal
 
         private void bağlantıyıBaşlatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string sadece_saat = DateTime.Now.ToString("hh:mm:ss");
-            string sadece_tarih = DateTime.Now.ToString("dd-MM-yyyy");
-            baglantiDurumPictureBox.Image = Properties.Resources.dot_sari;
-
-            if (!serialPort1.IsOpen) //Bağlantı kurulmamışsa.
-            {
-                if (COMPortList.SelectedIndex < 0) //Bağlantı noktası boş olduğu zaman program çöküyor bu yüzden kullanıcıyı bilgilendiriyorum ve çökmesini engelliyorum.
-                {
-                    MessageBox.Show("Hata! Alıcı sistem ile bağlantı kurulamadı! Lütfen alıcıyı bilgisayarınıza bağladığınızdan emin olunuz, eğer zaten bağlıysa kabloları kontrol ediniz. (Detay: Muhtemel Liste Boşluğu)", "Alıcı Sistem Bulunamadı!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    hamVeriTextBox1.AppendText(sadece_saat + " --> Bağlantı noktası ile iletişim kurulamadı! (Muhtemel Liste Boşluğu)" + Environment.NewLine);
-                }
-                else
-                {
-                    serialPort1.PortName = COMPortList.Text;
-                    try
-                    {
-                        serialPort1.Open();
-                        Properties.Settings.Default.serialportdurum = true;
-
-                        bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kes";
-                        hamVeriTextBox1.AppendText(Environment.NewLine);
-                        hamVeriTextBox1.AppendText(sadece_saat + " --> Bağlantı " + COMPortList.Text + " üzerinden " + sadece_tarih + "</>" + sadece_saat + " tarihinde başlatıldı!");
-                        hamVeriTextBox1.AppendText(Environment.NewLine);
-                        
-                        //log kayıtlarında da karışıklık olmasın diye eğer kayıt etme açıksa bir kaç bilgi yazılır kayıt dosyasına
-                        if (verikaydetToolStripMenuItem.CheckState == CheckState.Checked)
-                        {
-                            string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
-                            string kayitformati = programVeriFormat;
-                            using (System.IO.StreamWriter file = new System.IO.StreamWriter(programyolu + @"logs\" + "roketLog-" + sadece_tarih.ToString() + kayitformati, true)) //Log yerine kullanılabilecek Türkçe bir karşılık bulamadım, belki Veri çıktısı diyebiliriz ama Log kavramı daha evrensel olduğu için böyle yazdım.
-                            {
-                                file.WriteLine("----------------------------------------------------------------------------------------------------------------------" + Environment.NewLine);
-                                file.WriteLine(sadece_saat + " --> Bağlantı " + COMPortList.Text + " üzerinden " + sadece_tarih + "</>" + sadece_saat + " tarihinde başlatıldı!" + Environment.NewLine);
-                                file.WriteLine("----------------------------------------------------------------------------------------------------------------------" + Environment.NewLine);
-                            }
-                        }
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Hata! Alıcıdan veri alınırken bir problem oluştu. (Detay: " + ex.Message.ToString() + ")", "Alıcı sistem algılanamadı !", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        hamVeriTextBox1.AppendText(sadece_saat + " --> Alıcıdan veri alırken bir problem oluştu! (" + ex.Message.ToString() + ")" + Environment.NewLine);
-                    }
-                }
-            }
-            else //Eğer bağlantı zaten kurulmuşsa bağlantıyı kes.
-            {
-                serialPort1.Close();
-                Properties.Settings.Default.serialportdurum = false;
-                baglantiDurumPictureBox.Image = Properties.Resources.dot_kirmizi;
-                bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kur";
-                hamVeriTextBox1.AppendText(sadece_saat + " --> " + COMPortList.Text + " üzerindeki bağlantı " + sadece_tarih + "</>" + sadece_saat + " tarihinde sonlandırıldı!");
-                hamVeriTextBox1.AppendText(Environment.NewLine);
-                
-                //log kayıtlarında da karışıklık olmasın diye eğer kayıt etme açıksa bir kaç bilgi yazılır kayıt dosyasına
-                if (verikaydetToolStripMenuItem.CheckState == CheckState.Checked)
-                {
-                    string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
-                    string kayitformati = programVeriFormat;
-                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(programyolu + @"logs\" + "roketLog-" + sadece_tarih.ToString() + kayitformati, true)) //Log yerine kullanılabilecek Türkçe bir karşılık bulamadım, belki Veri çıktısı diyebiliriz ama Log kavramı daha evrensel olduğu için böyle yazdım.
-                    {
-                        file.WriteLine("----------------------------------------------------------------------------------------------------------------------" + Environment.NewLine);
-                        file.WriteLine(sadece_saat + " --> " + COMPortList.Text + " üzerindeki bağlantı " + sadece_tarih + "</>" + sadece_saat + " tarihinde sonlandırıldı!" + Environment.NewLine);
-                        file.WriteLine("----------------------------------------------------------------------------------------------------------------------" + Environment.NewLine);
-                    }
-                }
-            }
+            baglantiBaslat();
         }
 
         private void hakkındaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -621,7 +548,7 @@ namespace mCTerminal
             try
             {
 
-                Process.Start(programyolu + @"\mCTerminal-updater.exe");
+                Process.Start(programyolu + @"mCTerminal-updater.exe");
 
             }
             catch
@@ -692,20 +619,7 @@ namespace mCTerminal
 
         private void verikaydetToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (verikaydetToolStripMenuItem.CheckState == CheckState.Unchecked)
-            {
-                verikaydetToolStripMenuItem.CheckState = CheckState.Checked;
-                kayitdurumPictureBox.Image = mCTerminal.Properties.Resources.pen_drive_yesil;
-                toolTip1.SetToolTip(kayitdurumPictureBox, "Veri kayıtı yapılıyor!");
-                toolTip1.ToolTipIcon = ToolTipIcon.Info;
-            }
-            else
-            {
-                verikaydetToolStripMenuItem.CheckState = CheckState.Unchecked;
-                kayitdurumPictureBox.Image = mCTerminal.Properties.Resources.pen_drive_kirmizi;
-                toolTip1.SetToolTip(kayitdurumPictureBox, "Veri kayıtı yapılmıyor!");
-                toolTip1.ToolTipIcon = ToolTipIcon.Warning;
-            }
+            editorVeriKaydet();
         }
 
         private void hataGidermeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -734,11 +648,113 @@ namespace mCTerminal
 
         private void programiyenidenbaslatStripMenuItem2_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("mCTerminal.exe");
-            this.Close();
+            editorProgramYenidenBaslat();
         }
 
         private void baglantiListeYenileButton_Click(object sender, EventArgs e)
+        {
+            baglantiYenile();
+        }
+
+        private void baudRatePortList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            baglantiHizi_label.Text = "Bağlantı Hızı: " + baudRatePortList.SelectedItem.ToString();
+            serialPort1.BaudRate = Convert.ToInt32(baudRatePortList.Text);
+        }
+
+        private void roketŞemasıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            roketsema roketsemafrm = new roketsema();
+            roketsemafrm.Show();
+        }
+
+        private void beklemeEkranıAcTimer_Tick(object sender, EventArgs e)
+        {
+            //bekleme ekranını açar (sırf hoş gözüksün diye yoksa işlevsellik yok xd)
+            beklemeEkranıAcTimer.Stop();
+            
+            programListeYenileForm programListeYenileFormfrm = new programListeYenileForm();
+            programListeYenileFormfrm.Show();
+            beklemeEkranıAcTimer.Stop();
+        }
+
+        private void ciktoolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        public void baglantiBaslat()
+        {
+            string sadece_saat = DateTime.Now.ToString("hh:mm:ss");
+            string sadece_tarih = DateTime.Now.ToString("dd-MM-yyyy");
+            baglantiDurumPictureBox.Image = Properties.Resources.dot_sari;
+
+            if (!serialPort1.IsOpen) //Bağlantı kurulmamışsa.
+            {
+                if (COMPortList.SelectedIndex < 0) //Bağlantı noktası boş olduğu zaman program çöküyor bu yüzden kullanıcıyı bilgilendiriyorum ve çökmesini engelliyorum.
+                {
+                    MessageBox.Show("Hata! Alıcı sistem ile bağlantı kurulamadı! Lütfen alıcıyı bilgisayarınıza bağladığınızdan emin olunuz, eğer zaten bağlıysa kabloları kontrol ediniz. (Detay: Muhtemel Liste Boşluğu)", "Alıcı Sistem Bulunamadı!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    hamVeriTextBox1.AppendText(sadece_saat + " --> Bağlantı noktası ile iletişim kurulamadı! (Muhtemel Liste Boşluğu)" + Environment.NewLine);
+                }
+                else
+                {
+                    serialPort1.PortName = COMPortList.Text;
+                    try
+                    {
+                        serialPort1.Open();
+                        Properties.Settings.Default.serialportdurum = true;
+
+                        bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kes";
+                        hamVeriTextBox1.AppendText(Environment.NewLine);
+                        hamVeriTextBox1.AppendText(sadece_saat + " --> Bağlantı " + COMPortList.Text + " üzerinden " + sadece_tarih + "</>" + sadece_saat + " tarihinde başlatıldı!");
+                        hamVeriTextBox1.AppendText(Environment.NewLine);
+
+                        //log kayıtlarında da karışıklık olmasın diye eğer kayıt etme açıksa bir kaç bilgi yazılır kayıt dosyasına
+                        if (verikaydetToolStripMenuItem.CheckState == CheckState.Checked)
+                        {
+                            string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
+                            string kayitformati = programVeriFormat;
+                            using (System.IO.StreamWriter file = new System.IO.StreamWriter(programyolu + @"logs\" + "roketLog-" + sadece_tarih.ToString() + kayitformati, true)) //Log yerine kullanılabilecek Türkçe bir karşılık bulamadım, belki Veri çıktısı diyebiliriz ama Log kavramı daha evrensel olduğu için böyle yazdım.
+                            {
+                                file.WriteLine("----------------------------------------------------------------------------------------------------------------------" + Environment.NewLine);
+                                file.WriteLine(sadece_saat + " --> Bağlantı " + COMPortList.Text + " üzerinden " + sadece_tarih + "</>" + sadece_saat + " tarihinde başlatıldı!" + Environment.NewLine);
+                                file.WriteLine("----------------------------------------------------------------------------------------------------------------------" + Environment.NewLine);
+                            }
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Hata! Alıcıdan veri alınırken bir problem oluştu. (Detay: " + ex.Message.ToString() + ")", "Alıcı sistem algılanamadı !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        hamVeriTextBox1.AppendText(sadece_saat + " --> Alıcıdan veri alırken bir problem oluştu! (" + ex.Message.ToString() + ")" + Environment.NewLine);
+                    }
+                }
+            }
+            else //Eğer bağlantı zaten kurulmuşsa bağlantıyı kes.
+            {
+                serialPort1.Close();
+                Properties.Settings.Default.serialportdurum = false;
+                baglantiDurumPictureBox.Image = Properties.Resources.dot_kirmizi;
+                bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kur";
+                hamVeriTextBox1.AppendText(sadece_saat + " --> " + COMPortList.Text + " üzerindeki bağlantı " + sadece_tarih + "</>" + sadece_saat + " tarihinde sonlandırıldı!");
+                hamVeriTextBox1.AppendText(Environment.NewLine);
+
+                //log kayıtlarında da karışıklık olmasın diye eğer kayıt etme açıksa bir kaç bilgi yazılır kayıt dosyasına
+                if (verikaydetToolStripMenuItem.CheckState == CheckState.Checked)
+                {
+                    string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
+                    string kayitformati = programVeriFormat;
+                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(programyolu + @"logs\" + "roketLog-" + sadece_tarih.ToString() + kayitformati, true)) //Log yerine kullanılabilecek Türkçe bir karşılık bulamadım, belki Veri çıktısı diyebiliriz ama Log kavramı daha evrensel olduğu için böyle yazdım.
+                    {
+                        file.WriteLine("----------------------------------------------------------------------------------------------------------------------" + Environment.NewLine);
+                        file.WriteLine(sadece_saat + " --> " + COMPortList.Text + " üzerindeki bağlantı " + sadece_tarih + "</>" + sadece_saat + " tarihinde sonlandırıldı!" + Environment.NewLine);
+                        file.WriteLine("----------------------------------------------------------------------------------------------------------------------" + Environment.NewLine);
+                    }
+                }
+            }
+        }
+
+        public void baglantiYenile()
         {
             //bekleme ekranını açar (sırf hoş gözüksün diye yoksa işlevsellik yok xd)
             programListeYenileForm programListeYenileFormfrm = new programListeYenileForm();
@@ -775,33 +791,29 @@ namespace mCTerminal
             baudRatePortList.SelectedIndex = 6; //seçili baudrate'i 9600 yapar (orionid projesi için)
         }
 
-        private void baudRatePortList_SelectedIndexChanged(object sender, EventArgs e)
+        public void editorVeriKaydet()
         {
-            baglantiHizi_label.Text = "Bağlantı Hızı: " + baudRatePortList.SelectedItem.ToString();
-            serialPort1.BaudRate = Convert.ToInt32(baudRatePortList.Text);
+            if (verikaydetToolStripMenuItem.CheckState == CheckState.Unchecked)
+            {
+                verikaydetToolStripMenuItem.CheckState = CheckState.Checked;
+                kayitdurumPictureBox.Image = mCTerminal.Properties.Resources.pen_drive_yesil;
+                toolTip1.SetToolTip(kayitdurumPictureBox, "Veri kayıtı yapılıyor!");
+                toolTip1.ToolTipIcon = ToolTipIcon.Info;
+            }
+            else
+            {
+                verikaydetToolStripMenuItem.CheckState = CheckState.Unchecked;
+                kayitdurumPictureBox.Image = mCTerminal.Properties.Resources.pen_drive_kirmizi;
+                toolTip1.SetToolTip(kayitdurumPictureBox, "Veri kayıtı yapılmıyor!");
+                toolTip1.ToolTipIcon = ToolTipIcon.Warning;
+            }
         }
 
-        private void roketŞemasıToolStripMenuItem_Click(object sender, EventArgs e)
+        public void editorProgramYenidenBaslat()
         {
-            roketsema roketsemafrm = new roketsema();
-            roketsemafrm.Show();
+            System.Diagnostics.Process.Start("mCTerminal.exe");
+            Application.Exit();
         }
-
-        private void beklemeEkranıAcTimer_Tick(object sender, EventArgs e)
-        {
-            //bekleme ekranını açar (sırf hoş gözüksün diye yoksa işlevsellik yok xd)
-            beklemeEkranıAcTimer.Stop();
-            
-            programListeYenileForm programListeYenileFormfrm = new programListeYenileForm();
-            programListeYenileFormfrm.Show();
-            beklemeEkranıAcTimer.Stop();
-        }
-
-        private void ciktoolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
 
         private void ayarlarToolStripMenuItem_Click(object sender, EventArgs e)
         {

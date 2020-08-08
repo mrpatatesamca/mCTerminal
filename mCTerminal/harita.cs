@@ -23,7 +23,9 @@ namespace mCTerminal
         public string programVeriFormat;
         public string programSurum;
         public string programHaritaDataKonum = programyolu + @"\map_datab\";
+        public string programHaritaEkranGoruntuKonum;
         static string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
+        
 
         public harita()
         {
@@ -58,7 +60,17 @@ namespace mCTerminal
                 programTema = splitted_data2[0];
                 programSurum = splitted_data2[1];
                 programVeriFormat = splitted_data2[2];
+                programHaritaEkranGoruntuKonum = splitted_data2[3];
                 xtr.Close();
+
+                //ekran goruntusu konumu için bir failsafe. Eğer kullanıcı tarafından dizin ayarlanmamışsa otomatik olarak varsayılan klasörü ayarlar.
+                if (programHaritaEkranGoruntuKonum == "")
+                {
+                    programHaritaEkranGoruntuKonum = programyolu + "screenshots";
+                }
+
+
+
             }
             catch
             {
@@ -191,6 +203,7 @@ namespace mCTerminal
             harita1.MapProvider = GMap.NET.MapProviders.GoogleHybridMapProvider.Instance;
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerAndCache;
             harita1.CacheLocation = programHaritaDataKonum;
+            harita1.DragButton = MouseButtons.Left;
             harita1.Position = new GMap.NET.PointLatLng(39.9179769, 44.0351519);
             harita1.Zoom = 10;
 
@@ -272,6 +285,38 @@ namespace mCTerminal
                     }
                 }
             } 
+        }
+
+        private void harita_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            harita1.Manager.CancelTileCaching(); //Harita önbellekleme işlemin durdur.
+            harita1.Dispose(); //Harita kaynaklarını serbest bırak.
+            
+        }
+
+        private void ekranGoruntusuCekButton_Click(object sender, EventArgs e)
+        {
+            //haritanın o anki ekran görüntüsünü kaydeder.
+            try
+            {
+                string sadece_saat = DateTime.Now.ToString("hh.mm.ss");
+                string sadece_tarih = DateTime.Now.ToString("dd-MM-yyyy");
+                string dosya_isim = "harita-" + sadece_tarih + "-" + sadece_saat;
+
+                var tmpImage = harita1.ToImage();
+                if (tmpImage != null)
+                {
+                    using (tmpImage)
+                    {
+                        tmpImage.Save(programHaritaEkranGoruntuKonum + @"\" + dosya_isim + ".png");
+                        MessageBox.Show("Harita görüntüsü " + programHaritaEkranGoruntuKonum + @"\" + dosya_isim + ".png dizinine kaydedildi.", "mCTerminal Harita", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Harita görüntüsü kaydedilemedi! (Detay: " + ex.Message + ")", "mCTerminal Harita", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

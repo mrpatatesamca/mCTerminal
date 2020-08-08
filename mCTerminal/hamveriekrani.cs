@@ -14,7 +14,7 @@ namespace mCTerminal
     public partial class hamveriekrani : Form
     {
         anaEkran anaEkranfrm = new anaEkran();
-        XmlTextReader xtr = new XmlTextReader(programyolu + @"\res\settings.xml"); //XML dosyasını okumak için hazırlık yap
+        XmlTextReader xtr = new XmlTextReader(programyolu + @"res\settings.xml"); //XML dosyasını okumak için hazırlık yap
         string xmlAyarIsim;
         string xmlAyarDeger;
         public string programTema;

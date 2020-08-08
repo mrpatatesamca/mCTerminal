@@ -34,6 +34,7 @@
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.tamEkranToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gitButon = new System.Windows.Forms.ToolStripButton();
+            this.ekranGoruntusuCekButton = new System.Windows.Forms.ToolStripButton();
             this.boylamTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.enlemTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
@@ -62,13 +63,14 @@
             this.haritaAracMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripDropDownButton2,
             this.gitButon,
+            this.ekranGoruntusuCekButton,
             this.boylamTextBox,
             this.enlemTextBox,
             this.toolStripDropDownButton1});
             this.haritaAracMenu.Location = new System.Drawing.Point(0, 0);
             this.haritaAracMenu.Name = "haritaAracMenu";
             this.haritaAracMenu.ShowItemToolTips = false;
-            this.haritaAracMenu.Size = new System.Drawing.Size(516, 25);
+            this.haritaAracMenu.Size = new System.Drawing.Size(544, 25);
             this.haritaAracMenu.TabIndex = 0;
             // 
             // toolStripDropDownButton2
@@ -99,6 +101,7 @@
             // gitButon
             // 
             this.gitButon.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.gitButon.AutoToolTip = false;
             this.gitButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.gitButon.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.gitButon.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -108,7 +111,22 @@
             this.gitButon.Name = "gitButon";
             this.gitButon.Size = new System.Drawing.Size(23, 25);
             this.gitButon.Text = "Git";
+            this.gitButon.ToolTipText = "Yazılan koordinatlara git";
             this.gitButon.Click += new System.EventHandler(this.gitButon_Click);
+            // 
+            // ekranGoruntusuCekButton
+            // 
+            this.ekranGoruntusuCekButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.ekranGoruntusuCekButton.AutoToolTip = false;
+            this.ekranGoruntusuCekButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ekranGoruntusuCekButton.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.ekranGoruntusuCekButton.Image = global::mCTerminal.Properties.Resources.screenshot;
+            this.ekranGoruntusuCekButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ekranGoruntusuCekButton.Name = "ekranGoruntusuCekButton";
+            this.ekranGoruntusuCekButton.Size = new System.Drawing.Size(23, 22);
+            this.ekranGoruntusuCekButton.Text = "toolStripButton1";
+            this.ekranGoruntusuCekButton.ToolTipText = "Haritanın görüntüsünü kaydet";
+            this.ekranGoruntusuCekButton.Click += new System.EventHandler(this.ekranGoruntusuCekButton_Click);
             // 
             // boylamTextBox
             // 
@@ -255,7 +273,7 @@
             this.harita1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.harita1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.harita1.ShowTileGridLines = false;
-            this.harita1.Size = new System.Drawing.Size(515, 332);
+            this.harita1.Size = new System.Drawing.Size(543, 359);
             this.harita1.TabIndex = 1;
             this.harita1.Zoom = 0D;
             this.harita1.OnPositionChanged += new GMap.NET.PositionChanged(this.harita1_OnPositionChanged);
@@ -274,7 +292,7 @@
             this.haritaortala_checkbox.Checked = true;
             this.haritaortala_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.haritaortala_checkbox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.haritaortala_checkbox.Location = new System.Drawing.Point(152, 0);
+            this.haritaortala_checkbox.Location = new System.Drawing.Point(156, 0);
             this.haritaortala_checkbox.Name = "haritaortala_checkbox";
             this.haritaortala_checkbox.Size = new System.Drawing.Size(93, 24);
             this.haritaortala_checkbox.TabIndex = 2;
@@ -286,16 +304,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(514, 356);
+            this.ClientSize = new System.Drawing.Size(542, 383);
             this.Controls.Add(this.harita1);
             this.Controls.Add(this.haritaortala_checkbox);
             this.Controls.Add(this.haritaAracMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(530, 395);
+            this.MinimumSize = new System.Drawing.Size(558, 422);
             this.Name = "harita";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mCTerminal Harita";
             this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.harita_FormClosing);
             this.Load += new System.EventHandler(this.harita_Load);
             this.haritaAracMenu.ResumeLayout(false);
             this.haritaAracMenu.PerformLayout();
@@ -323,5 +342,6 @@
         private System.Windows.Forms.ToolStripMenuItem araziHaritasıToolStripMenuItem;
         private System.Windows.Forms.Timer haritaRoketEsle;
         private System.Windows.Forms.CheckBox haritaortala_checkbox;
+        private System.Windows.Forms.ToolStripButton ekranGoruntusuCekButton;
     }
 }

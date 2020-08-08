@@ -38,12 +38,12 @@ namespace mCTerminal
             {
                 if (File.Exists("mCTerminal-updater2.exe"))
                 {
-                    Process.Start(programyolu + @"\mCTerminal-updater2.exe");
+                    Process.Start(programyolu + @"mCTerminal-updater2.exe");
                     File.Delete("mCTerminal-updater.exe");
                 }
                 else
                 {
-                    Process.Start(programyolu + @"\mCTerminal-updater.exe");
+                    Process.Start(programyolu + @"mCTerminal-updater.exe");
                 }
                 this.Close();
             }
@@ -165,7 +165,7 @@ namespace mCTerminal
                 dosyabilgiTextBox2.AppendText("EKSİK" + Environment.NewLine);
             }
             //------------
-            if (File.Exists(programyolu + @"\res\settings.xml"))
+            if (File.Exists(programyolu + @"res\settings.xml"))
             {
                 dosyabilgiTextBox2.AppendText("TAMAM" + Environment.NewLine);
             }
@@ -174,7 +174,7 @@ namespace mCTerminal
                 dosyabilgiTextBox2.AppendText("EKSİK" + Environment.NewLine);
             }
             //------------
-            if (File.Exists(programyolu + @"\res\chiptune2.mp3"))
+            if (File.Exists(programyolu + @"res\chiptune2.mp3"))
             {
                 dosyabilgiTextBox2.AppendText("TAMAM" + Environment.NewLine);
             }

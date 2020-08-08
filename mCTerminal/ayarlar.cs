@@ -14,7 +14,7 @@ namespace mCTerminal
 {
     public partial class ayarlar : Form
     {
-        XmlTextReader xtr = new XmlTextReader(programyolu + @"\res\settings.xml"); //XML dosyasını okumak için hazırlık yap
+        XmlTextReader xtr = new XmlTextReader(programyolu + @"res\settings.xml"); //XML dosyasını okumak için hazırlık yap
         static string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
         anaEkran anaEkranfrm = new anaEkran();
         string xmlAyarIsim;
@@ -23,8 +23,8 @@ namespace mCTerminal
         public string programVeriFormat;
         public string programSurum;
         public string harita_veri_boyut;
-        static FileInfo fi = new FileInfo(programyolu + @"\map_datab\TileDBv5\en\Data.gmdb");
-        
+        static FileInfo fi = new FileInfo(programyolu + @"map_datab\TileDBv5\en\Data.gmdb");
+        public string programHaritaEkranGoruntuKonum;
 
 
         public ayarlar()
@@ -73,7 +73,7 @@ namespace mCTerminal
         {
             try
             {
-                XmlTextWriter xtw = new XmlTextWriter(programyolu + @"\res\settings.xml", System.Text.Encoding.UTF8); //XML dosyasını yazmak için hazırlık yap
+                XmlTextWriter xtw = new XmlTextWriter(programyolu + @"res\settings.xml", System.Text.Encoding.UTF8); //XML dosyasını yazmak için hazırlık yap
                 xtw.Formatting = Formatting.Indented;
 
                 xtw.WriteStartDocument();
@@ -96,6 +96,11 @@ namespace mCTerminal
                 xtw.WriteStartElement("ayar");
                 xtw.WriteElementString("name", "programVeriFormat");
                 xtw.WriteElementString("value", programVeriFormat);
+                xtw.WriteEndElement();
+                //-------------------------------------------
+                xtw.WriteStartElement("ayar");
+                xtw.WriteElementString("name", "programHaritaEkranGoruntuKonum");
+                xtw.WriteElementString("value", programHaritaEkranGoruntuKonum);
                 xtw.WriteEndElement();
                 //-------------------------------------------
 
@@ -164,7 +169,15 @@ namespace mCTerminal
                 programTema = splitted_data2[0];
                 programSurum = splitted_data2[1];
                 programVeriFormat = splitted_data2[2];
+                programHaritaEkranGoruntuKonum = splitted_data2[3];
                 xtr.Close();
+
+                //ekran goruntusu konumu için bir failsafe. Eğer kullanıcı tarafından dizin ayarlanmamışsa otomatik olarak varsayılan klasörü ayarlar.
+                if (!Directory.Exists(programHaritaEkranGoruntuKonum))
+                {
+                    programHaritaEkranGoruntuKonum = programyolu + "screenshots";
+                }
+
 
                 //----------------------program teması ayarları------------------------------
                 if (programTema == "tema_varsayilan")
@@ -213,6 +226,12 @@ namespace mCTerminal
                 {
                     vericiktikayitformatComboBox.SelectedItem = "Verilog Dosyası (*.vs)";
                 }
+
+                //-----------------------harita ekran görüntüsü konum ayarı----------------------------
+                haritaEkranGoruntusuKonumTextBox.Text = programHaritaEkranGoruntuKonum;
+
+
+
             }
             catch
             {
@@ -262,7 +281,7 @@ namespace mCTerminal
             {
                 try
                 {
-                    File.Delete(programyolu + @"\map_datab\TileDBv5\en\Data.gmdb");
+                    File.Delete(programyolu + @"map_datab\TileDBv5\en\Data.gmdb");
                     haritaverisilTimer.Start();
                 }
                 catch
@@ -281,6 +300,22 @@ namespace mCTerminal
             haritaverisilTimer.Stop();
             MessageBox.Show("Harita verileri başarıyla temizlendi!", "Harita Verileri Silindi!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             haritaVeriBoyutuLabel.Text = "Harita Verisi Boyutu: 0 bayt";
+        }
+
+        private void haritaEkranGoruntusuKonumDegistirButton_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                haritaEkranGoruntusuKonumTextBox.Text = folderBrowserDialog1.SelectedPath;
+                programHaritaEkranGoruntuKonum = folderBrowserDialog1.SelectedPath;
+            }
+        }
+
+        private void haritaEkranGoruntusuKonumVarsayilanButton_Click(object sender, EventArgs e)
+        {
+            haritaEkranGoruntusuKonumTextBox.Text = programyolu + "screenshots";
+            programHaritaEkranGoruntuKonum = programyolu + "screenshots";
         }
     }
 }

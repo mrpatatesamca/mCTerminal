@@ -20,7 +20,7 @@ namespace mCTerminal
         {
             InitializeComponent();
         }
-        XmlTextReader xtr = new XmlTextReader(programyolu + @"\res\settings.xml"); //XML dosyasını okumak için hazırlık yap
+        XmlTextReader xtr = new XmlTextReader(programyolu + @"res\settings.xml"); //XML dosyasını okumak için hazırlık yap
         FilterInfoCollection filterInfoCollection;
         VideoCaptureDevice videoCaptureDevice;
         anaEkran anaEkranfrm = new anaEkran();
