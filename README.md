@@ -6,6 +6,23 @@ mCTerminal Cosmos Takımı için hazırlanan ve Berke Aydin tarafından gelişti
 ###### Proje Websitesi: [www.cosmostakimi.com](https://www.cosmostakimi.com)
 ###### mCTerminal Güncelleme Aracı GitHub Sayfası: [GitHub-mCTerminal-updater](https://github.com/mrpatatesamca/mCTerminal-updater)
 
+## Program Özellikleri
+
+- USB bağlantısı ile birden fazla cihaz arasından birini seçip dinleyebilme.
+- Uzaktan görüntü alabilme.
+- Grafik tablosu ile verileri tablodan okuma.
+- İbreler sayesinde verileri okuyabilme.
+- Çeşitli uzantılarda vei kaydı yapabilme.
+- Online veya Offline harita desteği.
+- Google Haritalar, Yandex Haritalar, Bing Haritalar veya WikiMaps gibi farklı servis sağlayıcılarından haritaya ulaşabilme.
+- Ham veri ekranı ile veri takibi.
+- Program içinden güncelleme yapabilme.
+- Program içinden hata giderme yapabilme.
+- Birbirinden güzel ve işlevsel temalar ile deneyiminizi özelleştirebilme.
+- Haritanın görüntüsünü kaydedebilme. (.png formatında)
+- Bağlantı noktası ve hızını seçebilme.
+- Klavye kısayolları ile deneyiminizi iyileştirme olağanı.
+- Hafif ve az yer kaplayan mimari.
 
 ## Bilgilendirme!
 
@@ -17,7 +34,6 @@ GitHub'dan indirilen sürüm için kuruluma ihtiyaç yoktur.
 
 - **Release sayfasından .zip veya .7z arşivi olarak indirdiyseniz:**
 İndirdiğiniz arşivin içindeki `*mCTerminal.exe` uygulamasını başlatarak kullanabilirsiniz.
-
 
 ## Kullanım
 
