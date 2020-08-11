@@ -34,5 +34,5 @@ Bu yazılım aşağıda adı belirtilen Creative Commons Zero v1.0 Universal Lis
 [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ## Görseller
-
+![mCTerminal - Tam Ekran Görüntüsü](https://github.com/mrpatatesamca/mCTerminal/blob/master/.github/images/tamekran.PNG)
 ![mCTerminal - Bütün Ekranlar](https://github.com/mrpatatesamca/mCTerminal/blob/master/.github/images/tamekran5.PNG)
