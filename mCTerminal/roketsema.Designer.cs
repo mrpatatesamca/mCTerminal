@@ -47,9 +47,9 @@
             this.koniDurumLabel.BackColor = System.Drawing.Color.Transparent;
             this.koniDurumLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.koniDurumLabel.ForeColor = System.Drawing.Color.Transparent;
-            this.koniDurumLabel.Location = new System.Drawing.Point(2, 102);
+            this.koniDurumLabel.Location = new System.Drawing.Point(2, 77);
             this.koniDurumLabel.Name = "koniDurumLabel";
-            this.koniDurumLabel.Size = new System.Drawing.Size(156, 14);
+            this.koniDurumLabel.Size = new System.Drawing.Size(140, 14);
             this.koniDurumLabel.TabIndex = 16;
             this.koniDurumLabel.Text = "Koni: Bekliyor...";
             this.koniDurumLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -60,9 +60,9 @@
             this.ortagovdeDurumLabel.BackColor = System.Drawing.Color.Transparent;
             this.ortagovdeDurumLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ortagovdeDurumLabel.ForeColor = System.Drawing.Color.Transparent;
-            this.ortagovdeDurumLabel.Location = new System.Drawing.Point(164, 102);
+            this.ortagovdeDurumLabel.Location = new System.Drawing.Point(148, 77);
             this.ortagovdeDurumLabel.Name = "ortagovdeDurumLabel";
-            this.ortagovdeDurumLabel.Size = new System.Drawing.Size(181, 14);
+            this.ortagovdeDurumLabel.Size = new System.Drawing.Size(170, 14);
             this.ortagovdeDurumLabel.TabIndex = 17;
             this.ortagovdeDurumLabel.Text = "Orta Gövde: Bekliyor...";
             this.ortagovdeDurumLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -73,17 +73,15 @@
             this.kameraDurumLabel.BackColor = System.Drawing.Color.Transparent;
             this.kameraDurumLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.kameraDurumLabel.ForeColor = System.Drawing.Color.Transparent;
-            this.kameraDurumLabel.Location = new System.Drawing.Point(351, 102);
+            this.kameraDurumLabel.Location = new System.Drawing.Point(324, 77);
             this.kameraDurumLabel.Name = "kameraDurumLabel";
-            this.kameraDurumLabel.Size = new System.Drawing.Size(194, 14);
+            this.kameraDurumLabel.Size = new System.Drawing.Size(187, 14);
             this.kameraDurumLabel.TabIndex = 18;
             this.kameraDurumLabel.Text = "Video Yayını: Bekliyor...";
             this.kameraDurumLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // aciYLabel
             // 
-            this.aciYLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.aciYLabel.BackColor = System.Drawing.Color.Transparent;
             this.aciYLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.aciYLabel.ForeColor = System.Drawing.Color.Transparent;
@@ -96,8 +94,6 @@
             // 
             // AciXLabel
             // 
-            this.AciXLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.AciXLabel.BackColor = System.Drawing.Color.Transparent;
             this.AciXLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.AciXLabel.ForeColor = System.Drawing.Color.Transparent;
@@ -110,8 +106,6 @@
             // 
             // gkuvvetLabel
             // 
-            this.gkuvvetLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.gkuvvetLabel.BackColor = System.Drawing.Color.Transparent;
             this.gkuvvetLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.gkuvvetLabel.ForeColor = System.Drawing.Color.Transparent;
@@ -134,7 +128,7 @@
             this.hdopPictureBox.Image = global::mCTerminal.Properties.Resources.orionid_rocket_desing;
             this.hdopPictureBox.Location = new System.Drawing.Point(0, 0);
             this.hdopPictureBox.Name = "hdopPictureBox";
-            this.hdopPictureBox.Size = new System.Drawing.Size(769, 116);
+            this.hdopPictureBox.Size = new System.Drawing.Size(511, 91);
             this.hdopPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.hdopPictureBox.TabIndex = 15;
             this.hdopPictureBox.TabStop = false;
@@ -144,7 +138,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(769, 116);
+            this.ClientSize = new System.Drawing.Size(511, 91);
             this.Controls.Add(this.aciYLabel);
             this.Controls.Add(this.AciXLabel);
             this.Controls.Add(this.gkuvvetLabel);
@@ -153,7 +147,7 @@
             this.Controls.Add(this.koniDurumLabel);
             this.Controls.Add(this.hdopPictureBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(785, 155);
+            this.MinimumSize = new System.Drawing.Size(527, 130);
             this.Name = "roketsema";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mCTerminal Roket Şeması";

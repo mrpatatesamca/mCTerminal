@@ -180,7 +180,7 @@ namespace mCTerminal
                 eksikdosyasayi += 1;
             }
             //----------
-            if (!File.Exists("mCTerminal-updater.exe"))
+            if (!File.Exists("mCTerminal-updater2.exe"))
             {
                 eksikdosyasayi += 1;
             }
@@ -363,7 +363,7 @@ namespace mCTerminal
                 Properties.Settings.Default.boylam = splitted_data[3]; //global değikene de yaz boylamı
                 irtifaLabel.Text = "İrtifa: " + splitted_data[4] + "m"; //gps irtifa
                 irtifaMaxLabel.Text = "Maks İrtifa: " + splitted_data[5] + "m"; //gps maks irtifa
-                yatayHizLabel.Text = "Yatay Hız: " + splitted_data[6] + "m/s"; //yatay hız
+                yatayHizLabel.Text = "Yatay Hız: " + splitted_data[6] + "km/s"; //yatay hız
                 AciXLabel.Text = "X Açısı: " + splitted_data[8] + "°"; //x açısı
                 Properties.Settings.Default.aciX = splitted_data[8]; // global değişkene de yaz x açısını
                 aciYLabel.Text = "Y Açısı: " + splitted_data[9] + "°"; //y açısı
@@ -510,7 +510,7 @@ namespace mCTerminal
 
         private void bağlantıyıBaşlatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            baglantiBaslat();
+            editorBaglantiBaslat();
         }
 
         private void hakkındaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -548,7 +548,7 @@ namespace mCTerminal
             try
             {
 
-                Process.Start(programyolu + @"mCTerminal-updater.exe");
+                Process.Start(programyolu + @"mCTerminal-updater2.exe");
 
             }
             catch
@@ -653,7 +653,8 @@ namespace mCTerminal
 
         private void baglantiListeYenileButton_Click(object sender, EventArgs e)
         {
-            baglantiYenile();
+            editorBaglantiYenile();
+            baglantiYenileİkonDuzeltTimer.Start();
         }
 
         private void baudRatePortList_SelectedIndexChanged(object sender, EventArgs e)
@@ -683,7 +684,7 @@ namespace mCTerminal
             Application.Exit();
         }
 
-        public void baglantiBaslat()
+        public void editorBaglantiBaslat()
         {
             string sadece_saat = DateTime.Now.ToString("hh:mm:ss");
             string sadece_tarih = DateTime.Now.ToString("dd-MM-yyyy");
@@ -696,7 +697,7 @@ namespace mCTerminal
                     MessageBox.Show("Hata! Alıcı sistem ile bağlantı kurulamadı! Lütfen alıcıyı bilgisayarınıza bağladığınızdan emin olunuz, eğer zaten bağlıysa kabloları kontrol ediniz. (Detay: Muhtemel Liste Boşluğu)", "Alıcı Sistem Bulunamadı!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     hamVeriTextBox1.AppendText(sadece_saat + " --> Bağlantı noktası ile iletişim kurulamadı! (Muhtemel Liste Boşluğu)" + Environment.NewLine);
                 }
-                else
+                else //liste boş değil ve bağlantı kurulmamış ise.
                 {
                     serialPort1.PortName = COMPortList.Text;
                     try
@@ -732,37 +733,46 @@ namespace mCTerminal
             }
             else //Eğer bağlantı zaten kurulmuşsa bağlantıyı kes.
             {
-                serialPort1.Close();
-                Properties.Settings.Default.serialportdurum = false;
-                baglantiDurumPictureBox.Image = Properties.Resources.dot_kirmizi;
-                bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kur";
-                hamVeriTextBox1.AppendText(sadece_saat + " --> " + COMPortList.Text + " üzerindeki bağlantı " + sadece_tarih + "</>" + sadece_saat + " tarihinde sonlandırıldı!");
-                hamVeriTextBox1.AppendText(Environment.NewLine);
+                editorBaglantiKes();
+            }
+        }
 
-                //log kayıtlarında da karışıklık olmasın diye eğer kayıt etme açıksa bir kaç bilgi yazılır kayıt dosyasına
-                if (verikaydetToolStripMenuItem.CheckState == CheckState.Checked)
+        public void editorBaglantiKes()
+        {
+            string sadece_saat = DateTime.Now.ToString("hh:mm:ss");
+            string sadece_tarih = DateTime.Now.ToString("dd-MM-yyyy");
+
+            serialPort1.Close();
+            Properties.Settings.Default.serialportdurum = false;
+            baglantiDurumPictureBox.Image = Properties.Resources.dot_kirmizi;
+            bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kur";
+            hamVeriTextBox1.AppendText(sadece_saat + " --> " + COMPortList.Text + " üzerindeki bağlantı " + sadece_tarih + "</>" + sadece_saat + " tarihinde sonlandırıldı!");
+            hamVeriTextBox1.AppendText(Environment.NewLine);
+
+            //log kayıtlarında da karışıklık olmasın diye eğer kayıt etme açıksa bir kaç bilgi yazılır kayıt dosyasına
+            if (verikaydetToolStripMenuItem.CheckState == CheckState.Checked)
+            {
+                string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
+                string kayitformati = programVeriFormat;
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(programyolu + @"logs\" + "roketLog-" + sadece_tarih.ToString() + kayitformati, true)) //Log yerine kullanılabilecek Türkçe bir karşılık bulamadım, belki Veri çıktısı diyebiliriz ama Log kavramı daha evrensel olduğu için böyle yazdım.
                 {
-                    string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
-                    string kayitformati = programVeriFormat;
-                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(programyolu + @"logs\" + "roketLog-" + sadece_tarih.ToString() + kayitformati, true)) //Log yerine kullanılabilecek Türkçe bir karşılık bulamadım, belki Veri çıktısı diyebiliriz ama Log kavramı daha evrensel olduğu için böyle yazdım.
-                    {
-                        file.WriteLine("----------------------------------------------------------------------------------------------------------------------" + Environment.NewLine);
-                        file.WriteLine(sadece_saat + " --> " + COMPortList.Text + " üzerindeki bağlantı " + sadece_tarih + "</>" + sadece_saat + " tarihinde sonlandırıldı!" + Environment.NewLine);
-                        file.WriteLine("----------------------------------------------------------------------------------------------------------------------" + Environment.NewLine);
-                    }
+                    file.WriteLine("----------------------------------------------------------------------------------------------------------------------" + Environment.NewLine);
+                    file.WriteLine(sadece_saat + " --> " + COMPortList.Text + " üzerindeki bağlantı " + sadece_tarih + "</>" + sadece_saat + " tarihinde sonlandırıldı!" + Environment.NewLine);
+                    file.WriteLine("----------------------------------------------------------------------------------------------------------------------" + Environment.NewLine);
                 }
             }
         }
 
-        public void baglantiYenile()
+        public void editorBaglantiYenile()
         {
             //bekleme ekranını açar (sırf hoş gözüksün diye yoksa işlevsellik yok xd)
             programListeYenileForm programListeYenileFormfrm = new programListeYenileForm();
             programListeYenileFormfrm.Show();
 
-
+            editorBaglantiKes(); //program bağlantısını keser.
             baudRatePortList.Items.Clear();
-            COMPortList.Items.Clear();
+            serialPort1.Close(); //serial portunu kapatır.
+            COMPortList.Items.Clear(); //listeyi temizle.
             string[] portlar = SerialPort.GetPortNames(); //portlar listesine COM portları alındı.
             serialPort1.BaudRate = 9600; //baudrate ayarlama (daha sonra arayüz üzerinden değiştirilebilir)
             Control.CheckForIllegalCrossThreadCalls = false;
@@ -807,6 +817,11 @@ namespace mCTerminal
                 toolTip1.SetToolTip(kayitdurumPictureBox, "Veri kayıtı yapılmıyor!");
                 toolTip1.ToolTipIcon = ToolTipIcon.Warning;
             }
+        }
+
+        private void baglantiYenileİkonDuzeltTimer_Tick(object sender, EventArgs e)
+        {
+            baglantiDurumPictureBox.Image = Properties.Resources.dot; //bağlantı durumu ikonunu düzelt.
         }
 
         public void editorProgramYenidenBaslat()

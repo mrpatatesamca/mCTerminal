@@ -273,15 +273,15 @@ namespace mCTerminal
                     NumberFormatInfo provider = new NumberFormatInfo();
                     provider.NumberDecimalSeparator = ".";
                     provider.NumberGroupSeparator = ",";
-                    double enlemDouble = Convert.ToDouble(Properties.Settings.Default.enlem, provider);
-                    double boylamDouble = Convert.ToDouble(Properties.Settings.Default.boylam, provider);
                     try
                     {
+                        double enlemDouble = Convert.ToDouble(Properties.Settings.Default.enlem, provider);
+                        double boylamDouble = Convert.ToDouble(Properties.Settings.Default.boylam, provider);
                         harita1.Position = new PointLatLng(enlemDouble, boylamDouble);
                     }
                     catch
                     {
-                        //bir şey olmamış gibi devam :D
+                        //sıkıntı yok bi anlık çevirisi hatası oldu :D
                     }
                 }
             } 

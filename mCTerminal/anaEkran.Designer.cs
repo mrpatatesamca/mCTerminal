@@ -107,6 +107,7 @@
             this.AciXGaugeBaslikLabel = new System.Windows.Forms.Label();
             this.AciXGauge = new System.Windows.Forms.AGauge();
             this.beklemeEkranıAcTimer = new System.Windows.Forms.Timer(this.components);
+            this.baglantiYenileİkonDuzeltTimer = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1.SuspendLayout();
             this.baglantiGrup.SuspendLayout();
             this.fizikselGrup.SuspendLayout();
@@ -428,12 +429,12 @@
             this.hamVeriTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.hamVeriTextBox1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.hamVeriTextBox1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.hamVeriTextBox1.Location = new System.Drawing.Point(0, 246);
+            this.hamVeriTextBox1.Location = new System.Drawing.Point(0, 232);
             this.hamVeriTextBox1.Multiline = true;
             this.hamVeriTextBox1.Name = "hamVeriTextBox1";
             this.hamVeriTextBox1.ReadOnly = true;
             this.hamVeriTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.hamVeriTextBox1.Size = new System.Drawing.Size(612, 127);
+            this.hamVeriTextBox1.Size = new System.Drawing.Size(612, 141);
             this.hamVeriTextBox1.TabIndex = 5;
             // 
             // baglantiNoktasi_label
@@ -663,7 +664,7 @@
             this.yatayHizLabel.Name = "yatayHizLabel";
             this.yatayHizLabel.Size = new System.Drawing.Size(301, 14);
             this.yatayHizLabel.TabIndex = 8;
-            this.yatayHizLabel.Text = "Yatay Hız: 0m/s";
+            this.yatayHizLabel.Text = "Yatay Hız: 0km/s";
             this.yatayHizLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // boylamLabel
@@ -1206,6 +1207,11 @@
             this.beklemeEkranıAcTimer.Interval = 500;
             this.beklemeEkranıAcTimer.Tick += new System.EventHandler(this.beklemeEkranıAcTimer_Tick);
             // 
+            // baglantiYenileİkonDuzeltTimer
+            // 
+            this.baglantiYenileİkonDuzeltTimer.Interval = 1453;
+            this.baglantiYenileİkonDuzeltTimer.Tick += new System.EventHandler(this.baglantiYenileİkonDuzeltTimer_Tick);
+            // 
             // anaEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1319,5 +1325,6 @@
         private System.Windows.Forms.ToolStripButton baglantiListeYenileButton;
         private System.Windows.Forms.ToolStripMenuItem roketŞemasıToolStripMenuItem;
         private System.Windows.Forms.Timer beklemeEkranıAcTimer;
+        private System.Windows.Forms.Timer baglantiYenileİkonDuzeltTimer;
     }
 }

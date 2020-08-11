@@ -65,7 +65,7 @@
             this.kameraAracMenu.Location = new System.Drawing.Point(-1, 0);
             this.kameraAracMenu.Name = "kameraAracMenu";
             this.kameraAracMenu.ShowItemToolTips = false;
-            this.kameraAracMenu.Size = new System.Drawing.Size(388, 26);
+            this.kameraAracMenu.Size = new System.Drawing.Size(353, 26);
             this.kameraAracMenu.TabIndex = 1;
             // 
             // toolStripDropDownButton2
@@ -102,7 +102,7 @@
             this.videoCaptureButton.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.videoCaptureButton.Image = global::mCTerminal.Properties.Resources.play;
             this.videoCaptureButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.videoCaptureButton.Margin = new System.Windows.Forms.Padding(0, 1, 10, 2);
+            this.videoCaptureButton.Margin = new System.Windows.Forms.Padding(0, 1, 3, 2);
             this.videoCaptureButton.Name = "videoCaptureButton";
             this.videoCaptureButton.Size = new System.Drawing.Size(23, 23);
             this.videoCaptureButton.Text = "Seçili aygıtı yükle";
@@ -236,7 +236,7 @@
             this.videoCaptureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.videoCaptureBox.Location = new System.Drawing.Point(-1, 26);
             this.videoCaptureBox.Name = "videoCaptureBox";
-            this.videoCaptureBox.Size = new System.Drawing.Size(387, 255);
+            this.videoCaptureBox.Size = new System.Drawing.Size(352, 255);
             this.videoCaptureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.videoCaptureBox.TabIndex = 0;
             this.videoCaptureBox.TabStop = false;
@@ -246,11 +246,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.ClientSize = new System.Drawing.Size(384, 281);
+            this.ClientSize = new System.Drawing.Size(349, 281);
             this.Controls.Add(this.kameraAracMenu);
             this.Controls.Add(this.videoCaptureBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(335, 320);
+            this.MinimumSize = new System.Drawing.Size(365, 320);
             this.Name = "kamera";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mCTerminal Uzak Görüntü | (DIRECTSHOW_AYGIT)";

@@ -70,7 +70,7 @@
             this.haritaAracMenu.Location = new System.Drawing.Point(0, 0);
             this.haritaAracMenu.Name = "haritaAracMenu";
             this.haritaAracMenu.ShowItemToolTips = false;
-            this.haritaAracMenu.Size = new System.Drawing.Size(544, 25);
+            this.haritaAracMenu.Size = new System.Drawing.Size(523, 25);
             this.haritaAracMenu.TabIndex = 0;
             // 
             // toolStripDropDownButton2
@@ -137,7 +137,7 @@
             this.boylamTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.boylamTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.boylamTextBox.Name = "boylamTextBox";
-            this.boylamTextBox.Size = new System.Drawing.Size(120, 23);
+            this.boylamTextBox.Size = new System.Drawing.Size(110, 23);
             this.boylamTextBox.Text = "34.56789";
             // 
             // enlemTextBox
@@ -149,7 +149,7 @@
             this.enlemTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.enlemTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.enlemTextBox.Name = "enlemTextBox";
-            this.enlemTextBox.Size = new System.Drawing.Size(120, 23);
+            this.enlemTextBox.Size = new System.Drawing.Size(110, 23);
             this.enlemTextBox.Text = "45.67890";
             // 
             // toolStripDropDownButton1
@@ -273,7 +273,7 @@
             this.harita1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.harita1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.harita1.ShowTileGridLines = false;
-            this.harita1.Size = new System.Drawing.Size(543, 359);
+            this.harita1.Size = new System.Drawing.Size(522, 345);
             this.harita1.TabIndex = 1;
             this.harita1.Zoom = 0D;
             this.harita1.OnPositionChanged += new GMap.NET.PositionChanged(this.harita1_OnPositionChanged);
@@ -292,7 +292,7 @@
             this.haritaortala_checkbox.Checked = true;
             this.haritaortala_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.haritaortala_checkbox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.haritaortala_checkbox.Location = new System.Drawing.Point(156, 0);
+            this.haritaortala_checkbox.Location = new System.Drawing.Point(155, 0);
             this.haritaortala_checkbox.Name = "haritaortala_checkbox";
             this.haritaortala_checkbox.Size = new System.Drawing.Size(93, 24);
             this.haritaortala_checkbox.TabIndex = 2;
@@ -304,12 +304,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(542, 383);
+            this.ClientSize = new System.Drawing.Size(521, 369);
             this.Controls.Add(this.harita1);
             this.Controls.Add(this.haritaortala_checkbox);
             this.Controls.Add(this.haritaAracMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(558, 422);
+            this.MinimumSize = new System.Drawing.Size(537, 408);
             this.Name = "harita";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mCTerminal Harita";

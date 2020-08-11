@@ -36,16 +36,9 @@ namespace mCTerminal
             //yeni sürümü varsa güncelleme aracının yeni sürümünü başlat.
             try
             {
-                if (File.Exists("mCTerminal-updater2.exe"))
-                {
-                    Process.Start(programyolu + @"mCTerminal-updater2.exe");
-                    File.Delete("mCTerminal-updater.exe");
-                }
-                else
-                {
-                    Process.Start(programyolu + @"mCTerminal-updater.exe");
-                }
-                this.Close();
+                
+                Process.Start(programyolu + @"mCTerminal-updater2.exe");
+
             }
             catch
             {
@@ -138,7 +131,7 @@ namespace mCTerminal
                 dosyabilgiTextBox2.AppendText("EKSİK" + Environment.NewLine);
             }
             //----------
-            if (File.Exists("mCTerminal-updater.exe"))
+            if (File.Exists("mCTerminal-updater2.exe"))
             {
                 dosyabilgiTextBox2.AppendText("TAMAM" + Environment.NewLine);
             }
