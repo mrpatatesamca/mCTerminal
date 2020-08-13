@@ -253,6 +253,8 @@
     <None Include="Resources\loading-gif-90-10-101.gif" />
     <None Include="Resources\screenshot.png" />
     <None Include="Resources\COSMOSLogoText.png" />
+    <None Include="Resources\puzzle.png" />
+    <None Include="Resources\ebook.png" />
     <Content Include="terminal_logo2.ico" />
   </ItemGroup>
   <ItemGroup>

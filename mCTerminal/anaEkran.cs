@@ -229,6 +229,7 @@ namespace mCTerminal
                 toolStripDropDownButton3.ForeColor = Color.WhiteSmoke;
                 toolStripDropDownButton4.ForeColor = Color.WhiteSmoke;
                 toolStripDropDownButton5.ForeColor = Color.WhiteSmoke;
+                toolStripDropDownButton6.ForeColor = Color.WhiteSmoke;
                 ortagovdeDurumLabel.ForeColor = Color.WhiteSmoke;
                 irtifaMaxLabel.ForeColor = Color.WhiteSmoke;
                 irtifaAnlıkLabel.ForeColor = Color.WhiteSmoke;
@@ -249,6 +250,7 @@ namespace mCTerminal
                 toolStripDropDownButton3.ForeColor = Color.LimeGreen;
                 toolStripDropDownButton4.ForeColor = Color.LimeGreen;
                 toolStripDropDownButton5.ForeColor = Color.LimeGreen;
+                toolStripDropDownButton6.ForeColor = Color.LimeGreen;
                 ortagovdeDurumLabel.ForeColor = Color.DarkOliveGreen;
                 irtifaMaxLabel.ForeColor = Color.DarkOliveGreen;
                 irtifaAnlıkLabel.ForeColor = Color.DarkOliveGreen;
@@ -273,6 +275,7 @@ namespace mCTerminal
                 toolStripDropDownButton3.ForeColor = Color.FromArgb(255, 230, 230);
                 toolStripDropDownButton4.ForeColor = Color.FromArgb(255, 230, 230);
                 toolStripDropDownButton5.ForeColor = Color.FromArgb(255, 230, 230);
+                toolStripDropDownButton6.ForeColor = Color.FromArgb(255, 230, 230);
                 anlikİrtifaGrafik.Titles[0].ForeColor = Color.IndianRed;
                 gkuvvetGrafik.Titles[0].ForeColor = Color.IndianRed;
             }
@@ -293,6 +296,7 @@ namespace mCTerminal
                 toolStripDropDownButton3.ForeColor = Color.FromArgb(245, 228, 183);
                 toolStripDropDownButton4.ForeColor = Color.FromArgb(245, 228, 183);
                 toolStripDropDownButton5.ForeColor = Color.FromArgb(245, 228, 183);
+                toolStripDropDownButton6.ForeColor = Color.FromArgb(245, 228, 183);
                 anlikİrtifaGrafik.Titles[0].ForeColor = Color.FromArgb(245, 228, 183);
                 gkuvvetGrafik.Titles[0].ForeColor = Color.FromArgb(245, 228, 183);
             }
@@ -309,6 +313,7 @@ namespace mCTerminal
                 toolStripDropDownButton3.ForeColor = Color.WhiteSmoke;
                 toolStripDropDownButton4.ForeColor = Color.WhiteSmoke;
                 toolStripDropDownButton5.ForeColor = Color.WhiteSmoke;
+                toolStripDropDownButton6.ForeColor = Color.WhiteSmoke;
                 ortagovdeDurumLabel.ForeColor = Color.FromArgb(251, 235, 235);
                 hdopLabel.ForeColor = Color.FromArgb(251, 235, 235);
                 irtifaMaxLabel.ForeColor = Color.FromArgb(251, 235, 235);

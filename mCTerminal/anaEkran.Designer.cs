@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(anaEkran));
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -56,7 +56,10 @@
             this.hamVeriyiGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton5 = new System.Windows.Forms.ToolStripDropDownButton();
             this.ayarlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hataGidermeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.güncelleştirmeleriKontrolEtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton6 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.destekSayfasınaGitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hakkındaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -108,7 +111,6 @@
             this.AciXGauge = new System.Windows.Forms.AGauge();
             this.beklemeEkranıAcTimer = new System.Windows.Forms.Timer(this.components);
             this.baglantiYenileİkonDuzeltTimer = new System.Windows.Forms.Timer(this.components);
-            this.hataGidermeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.baglantiGrup.SuspendLayout();
             this.fizikselGrup.SuspendLayout();
@@ -139,6 +141,7 @@
             this.toolStripDropDownButton1,
             this.toolStripDropDownButton4,
             this.toolStripDropDownButton5,
+            this.toolStripDropDownButton6,
             this.toolStripDropDownButton3,
             this.baglantiListeYenileButton,
             this.COMPortList,
@@ -148,7 +151,7 @@
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.toolStrip1.ShowItemToolTips = false;
-            this.toolStrip1.Size = new System.Drawing.Size(617, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(854, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -339,6 +342,17 @@
             this.ayarlarToolStripMenuItem.Text = "Ayarlar";
             this.ayarlarToolStripMenuItem.Click += new System.EventHandler(this.ayarlarToolStripMenuItem_Click);
             // 
+            // hataGidermeToolStripMenuItem
+            // 
+            this.hataGidermeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.hataGidermeToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.hataGidermeToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.bug;
+            this.hataGidermeToolStripMenuItem.Name = "hataGidermeToolStripMenuItem";
+            this.hataGidermeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F4)));
+            this.hataGidermeToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.hataGidermeToolStripMenuItem.Text = "Hata Giderme";
+            this.hataGidermeToolStripMenuItem.Click += new System.EventHandler(this.hataGidermeToolStripMenuItem_Click);
+            // 
             // güncelleştirmeleriKontrolEtToolStripMenuItem
             // 
             this.güncelleştirmeleriKontrolEtToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
@@ -349,6 +363,26 @@
             this.güncelleştirmeleriKontrolEtToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.güncelleştirmeleriKontrolEtToolStripMenuItem.Text = "Güncelleştirmeleri Kontrol Et";
             this.güncelleştirmeleriKontrolEtToolStripMenuItem.Click += new System.EventHandler(this.güncelleştirmeleriKontrolEtToolStripMenuItem_Click);
+            // 
+            // toolStripDropDownButton6
+            // 
+            this.toolStripDropDownButton6.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripDropDownButton6.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem});
+            this.toolStripDropDownButton6.Image = global::mCTerminal.Properties.Resources.puzzle;
+            this.toolStripDropDownButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton6.Name = "toolStripDropDownButton6";
+            this.toolStripDropDownButton6.Size = new System.Drawing.Size(84, 22);
+            this.toolStripDropDownButton6.Text = "Eklentiler";
+            // 
+            // kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem
+            // 
+            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.ebook;
+            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Name = "kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem";
+            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Text = "Kayıtlı Veri Okuyucu | mct-rd.exe";
             // 
             // toolStripDropDownButton3
             // 
@@ -428,14 +462,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.hamVeriTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.hamVeriTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.hamVeriTextBox1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.hamVeriTextBox1.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.hamVeriTextBox1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.hamVeriTextBox1.Location = new System.Drawing.Point(0, 232);
+            this.hamVeriTextBox1.Location = new System.Drawing.Point(0, 335);
             this.hamVeriTextBox1.Multiline = true;
             this.hamVeriTextBox1.Name = "hamVeriTextBox1";
             this.hamVeriTextBox1.ReadOnly = true;
             this.hamVeriTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.hamVeriTextBox1.Size = new System.Drawing.Size(612, 141);
+            this.hamVeriTextBox1.Size = new System.Drawing.Size(849, 141);
             this.hamVeriTextBox1.TabIndex = 5;
             // 
             // baglantiNoktasi_label
@@ -742,70 +776,70 @@
             this.anlikİrtifaGrafik.BackColor = System.Drawing.Color.Transparent;
             this.anlikİrtifaGrafik.BorderlineColor = System.Drawing.Color.WhiteSmoke;
             this.anlikİrtifaGrafik.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea7.AxisX.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
-            chartArea7.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            chartArea7.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            chartArea7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            chartArea7.BorderColor = System.Drawing.Color.WhiteSmoke;
-            chartArea7.Name = "ChartArea1";
-            this.anlikİrtifaGrafik.ChartAreas.Add(chartArea7);
-            legend7.Enabled = false;
-            legend7.Name = "Legend1";
-            this.anlikİrtifaGrafik.Legends.Add(legend7);
+            chartArea1.AxisX.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
+            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            chartArea1.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            chartArea1.BorderColor = System.Drawing.Color.WhiteSmoke;
+            chartArea1.Name = "ChartArea1";
+            this.anlikİrtifaGrafik.ChartAreas.Add(chartArea1);
+            legend1.Enabled = false;
+            legend1.Name = "Legend1";
+            this.anlikİrtifaGrafik.Legends.Add(legend1);
             this.anlikİrtifaGrafik.Location = new System.Drawing.Point(849, 35);
             this.anlikİrtifaGrafik.Name = "anlikİrtifaGrafik";
             this.anlikİrtifaGrafik.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series7.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series7.LabelForeColor = System.Drawing.Color.WhiteSmoke;
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.anlikİrtifaGrafik.Series.Add(series7);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series1.LabelForeColor = System.Drawing.Color.WhiteSmoke;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.anlikİrtifaGrafik.Series.Add(series1);
             this.anlikİrtifaGrafik.Size = new System.Drawing.Size(200, 200);
             this.anlikİrtifaGrafik.TabIndex = 10;
             this.anlikİrtifaGrafik.Text = "anlikİrtifaGrafik";
-            title7.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            title7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            title7.Name = "Title1";
-            title7.Text = "Anlık İrtifa Grafiği";
-            this.anlikİrtifaGrafik.Titles.Add(title7);
+            title1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            title1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            title1.Name = "Title1";
+            title1.Text = "Anlık İrtifa Grafiği";
+            this.anlikİrtifaGrafik.Titles.Add(title1);
             // 
             // gkuvvetGrafik
             // 
             this.gkuvvetGrafik.BackColor = System.Drawing.Color.Transparent;
             this.gkuvvetGrafik.BorderlineColor = System.Drawing.Color.WhiteSmoke;
             this.gkuvvetGrafik.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea8.AxisX.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
-            chartArea8.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            chartArea8.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            chartArea8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            chartArea8.BorderColor = System.Drawing.Color.WhiteSmoke;
-            chartArea8.Name = "ChartArea1";
-            this.gkuvvetGrafik.ChartAreas.Add(chartArea8);
-            legend8.Enabled = false;
-            legend8.Name = "Legend1";
-            this.gkuvvetGrafik.Legends.Add(legend8);
+            chartArea2.AxisX.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
+            chartArea2.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            chartArea2.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            chartArea2.BorderColor = System.Drawing.Color.WhiteSmoke;
+            chartArea2.Name = "ChartArea1";
+            this.gkuvvetGrafik.ChartAreas.Add(chartArea2);
+            legend2.Enabled = false;
+            legend2.Name = "Legend1";
+            this.gkuvvetGrafik.Legends.Add(legend2);
             this.gkuvvetGrafik.Location = new System.Drawing.Point(1055, 35);
             this.gkuvvetGrafik.Name = "gkuvvetGrafik";
             this.gkuvvetGrafik.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series8.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series8.LabelForeColor = System.Drawing.Color.WhiteSmoke;
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.gkuvvetGrafik.Series.Add(series8);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series2.LabelForeColor = System.Drawing.Color.WhiteSmoke;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.gkuvvetGrafik.Series.Add(series2);
             this.gkuvvetGrafik.Size = new System.Drawing.Size(200, 200);
             this.gkuvvetGrafik.TabIndex = 12;
             this.gkuvvetGrafik.Text = "gkuvvetGrafik";
-            title8.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            title8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            title8.Name = "Title1";
-            title8.Text = "G Kuvveti Grafiği";
-            this.gkuvvetGrafik.Titles.Add(title8);
+            title2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            title2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            title2.Name = "Title1";
+            title2.Text = "G Kuvveti Grafiği";
+            this.gkuvvetGrafik.Titles.Add(title2);
             // 
             // toolTip1
             // 
@@ -1213,23 +1247,12 @@
             this.baglantiYenileİkonDuzeltTimer.Interval = 1453;
             this.baglantiYenileİkonDuzeltTimer.Tick += new System.EventHandler(this.baglantiYenileİkonDuzeltTimer_Tick);
             // 
-            // hataGidermeToolStripMenuItem
-            // 
-            this.hataGidermeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.hataGidermeToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.hataGidermeToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.bug;
-            this.hataGidermeToolStripMenuItem.Name = "hataGidermeToolStripMenuItem";
-            this.hataGidermeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F4)));
-            this.hataGidermeToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
-            this.hataGidermeToolStripMenuItem.Text = "Hata Giderme";
-            this.hataGidermeToolStripMenuItem.Click += new System.EventHandler(this.hataGidermeToolStripMenuItem_Click);
-            // 
             // anaEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(612, 373);
+            this.ClientSize = new System.Drawing.Size(849, 476);
             this.Controls.Add(this.baglantiDurumPictureBox);
             this.Controls.Add(this.kayitdurumPictureBox);
             this.Controls.Add(this.hamVeriTextBox1);
@@ -1244,7 +1267,7 @@
             this.Controls.Add(this.toolStrip1);
             this.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(628, 412);
+            this.MinimumSize = new System.Drawing.Size(865, 515);
             this.Name = "anaEkran";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mCTerminal $PROGRAM_SURUM | [@PC ADI]";
@@ -1339,5 +1362,7 @@
         private System.Windows.Forms.ToolStripMenuItem ayarlarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem güncelleştirmeleriKontrolEtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hataGidermeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton6;
+        private System.Windows.Forms.ToolStripMenuItem kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem;
     }
 }
