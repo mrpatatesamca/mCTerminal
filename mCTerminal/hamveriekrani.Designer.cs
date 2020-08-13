@@ -53,7 +53,7 @@
             this.hamveritextbox.Name = "hamveritextbox";
             this.hamveritextbox.ReadOnly = true;
             this.hamveritextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.hamveritextbox.Size = new System.Drawing.Size(654, 283);
+            this.hamveritextbox.Size = new System.Drawing.Size(634, 182);
             this.hamveritextbox.TabIndex = 0;
             this.hamveritextbox.Text = "hh:mm:ss --> Veri Bekleniyor...";
             // 
@@ -62,11 +62,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(654, 282);
+            this.ClientSize = new System.Drawing.Size(634, 181);
             this.Controls.Add(this.hamveritextbox);
             this.ForeColor = System.Drawing.Color.Lime;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(490, 220);
+            this.MinimumSize = new System.Drawing.Size(650, 220);
             this.Name = "hamveriekrani";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mCTerminal Ham Veri";

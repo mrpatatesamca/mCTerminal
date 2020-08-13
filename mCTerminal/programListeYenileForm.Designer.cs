@@ -53,7 +53,7 @@
             // formKapatTimer
             // 
             this.formKapatTimer.Enabled = true;
-            this.formKapatTimer.Interval = 2000;
+            this.formKapatTimer.Interval = 650;
             this.formKapatTimer.Tick += new System.EventHandler(this.formKapat_Tick);
             // 
             // pictureBox1

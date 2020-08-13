@@ -228,6 +228,7 @@ namespace mCTerminal
                 toolStripDropDownButton2.ForeColor = Color.WhiteSmoke;
                 toolStripDropDownButton3.ForeColor = Color.WhiteSmoke;
                 toolStripDropDownButton4.ForeColor = Color.WhiteSmoke;
+                toolStripDropDownButton5.ForeColor = Color.WhiteSmoke;
                 ortagovdeDurumLabel.ForeColor = Color.WhiteSmoke;
                 irtifaMaxLabel.ForeColor = Color.WhiteSmoke;
                 irtifaAnlıkLabel.ForeColor = Color.WhiteSmoke;
@@ -247,6 +248,7 @@ namespace mCTerminal
                 toolStripDropDownButton2.ForeColor = Color.LimeGreen;
                 toolStripDropDownButton3.ForeColor = Color.LimeGreen;
                 toolStripDropDownButton4.ForeColor = Color.LimeGreen;
+                toolStripDropDownButton5.ForeColor = Color.LimeGreen;
                 ortagovdeDurumLabel.ForeColor = Color.DarkOliveGreen;
                 irtifaMaxLabel.ForeColor = Color.DarkOliveGreen;
                 irtifaAnlıkLabel.ForeColor = Color.DarkOliveGreen;
@@ -270,6 +272,7 @@ namespace mCTerminal
                 toolStripDropDownButton2.ForeColor = Color.FromArgb(255, 230, 230);
                 toolStripDropDownButton3.ForeColor = Color.FromArgb(255, 230, 230);
                 toolStripDropDownButton4.ForeColor = Color.FromArgb(255, 230, 230);
+                toolStripDropDownButton5.ForeColor = Color.FromArgb(255, 230, 230);
                 anlikİrtifaGrafik.Titles[0].ForeColor = Color.IndianRed;
                 gkuvvetGrafik.Titles[0].ForeColor = Color.IndianRed;
             }
@@ -289,6 +292,7 @@ namespace mCTerminal
                 toolStripDropDownButton2.ForeColor = Color.FromArgb(245, 228, 183);
                 toolStripDropDownButton3.ForeColor = Color.FromArgb(245, 228, 183);
                 toolStripDropDownButton4.ForeColor = Color.FromArgb(245, 228, 183);
+                toolStripDropDownButton5.ForeColor = Color.FromArgb(245, 228, 183);
                 anlikİrtifaGrafik.Titles[0].ForeColor = Color.FromArgb(245, 228, 183);
                 gkuvvetGrafik.Titles[0].ForeColor = Color.FromArgb(245, 228, 183);
             }
@@ -304,6 +308,7 @@ namespace mCTerminal
                 toolStripDropDownButton2.ForeColor = Color.WhiteSmoke;
                 toolStripDropDownButton3.ForeColor = Color.WhiteSmoke;
                 toolStripDropDownButton4.ForeColor = Color.WhiteSmoke;
+                toolStripDropDownButton5.ForeColor = Color.WhiteSmoke;
                 ortagovdeDurumLabel.ForeColor = Color.FromArgb(251, 235, 235);
                 hdopLabel.ForeColor = Color.FromArgb(251, 235, 235);
                 irtifaMaxLabel.ForeColor = Color.FromArgb(251, 235, 235);
@@ -342,6 +347,17 @@ namespace mCTerminal
 
             //Ham veri'nin yazıldığı textbox'ın düzgün gözükmesi için
             hamVeriTextBox1.SelectionStart = hamVeriTextBox1.Text.Length;
+
+            //Eski güncelleme aracını kaldırır. (mCTerminal-updater2.exe yeni sürüm, kaldırılacak sürüm: mCTerminal-updater.exe)
+            try
+            {
+                File.Delete("mCTerminal-updater.exe");
+            }
+            catch
+            {
+                //bir şey olmamış gibi devam :D
+            }
+
         }
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -543,20 +559,6 @@ namespace mCTerminal
             System.Diagnostics.Process.Start("https://github.com/mrpatatesamca/mCTerminal");
         }
 
-        private void güncelleştirmeleriKontrolEtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-                Process.Start(programyolu + @"mCTerminal-updater2.exe");
-
-            }
-            catch
-            {
-                MessageBox.Show("Güncelleme aracı başlatılamadı! Lütfen dosyaların konumunu kontrol edin.", "Program başlatılamadı!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } 
-        }
-
         private void uzakGörüntüyüGösterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             kamera kamerafrm = new kamera();
@@ -620,12 +622,6 @@ namespace mCTerminal
         private void verikaydetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             editorVeriKaydet();
-        }
-
-        private void hataGidermeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            eksikdosyaForm eksikdosyafrm = new eksikdosyaForm();
-            eksikdosyafrm.Show();
         }
 
         private void tamEkranToolStripMenuItem_Click(object sender, EventArgs e)
@@ -808,6 +804,7 @@ namespace mCTerminal
                 verikaydetToolStripMenuItem.CheckState = CheckState.Checked;
                 kayitdurumPictureBox.Image = mCTerminal.Properties.Resources.pen_drive_yesil;
                 toolTip1.SetToolTip(kayitdurumPictureBox, "Veri kayıtı yapılıyor!");
+                verikaydetToolStripMenuItem.Text = "Veri Çıktısını Kaydetme";
                 toolTip1.ToolTipIcon = ToolTipIcon.Info;
             }
             else
@@ -815,8 +812,35 @@ namespace mCTerminal
                 verikaydetToolStripMenuItem.CheckState = CheckState.Unchecked;
                 kayitdurumPictureBox.Image = mCTerminal.Properties.Resources.pen_drive_kirmizi;
                 toolTip1.SetToolTip(kayitdurumPictureBox, "Veri kayıtı yapılmıyor!");
+                verikaydetToolStripMenuItem.Text = "Veri Çıktısını Kaydet";
                 toolTip1.ToolTipIcon = ToolTipIcon.Warning;
             }
+        }
+
+        private void ayarlarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ayarlar ayarlarfrm = new ayarlar();
+            ayarlarfrm.Show();
+        }
+
+        private void güncelleştirmeleriKontrolEtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                Process.Start(programyolu + @"mCTerminal-updater2.exe");
+
+            }
+            catch
+            {
+                MessageBox.Show("Güncelleme aracı başlatılamadı! Lütfen dosyaların konumunu kontrol edin.", "Program başlatılamadı!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void hataGidermeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            eksikdosyaForm eksikdosyafrm = new eksikdosyaForm();
+            eksikdosyafrm.Show();
         }
 
         private void baglantiYenileİkonDuzeltTimer_Tick(object sender, EventArgs e)
@@ -828,12 +852,6 @@ namespace mCTerminal
         {
             System.Diagnostics.Process.Start("mCTerminal.exe");
             Application.Exit();
-        }
-
-        private void ayarlarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ayarlar ayarlarfrm = new ayarlar();
-            ayarlarfrm.Show();
         }
     }
 }

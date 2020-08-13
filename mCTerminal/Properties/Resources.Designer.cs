@@ -103,6 +103,16 @@ namespace mCTerminal.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap COSMOSLogoText {
+            get {
+                object obj = ResourceManager.GetObject("COSMOSLogoText", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap COSMOSLogoTextGif {
             get {
                 object obj = ResourceManager.GetObject("COSMOSLogoTextGif", resourceCulture);

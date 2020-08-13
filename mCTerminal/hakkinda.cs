@@ -79,15 +79,21 @@ namespace mCTerminal
         private void hakkinda_Load(object sender, EventArgs e)
         {
             this.Text = "mCTerminal " + programSurum + " Hakkında";
-            programSurumSayiLabel.Text = "mCTerminal " + programSurum + " | build 20200807";
+            programSurumSayiLabel.Text = "mCTerminal " + programSurum + " | build 20200813";
             sistembilgiLabel.Text = "@" + Environment.MachineName + "/" + Environment.UserName + " | " + Environment.OSVersion;
             wmp.URL = programyolu + @"res\chiptune2.mp3";
+            wmp.settings.volume = 45;
             wmp.controls.play();
         }
 
         private void hakkinda_FormClosing(object sender, FormClosingEventArgs e)
         {
             wmp.controls.stop();
+        }
+
+        private void cosmosTakimiLogoPictureBox_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.cosmostakimi.com");
         }
     }
 }
