@@ -381,8 +381,9 @@
             this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.ebook;
             this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Name = "kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem";
-            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
-            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Text = "Kayıtlı Veri Okuyucu | mct-rd.exe";
+            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Text = "mCTerminal Okuyucu | mct-rd.exe";
+            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Click += new System.EventHandler(this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton3
             // 
@@ -462,7 +463,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.hamVeriTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.hamVeriTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.hamVeriTextBox1.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.hamVeriTextBox1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.hamVeriTextBox1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.hamVeriTextBox1.Location = new System.Drawing.Point(0, 335);
             this.hamVeriTextBox1.Multiline = true;

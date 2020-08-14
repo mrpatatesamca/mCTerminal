@@ -108,7 +108,7 @@
             this.dosyabilgiTextBox2.Size = new System.Drawing.Size(144, 205);
             this.dosyabilgiTextBox2.TabIndex = 4;
             this.dosyabilgiTextBox2.Text = "TAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMA" +
-    "M\r\nTAMAM\r\nTAMAM";
+    "M\r\nTAMAM\r\nTAMAM\r\nTAMAM";
             this.dosyabilgiTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // fakebaslikTextBox

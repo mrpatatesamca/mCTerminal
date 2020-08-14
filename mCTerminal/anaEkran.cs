@@ -180,7 +180,12 @@ namespace mCTerminal
                 eksikdosyasayi += 1;
             }
             //----------
-            if (!File.Exists("mCTerminal-updater2.exe"))
+            if (!File.Exists("mct-upd.exe"))
+            {
+                eksikdosyasayi += 1;
+            }
+            //----------
+            if (!File.Exists("mct-rd.exe"))
             {
                 eksikdosyasayi += 1;
             }
@@ -833,7 +838,7 @@ namespace mCTerminal
             try
             {
 
-                Process.Start(programyolu + @"mCTerminal-updater2.exe");
+                Process.Start(programyolu + @"mct-upd.exe");
 
             }
             catch
@@ -846,6 +851,11 @@ namespace mCTerminal
         {
             eksikdosyaForm eksikdosyafrm = new eksikdosyaForm();
             eksikdosyafrm.Show();
+        }
+
+        private void kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("mct-rd.exe");
         }
 
         private void baglantiYenileİkonDuzeltTimer_Tick(object sender, EventArgs e)
