@@ -414,6 +414,7 @@ namespace mCTerminal
                 hamVeriTextBox1.AppendText(sadece_saat + " --> " + data + Environment.NewLine);
                 int line = hamVeriTextBox1.GetLineFromCharIndex(hamVeriTextBox1.SelectionStart); //otomatik en aşağı kaydırması için
                 int column = hamVeriTextBox1.SelectionStart - hamVeriTextBox1.GetFirstCharIndexFromLine(line); //otomatik en aşağı kaydırması için
+                //---------------------------------------------------------------------------------------------------
 
                 if (splitted_data[7] == "1") //kamera durumu 1 ise
                 {
@@ -442,71 +443,95 @@ namespace mCTerminal
                     ortagovdeDurumLabel.Text = "Orta Gövde: Ayrılmadı!";
                 }
 
-                //---------------------------------GRAFİK KUTULARI-----------------------------------
-                //-----------------------------------ANLIK İRTİFA GRAFİĞİ----------------------------------
-                anlikİrtifaGrafik.ChartAreas[0].AxisX.Minimum = minm;
-                anlikİrtifaGrafik.ChartAreas[0].AxisX.Maximum = maksm;
-                anlikİrtifaGrafik.ChartAreas[0].AxisY.Minimum = 0;
-                anlikİrtifaGrafik.ChartAreas[0].AxisY.Maximum = 3500;
-                anlikİrtifaGrafik.ChartAreas[0].AxisX.ScaleView.Zoom(minm, maksm);
-                this.anlikİrtifaGrafik.Series[0].Points.AddXY((minm + maksm) / 2, splitted_data[12]);
-                //---------------------------------G KUVVETİ GRAFİĞİ---------------------------------
-                gkuvvetGrafik.ChartAreas[0].AxisX.Minimum = gkuvvetmin;
-                gkuvvetGrafik.ChartAreas[0].AxisX.Maximum = gkuvvetmaks;
-                gkuvvetGrafik.ChartAreas[0].AxisY.Minimum = 0;
-                gkuvvetGrafik.ChartAreas[0].AxisY.Maximum = 5;
-                gkuvvetGrafik.ChartAreas[0].AxisX.ScaleView.Zoom(gkuvvetmin, gkuvvetmaks);
-                this.gkuvvetGrafik.Series[0].Points.AddXY((gkuvvetmin + gkuvvetmaks) / 2, splitted_data[10]);
-                //-----------------------------------------------------------------------------------
-                gkuvvetmin++;
-                gkuvvetmaks++;
-                maksm++;
-                minm++;
-                //----------------------------------GRAFİK KUTULARI SON------------------------------
 
-                //--------------------------İBRE KUTULARI--------------------------------
-                gKuvvetGauge.Value = Convert.ToInt32(splitted_data[10]); //gkuvvet
-                yatayHizGauge.Value = Convert.ToInt32(splitted_data[6]); //yatay hız
-                maksİrtifaGauge.Value = Convert.ToInt32(splitted_data[5]); //gps maks irtifa
-                irtifaGauge.Value = Convert.ToInt32(splitted_data[4]); //gps irtifa
-                AciXGauge.Value = Convert.ToInt32(splitted_data[8]); //x açısı
-                AciYGauge.Value = Convert.ToInt32(splitted_data[9]); //y açısı
-                //-------------------------İBRE KUTULARI SON-------------------------------
+                try
+                {
+                    //---------------------------------GRAFİK KUTULARI-----------------------------------
+                    //-----------------------------------ANLIK İRTİFA GRAFİĞİ----------------------------------
+                    anlikİrtifaGrafik.ChartAreas[0].AxisX.Minimum = minm;
+                    anlikİrtifaGrafik.ChartAreas[0].AxisX.Maximum = maksm;
+                    anlikİrtifaGrafik.ChartAreas[0].AxisY.Minimum = 0;
+                    anlikİrtifaGrafik.ChartAreas[0].AxisY.Maximum = 3500;
+                    anlikİrtifaGrafik.ChartAreas[0].AxisX.ScaleView.Zoom(minm, maksm);
+                    this.anlikİrtifaGrafik.Series[0].Points.AddXY((minm + maksm) / 2, splitted_data[12]);
+                    //---------------------------------G KUVVETİ GRAFİĞİ---------------------------------
+                    gkuvvetGrafik.ChartAreas[0].AxisX.Minimum = gkuvvetmin;
+                    gkuvvetGrafik.ChartAreas[0].AxisX.Maximum = gkuvvetmaks;
+                    gkuvvetGrafik.ChartAreas[0].AxisY.Minimum = 0;
+                    gkuvvetGrafik.ChartAreas[0].AxisY.Maximum = 5;
+                    gkuvvetGrafik.ChartAreas[0].AxisX.ScaleView.Zoom(gkuvvetmin, gkuvvetmaks);
+                    this.gkuvvetGrafik.Series[0].Points.AddXY((gkuvvetmin + gkuvvetmaks) / 2, splitted_data[10]);
+                    //-----------------------------------------------------------------------------------
+                    gkuvvetmin++;
+                    gkuvvetmaks++;
+                    maksm++;
+                    minm++;
+                    //----------------------------------GRAFİK KUTULARI SON------------------------------
+                }
+                catch
+                {
+                    hamVeriTextBox1.AppendText(sadece_saat + " --> Hata! Grafik Kutuları bir hata ile karşılaştı. Yok sayılıp devam ediliyor..." + Environment.NewLine);
+                }
 
-                //-------------------------------SİMGELERİN DURUMU---------------------------------------
-                int hdop_durum_sayi = Convert.ToInt32(splitted_data[1]);
-                int baglanilan_uydu_sayisi_durum_sayi = Convert.ToInt32(splitted_data[0]);
-                //-----hdop durumu-----
-                if (hdop_durum_sayi <= 2)
+                try
                 {
-                    hdopPictureBox.Image = Properties.Resources.snr_seviye_yesil;
+                    //--------------------------İBRE KUTULARI--------------------------------
+                    gKuvvetGauge.Value = Convert.ToInt32(splitted_data[10]); //gkuvvet
+                    yatayHizGauge.Value = Convert.ToInt32(splitted_data[6]); //yatay hız
+                    maksİrtifaGauge.Value = Convert.ToInt32(splitted_data[5]); //gps maks irtifa
+                    irtifaGauge.Value = Convert.ToInt32(splitted_data[4]); //gps irtifa
+                    AciXGauge.Value = Convert.ToInt32(splitted_data[8]); //x açısı
+                    AciYGauge.Value = Convert.ToInt32(splitted_data[9]); //y açısı
+                    //-------------------------İBRE KUTULARI SON-------------------------------
                 }
-                if (hdop_durum_sayi > 2 && hdop_durum_sayi <= 4)
+                catch
                 {
-                    hdopPictureBox.Image = Properties.Resources.snr_seviye_sari;
+                    hamVeriTextBox1.AppendText(sadece_saat + " --> Hata! İbre Kutuları bir hata ile karşılaştı. Yok sayılıp devam ediliyor..." + Environment.NewLine);
                 }
-                if (hdop_durum_sayi > 4)
-                {
-                    hdopPictureBox.Image = Properties.Resources.snr_seviye_kirmizi;
-                }
-                //---hdop durumu son---
 
-                //-----gps uydu durumu-----
-                if (baglanilan_uydu_sayisi_durum_sayi <= 4)
-                {
-                    uyduPictureBox.Image = Properties.Resources.uydu_kirmizi;
-                }
-                if (baglanilan_uydu_sayisi_durum_sayi > 4 && hdop_durum_sayi <= 7)
-                {
-                    uyduPictureBox.Image = Properties.Resources.uydu_sari;
-                }
-                if (baglanilan_uydu_sayisi_durum_sayi > 7)
-                {
-                    uyduPictureBox.Image = Properties.Resources.uydu_yesil;
-                }
-                //---gps uydu durumu son---
 
-                //-------------------------------SİMGELERİN DURUMU SON-----------------------------------
+                try
+                {
+                    //-------------------------------SİMGELERİN DURUMU---------------------------------------
+                    int hdop_durum_sayi = Convert.ToInt32(splitted_data[1]);
+                    int baglanilan_uydu_sayisi_durum_sayi = Convert.ToInt32(splitted_data[0]);
+                    //-----hdop durumu-----
+                    if (hdop_durum_sayi <= 2)
+                    {
+                        hdopPictureBox.Image = Properties.Resources.snr_seviye_yesil;
+                    }
+                    if (hdop_durum_sayi > 2 && hdop_durum_sayi <= 4)
+                    {
+                        hdopPictureBox.Image = Properties.Resources.snr_seviye_sari;
+                    }
+                    if (hdop_durum_sayi > 4)
+                    {
+                        hdopPictureBox.Image = Properties.Resources.snr_seviye_kirmizi;
+                    }
+                    //---hdop durumu son---
+
+                    //-----gps uydu durumu-----
+                    if (baglanilan_uydu_sayisi_durum_sayi <= 4)
+                    {
+                        uyduPictureBox.Image = Properties.Resources.uydu_kirmizi;
+                    }
+                    if (baglanilan_uydu_sayisi_durum_sayi > 4 && hdop_durum_sayi <= 7)
+                    {
+                        uyduPictureBox.Image = Properties.Resources.uydu_sari;
+                    }
+                    if (baglanilan_uydu_sayisi_durum_sayi > 7)
+                    {
+                        uyduPictureBox.Image = Properties.Resources.uydu_yesil;
+                    }
+                    //---gps uydu durumu son---
+
+                    //-------------------------------SİMGELERİN DURUMU SON-----------------------------------
+                }
+                catch
+                {
+                    hamVeriTextBox1.AppendText(sadece_saat + " --> Hata! Durum Simgeleri bir hata ile karşılaştı. Yok sayılıp devam ediliyor..." + Environment.NewLine);
+                }
+
 
                 //VERİ ÇIKTISINI KAYDETMEK İÇİN VERİ KAYDET BUTONUNU KONTROL EDER VE ONA GÖRE VERİYİ YAZAR
                 if (verikaydetToolStripMenuItem.CheckState == CheckState.Checked)
@@ -710,6 +735,7 @@ namespace mCTerminal
                     {
                         serialPort1.Open();
                         Properties.Settings.Default.serialportdurum = true;
+                        hamVeriBellekBosaltTimer.Start(); //bellek boşaltmayı başlat.
 
                         bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kes";
                         hamVeriTextBox1.AppendText(Environment.NewLine);
@@ -750,6 +776,7 @@ namespace mCTerminal
 
             serialPort1.Close();
             Properties.Settings.Default.serialportdurum = false;
+            hamVeriBellekBosaltTimer.Stop(); //bellek boşaltmayı durdur.
             baglantiDurumPictureBox.Image = Properties.Resources.dot_kirmizi;
             bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kur";
             hamVeriTextBox1.AppendText(sadece_saat + " --> " + COMPortList.Text + " üzerindeki bağlantı " + sadece_tarih + "</>" + sadece_saat + " tarihinde sonlandırıldı!");
@@ -856,6 +883,13 @@ namespace mCTerminal
         private void kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("mct-rd.exe");
+        }
+
+        private void hamVeriBellekBosaltTimer_Tick(object sender, EventArgs e)
+        {
+            //program şişmesin diye hem veri ekranını (ana ekrandaki) hem de global (ayar) data değişkenini temizler.
+            hamVeriTextBox1.Text = string.Empty;
+            Properties.Settings.Default.data = string.Empty;
         }
 
         private void baglantiYenileİkonDuzeltTimer_Tick(object sender, EventArgs e)

@@ -111,6 +111,7 @@
             this.AciXGauge = new System.Windows.Forms.AGauge();
             this.beklemeEkranıAcTimer = new System.Windows.Forms.Timer(this.components);
             this.baglantiYenileİkonDuzeltTimer = new System.Windows.Forms.Timer(this.components);
+            this.hamVeriBellekBosaltTimer = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1.SuspendLayout();
             this.baglantiGrup.SuspendLayout();
             this.fizikselGrup.SuspendLayout();
@@ -151,7 +152,7 @@
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.toolStrip1.ShowItemToolTips = false;
-            this.toolStrip1.Size = new System.Drawing.Size(854, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(734, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -465,12 +466,12 @@
             this.hamVeriTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.hamVeriTextBox1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.hamVeriTextBox1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.hamVeriTextBox1.Location = new System.Drawing.Point(0, 335);
+            this.hamVeriTextBox1.Location = new System.Drawing.Point(0, 260);
             this.hamVeriTextBox1.Multiline = true;
             this.hamVeriTextBox1.Name = "hamVeriTextBox1";
             this.hamVeriTextBox1.ReadOnly = true;
             this.hamVeriTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.hamVeriTextBox1.Size = new System.Drawing.Size(849, 141);
+            this.hamVeriTextBox1.Size = new System.Drawing.Size(729, 141);
             this.hamVeriTextBox1.TabIndex = 5;
             // 
             // baglantiNoktasi_label
@@ -1248,12 +1249,17 @@
             this.baglantiYenileİkonDuzeltTimer.Interval = 1453;
             this.baglantiYenileİkonDuzeltTimer.Tick += new System.EventHandler(this.baglantiYenileİkonDuzeltTimer_Tick);
             // 
+            // hamVeriBellekBosaltTimer
+            // 
+            this.hamVeriBellekBosaltTimer.Interval = 20000;
+            this.hamVeriBellekBosaltTimer.Tick += new System.EventHandler(this.hamVeriBellekBosaltTimer_Tick);
+            // 
             // anaEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(849, 476);
+            this.ClientSize = new System.Drawing.Size(729, 401);
             this.Controls.Add(this.baglantiDurumPictureBox);
             this.Controls.Add(this.kayitdurumPictureBox);
             this.Controls.Add(this.hamVeriTextBox1);
@@ -1268,7 +1274,7 @@
             this.Controls.Add(this.toolStrip1);
             this.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(865, 515);
+            this.MinimumSize = new System.Drawing.Size(745, 440);
             this.Name = "anaEkran";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mCTerminal $PROGRAM_SURUM | [@PC ADI]";
@@ -1365,5 +1371,6 @@
         private System.Windows.Forms.ToolStripMenuItem hataGidermeToolStripMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton6;
         private System.Windows.Forms.ToolStripMenuItem kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem;
+        private System.Windows.Forms.Timer hamVeriBellekBosaltTimer;
     }
 }
