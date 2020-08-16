@@ -136,12 +136,33 @@
     <value>600, 5</value>
   </metadata>
   <metadata name="hamVeriBellekBosaltTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>818, 5</value>
+    <value>335, 38</value>
   </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>45</value>
+  <metadata name="saatGuncelleTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>10, 35</value>
+  </metadata>
+  <metadata name="gecenSureGuncelleTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>161, 35</value>
+  </metadata>
+  <metadata name="hamVeriBellekBosaltTimer2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>528, 38</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="bellekTemizlemeDurumPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
+        TUUH5AgQDzANi8PiGQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEUSURBVEhL
+        3ZXbiQJBFETnzw8F/zYKwcdGsCGszySMwxTEzWPXJIzCRMZTM9W0D7Cd1oHFAwV676264LQ9xT3Kshyg
+        FAOPN0fmOuMu/2gBw59oi3boS2aUQjOalUfeieMuodFHPyiwRo8u0GxAGX3H1lCYV61LchcEZo6vFnTR
+        N9qrY3IXKENZXcdHKC7RwdLnRxec+xaOS2NzikanqIMmSKfpQ2aUQjOalUfejuNuoblBgdxnsHFchOII
+        /aGjJkzuAmX8opHjqwVDF1+5YOj4CMV2fqIAzXYf8jU2p2h0TFfo2T/a0nERij00Ra+6KpQVrwq+zNS5
+        IndBYOr4GgrtXdcBGjoFz75wxo5LY3OKt37pF8UJLC7Cfoap2gAAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>110</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAUAEBAAAAEAIABoBAAAVgAAABgYAAABACAAiAkAAL4EAAAgIAAAAQAgAKgQAABGDgAAMDAAAAEA

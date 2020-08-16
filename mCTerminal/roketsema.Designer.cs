@@ -34,7 +34,7 @@
             this.ortagovdeDurumLabel = new System.Windows.Forms.Label();
             this.kameraDurumLabel = new System.Windows.Forms.Label();
             this.aciYLabel = new System.Windows.Forms.Label();
-            this.AciXLabel = new System.Windows.Forms.Label();
+            this.aciXLabel = new System.Windows.Forms.Label();
             this.gkuvvetLabel = new System.Windows.Forms.Label();
             this.bilgiaktarTimer = new System.Windows.Forms.Timer(this.components);
             this.hdopPictureBox = new System.Windows.Forms.PictureBox();
@@ -92,17 +92,17 @@
             this.aciYLabel.Text = "Y Açısı: 0°";
             this.aciYLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // AciXLabel
+            // aciXLabel
             // 
-            this.AciXLabel.BackColor = System.Drawing.Color.Transparent;
-            this.AciXLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.AciXLabel.ForeColor = System.Drawing.Color.Transparent;
-            this.AciXLabel.Location = new System.Drawing.Point(115, 0);
-            this.AciXLabel.Name = "AciXLabel";
-            this.AciXLabel.Size = new System.Drawing.Size(107, 14);
-            this.AciXLabel.TabIndex = 20;
-            this.AciXLabel.Text = "X Açısı: 0°";
-            this.AciXLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.aciXLabel.BackColor = System.Drawing.Color.Transparent;
+            this.aciXLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.aciXLabel.ForeColor = System.Drawing.Color.Transparent;
+            this.aciXLabel.Location = new System.Drawing.Point(115, 0);
+            this.aciXLabel.Name = "aciXLabel";
+            this.aciXLabel.Size = new System.Drawing.Size(107, 14);
+            this.aciXLabel.TabIndex = 20;
+            this.aciXLabel.Text = "X Açısı: 0°";
+            this.aciXLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // gkuvvetLabel
             // 
@@ -140,7 +140,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(511, 91);
             this.Controls.Add(this.aciYLabel);
-            this.Controls.Add(this.AciXLabel);
+            this.Controls.Add(this.aciXLabel);
             this.Controls.Add(this.gkuvvetLabel);
             this.Controls.Add(this.kameraDurumLabel);
             this.Controls.Add(this.ortagovdeDurumLabel);
@@ -152,6 +152,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mCTerminal Roket Şeması";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.roketsema_Load);
             ((System.ComponentModel.ISupportInitialize)(this.hdopPictureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -164,7 +165,7 @@
         private System.Windows.Forms.Label ortagovdeDurumLabel;
         private System.Windows.Forms.Label kameraDurumLabel;
         private System.Windows.Forms.Label aciYLabel;
-        private System.Windows.Forms.Label AciXLabel;
+        private System.Windows.Forms.Label aciXLabel;
         private System.Windows.Forms.Label gkuvvetLabel;
         private System.Windows.Forms.Timer bilgiaktarTimer;
     }

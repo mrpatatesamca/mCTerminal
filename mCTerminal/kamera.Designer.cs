@@ -51,21 +51,19 @@
             // 
             // kameraAracMenu
             // 
-            this.kameraAracMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.kameraAracMenu.AutoSize = false;
             this.kameraAracMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.kameraAracMenu.Dock = System.Windows.Forms.DockStyle.None;
             this.kameraAracMenu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.kameraAracMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripDropDownButton2,
             this.videoCaptureButton,
             this.toolStripDropDownButton1,
             this.videoCaptureComboBox});
-            this.kameraAracMenu.Location = new System.Drawing.Point(-1, 0);
+            this.kameraAracMenu.Location = new System.Drawing.Point(0, 0);
             this.kameraAracMenu.Name = "kameraAracMenu";
+            this.kameraAracMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.kameraAracMenu.ShowItemToolTips = false;
-            this.kameraAracMenu.Size = new System.Drawing.Size(352, 26);
+            this.kameraAracMenu.Size = new System.Drawing.Size(349, 26);
             this.kameraAracMenu.TabIndex = 1;
             // 
             // toolStripDropDownButton2
@@ -85,11 +83,11 @@
             // tamEkranToolStripMenuItem
             // 
             this.tamEkranToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.tamEkranToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tamEkranToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tamEkranToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.fullscreen;
             this.tamEkranToolStripMenuItem.Name = "tamEkranToolStripMenuItem";
             this.tamEkranToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F2)));
-            this.tamEkranToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.tamEkranToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tamEkranToolStripMenuItem.Text = "Tam Ekran";
             this.tamEkranToolStripMenuItem.Click += new System.EventHandler(this.tamEkranToolStripMenuItem_Click);
             // 
@@ -128,7 +126,7 @@
             this.üstteGösterToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.üstteGösterToolStripMenuItem.Checked = true;
             this.üstteGösterToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.üstteGösterToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.üstteGösterToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.üstteGösterToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.eye;
             this.üstteGösterToolStripMenuItem.Name = "üstteGösterToolStripMenuItem";
             this.üstteGösterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F1)));
@@ -147,7 +145,7 @@
             this.x480ToolStripMenuItem1,
             this.x240ToolStripMenuItem,
             this.x120ToolStripMenuItem});
-            this.çözünürlükToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.çözünürlükToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.çözünürlükToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.resolution;
             this.çözünürlükToolStripMenuItem.Name = "çözünürlükToolStripMenuItem";
             this.çözünürlükToolStripMenuItem.Size = new System.Drawing.Size(184, 22);

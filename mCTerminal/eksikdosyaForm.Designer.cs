@@ -43,7 +43,7 @@
             // eksikdosyaindirButon
             // 
             this.eksikdosyaindirButon.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.eksikdosyaindirButon.Location = new System.Drawing.Point(171, 380);
+            this.eksikdosyaindirButon.Location = new System.Drawing.Point(171, 402);
             this.eksikdosyaindirButon.Name = "eksikdosyaindirButon";
             this.eksikdosyaindirButon.Size = new System.Drawing.Size(110, 23);
             this.eksikdosyaindirButon.TabIndex = 0;
@@ -54,7 +54,7 @@
             // tamamButon
             // 
             this.tamamButon.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.tamamButon.Location = new System.Drawing.Point(83, 380);
+            this.tamamButon.Location = new System.Drawing.Point(83, 402);
             this.tamamButon.Name = "tamamButon";
             this.tamamButon.Size = new System.Drawing.Size(82, 23);
             this.tamamButon.TabIndex = 1;
@@ -87,7 +87,7 @@
             this.dosyabilgiTextBox.Multiline = true;
             this.dosyabilgiTextBox.Name = "dosyabilgiTextBox";
             this.dosyabilgiTextBox.ReadOnly = true;
-            this.dosyabilgiTextBox.Size = new System.Drawing.Size(279, 205);
+            this.dosyabilgiTextBox.Size = new System.Drawing.Size(279, 227);
             this.dosyabilgiTextBox.TabIndex = 3;
             this.dosyabilgiTextBox.Text = resources.GetString("dosyabilgiTextBox.Text");
             // 
@@ -101,11 +101,11 @@
             this.dosyabilgiTextBox2.Cursor = System.Windows.Forms.Cursors.Default;
             this.dosyabilgiTextBox2.Font = new System.Drawing.Font("Candara", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dosyabilgiTextBox2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.dosyabilgiTextBox2.Location = new System.Drawing.Point(208, 133);
+            this.dosyabilgiTextBox2.Location = new System.Drawing.Point(290, 133);
             this.dosyabilgiTextBox2.Multiline = true;
             this.dosyabilgiTextBox2.Name = "dosyabilgiTextBox2";
             this.dosyabilgiTextBox2.ReadOnly = true;
-            this.dosyabilgiTextBox2.Size = new System.Drawing.Size(144, 205);
+            this.dosyabilgiTextBox2.Size = new System.Drawing.Size(62, 227);
             this.dosyabilgiTextBox2.TabIndex = 4;
             this.dosyabilgiTextBox2.Text = "TAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMAM\r\nTAMA" +
     "M\r\nTAMAM\r\nTAMAM\r\nTAMAM";
@@ -125,7 +125,7 @@
             this.fakebaslikTextBox.Multiline = true;
             this.fakebaslikTextBox.Name = "fakebaslikTextBox";
             this.fakebaslikTextBox.ReadOnly = true;
-            this.fakebaslikTextBox.Size = new System.Drawing.Size(340, 138);
+            this.fakebaslikTextBox.Size = new System.Drawing.Size(340, 160);
             this.fakebaslikTextBox.TabIndex = 5;
             this.fakebaslikTextBox.Text = "============================\r\n#      mCTerminal Bütünlük Testi    #\r\n============" +
     "================";
@@ -136,7 +136,7 @@
             this.durumLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.durumLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.durumLabel.Location = new System.Drawing.Point(9, 341);
+            this.durumLabel.Location = new System.Drawing.Point(9, 363);
             this.durumLabel.Name = "durumLabel";
             this.durumLabel.Size = new System.Drawing.Size(343, 13);
             this.durumLabel.TabIndex = 6;
@@ -153,7 +153,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(364, 415);
+            this.ClientSize = new System.Drawing.Size(364, 437);
             this.Controls.Add(this.durumLabel);
             this.Controls.Add(this.dosyabilgiTextBox2);
             this.Controls.Add(this.dosyabilgiTextBox);

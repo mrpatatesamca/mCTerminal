@@ -79,10 +79,10 @@ namespace mCTerminal
         private void hakkinda_Load(object sender, EventArgs e)
         {
             this.Text = "mCTerminal " + programSurum + " Hakkında";
-            programSurumSayiLabel.Text = "mCTerminal " + programSurum + " | build 20200813";
+            programSurumSayiLabel.Text = "mCTerminal " + programSurum + " | build 20200816";
             sistembilgiLabel.Text = "@" + Environment.MachineName + "/" + Environment.UserName + " | " + Environment.OSVersion;
             wmp.URL = programyolu + @"res\chiptune2.mp3";
-            wmp.settings.volume = 45;
+            wmp.settings.volume = 40;
             wmp.controls.play();
         }
 

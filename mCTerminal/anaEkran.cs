@@ -36,8 +36,12 @@ namespace mCTerminal
         //-------------------------------------------
 
         //global değişkenler
-        string xmlAyarIsim;
-        string xmlAyarDeger;
+        public string xmlAyarIsim;
+        public string xmlAyarDeger;
+        public int gecenSalise;
+        public int gecenSaniye;
+        public int gecenDakika;
+        public int gecenSaat;
         public string programTema;
         public string programVeriFormat;
         public string programSurum;
@@ -79,7 +83,7 @@ namespace mCTerminal
 
             serialPort1.DataReceived += new SerialDataReceivedEventHandler(serialPort1_DataReceived);
 
-            string sadece_saat = DateTime.Now.ToString("hh:mm:ss");
+            string sadece_saat = DateTime.Now.ToString("HH:mm:ss");
             //-------------------------Formda altta bulunan yere yazdırılacak yazılar-------------------------
             hamVeriTextBox1.AppendText(sadece_saat + " --> Program başlatılıyor..." + Environment.NewLine);
             hamVeriTextBox1.AppendText(sadece_saat + " --> Gerekli ayarlamalar yapılıyor..." + Environment.NewLine);
@@ -241,6 +245,10 @@ namespace mCTerminal
                 hdopLabel.ForeColor = Color.WhiteSmoke;
                 anlikİrtifaGrafik.Titles[0].ForeColor = Color.WhiteSmoke;
                 gkuvvetGrafik.Titles[0].ForeColor = Color.WhiteSmoke;
+                gecenSureLabel.BackColor = toolStrip1.BackColor;
+                saatLabel.BackColor = toolStrip1.BackColor;
+                gecenSureLabel.ForeColor = Color.WhiteSmoke;
+                saatLabel.ForeColor = Color.WhiteSmoke;
             }
             //---------------------
             if (programTema == "tema_matrix")
@@ -262,6 +270,10 @@ namespace mCTerminal
                 hdopLabel.ForeColor = Color.DarkOliveGreen;
                 anlikİrtifaGrafik.Titles[0].ForeColor = Color.DarkOliveGreen;
                 gkuvvetGrafik.Titles[0].ForeColor = Color.DarkOliveGreen;
+                gecenSureLabel.BackColor = toolStrip1.BackColor;
+                saatLabel.BackColor = toolStrip1.BackColor;
+                gecenSureLabel.ForeColor = Color.LimeGreen;
+                saatLabel.ForeColor = Color.LimeGreen;
             }
             //---------------------
             if (programTema == "tema_dondurma")
@@ -283,6 +295,10 @@ namespace mCTerminal
                 toolStripDropDownButton6.ForeColor = Color.FromArgb(255, 230, 230);
                 anlikİrtifaGrafik.Titles[0].ForeColor = Color.IndianRed;
                 gkuvvetGrafik.Titles[0].ForeColor = Color.IndianRed;
+                gecenSureLabel.BackColor = toolStrip1.BackColor;
+                saatLabel.BackColor = toolStrip1.BackColor;
+                gecenSureLabel.ForeColor = Color.FromArgb(255, 230, 230);
+                saatLabel.ForeColor = Color.FromArgb(255, 230, 230);
             }
             //---------------------
             if (programTema == "tema_cosmos")
@@ -304,6 +320,10 @@ namespace mCTerminal
                 toolStripDropDownButton6.ForeColor = Color.FromArgb(245, 228, 183);
                 anlikİrtifaGrafik.Titles[0].ForeColor = Color.FromArgb(245, 228, 183);
                 gkuvvetGrafik.Titles[0].ForeColor = Color.FromArgb(245, 228, 183);
+                gecenSureLabel.BackColor = toolStrip1.BackColor;
+                saatLabel.BackColor = toolStrip1.BackColor;
+                gecenSureLabel.ForeColor = Color.FromArgb(245, 228, 183);
+                saatLabel.ForeColor = Color.FromArgb(245, 228, 183);
             }
             //---------------------
             if (programTema == "tema_material")
@@ -325,6 +345,10 @@ namespace mCTerminal
                 irtifaAnlıkLabel.ForeColor = Color.FromArgb(251, 235, 235);
                 anlikİrtifaGrafik.Titles[0].ForeColor = Color.FromArgb(251, 235, 235);
                 gkuvvetGrafik.Titles[0].ForeColor = Color.FromArgb(251, 235, 235);
+                gecenSureLabel.BackColor = toolStrip1.BackColor;
+                saatLabel.BackColor = toolStrip1.BackColor;
+                gecenSureLabel.ForeColor = Color.WhiteSmoke;
+                saatLabel.ForeColor = Color.WhiteSmoke;
             }
 
             baglantiNoktasi_label.ForeColor = this.ForeColor;
@@ -368,11 +392,14 @@ namespace mCTerminal
                 //bir şey olmamış gibi devam :D
             }
 
+            baudRatePortList.Visible = false;
+
+
         }
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            string sadece_saat = DateTime.Now.ToString("hh:mm:ss");
+            string sadece_saat = DateTime.Now.ToString("HH:mm:ss");
             string[] splitted_data;
             string data;
             try
@@ -416,56 +443,64 @@ namespace mCTerminal
                 int column = hamVeriTextBox1.SelectionStart - hamVeriTextBox1.GetFirstCharIndexFromLine(line); //otomatik en aşağı kaydırması için
                 //---------------------------------------------------------------------------------------------------
 
+                
                 if (splitted_data[7] == "1") //kamera durumu 1 ise
                 {
                     kameraDurumLabel.Text = "Video Yayını: Aktif!";
+                    kameraDurumPictureBox.Image = Properties.Resources.film_yesil;
                 }
                 else
                 {
                     kameraDurumLabel.Text = "Video Yayını: Aktif Değil!";
+                    kameraDurumPictureBox.Image = Properties.Resources.film_kirmizi;
                 }
 
                 if (splitted_data[13] == "1") //koni ayrılmış ise
                 {
                     koniDurumLabel.Text = "Koni: Ayrıldı!";
+                    koniDurumPictureBox.Image = Properties.Resources.cone_yesil;
                 }
                 else
                 {
                     koniDurumLabel.Text = "Koni: Ayrılmadı!";
+                    koniDurumPictureBox.Image = Properties.Resources.cone_kirmizi;
                 }
 
                 if (splitted_data[14] == "1") //orta göve ayrılmış ise
                 {
                     ortagovdeDurumLabel.Text = "Orta Gövde: Ayrıldı!";
+                    ortaGovdeDurumPictureBox.Image = Properties.Resources.split_yesil;
                 }
                 else
                 {
                     ortagovdeDurumLabel.Text = "Orta Gövde: Ayrılmadı!";
+                    ortaGovdeDurumPictureBox.Image = Properties.Resources.split_kirmizi;
                 }
 
 
+                //program çöküyor diye bu kutuları kapatmak zorunda kaldım. Üstünde uğraşıyorum...
                 try
                 {
                     //---------------------------------GRAFİK KUTULARI-----------------------------------
                     //-----------------------------------ANLIK İRTİFA GRAFİĞİ----------------------------------
-                    anlikİrtifaGrafik.ChartAreas[0].AxisX.Minimum = minm;
-                    anlikİrtifaGrafik.ChartAreas[0].AxisX.Maximum = maksm;
-                    anlikİrtifaGrafik.ChartAreas[0].AxisY.Minimum = 0;
-                    anlikİrtifaGrafik.ChartAreas[0].AxisY.Maximum = 3500;
-                    anlikİrtifaGrafik.ChartAreas[0].AxisX.ScaleView.Zoom(minm, maksm);
-                    this.anlikİrtifaGrafik.Series[0].Points.AddXY((minm + maksm) / 2, splitted_data[12]);
+                    //anlikİrtifaGrafik.ChartAreas[0].AxisX.Minimum = minm;
+                    //anlikİrtifaGrafik.ChartAreas[0].AxisX.Maximum = maksm;
+                    //anlikİrtifaGrafik.ChartAreas[0].AxisY.Minimum = 0;
+                    //anlikİrtifaGrafik.ChartAreas[0].AxisY.Maximum = 3500;
+                    //anlikİrtifaGrafik.ChartAreas[0].AxisX.ScaleView.Zoom(minm, maksm);
+                    //this.anlikİrtifaGrafik.Series[0].Points.AddXY((minm + maksm) / 2, splitted_data[12]);
                     //---------------------------------G KUVVETİ GRAFİĞİ---------------------------------
-                    gkuvvetGrafik.ChartAreas[0].AxisX.Minimum = gkuvvetmin;
-                    gkuvvetGrafik.ChartAreas[0].AxisX.Maximum = gkuvvetmaks;
-                    gkuvvetGrafik.ChartAreas[0].AxisY.Minimum = 0;
-                    gkuvvetGrafik.ChartAreas[0].AxisY.Maximum = 5;
-                    gkuvvetGrafik.ChartAreas[0].AxisX.ScaleView.Zoom(gkuvvetmin, gkuvvetmaks);
-                    this.gkuvvetGrafik.Series[0].Points.AddXY((gkuvvetmin + gkuvvetmaks) / 2, splitted_data[10]);
+                    //gkuvvetGrafik.ChartAreas[0].AxisX.Minimum = gkuvvetmin;
+                    //gkuvvetGrafik.ChartAreas[0].AxisX.Maximum = gkuvvetmaks;
+                    //gkuvvetGrafik.ChartAreas[0].AxisY.Minimum = 0;
+                    //gkuvvetGrafik.ChartAreas[0].AxisY.Maximum = 5;
+                    //gkuvvetGrafik.ChartAreas[0].AxisX.ScaleView.Zoom(gkuvvetmin, gkuvvetmaks);
+                    //this.gkuvvetGrafik.Series[0].Points.AddXY((gkuvvetmin + gkuvvetmaks) / 2, splitted_data[10]);
                     //-----------------------------------------------------------------------------------
-                    gkuvvetmin++;
-                    gkuvvetmaks++;
-                    maksm++;
-                    minm++;
+                    //gkuvvetmin++;
+                    //gkuvvetmaks++;
+                    //maksm++;
+                    //minm++;
                     //----------------------------------GRAFİK KUTULARI SON------------------------------
                 }
                 catch
@@ -574,7 +609,7 @@ namespace mCTerminal
         private void anaEkran_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-            Environment.Exit(0);
+            Application.Exit();
         }
 
         private void haritayıGösterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -606,17 +641,23 @@ namespace mCTerminal
             kamera kamerafrm = new kamera();
             hamveriekrani hamveriekranifrm = new hamveriekrani();
             harita haritafrm = new harita();
+            roketsema roketsemafrm = new roketsema();
 
             hamveriekranifrm.Show();
             hamveriekranifrm.Height = 230;
             hamveriekranifrm.Location = new Point(0, Screen.PrimaryScreen.Bounds.Height - kamerafrm.Height + 90);
             
             kamerafrm.Show();
-            kamerafrm.Location = new Point(0, Screen.PrimaryScreen.Bounds.Height - kamerafrm.Height - hamveriekranifrm.Height);
+            kamerafrm.Location = new Point(kamerafrm.Width - 115, Screen.PrimaryScreen.Bounds.Height - kamerafrm.Height * 2);
 
             haritafrm.Show();
-            haritafrm.Height = 530;
+            haritafrm.Height = 700;
             haritafrm.Location = new Point(Screen.PrimaryScreen.Bounds.Width - haritafrm.Width, Screen.PrimaryScreen.Bounds.Height - haritafrm.Height);
+
+            roketsemafrm.Show();
+            roketsemafrm.Width = 800;
+            roketsemafrm.Location = new Point(0, Screen.PrimaryScreen.Bounds.Height - hamveriekranifrm.Height - 95);
+
 
             if (this.FormBorderStyle == FormBorderStyle.Sizable)
             {
@@ -717,7 +758,7 @@ namespace mCTerminal
 
         public void editorBaglantiBaslat()
         {
-            string sadece_saat = DateTime.Now.ToString("hh:mm:ss");
+            string sadece_saat = DateTime.Now.ToString("HH:mm:ss");
             string sadece_tarih = DateTime.Now.ToString("dd-MM-yyyy");
             baglantiDurumPictureBox.Image = Properties.Resources.dot_sari;
 
@@ -735,6 +776,7 @@ namespace mCTerminal
                     {
                         serialPort1.Open();
                         Properties.Settings.Default.serialportdurum = true;
+                        gecenSureGuncelleTimer.Start();
                         hamVeriBellekBosaltTimer.Start(); //bellek boşaltmayı başlat.
 
                         bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kes";
@@ -771,11 +813,12 @@ namespace mCTerminal
 
         public void editorBaglantiKes()
         {
-            string sadece_saat = DateTime.Now.ToString("hh:mm:ss");
+            string sadece_saat = DateTime.Now.ToString("HH:mm:ss");
             string sadece_tarih = DateTime.Now.ToString("dd-MM-yyyy");
 
             serialPort1.Close();
             Properties.Settings.Default.serialportdurum = false;
+            gecenSureGuncelleTimer.Stop();
             hamVeriBellekBosaltTimer.Stop(); //bellek boşaltmayı durdur.
             baglantiDurumPictureBox.Image = Properties.Resources.dot_kirmizi;
             bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kur";
@@ -890,11 +933,90 @@ namespace mCTerminal
             //program şişmesin diye hem veri ekranını (ana ekrandaki) hem de global (ayar) data değişkenini temizler.
             hamVeriTextBox1.Text = string.Empty;
             Properties.Settings.Default.data = string.Empty;
+            bellekTemizlemeDurumPictureBox.Image = Properties.Resources.ram_sari;
+            hamVeriBellekBosaltTimer2.Start();
+        }
+
+        //form belli bir boyuttan sonra belirli kontrolleri göstermesi için yapılan fonksiyon.
+        private void anaEkran_SizeChanged(object sender, EventArgs e)
+        {
+            //baudrate listesi gösterimi.
+            if (this.Size.Width >= 703)
+            {
+                baudRatePortList.Visible = true;
+            }
+            else
+            {
+                baudRatePortList.Visible = false;
+            }
+            //saat gösterimi.
+            if (this.Size.Width >= 795)
+            {
+                saatLabel.Visible = true;
+                saatGuncelleTimer.Start();
+            }
+            else
+            {
+                saatLabel.Visible = false;
+                saatGuncelleTimer.Stop();
+            }
+            //geçen süre gösterimi.
+            if (this.Size.Width >= 915)
+            {
+                gecenSureLabel.Visible = true;
+            }
+            else
+            {
+                gecenSureLabel.Visible = false;
+            }
+
+
+        }
+
+        private void saatGuncelleTimer_Tick(object sender, EventArgs e)
+        {
+            string sadece_saat = DateTime.Now.ToString("HH:mm:ss");
+            saatLabel.Text = "Saat: " + sadece_saat;
+        }
+
+        private void gecenSureGuncelleTimer_Tick(object sender, EventArgs e)
+        {
+            //-------------kullanılmıyor!---------------
+            if (gecenSalise == 60) //60 salise olursa.
+            {
+                gecenSalise = 0; //saliseyi geri sıfır yap.
+                gecenSaniye += 1; //saniyeyi + 1 yap.
+            }
+            //------------------------------------------
+
+
+
+            if (gecenSaniye == 60) //60 saniye olursa.
+            {
+                gecenSaniye = 0; //saniyeyi geri sıfır yap.
+                gecenDakika += 1; //dakikayı + 1 yap.
+            }
+            if (gecenDakika == 60) //60 dakika olursa.
+            {
+                gecenDakika = 0; //dakikayı geri sıfır yap.
+                gecenSaat += 1; //saati + 1 yap.
+            }
+
+            gecenSaniye++;
+            gecenSureLabel.Text = "Geçen Süre: " + gecenSaat.ToString("00") + ":" + gecenDakika.ToString("00") + ":" + gecenSaniye.ToString("00");
+
+        }
+
+        private void hamVeriBellekBosaltTimer2_Tick(object sender, EventArgs e)
+        {
+            hamVeriBellekBosaltTimer2.Stop();
+            bellekTemizlemeDurumPictureBox.Image = Properties.Resources.ram;
         }
 
         private void baglantiYenileİkonDuzeltTimer_Tick(object sender, EventArgs e)
         {
             baglantiDurumPictureBox.Image = Properties.Resources.dot; //bağlantı durumu ikonunu düzelt.
+            baglantiYenileİkonDuzeltTimer.Stop();
         }
 
         public void editorProgramYenidenBaslat()
