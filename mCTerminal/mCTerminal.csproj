@@ -78,6 +78,9 @@
     <Reference Include="GMap.NET.WindowsForms, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
       <HintPath>..\packages\GMap.NET.WindowsForms.1.7.5\lib\net40\GMap.NET.WindowsForms.dll</HintPath>
     </Reference>
+    <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -147,11 +150,18 @@
       <DependentUpon>programListeYenileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\AudioManager.cs" />
     <Compile Include="roketsema.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="roketsema.Designer.cs">
       <DependentUpon>roketsema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uzaktanses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="uzaktanses.Designer.cs">
+      <DependentUpon>uzaktanses.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="anaEkran.resx">
       <DependentUpon>anaEkran.cs</DependentUpon>
@@ -184,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="roketsema.resx">
       <DependentUpon>roketsema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uzaktanses.resx">
+      <DependentUpon>uzaktanses.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -267,6 +280,7 @@
     <None Include="Resources\film_kirmizi.png" />
     <None Include="Resources\film_yesil.png" />
     <None Include="Resources\coding2.png" />
+    <None Include="Resources\headphones.png" />
     <Content Include="terminal_logo2.ico" />
   </ItemGroup>
   <ItemGroup>

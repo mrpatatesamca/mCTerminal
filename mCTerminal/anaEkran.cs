@@ -492,15 +492,17 @@ namespace mCTerminal
             roketsema roketsemafrm = new roketsema();
 
             hamveriekranifrm.Show();
-            hamveriekranifrm.Height = 230;
+            hamveriekranifrm.Height = 225;
+            hamveriekranifrm.Width += 190;
             hamveriekranifrm.Location = new Point(0, Screen.PrimaryScreen.Bounds.Height - kamerafrm.Height + 90);
 
             kamerafrm.Show();
             kamerafrm.Location = new Point(kamerafrm.Width - 115, Screen.PrimaryScreen.Bounds.Height - kamerafrm.Height * 2);
 
             haritafrm.Show();
-            haritafrm.Height = 700;
-            haritafrm.Location = new Point(Screen.PrimaryScreen.Bounds.Width - haritafrm.Width, Screen.PrimaryScreen.Bounds.Height - haritafrm.Height);
+            haritafrm.Height = 680;
+            haritafrm.Width = 520;
+            haritafrm.Location = new Point(Screen.PrimaryScreen.Bounds.Width - haritafrm.Width, Screen.PrimaryScreen.Bounds.Height - haritafrm.Height + 40);
 
             roketsemafrm.Show();
             roketsemafrm.Width = 800;
@@ -1087,6 +1089,12 @@ namespace mCTerminal
                 bütünPencereleriKöşesizYapToolStripMenuItem.Text = "Bütün Pencereleri Köşesiz Yap";
             }
 
+        }
+
+        private void uzakSesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            uzaktanses uzaktansesfrm = new uzaktanses();
+            uzaktansesfrm.Show();
         }
     }
 }

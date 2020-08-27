@@ -159,11 +159,13 @@ namespace mCTerminal
         {
             try
             {
+                eventArgs.Frame.RotateFlip(RotateFlipType.Rotate180FlipNone);
                 videoCaptureBox.Image = (Bitmap)eventArgs.Frame.Clone();
+                
             }
             catch
             {
-                MessageBox.Show("Görüntü İşleyici bir hata ile karşılaştı!", "Hata!", MessageBoxButtons.OK);
+                MessageBox.Show("Görüntü İşleyici bir hata ile karşılaştı!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

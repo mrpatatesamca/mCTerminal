@@ -46,6 +46,7 @@
             this.toolStripDropDownButton4 = new System.Windows.Forms.ToolStripDropDownButton();
             this.haritayıGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uzakGörüntüyüGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uzakSesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roketŞemasıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hamVeriyiGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton5 = new System.Windows.Forms.ToolStripDropDownButton();
@@ -288,6 +289,7 @@
             this.toolStripDropDownButton4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.haritayıGösterToolStripMenuItem,
             this.uzakGörüntüyüGösterToolStripMenuItem,
+            this.uzakSesToolStripMenuItem,
             this.roketŞemasıToolStripMenuItem,
             this.hamVeriyiGösterToolStripMenuItem});
             this.toolStripDropDownButton4.Image = global::mCTerminal.Properties.Resources.toolbox;
@@ -317,6 +319,15 @@
             this.uzakGörüntüyüGösterToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.uzakGörüntüyüGösterToolStripMenuItem.Text = "Uzak Görüntü";
             this.uzakGörüntüyüGösterToolStripMenuItem.Click += new System.EventHandler(this.uzakGörüntüyüGösterToolStripMenuItem_Click);
+            // 
+            // uzakSesToolStripMenuItem
+            // 
+            this.uzakSesToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.headphones;
+            this.uzakSesToolStripMenuItem.Name = "uzakSesToolStripMenuItem";
+            this.uzakSesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.uzakSesToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.uzakSesToolStripMenuItem.Text = "Uzak Ses";
+            this.uzakSesToolStripMenuItem.Click += new System.EventHandler(this.uzakSesToolStripMenuItem_Click);
             // 
             // roketŞemasıToolStripMenuItem
             // 
@@ -1468,5 +1479,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Timer hamVeriYazmayaDevamKontrolTimer;
         private System.Windows.Forms.ToolStripMenuItem bütünPencereleriKöşesizYapToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uzakSesToolStripMenuItem;
     }
 }
