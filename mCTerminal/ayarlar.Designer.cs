@@ -37,19 +37,22 @@
             this.vericiktikayitformatComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.haritaDataSilButton = new System.Windows.Forms.Button();
-            this.haritaverisilTimer = new System.Windows.Forms.Timer(this.components);
+            this.haritaVeriSilTimer = new System.Windows.Forms.Timer(this.components);
             this.haritaVeriBoyutuLabel = new System.Windows.Forms.Label();
             this.haritaEkranGoruntusuKonumDegistirButton = new System.Windows.Forms.Button();
             this.haritaEkranGoruntusuKonumTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.haritaEkranGoruntusuKonumVarsayilanButton = new System.Windows.Forms.Button();
+            this.hamVeriDataSilButton = new System.Windows.Forms.Button();
+            this.hamVeriBoyutuLabel = new System.Windows.Forms.Label();
+            this.hamVeriSilTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // kaydetButton
             // 
             this.kaydetButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.kaydetButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.kaydetButton.Location = new System.Drawing.Point(222, 296);
+            this.kaydetButton.Location = new System.Drawing.Point(222, 401);
             this.kaydetButton.Name = "kaydetButton";
             this.kaydetButton.Size = new System.Drawing.Size(83, 23);
             this.kaydetButton.TabIndex = 1;
@@ -61,7 +64,7 @@
             // 
             this.iptalButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.iptalButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iptalButton.Location = new System.Drawing.Point(141, 296);
+            this.iptalButton.Location = new System.Drawing.Point(141, 401);
             this.iptalButton.Name = "iptalButton";
             this.iptalButton.Size = new System.Drawing.Size(75, 23);
             this.iptalButton.TabIndex = 2;
@@ -122,7 +125,7 @@
             // 
             this.haritaDataSilButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.haritaDataSilButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.haritaDataSilButton.Location = new System.Drawing.Point(129, 230);
+            this.haritaDataSilButton.Location = new System.Drawing.Point(129, 324);
             this.haritaDataSilButton.Name = "haritaDataSilButton";
             this.haritaDataSilButton.Size = new System.Drawing.Size(188, 23);
             this.haritaDataSilButton.TabIndex = 14;
@@ -130,15 +133,15 @@
             this.haritaDataSilButton.UseVisualStyleBackColor = true;
             this.haritaDataSilButton.Click += new System.EventHandler(this.haritaDataSilButton_Click);
             // 
-            // haritaverisilTimer
+            // haritaVeriSilTimer
             // 
-            this.haritaverisilTimer.Interval = 1000;
-            this.haritaverisilTimer.Tick += new System.EventHandler(this.haritaverisilTimer_Tick);
+            this.haritaVeriSilTimer.Interval = 500;
+            this.haritaVeriSilTimer.Tick += new System.EventHandler(this.haritaverisilTimer_Tick);
             // 
             // haritaVeriBoyutuLabel
             // 
             this.haritaVeriBoyutuLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.haritaVeriBoyutuLabel.Location = new System.Drawing.Point(111, 256);
+            this.haritaVeriBoyutuLabel.Location = new System.Drawing.Point(111, 350);
             this.haritaVeriBoyutuLabel.Name = "haritaVeriBoyutuLabel";
             this.haritaVeriBoyutuLabel.Size = new System.Drawing.Size(225, 13);
             this.haritaVeriBoyutuLabel.TabIndex = 15;
@@ -183,12 +186,41 @@
             this.haritaEkranGoruntusuKonumVarsayilanButton.UseVisualStyleBackColor = true;
             this.haritaEkranGoruntusuKonumVarsayilanButton.Click += new System.EventHandler(this.haritaEkranGoruntusuKonumVarsayilanButton_Click);
             // 
+            // hamVeriDataSilButton
+            // 
+            this.hamVeriDataSilButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.hamVeriDataSilButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.hamVeriDataSilButton.Location = new System.Drawing.Point(129, 249);
+            this.hamVeriDataSilButton.Name = "hamVeriDataSilButton";
+            this.hamVeriDataSilButton.Size = new System.Drawing.Size(188, 23);
+            this.hamVeriDataSilButton.TabIndex = 20;
+            this.hamVeriDataSilButton.Text = "Ham Veri Kayıtlarını Sil";
+            this.hamVeriDataSilButton.UseVisualStyleBackColor = true;
+            this.hamVeriDataSilButton.Click += new System.EventHandler(this.hamVeriDataSilButton_Click);
+            // 
+            // hamVeriBoyutuLabel
+            // 
+            this.hamVeriBoyutuLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.hamVeriBoyutuLabel.Location = new System.Drawing.Point(111, 275);
+            this.hamVeriBoyutuLabel.Name = "hamVeriBoyutuLabel";
+            this.hamVeriBoyutuLabel.Size = new System.Drawing.Size(225, 13);
+            this.hamVeriBoyutuLabel.TabIndex = 21;
+            this.hamVeriBoyutuLabel.Text = "Ham Veri Boyutu: 0MB";
+            this.hamVeriBoyutuLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // hamVeriSilTimer
+            // 
+            this.hamVeriSilTimer.Interval = 500;
+            this.hamVeriSilTimer.Tick += new System.EventHandler(this.hamVeriSilTimer_Tick);
+            // 
             // ayarlar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(446, 331);
+            this.ClientSize = new System.Drawing.Size(446, 436);
+            this.Controls.Add(this.hamVeriBoyutuLabel);
+            this.Controls.Add(this.hamVeriDataSilButton);
             this.Controls.Add(this.haritaEkranGoruntusuKonumVarsayilanButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.haritaEkranGoruntusuKonumTextBox);
@@ -224,11 +256,14 @@
         private System.Windows.Forms.ComboBox vericiktikayitformatComboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button haritaDataSilButton;
-        private System.Windows.Forms.Timer haritaverisilTimer;
+        private System.Windows.Forms.Timer haritaVeriSilTimer;
         private System.Windows.Forms.Label haritaVeriBoyutuLabel;
         private System.Windows.Forms.Button haritaEkranGoruntusuKonumDegistirButton;
         private System.Windows.Forms.TextBox haritaEkranGoruntusuKonumTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button haritaEkranGoruntusuKonumVarsayilanButton;
+        private System.Windows.Forms.Button hamVeriDataSilButton;
+        private System.Windows.Forms.Label hamVeriBoyutuLabel;
+        private System.Windows.Forms.Timer hamVeriSilTimer;
     }
 }

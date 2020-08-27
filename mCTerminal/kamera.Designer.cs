@@ -87,7 +87,7 @@
             this.tamEkranToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.fullscreen;
             this.tamEkranToolStripMenuItem.Name = "tamEkranToolStripMenuItem";
             this.tamEkranToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F2)));
-            this.tamEkranToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tamEkranToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.tamEkranToolStripMenuItem.Text = "Tam Ekran";
             this.tamEkranToolStripMenuItem.Click += new System.EventHandler(this.tamEkranToolStripMenuItem_Click);
             // 
@@ -154,25 +154,25 @@
             // x1080ToolStripMenuItem
             // 
             this.x1080ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.x1080ToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.x1080ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.x1080ToolStripMenuItem.Name = "x1080ToolStripMenuItem";
-            this.x1080ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.x1080ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.x1080ToolStripMenuItem.Text = "1920x1080";
             // 
             // x720ToolStripMenuItem
             // 
             this.x720ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.x720ToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.x720ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.x720ToolStripMenuItem.Name = "x720ToolStripMenuItem";
-            this.x720ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.x720ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.x720ToolStripMenuItem.Text = "1280x720";
             // 
             // x576ToolStripMenuItem
             // 
             this.x576ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.x576ToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.x576ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.x576ToolStripMenuItem.Name = "x576ToolStripMenuItem";
-            this.x576ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.x576ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.x576ToolStripMenuItem.Text = "720x576";
             this.x576ToolStripMenuItem.Click += new System.EventHandler(this.x576ToolStripMenuItem_Click);
             // 
@@ -181,36 +181,36 @@
             this.x480ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.x480ToolStripMenuItem.Checked = true;
             this.x480ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.x480ToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.x480ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.x480ToolStripMenuItem.Name = "x480ToolStripMenuItem";
-            this.x480ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.x480ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.x480ToolStripMenuItem.Text = "720x480";
             this.x480ToolStripMenuItem.Click += new System.EventHandler(this.x480ToolStripMenuItem_Click);
             // 
             // x480ToolStripMenuItem1
             // 
             this.x480ToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.x480ToolStripMenuItem1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.x480ToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.x480ToolStripMenuItem1.Name = "x480ToolStripMenuItem1";
-            this.x480ToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
+            this.x480ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.x480ToolStripMenuItem1.Text = "640x480";
             this.x480ToolStripMenuItem1.Click += new System.EventHandler(this.x480ToolStripMenuItem1_Click);
             // 
             // x240ToolStripMenuItem
             // 
             this.x240ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.x240ToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.x240ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.x240ToolStripMenuItem.Name = "x240ToolStripMenuItem";
-            this.x240ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.x240ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.x240ToolStripMenuItem.Text = "320x240";
             this.x240ToolStripMenuItem.Click += new System.EventHandler(this.x240ToolStripMenuItem_Click);
             // 
             // x120ToolStripMenuItem
             // 
             this.x120ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.x120ToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.x120ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.x120ToolStripMenuItem.Name = "x120ToolStripMenuItem";
-            this.x120ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.x120ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.x120ToolStripMenuItem.Text = "160x120";
             this.x120ToolStripMenuItem.Click += new System.EventHandler(this.x120ToolStripMenuItem_Click);
             // 

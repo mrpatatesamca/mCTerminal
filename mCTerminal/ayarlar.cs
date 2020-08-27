@@ -24,6 +24,7 @@ namespace mCTerminal
         public string programSurum;
         public string harita_veri_boyut;
         static FileInfo fi = new FileInfo(programyolu + @"map_datab\TileDBv5\en\Data.gmdb");
+        static DirectoryInfo di = new DirectoryInfo(programyolu + @"logs");
         public string programHaritaEkranGoruntuKonum;
 
 
@@ -240,13 +241,37 @@ namespace mCTerminal
             }
         }
 
+        static long GetDirectorySize(string p)
+        {
+            // 1.
+            // Get array of all file names.
+            string[] a = Directory.GetFiles(p, "*.*");
+
+            // 2.
+            // Calculate total bytes of all files in a loop.
+            long b = 0;
+            foreach (string name in a)
+            {
+                // 3.
+                // Use FileInfo to get length of each file.
+                FileInfo info = new FileInfo(name);
+                b += info.Length;
+            }
+            // 4.
+            // Return total size
+            return b;
+        }
+
         private void ayarlar_Load(object sender, EventArgs e)
         {
-            
             editorAyarYukle();
+
             try
             {
                 long harita_veri_boyut_byte = fi.Length;
+                long ham_veri_kayit_boyut_byte = GetDirectorySize(programyolu + "logs");
+
+                hamVeriBoyutuLabel.Text = "Ham Veri Boyutu: " + ham_veri_kayit_boyut_byte + "bayt";
                 haritaVeriBoyutuLabel.Text = "Harita Verisi Boyutu: " + harita_veri_boyut_byte + " bayt";
             }
             catch
@@ -281,12 +306,12 @@ namespace mCTerminal
             {
                 try
                 {
-                    File.Delete(programyolu + @"map_datab\TileDBv5\en\Data.gmdb");
-                    haritaverisilTimer.Start();
+                    Directory.Delete(programyolu + @"map_datab\TileDBv5");
+                    haritaVeriSilTimer.Start();
                 }
                 catch
                 {
-                    MessageBox.Show("Harita verileri silinemedi! Lütfen " + programyolu + @"map_datab\TileDBv5\en\Data.gmdb dosyasının şu anda kullanımda olmadığından emin olun.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Harita verileri silinemedi! Lütfen " + programyolu + @"map_datab\TileDBv5 dizininin şu anda kullanımda olmadığından emin olun.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -297,7 +322,7 @@ namespace mCTerminal
 
         private void haritaverisilTimer_Tick(object sender, EventArgs e)
         {
-            haritaverisilTimer.Stop();
+            haritaVeriSilTimer.Stop();
             MessageBox.Show("Harita verileri başarıyla temizlendi!", "Harita Verileri Silindi!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             haritaVeriBoyutuLabel.Text = "Harita Verisi Boyutu: 0 bayt";
         }
@@ -316,6 +341,36 @@ namespace mCTerminal
         {
             haritaEkranGoruntusuKonumTextBox.Text = programyolu + "screenshots";
             programHaritaEkranGoruntuKonum = programyolu + "screenshots";
+        }
+
+        private void hamVeriDataSilButton_Click(object sender, EventArgs e)
+        {
+            DialogResult uyarimesaj = new DialogResult();
+            uyarimesaj = MessageBox.Show("Dikkat! Ham Veri Kayıtlarını silmek üzeresiniz. Silmek istediğinize emin misiniz?", "Ham Veri Kayıtları Silinmek Üzere!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (uyarimesaj == DialogResult.Yes)
+            {
+                try
+                {
+                    Directory.Delete(programyolu + @"logs", true);
+                    hamVeriSilTimer.Start();
+                }
+                catch
+                {
+                    MessageBox.Show("Ham Veri Kayıtları silinemedi! Lütfen " + programyolu + @"logs dizininin şu anda kullanımda olmadığından emin olun.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+
+            }
+        }
+
+        private void hamVeriSilTimer_Tick(object sender, EventArgs e)
+        {
+            hamVeriSilTimer.Stop();
+            Directory.CreateDirectory(programyolu + @"logs");
+            MessageBox.Show("Ham Veri Kayıtları başarıyla temizlendi!", "Ham Veri Kayıtları Silindi!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            hamVeriBoyutuLabel.Text = "Ham Veri Boyutu: 0 bayt";
         }
     }
 }

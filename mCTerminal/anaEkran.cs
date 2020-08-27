@@ -17,27 +17,20 @@ using System.Xml;
 
 namespace mCTerminal
 {
-    
+
     public partial class anaEkran : Form
     {
-        
-        
-        
-        
+
+
+
+
         XmlTextReader xtr = new XmlTextReader(programyolu + @"res\settings.xml"); //XML dosyasını okumak için hazırlık yap
-        
-
-
-
-
-        //--------tablo grafiği için gerekli---------
-        int maksm = 20, minm = 0;
-        int gkuvvetmin = 0, gkuvvetmaks = 20;
-        //-------------------------------------------
 
         //global değişkenler
         public string xmlAyarIsim;
         public string xmlAyarDeger;
+        public string[] splitted_data;
+        public string data;
         public int gecenSalise;
         public int gecenSaniye;
         public int gecenDakika;
@@ -46,7 +39,7 @@ namespace mCTerminal
         public string programVeriFormat;
         public string programSurum;
         static string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
-        
+
 
         public anaEkran()
         {
@@ -91,10 +84,11 @@ namespace mCTerminal
             hamVeriTextBox1.AppendText(sadece_saat + " --> #   www.cosmostakimi.com   #" + Environment.NewLine);
             hamVeriTextBox1.AppendText(sadece_saat + " --> #--------------------------#" + Environment.NewLine);
             hamVeriTextBox1.AppendText(sadece_saat + " --> Program Yüklendi ve Kullanıma Hazır!" + Environment.NewLine);
-            
+
             int line = hamVeriTextBox1.GetLineFromCharIndex(hamVeriTextBox1.SelectionStart); //textbox'ı otomatik olarak en aşağı kaydırıyor
             int column = hamVeriTextBox1.SelectionStart - hamVeriTextBox1.GetFirstCharIndexFromLine(line); //böylece en son gelen veriyi görebiliyoruz.
             //------------------------------------------------------------------------------------------------
+
         }
 
         public void editorAyarYukle()
@@ -243,8 +237,6 @@ namespace mCTerminal
                 irtifaMaxLabel.ForeColor = Color.WhiteSmoke;
                 irtifaAnlıkLabel.ForeColor = Color.WhiteSmoke;
                 hdopLabel.ForeColor = Color.WhiteSmoke;
-                anlikİrtifaGrafik.Titles[0].ForeColor = Color.WhiteSmoke;
-                gkuvvetGrafik.Titles[0].ForeColor = Color.WhiteSmoke;
                 gecenSureLabel.BackColor = toolStrip1.BackColor;
                 saatLabel.BackColor = toolStrip1.BackColor;
                 gecenSureLabel.ForeColor = Color.WhiteSmoke;
@@ -268,8 +260,6 @@ namespace mCTerminal
                 irtifaMaxLabel.ForeColor = Color.DarkOliveGreen;
                 irtifaAnlıkLabel.ForeColor = Color.DarkOliveGreen;
                 hdopLabel.ForeColor = Color.DarkOliveGreen;
-                anlikİrtifaGrafik.Titles[0].ForeColor = Color.DarkOliveGreen;
-                gkuvvetGrafik.Titles[0].ForeColor = Color.DarkOliveGreen;
                 gecenSureLabel.BackColor = toolStrip1.BackColor;
                 saatLabel.BackColor = toolStrip1.BackColor;
                 gecenSureLabel.ForeColor = Color.LimeGreen;
@@ -293,8 +283,6 @@ namespace mCTerminal
                 toolStripDropDownButton4.ForeColor = Color.FromArgb(255, 230, 230);
                 toolStripDropDownButton5.ForeColor = Color.FromArgb(255, 230, 230);
                 toolStripDropDownButton6.ForeColor = Color.FromArgb(255, 230, 230);
-                anlikİrtifaGrafik.Titles[0].ForeColor = Color.IndianRed;
-                gkuvvetGrafik.Titles[0].ForeColor = Color.IndianRed;
                 gecenSureLabel.BackColor = toolStrip1.BackColor;
                 saatLabel.BackColor = toolStrip1.BackColor;
                 gecenSureLabel.ForeColor = Color.FromArgb(255, 230, 230);
@@ -318,8 +306,6 @@ namespace mCTerminal
                 toolStripDropDownButton4.ForeColor = Color.FromArgb(245, 228, 183);
                 toolStripDropDownButton5.ForeColor = Color.FromArgb(245, 228, 183);
                 toolStripDropDownButton6.ForeColor = Color.FromArgb(245, 228, 183);
-                anlikİrtifaGrafik.Titles[0].ForeColor = Color.FromArgb(245, 228, 183);
-                gkuvvetGrafik.Titles[0].ForeColor = Color.FromArgb(245, 228, 183);
                 gecenSureLabel.BackColor = toolStrip1.BackColor;
                 saatLabel.BackColor = toolStrip1.BackColor;
                 gecenSureLabel.ForeColor = Color.FromArgb(245, 228, 183);
@@ -343,8 +329,6 @@ namespace mCTerminal
                 hdopLabel.ForeColor = Color.FromArgb(251, 235, 235);
                 irtifaMaxLabel.ForeColor = Color.FromArgb(251, 235, 235);
                 irtifaAnlıkLabel.ForeColor = Color.FromArgb(251, 235, 235);
-                anlikİrtifaGrafik.Titles[0].ForeColor = Color.FromArgb(251, 235, 235);
-                gkuvvetGrafik.Titles[0].ForeColor = Color.FromArgb(251, 235, 235);
                 gecenSureLabel.BackColor = toolStrip1.BackColor;
                 saatLabel.BackColor = toolStrip1.BackColor;
                 gecenSureLabel.ForeColor = Color.WhiteSmoke;
@@ -365,6 +349,8 @@ namespace mCTerminal
             yatayHizLabel.ForeColor = this.ForeColor;
             koniDurumLabel.ForeColor = this.ForeColor;
             kameraDurumLabel.ForeColor = this.ForeColor;
+            groupBox1.ForeColor = toolStripDropDownButton1.ForeColor;
+            groupBox2.ForeColor = toolStripDropDownButton1.ForeColor;
 
             //-----------------------------------------------------------
         }
@@ -400,13 +386,12 @@ namespace mCTerminal
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             string sadece_saat = DateTime.Now.ToString("HH:mm:ss");
-            string[] splitted_data;
-            string data;
             try
             {
                 data = serialPort1.ReadLine();
                 splitted_data = data.Split('*');
                 Properties.Settings.Default.data = data;
+                Properties.Settings.Default.hamveriyazmayadevam = true;
 
                 uyduSayiLabel.Text = "Bağlanılan Uydu Sayısı " + splitted_data[0]; //gps uydu sayısı
                 hdopLabel.Text = "HDOP: " + splitted_data[1]; //hdop sapması
@@ -415,7 +400,7 @@ namespace mCTerminal
                 boylamLabel.Text = "Boylam: " + splitted_data[3] + "°"; //boylam
                 Properties.Settings.Default.boylam = splitted_data[3]; //global değikene de yaz boylamı
                 irtifaLabel.Text = "İrtifa: " + splitted_data[4] + "m"; //gps irtifa
-                irtifaMaxLabel.Text = "Maks İrtifa: " + splitted_data[5] + "m"; //gps maks irtifa
+                irtifaMaxLabel.Text = "Maksimum İrtifa: " + splitted_data[5] + "m"; //gps maks irtifa
                 yatayHizLabel.Text = "Yatay Hız: " + splitted_data[6] + "km/s"; //yatay hız
                 AciXLabel.Text = "X Açısı: " + splitted_data[8] + "°"; //x açısı
                 Properties.Settings.Default.aciX = splitted_data[8]; // global değişkene de yaz x açısını
@@ -423,8 +408,8 @@ namespace mCTerminal
                 Properties.Settings.Default.aciY = splitted_data[9]; // global değişkene de yaz y açısını
                 gkuvvetLabel.Text = "G Kuvveti: " + splitted_data[10] + "g"; //g kuvveti
                 Properties.Settings.Default.gkuvvet = splitted_data[10]; //global değişkene de yaz g kuvvetini
-                barometrikİrtifaMaksLabel.Text = "Barometrik Maksimum İrtifa: " + splitted_data[11] + "m"; //baro irtifa maks
-                irtifaAnlıkLabel.Text = "Anlık İrtifa: " + splitted_data[12] + "m"; //anlık irtifa
+                barometrikİrtifaMaksLabel.Text = "Maksimum İrtifa: " + splitted_data[11] + "m"; //baro irtifa maks
+                irtifaAnlıkLabel.Text = "Coğrafi İrtifa: " + splitted_data[12] + "m"; //anlık irtifa
 
 
                 Properties.Settings.Default.konidurum = splitted_data[13]; //global değişken koni durumu
@@ -439,159 +424,20 @@ namespace mCTerminal
 
                 //Gelen veriyi formun altında gözüken siyah yere (TextBox) yazıyorum.
                 hamVeriTextBox1.AppendText(sadece_saat + " --> " + data + Environment.NewLine);
+
                 int line = hamVeriTextBox1.GetLineFromCharIndex(hamVeriTextBox1.SelectionStart); //otomatik en aşağı kaydırması için
                 int column = hamVeriTextBox1.SelectionStart - hamVeriTextBox1.GetFirstCharIndexFromLine(line); //otomatik en aşağı kaydırması için
                 //---------------------------------------------------------------------------------------------------
-
-                
-                if (splitted_data[7] == "1") //kamera durumu 1 ise
-                {
-                    kameraDurumLabel.Text = "Video Yayını: Aktif!";
-                    kameraDurumPictureBox.Image = Properties.Resources.film_yesil;
-                }
-                else
-                {
-                    kameraDurumLabel.Text = "Video Yayını: Aktif Değil!";
-                    kameraDurumPictureBox.Image = Properties.Resources.film_kirmizi;
-                }
-
-                if (splitted_data[13] == "1") //koni ayrılmış ise
-                {
-                    koniDurumLabel.Text = "Koni: Ayrıldı!";
-                    koniDurumPictureBox.Image = Properties.Resources.cone_yesil;
-                }
-                else
-                {
-                    koniDurumLabel.Text = "Koni: Ayrılmadı!";
-                    koniDurumPictureBox.Image = Properties.Resources.cone_kirmizi;
-                }
-
-                if (splitted_data[14] == "1") //orta göve ayrılmış ise
-                {
-                    ortagovdeDurumLabel.Text = "Orta Gövde: Ayrıldı!";
-                    ortaGovdeDurumPictureBox.Image = Properties.Resources.split_yesil;
-                }
-                else
-                {
-                    ortagovdeDurumLabel.Text = "Orta Gövde: Ayrılmadı!";
-                    ortaGovdeDurumPictureBox.Image = Properties.Resources.split_kirmizi;
-                }
-
-
-                //program çöküyor diye bu kutuları kapatmak zorunda kaldım. Üstünde uğraşıyorum...
-                try
-                {
-                    //---------------------------------GRAFİK KUTULARI-----------------------------------
-                    //-----------------------------------ANLIK İRTİFA GRAFİĞİ----------------------------------
-                    //anlikİrtifaGrafik.ChartAreas[0].AxisX.Minimum = minm;
-                    //anlikİrtifaGrafik.ChartAreas[0].AxisX.Maximum = maksm;
-                    //anlikİrtifaGrafik.ChartAreas[0].AxisY.Minimum = 0;
-                    //anlikİrtifaGrafik.ChartAreas[0].AxisY.Maximum = 3500;
-                    //anlikİrtifaGrafik.ChartAreas[0].AxisX.ScaleView.Zoom(minm, maksm);
-                    //this.anlikİrtifaGrafik.Series[0].Points.AddXY((minm + maksm) / 2, splitted_data[12]);
-                    //---------------------------------G KUVVETİ GRAFİĞİ---------------------------------
-                    //gkuvvetGrafik.ChartAreas[0].AxisX.Minimum = gkuvvetmin;
-                    //gkuvvetGrafik.ChartAreas[0].AxisX.Maximum = gkuvvetmaks;
-                    //gkuvvetGrafik.ChartAreas[0].AxisY.Minimum = 0;
-                    //gkuvvetGrafik.ChartAreas[0].AxisY.Maximum = 5;
-                    //gkuvvetGrafik.ChartAreas[0].AxisX.ScaleView.Zoom(gkuvvetmin, gkuvvetmaks);
-                    //this.gkuvvetGrafik.Series[0].Points.AddXY((gkuvvetmin + gkuvvetmaks) / 2, splitted_data[10]);
-                    //-----------------------------------------------------------------------------------
-                    //gkuvvetmin++;
-                    //gkuvvetmaks++;
-                    //maksm++;
-                    //minm++;
-                    //----------------------------------GRAFİK KUTULARI SON------------------------------
-                }
-                catch
-                {
-                    hamVeriTextBox1.AppendText(sadece_saat + " --> Hata! Grafik Kutuları bir hata ile karşılaştı. Yok sayılıp devam ediliyor..." + Environment.NewLine);
-                }
-
-                try
-                {
-                    //--------------------------İBRE KUTULARI--------------------------------
-                    gKuvvetGauge.Value = Convert.ToInt32(splitted_data[10]); //gkuvvet
-                    yatayHizGauge.Value = Convert.ToInt32(splitted_data[6]); //yatay hız
-                    maksİrtifaGauge.Value = Convert.ToInt32(splitted_data[5]); //gps maks irtifa
-                    irtifaGauge.Value = Convert.ToInt32(splitted_data[4]); //gps irtifa
-                    AciXGauge.Value = Convert.ToInt32(splitted_data[8]); //x açısı
-                    AciYGauge.Value = Convert.ToInt32(splitted_data[9]); //y açısı
-                    //-------------------------İBRE KUTULARI SON-------------------------------
-                }
-                catch
-                {
-                    hamVeriTextBox1.AppendText(sadece_saat + " --> Hata! İbre Kutuları bir hata ile karşılaştı. Yok sayılıp devam ediliyor..." + Environment.NewLine);
-                }
-
-
-                try
-                {
-                    //-------------------------------SİMGELERİN DURUMU---------------------------------------
-                    int hdop_durum_sayi = Convert.ToInt32(splitted_data[1]);
-                    int baglanilan_uydu_sayisi_durum_sayi = Convert.ToInt32(splitted_data[0]);
-                    //-----hdop durumu-----
-                    if (hdop_durum_sayi <= 2)
-                    {
-                        hdopPictureBox.Image = Properties.Resources.snr_seviye_yesil;
-                    }
-                    if (hdop_durum_sayi > 2 && hdop_durum_sayi <= 4)
-                    {
-                        hdopPictureBox.Image = Properties.Resources.snr_seviye_sari;
-                    }
-                    if (hdop_durum_sayi > 4)
-                    {
-                        hdopPictureBox.Image = Properties.Resources.snr_seviye_kirmizi;
-                    }
-                    //---hdop durumu son---
-
-                    //-----gps uydu durumu-----
-                    if (baglanilan_uydu_sayisi_durum_sayi <= 4)
-                    {
-                        uyduPictureBox.Image = Properties.Resources.uydu_kirmizi;
-                    }
-                    if (baglanilan_uydu_sayisi_durum_sayi > 4 && hdop_durum_sayi <= 7)
-                    {
-                        uyduPictureBox.Image = Properties.Resources.uydu_sari;
-                    }
-                    if (baglanilan_uydu_sayisi_durum_sayi > 7)
-                    {
-                        uyduPictureBox.Image = Properties.Resources.uydu_yesil;
-                    }
-                    //---gps uydu durumu son---
-
-                    //-------------------------------SİMGELERİN DURUMU SON-----------------------------------
-                }
-                catch
-                {
-                    hamVeriTextBox1.AppendText(sadece_saat + " --> Hata! Durum Simgeleri bir hata ile karşılaştı. Yok sayılıp devam ediliyor..." + Environment.NewLine);
-                }
-
-
-                //VERİ ÇIKTISINI KAYDETMEK İÇİN VERİ KAYDET BUTONUNU KONTROL EDER VE ONA GÖRE VERİYİ YAZAR
-                if (verikaydetToolStripMenuItem.CheckState == CheckState.Checked)
-                {
-                    string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
-                    string sadece_tarih = DateTime.Now.ToString("dd-MM-yyyy");
-                    string kayitformati = programVeriFormat;
-                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(programyolu + @"logs\" + "roketLog-" + sadece_tarih.ToString() + kayitformati, true)) //Log yerine kullanılabilecek Türkçe bir karşılık bulamadım, belki Veri çıktısı diyebiliriz ama Log kavramı daha evrensel olduğu için böyle yazdım.
-                    {
-                        file.WriteLine(sadece_saat + " --> " + data);
-                    }
-                    kayitdurumPictureBox.Image = mCTerminal.Properties.Resources.pen_drive_yesil;
-                    
-                }
-                else
-                {
-                    kayitdurumPictureBox.Image = mCTerminal.Properties.Resources.pen_drive_kirmizi;
-                    
-                }
-                //-------------------------------------------VERİ KAYIT SON------------------------------------------  
             }
             catch
             {
 
             }
+            editorDurumSimgeAyarla();
+            editorGrafikKutuAyarla();
+            editorİbreKutuAyarla();
+            editorDurumYaziAyarla();
+            editorVeriKaydetMotor();   
         }
 
         private void bağlantıyıBaşlatToolStripMenuItem_Click(object sender, EventArgs e)
@@ -638,6 +484,8 @@ namespace mCTerminal
         private void tumselKontrolleriAcToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //bütün gerekli pencereleri özel boyutta ve konumda açar
+            this.WindowState = FormWindowState.Normal;
+
             kamera kamerafrm = new kamera();
             hamveriekrani hamveriekranifrm = new hamveriekrani();
             harita haritafrm = new harita();
@@ -646,7 +494,7 @@ namespace mCTerminal
             hamveriekranifrm.Show();
             hamveriekranifrm.Height = 230;
             hamveriekranifrm.Location = new Point(0, Screen.PrimaryScreen.Bounds.Height - kamerafrm.Height + 90);
-            
+
             kamerafrm.Show();
             kamerafrm.Location = new Point(kamerafrm.Width - 115, Screen.PrimaryScreen.Bounds.Height - kamerafrm.Height * 2);
 
@@ -686,11 +534,13 @@ namespace mCTerminal
             if (this.TopMost == true)
             {
                 üstteGösterToolStripMenuItem.CheckState = CheckState.Unchecked;
+                üstteGösterToolStripMenuItem.Text = "Üstte Göster";
                 this.TopMost = false;
             }
             else
             {
                 üstteGösterToolStripMenuItem.CheckState = CheckState.Checked;
+                üstteGösterToolStripMenuItem.Text = "Üstte Gösterme";
                 this.TopMost = true;
             }
         }
@@ -745,10 +595,9 @@ namespace mCTerminal
         {
             //bekleme ekranını açar (sırf hoş gözüksün diye yoksa işlevsellik yok xd)
             beklemeEkranıAcTimer.Stop();
-            
+
             programListeYenileForm programListeYenileFormfrm = new programListeYenileForm();
             programListeYenileFormfrm.Show();
-            beklemeEkranıAcTimer.Stop();
         }
 
         private void ciktoolStripMenuItem3_Click(object sender, EventArgs e)
@@ -768,6 +617,7 @@ namespace mCTerminal
                 {
                     MessageBox.Show("Hata! Alıcı sistem ile bağlantı kurulamadı! Lütfen alıcıyı bilgisayarınıza bağladığınızdan emin olunuz, eğer zaten bağlıysa kabloları kontrol ediniz. (Detay: Muhtemel Liste Boşluğu)", "Alıcı Sistem Bulunamadı!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     hamVeriTextBox1.AppendText(sadece_saat + " --> Bağlantı noktası ile iletişim kurulamadı! (Muhtemel Liste Boşluğu)" + Environment.NewLine);
+                    Properties.Settings.Default.hata_data = sadece_saat + " --> Bağlantı noktası ile iletişim kurulamadı! (Muhtemel Liste Boşluğu)" + Environment.NewLine;
                 }
                 else //liste boş değil ve bağlantı kurulmamış ise.
                 {
@@ -777,7 +627,7 @@ namespace mCTerminal
                         serialPort1.Open();
                         Properties.Settings.Default.serialportdurum = true;
                         gecenSureGuncelleTimer.Start();
-                        hamVeriBellekBosaltTimer.Start(); //bellek boşaltmayı başlat.
+                        BellekBosaltTimer.Start(); //bellek boşaltmayı başlat.
 
                         bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kes";
                         hamVeriTextBox1.AppendText(Environment.NewLine);
@@ -802,6 +652,7 @@ namespace mCTerminal
                     {
                         MessageBox.Show("Hata! Alıcıdan veri alınırken bir problem oluştu. (Detay: " + ex.Message.ToString() + ")", "Alıcı sistem algılanamadı !", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         hamVeriTextBox1.AppendText(sadece_saat + " --> Alıcıdan veri alırken bir problem oluştu! (" + ex.Message.ToString() + ")" + Environment.NewLine);
+                        Properties.Settings.Default.hata_data = sadece_saat + " --> Alıcıdan veri alırken bir problem oluştu! (" + ex.Message.ToString() + ")" + Environment.NewLine;
                     }
                 }
             }
@@ -819,7 +670,7 @@ namespace mCTerminal
             serialPort1.Close();
             Properties.Settings.Default.serialportdurum = false;
             gecenSureGuncelleTimer.Stop();
-            hamVeriBellekBosaltTimer.Stop(); //bellek boşaltmayı durdur.
+            BellekBosaltTimer.Stop(); //bellek boşaltmayı durdur.
             baglantiDurumPictureBox.Image = Properties.Resources.dot_kirmizi;
             bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kur";
             hamVeriTextBox1.AppendText(sadece_saat + " --> " + COMPortList.Text + " üzerindeki bağlantı " + sadece_tarih + "</>" + sadece_saat + " tarihinde sonlandırıldı!");
@@ -933,8 +784,10 @@ namespace mCTerminal
             //program şişmesin diye hem veri ekranını (ana ekrandaki) hem de global (ayar) data değişkenini temizler.
             hamVeriTextBox1.Text = string.Empty;
             Properties.Settings.Default.data = string.Empty;
+
+
             bellekTemizlemeDurumPictureBox.Image = Properties.Resources.ram_sari;
-            hamVeriBellekBosaltTimer2.Start();
+            BellekBosaltTimer2.Start();
         }
 
         //form belli bir boyuttan sonra belirli kontrolleri göstermesi için yapılan fonksiyon.
@@ -1009,7 +862,7 @@ namespace mCTerminal
 
         private void hamVeriBellekBosaltTimer2_Tick(object sender, EventArgs e)
         {
-            hamVeriBellekBosaltTimer2.Stop();
+            BellekBosaltTimer2.Stop();
             bellekTemizlemeDurumPictureBox.Image = Properties.Resources.ram;
         }
 
@@ -1023,6 +876,217 @@ namespace mCTerminal
         {
             System.Diagnostics.Process.Start("mCTerminal.exe");
             Application.Exit();
+        }
+
+        public void editorDurumYaziAyarla()
+        {
+            try
+            {
+                if (splitted_data[7] == "1") //kamera durumu 1 ise
+                {
+                    kameraDurumLabel.Text = "Video Yayını: Aktif!";
+                    kameraDurumPictureBox.Image = Properties.Resources.film_yesil;
+                }
+                else
+                {
+                    kameraDurumLabel.Text = "Video Yayını: Aktif Değil!";
+                    kameraDurumPictureBox.Image = Properties.Resources.film_kirmizi;
+                }
+
+                if (splitted_data[13] == "1") //koni ayrılmış ise
+                {
+                    koniDurumLabel.Text = "Koni: Ayrıldı!";
+                    koniDurumPictureBox.Image = Properties.Resources.cone_yesil;
+                }
+                else
+                {
+                    koniDurumLabel.Text = "Koni: Ayrılmadı!";
+                    koniDurumPictureBox.Image = Properties.Resources.cone_kirmizi;
+                }
+
+                if (splitted_data[14] == "1") //orta göve ayrılmış ise
+                {
+                    ortagovdeDurumLabel.Text = "Orta Gövde: Ayrıldı!";
+                    ortaGovdeDurumPictureBox.Image = Properties.Resources.split_yesil;
+                }
+                else
+                {
+                    ortagovdeDurumLabel.Text = "Orta Gövde: Ayrılmadı!";
+                    ortaGovdeDurumPictureBox.Image = Properties.Resources.split_kirmizi;
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        public void editorDurumSimgeAyarla()
+        {
+            //-------------------------------SİMGELERİN DURUMU---------------------------------------
+
+            string sadece_saat = DateTime.Now.ToString("HH:mm:ss");
+            try
+            {
+                int hdop_durum_sayi = Convert.ToInt32(splitted_data[1].Split('.')[0]);
+                //-----hdop durumu-----
+                if (hdop_durum_sayi <= 2)
+                {
+                    hdopPictureBox.Image = Properties.Resources.snr_seviye_yesil;
+                }
+                if (hdop_durum_sayi > 2 && hdop_durum_sayi <= 4)
+                {
+                    hdopPictureBox.Image = Properties.Resources.snr_seviye_sari;
+                }
+                if (hdop_durum_sayi > 4)
+                {
+                    hdopPictureBox.Image = Properties.Resources.snr_seviye_kirmizi;
+                }
+                //---hdop durumu son---
+            }
+            catch
+            {
+                hamVeriTextBox1.AppendText(sadece_saat + " --> Hata! Durum Simgeleri (HDOP) bir hata ile karşılaştı. Yok sayılıp devam ediliyor..." + Environment.NewLine);
+                Properties.Settings.Default.hata_data = sadece_saat + " --> Hata! Durum Simgeleri (HDOP) bir hata ile karşılaştı. Yok sayılıp devam ediliyor..." + Environment.NewLine;
+            }
+
+            try
+            {
+                int baglanilan_uydu_sayisi_durum_sayi = Convert.ToInt32(splitted_data[0]);
+                //-----gps uydu durumu-----
+                if (baglanilan_uydu_sayisi_durum_sayi <= 4)
+                {
+                    uyduPictureBox.Image = Properties.Resources.uydu_kirmizi;
+                }
+                if (baglanilan_uydu_sayisi_durum_sayi > 4 && baglanilan_uydu_sayisi_durum_sayi <= 7)
+                {
+                    uyduPictureBox.Image = Properties.Resources.uydu_sari;
+                }
+                if (baglanilan_uydu_sayisi_durum_sayi > 7)
+                {
+                    uyduPictureBox.Image = Properties.Resources.uydu_yesil;
+                }
+                //---gps uydu durumu son---
+            }
+            catch
+            {
+                hamVeriTextBox1.AppendText(sadece_saat + " --> Hata! Durum Simgeleri (Bağlanılan Uydu Sayısı) bir hata ile karşılaştı. Yok sayılıp devam ediliyor..." + Environment.NewLine);
+                Properties.Settings.Default.hata_data = sadece_saat + " --> Hata! Durum Simgeleri (Bağlanılan Uydu Sayısı) bir hata ile karşılaştı. Yok sayılıp devam ediliyor..." + Environment.NewLine;
+            }
+            //-------------------------------SİMGELERİN DURUMU SON-----------------------------------
+        }
+
+        public void editorGrafikKutuAyarla()
+        {
+            
+        }
+
+        public void editorİbreKutuAyarla()
+        {
+            string sadece_saat = DateTime.Now.ToString("HH:mm:ss");
+            try
+            {
+                string gps_irtifa_bolunmus = splitted_data[4].Split('.')[0];
+                string yatay_hiz_bolunmus = splitted_data[6].Split('.')[0];
+                string g_kuvvet_bolunmus = splitted_data[10].Split('.')[0];
+                //--------------------------İBRE KUTULARI--------------------------------
+                gKuvvetGauge.Value = Convert.ToInt32(g_kuvvet_bolunmus); //gkuvvet
+                yatayHizGauge.Value = Convert.ToInt32(yatay_hiz_bolunmus); //yatay hız
+                maksİrtifaGauge.Value = Convert.ToInt32(splitted_data[5]); //gps maks irtifa
+                irtifaGauge.Value = Convert.ToInt32(gps_irtifa_bolunmus); //gps irtifa
+                AciXGauge.Value = Convert.ToInt32(splitted_data[8]); //x açısı
+                AciYGauge.Value = Convert.ToInt32(splitted_data[9]); //y açısı
+                //-------------------------İBRE KUTULARI SON-------------------------------
+            }
+            catch
+            {
+                hamVeriTextBox1.AppendText(sadece_saat + " --> Hata! İbre Kutuları bir hata ile karşılaştı. Yok sayılıp devam ediliyor..." + Environment.NewLine);
+                Properties.Settings.Default.hata_data = sadece_saat + " --> Hata! İbre Kutuları bir hata ile karşılaştı. Yok sayılıp devam ediliyor..." + Environment.NewLine;
+            }
+        }
+
+        public void editorVeriKaydetMotor()
+        {
+            string sadece_saat = DateTime.Now.ToString("HH:mm:ss");
+            //VERİ ÇIKTISINI KAYDETMEK İÇİN VERİ KAYDET BUTONUNU KONTROL EDER VE ONA GÖRE VERİYİ YAZAR
+            try
+            {
+                if (verikaydetToolStripMenuItem.CheckState == CheckState.Checked)
+                {
+                    string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
+                    string sadece_tarih = DateTime.Now.ToString("dd-MM-yyyy");
+                    string kayitformati = programVeriFormat;
+                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(programyolu + @"logs\" + "roketLog-" + sadece_tarih.ToString() + kayitformati, true)) //Log yerine kullanılabilecek Türkçe bir karşılık bulamadım, belki Veri çıktısı diyebiliriz ama Log kavramı daha evrensel olduğu için böyle yazdım.
+                    {
+                        file.WriteLine(sadece_saat + " --> " + data);
+                    }
+                }
+                else
+                {
+
+                }
+                //-------------------------------------------VERİ KAYIT SON------------------------------------------
+            }
+            catch
+            {
+                hamVeriTextBox1.AppendText(sadece_saat + " --> Hata! Veri Kaydetme Motoru bir hata ile karşılaştı. Yok sayılıp devam ediliyor..." + Environment.NewLine);
+                Properties.Settings.Default.hata_data = sadece_saat + " --> Hata! Veri Kaydetme Motoru bir hata ile karşılaştı. Yok sayılıp devam ediliyor..." + Environment.NewLine;
+            }
+        }
+
+        private void hamVeriYazmayaDevamKontrolTimer_Tick(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.hamveriyazmayadevam = false;
+        }
+
+        private void serialPortKontrolTimer_Tick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void bütünPencereleriKöşesizYapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+
+            if (bütünPencereleriKöşesizYapToolStripMenuItem.Text == "Bütün Pencereleri Köşesiz Yap")
+            {
+                var hamveriekranifrm = Application.OpenForms.OfType<hamveriekrani>().Single();
+                var haritafrm = Application.OpenForms.OfType<harita>().Single();
+                var roketsemafrm = Application.OpenForms.OfType<roketsema>().Single();
+                var kamerafrm = Application.OpenForms.OfType<kamera>().Single();
+
+                hamveriekranifrm.FormBorderStyle = FormBorderStyle.None;
+                haritafrm.FormBorderStyle = FormBorderStyle.None;
+                roketsemafrm.FormBorderStyle = FormBorderStyle.None;
+                kamerafrm.FormBorderStyle = FormBorderStyle.None;
+
+                hamveriekranifrm.Show();
+                haritafrm.Show();
+                roketsemafrm.Show();
+                kamerafrm.Show();
+
+                bütünPencereleriKöşesizYapToolStripMenuItem.Text = "Bütün Pencereleri Normal Yap";
+            }
+            else
+            {
+                var hamveriekranifrm = Application.OpenForms.OfType<hamveriekrani>().Single();
+                var haritafrm = Application.OpenForms.OfType<harita>().Single();
+                var roketsemafrm = Application.OpenForms.OfType<roketsema>().Single();
+                var kamerafrm = Application.OpenForms.OfType<kamera>().Single();
+
+                hamveriekranifrm.FormBorderStyle = FormBorderStyle.Sizable;
+                haritafrm.FormBorderStyle = FormBorderStyle.Sizable;
+                roketsemafrm.FormBorderStyle = FormBorderStyle.Sizable;
+                kamerafrm.FormBorderStyle = FormBorderStyle.Sizable;
+
+                hamveriekranifrm.Show();
+                haritafrm.Show();
+                roketsemafrm.Show();
+                kamerafrm.Show();
+
+                bütünPencereleriKöşesizYapToolStripMenuItem.Text = "Bütün Pencereleri Köşesiz Yap";
+            }
+
         }
     }
 }

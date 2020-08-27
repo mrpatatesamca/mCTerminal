@@ -30,14 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(hamveriekrani));
-            this.verikontrol = new System.Windows.Forms.Timer(this.components);
             this.hamveritextbox = new System.Windows.Forms.TextBox();
+            this.textboxYaziEsitleTimer = new System.Windows.Forms.Timer(this.components);
+            this.hamVeriBellekBosaltTimer = new System.Windows.Forms.Timer(this.components);
+            this.hamVeriBellekBosaltKontrolTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
-            // 
-            // verikontrol
-            // 
-            this.verikontrol.Enabled = true;
-            this.verikontrol.Tick += new System.EventHandler(this.verikontrol_Tick);
             // 
             // hamveritextbox
             // 
@@ -53,20 +50,36 @@
             this.hamveritextbox.Name = "hamveritextbox";
             this.hamveritextbox.ReadOnly = true;
             this.hamveritextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.hamveritextbox.Size = new System.Drawing.Size(634, 182);
+            this.hamveritextbox.Size = new System.Drawing.Size(634, 142);
             this.hamveritextbox.TabIndex = 0;
-            this.hamveritextbox.Text = "hh:mm:ss --> Veri Bekleniyor...";
+            // 
+            // textboxYaziEsitleTimer
+            // 
+            this.textboxYaziEsitleTimer.Enabled = true;
+            this.textboxYaziEsitleTimer.Interval = 1;
+            this.textboxYaziEsitleTimer.Tick += new System.EventHandler(this.textboxYaziEsitleTimer_Tick);
+            // 
+            // hamVeriBellekBosaltTimer
+            // 
+            this.hamVeriBellekBosaltTimer.Interval = 60000;
+            this.hamVeriBellekBosaltTimer.Tick += new System.EventHandler(this.hamVeriBellekBosaltTimer_Tick);
+            // 
+            // hamVeriBellekBosaltKontrolTimer
+            // 
+            this.hamVeriBellekBosaltKontrolTimer.Enabled = true;
+            this.hamVeriBellekBosaltKontrolTimer.Interval = 1;
+            this.hamVeriBellekBosaltKontrolTimer.Tick += new System.EventHandler(this.hamVeriBellekBosaltKontrolTimer_Tick);
             // 
             // hamveriekrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(634, 181);
+            this.ClientSize = new System.Drawing.Size(634, 141);
             this.Controls.Add(this.hamveritextbox);
             this.ForeColor = System.Drawing.Color.Lime;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(650, 220);
+            this.MinimumSize = new System.Drawing.Size(650, 180);
             this.Name = "hamveriekrani";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mCTerminal Ham Veri";
@@ -78,7 +91,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.Timer verikontrol;
-        private System.Windows.Forms.TextBox hamveritextbox;
+        public System.Windows.Forms.TextBox hamveritextbox;
+        private System.Windows.Forms.Timer textboxYaziEsitleTimer;
+        private System.Windows.Forms.Timer hamVeriBellekBosaltTimer;
+        private System.Windows.Forms.Timer hamVeriBellekBosaltKontrolTimer;
     }
 }

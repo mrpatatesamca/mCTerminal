@@ -142,5 +142,29 @@ namespace mCTerminal.Properties {
                 this["ortagovdedurum"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool hamveriyazmayadevam {
+            get {
+                return ((bool)(this["hamveriyazmayadevam"]));
+            }
+            set {
+                this["hamveriyazmayadevam"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string hata_data {
+            get {
+                return ((string)(this["hata_data"]));
+            }
+            set {
+                this["hata_data"] = value;
+            }
+        }
     }
 }

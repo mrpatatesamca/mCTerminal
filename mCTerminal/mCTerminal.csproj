@@ -266,6 +266,7 @@
     <None Include="Resources\film.png" />
     <None Include="Resources\film_kirmizi.png" />
     <None Include="Resources\film_yesil.png" />
+    <None Include="Resources\coding2.png" />
     <Content Include="terminal_logo2.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -146,26 +146,25 @@ namespace mCTerminal
                     }
                     //------------------------------------------------------------------------------------------
                 }
-
-
-
-
-
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Görüntü aygıtlarını yüklerken bir hata meydana geldi! (" + ex.ToString() + ")", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             //----------------------------------------------------------------------------------------
-
             this.Text = "mCTerminal Uzak Görüntü | (" + videoCaptureComboBox.SelectedItem.ToString() + ")";
-
         }
 
         private void VideoCaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            videoCaptureBox.Image = (Bitmap)eventArgs.Frame.Clone();
+            try
+            {
+                videoCaptureBox.Image = (Bitmap)eventArgs.Frame.Clone();
+            }
+            catch
+            {
+                MessageBox.Show("Görüntü İşleyici bir hata ile karşılaştı!", "Hata!", MessageBoxButtons.OK);
+            }
         }
 
         private void kamera_FormClosing(object sender, FormClosingEventArgs e)

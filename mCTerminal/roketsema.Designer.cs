@@ -85,7 +85,7 @@
             this.aciYLabel.BackColor = System.Drawing.Color.Transparent;
             this.aciYLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.aciYLabel.ForeColor = System.Drawing.Color.Transparent;
-            this.aciYLabel.Location = new System.Drawing.Point(228, 0);
+            this.aciYLabel.Location = new System.Drawing.Point(231, 0);
             this.aciYLabel.Name = "aciYLabel";
             this.aciYLabel.Size = new System.Drawing.Size(107, 14);
             this.aciYLabel.TabIndex = 21;
@@ -97,7 +97,7 @@
             this.aciXLabel.BackColor = System.Drawing.Color.Transparent;
             this.aciXLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.aciXLabel.ForeColor = System.Drawing.Color.Transparent;
-            this.aciXLabel.Location = new System.Drawing.Point(115, 0);
+            this.aciXLabel.Location = new System.Drawing.Point(118, 0);
             this.aciXLabel.Name = "aciXLabel";
             this.aciXLabel.Size = new System.Drawing.Size(107, 14);
             this.aciXLabel.TabIndex = 20;
@@ -111,7 +111,7 @@
             this.gkuvvetLabel.ForeColor = System.Drawing.Color.Transparent;
             this.gkuvvetLabel.Location = new System.Drawing.Point(2, 0);
             this.gkuvvetLabel.Name = "gkuvvetLabel";
-            this.gkuvvetLabel.Size = new System.Drawing.Size(107, 14);
+            this.gkuvvetLabel.Size = new System.Drawing.Size(110, 14);
             this.gkuvvetLabel.TabIndex = 22;
             this.gkuvvetLabel.Text = "G Kuvveti: 0g";
             this.gkuvvetLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

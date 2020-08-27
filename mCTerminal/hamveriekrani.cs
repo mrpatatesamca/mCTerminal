@@ -66,7 +66,6 @@ namespace mCTerminal
         private void hamveriekrani_Load(object sender, EventArgs e)
         {
             editorAyarYukle();
-
             //temalar için ayrılmış bölüm
 
             if (programTema == "tema_varsayilan")
@@ -100,29 +99,57 @@ namespace mCTerminal
             }
             //-----------------------------------------------------------
 
+            string sadece_saat = DateTime.Now.ToString("HH:mm:ss");
+            //-------------------------Formda altta bulunan yere yazdırılacak yazılar-------------------------
+            hamveritextbox.AppendText(sadece_saat + " --> Program başlatılıyor..." + Environment.NewLine);
+            hamveritextbox.AppendText(sadece_saat + " --> Gerekli ayarlamalar yapılıyor..." + Environment.NewLine);
+            hamveritextbox.AppendText(sadece_saat + " --> #--------------------------#" + Environment.NewLine);
+            hamveritextbox.AppendText(sadece_saat + " --> #   www.cosmostakimi.com   #" + Environment.NewLine);
+            hamveritextbox.AppendText(sadece_saat + " --> #--------------------------#" + Environment.NewLine);
+            hamveritextbox.AppendText(sadece_saat + " --> Program Yüklendi ve Kullanıma Hazır!" + Environment.NewLine);
+
+            int line = hamveritextbox.GetLineFromCharIndex(hamveritextbox.SelectionStart); //textbox'ı otomatik olarak en aşağı kaydırıyor
+            int column = hamveritextbox.SelectionStart - hamveritextbox.GetFirstCharIndexFromLine(line); //böylece en son gelen veriyi görebiliyoruz.
+            //------------------------------------------------------------------------------------------------
 
 
-
-
-
-            string sadece_saat = DateTime.Now.ToString("hh:mm:ss");
-            hamveritextbox.Text = sadece_saat + " --> Veri Bekleniyor..." + Environment.NewLine;
             hamveritextbox.SelectionStart = hamveritextbox.Text.Length;
 
         }
 
-        private void verikontrol_Tick(object sender, EventArgs e)
+        private void textboxYaziEsitleTimer_Tick(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.serialportdurum == true && Properties.Settings.Default.hamveriyazmayadevam == true)
+            {
+                if (Properties.Settings.Default.hata_data == string.Empty)
+                {
+                    string sadece_saat = DateTime.Now.ToString("HH:mm:ss");
+                    hamveritextbox.AppendText(sadece_saat + " --> " + Properties.Settings.Default.data + Environment.NewLine);
+                }
+                else
+                {
+                    string sadece_saat = DateTime.Now.ToString("HH:mm:ss");
+                    hamveritextbox.AppendText(Properties.Settings.Default.hata_data + Environment.NewLine);
+                    Properties.Settings.Default.hata_data = string.Empty;
+                }
+            }
+        }
+
+        private void hamVeriBellekBosaltKontrolTimer_Tick(object sender, EventArgs e)
         {
             if (Properties.Settings.Default.serialportdurum == true)
             {
-                string sadece_saat = DateTime.Now.ToString("hh:mm:ss");
-                hamveritextbox.AppendText(sadece_saat + " --> " + Properties.Settings.Default.data + Environment.NewLine);
-                int line = hamveritextbox.GetLineFromCharIndex(hamveritextbox.SelectionStart);
-                int column = hamveritextbox.SelectionStart - hamveritextbox.GetFirstCharIndexFromLine(line);
+                hamVeriBellekBosaltTimer.Start();
             }
-            
+            else
+            {
+                hamVeriBellekBosaltTimer.Stop();
+            }
+        }
 
-
+        private void hamVeriBellekBosaltTimer_Tick(object sender, EventArgs e)
+        {
+            hamveritextbox.Text = string.Empty;
         }
     }
 }

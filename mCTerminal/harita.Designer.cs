@@ -91,7 +91,7 @@
             this.tamEkranToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.fullscreen;
             this.tamEkranToolStripMenuItem.Name = "tamEkranToolStripMenuItem";
             this.tamEkranToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F2)));
-            this.tamEkranToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tamEkranToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.tamEkranToolStripMenuItem.Text = "Tam Ekran";
             this.tamEkranToolStripMenuItem.Click += new System.EventHandler(this.tamEkranToolStripMenuItem_Click);
             // 
@@ -131,9 +131,10 @@
             this.boylamTextBox.AutoSize = false;
             this.boylamTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.boylamTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.boylamTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.boylamTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.boylamTextBox.Name = "boylamTextBox";
-            this.boylamTextBox.Size = new System.Drawing.Size(110, 22);
+            this.boylamTextBox.Size = new System.Drawing.Size(110, 23);
             this.boylamTextBox.Text = "34.56789";
             // 
             // enlemTextBox
@@ -142,9 +143,10 @@
             this.enlemTextBox.AutoSize = false;
             this.enlemTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.enlemTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.enlemTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.enlemTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.enlemTextBox.Name = "enlemTextBox";
-            this.enlemTextBox.Size = new System.Drawing.Size(110, 22);
+            this.enlemTextBox.Size = new System.Drawing.Size(110, 23);
             this.enlemTextBox.Text = "45.67890";
             // 
             // toolStripDropDownButton1
@@ -193,53 +195,53 @@
             this.uyduHaritasıToolStripMenuItem,
             this.şehirHaritasıToolStripMenuItem,
             this.araziHaritasıToolStripMenuItem});
-            this.googleHaritalarToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.googleHaritalarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.googleHaritalarToolStripMenuItem.Name = "googleHaritalarToolStripMenuItem";
-            this.googleHaritalarToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.googleHaritalarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.googleHaritalarToolStripMenuItem.Text = "Google Haritalar";
             // 
             // uyduHaritasıToolStripMenuItem
             // 
             this.uyduHaritasıToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.uyduHaritasıToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.uyduHaritasıToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.uyduHaritasıToolStripMenuItem.Name = "uyduHaritasıToolStripMenuItem";
-            this.uyduHaritasıToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.uyduHaritasıToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.uyduHaritasıToolStripMenuItem.Text = "Uydu Haritası";
             this.uyduHaritasıToolStripMenuItem.Click += new System.EventHandler(this.uyduHaritasıToolStripMenuItem_Click);
             // 
             // şehirHaritasıToolStripMenuItem
             // 
             this.şehirHaritasıToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.şehirHaritasıToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.şehirHaritasıToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.şehirHaritasıToolStripMenuItem.Name = "şehirHaritasıToolStripMenuItem";
-            this.şehirHaritasıToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.şehirHaritasıToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.şehirHaritasıToolStripMenuItem.Text = "Şehir Haritası";
             this.şehirHaritasıToolStripMenuItem.Click += new System.EventHandler(this.şehirHaritasıToolStripMenuItem_Click);
             // 
             // araziHaritasıToolStripMenuItem
             // 
             this.araziHaritasıToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.araziHaritasıToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.araziHaritasıToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.araziHaritasıToolStripMenuItem.Name = "araziHaritasıToolStripMenuItem";
-            this.araziHaritasıToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.araziHaritasıToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.araziHaritasıToolStripMenuItem.Text = "Arazi Haritası";
             this.araziHaritasıToolStripMenuItem.Click += new System.EventHandler(this.araziHaritasıToolStripMenuItem_Click);
             // 
             // bingHaritaToolStripMenuItem
             // 
             this.bingHaritaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.bingHaritaToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.bingHaritaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.bingHaritaToolStripMenuItem.Name = "bingHaritaToolStripMenuItem";
-            this.bingHaritaToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.bingHaritaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bingHaritaToolStripMenuItem.Text = "Bing Haritalar";
             this.bingHaritaToolStripMenuItem.Click += new System.EventHandler(this.bingHaritaToolStripMenuItem_Click);
             // 
             // wikiMapiaToolStripMenuItem
             // 
             this.wikiMapiaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.wikiMapiaToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.wikiMapiaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.wikiMapiaToolStripMenuItem.Name = "wikiMapiaToolStripMenuItem";
-            this.wikiMapiaToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.wikiMapiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.wikiMapiaToolStripMenuItem.Text = "Wiki Mapia ";
             this.wikiMapiaToolStripMenuItem.Click += new System.EventHandler(this.wikiMapiaToolStripMenuItem_Click);
             // 
@@ -288,9 +290,9 @@
             this.haritaortala_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.haritaortala_checkbox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.haritaortala_checkbox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.haritaortala_checkbox.Location = new System.Drawing.Point(151, 0);
+            this.haritaortala_checkbox.Location = new System.Drawing.Point(151, 4);
             this.haritaortala_checkbox.Name = "haritaortala_checkbox";
-            this.haritaortala_checkbox.Size = new System.Drawing.Size(102, 25);
+            this.haritaortala_checkbox.Size = new System.Drawing.Size(102, 20);
             this.haritaortala_checkbox.TabIndex = 2;
             this.haritaortala_checkbox.Text = "Haritayı Ortala";
             this.haritaortala_checkbox.UseVisualStyleBackColor = false;
