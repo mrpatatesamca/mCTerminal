@@ -32,33 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(anaEkran));
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.bağlantıyıBaşlatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verikaydetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.programiyenidenbaslatStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.ciktoolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.üstteGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tamEkranToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tumselKontrolleriAcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bütünPencereleriKöşesizYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripDropDownButton4 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.haritayıGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uzakGörüntüyüGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uzakSesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.roketŞemasıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hamVeriyiGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripDropDownButton5 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.ayarlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hataGidermeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.güncelleştirmeleriKontrolEtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripDropDownButton6 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.destekSayfasınaGitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hakkındaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.baglantiListeYenileButton = new System.Windows.Forms.ToolStripButton();
             this.COMPortList = new System.Windows.Forms.ToolStripComboBox();
             this.baudRatePortList = new System.Windows.Forms.ToolStripComboBox();
             this.hamVeriTextBox1 = new System.Windows.Forms.TextBox();
@@ -86,15 +59,7 @@
             this.kameraDurumLabel = new System.Windows.Forms.Label();
             this.ortagovdeDurumLabel = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.kayitdurumPictureBox = new System.Windows.Forms.PictureBox();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.kameraDurumPictureBox = new System.Windows.Forms.PictureBox();
-            this.ortaGovdeDurumPictureBox = new System.Windows.Forms.PictureBox();
-            this.koniDurumPictureBox = new System.Windows.Forms.PictureBox();
-            this.bellekTemizlemeDurumPictureBox = new System.Windows.Forms.PictureBox();
-            this.baglantiDurumPictureBox = new System.Windows.Forms.PictureBox();
-            this.uyduPictureBox = new System.Windows.Forms.PictureBox();
-            this.hdopPictureBox = new System.Windows.Forms.PictureBox();
             this.gKuvvetGauge = new System.Windows.Forms.AGauge();
             this.yatayHizGauge = new System.Windows.Forms.AGauge();
             this.irtifaGauge = new System.Windows.Forms.AGauge();
@@ -117,21 +82,58 @@
             this.gecenSureGuncelleTimer = new System.Windows.Forms.Timer(this.components);
             this.BellekBosaltTimer2 = new System.Windows.Forms.Timer(this.components);
             this.hamVeriYazmayaDevamKontrolTimer = new System.Windows.Forms.Timer(this.components);
+            this.gurultuDurumPictureBox = new System.Windows.Forms.PictureBox();
+            this.kameraDurumPictureBox = new System.Windows.Forms.PictureBox();
+            this.ortaGovdeDurumPictureBox = new System.Windows.Forms.PictureBox();
+            this.koniDurumPictureBox = new System.Windows.Forms.PictureBox();
+            this.bellekTemizlemeDurumPictureBox = new System.Windows.Forms.PictureBox();
+            this.baglantiDurumPictureBox = new System.Windows.Forms.PictureBox();
+            this.kayitdurumPictureBox = new System.Windows.Forms.PictureBox();
+            this.uyduPictureBox = new System.Windows.Forms.PictureBox();
+            this.hdopPictureBox = new System.Windows.Forms.PictureBox();
+            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.bağlantıyıBaşlatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verikaydetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.programiyenidenbaslatStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ciktoolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.üstteGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tamEkranToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tumselKontrolleriAcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bütünPencereleriKöşesizYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton4 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.haritayıGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uzakGörüntüyüGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uzakSesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.roketŞemasıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hamVeriyiGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton5 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.ayarlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hataGidermeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.güncelleştirmeleriKontrolEtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton6 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.destekSayfasınaGitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hakkındaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.baglantiListeYenileButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.baglantiGrup.SuspendLayout();
             this.fizikselGrup.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.bilesenGrup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kayitdurumPictureBox)).BeginInit();
+            this.gostergeGrup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gurultuDurumPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kameraDurumPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ortaGovdeDurumPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.koniDurumPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bellekTemizlemeDurumPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.baglantiDurumPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kayitdurumPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uyduPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hdopPictureBox)).BeginInit();
-            this.gostergeGrup.SuspendLayout();
             this.SuspendLayout();
             // 
             // serialPort1
@@ -161,310 +163,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(613, 28);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripDropDownButton2
-            // 
-            this.toolStripDropDownButton2.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bağlantıyıBaşlatToolStripMenuItem,
-            this.verikaydetToolStripMenuItem,
-            this.programiyenidenbaslatStripMenuItem2,
-            this.toolStripSeparator1,
-            this.ciktoolStripMenuItem3});
-            this.toolStripDropDownButton2.Image = global::mCTerminal.Properties.Resources.folder;
-            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton2.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
-            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            this.toolStripDropDownButton2.Size = new System.Drawing.Size(68, 25);
-            this.toolStripDropDownButton2.Text = "Dosya";
-            // 
-            // bağlantıyıBaşlatToolStripMenuItem
-            // 
-            this.bağlantıyıBaşlatToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.bağlantıyıBaşlatToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.bağlantıyıBaşlatToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.connect;
-            this.bağlantıyıBaşlatToolStripMenuItem.Name = "bağlantıyıBaşlatToolStripMenuItem";
-            this.bağlantıyıBaşlatToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.bağlantıyıBaşlatToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Başlat";
-            this.bağlantıyıBaşlatToolStripMenuItem.Click += new System.EventHandler(this.bağlantıyıBaşlatToolStripMenuItem_Click);
-            // 
-            // verikaydetToolStripMenuItem
-            // 
-            this.verikaydetToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.verikaydetToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.verikaydetToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.save;
-            this.verikaydetToolStripMenuItem.Name = "verikaydetToolStripMenuItem";
-            this.verikaydetToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.verikaydetToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.verikaydetToolStripMenuItem.Text = "Veri Çıktısını Kaydet";
-            this.verikaydetToolStripMenuItem.Click += new System.EventHandler(this.verikaydetToolStripMenuItem_Click);
-            // 
-            // programiyenidenbaslatStripMenuItem2
-            // 
-            this.programiyenidenbaslatStripMenuItem2.BackColor = System.Drawing.SystemColors.Control;
-            this.programiyenidenbaslatStripMenuItem2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.programiyenidenbaslatStripMenuItem2.Image = global::mCTerminal.Properties.Resources.refresh;
-            this.programiyenidenbaslatStripMenuItem2.Name = "programiyenidenbaslatStripMenuItem2";
-            this.programiyenidenbaslatStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.programiyenidenbaslatStripMenuItem2.Size = new System.Drawing.Size(243, 22);
-            this.programiyenidenbaslatStripMenuItem2.Text = "Programı Yeniden Başlat";
-            this.programiyenidenbaslatStripMenuItem2.Click += new System.EventHandler(this.programiyenidenbaslatStripMenuItem2_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(240, 6);
-            // 
-            // ciktoolStripMenuItem3
-            // 
-            this.ciktoolStripMenuItem3.BackColor = System.Drawing.SystemColors.Control;
-            this.ciktoolStripMenuItem3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ciktoolStripMenuItem3.Image = global::mCTerminal.Properties.Resources.exit;
-            this.ciktoolStripMenuItem3.Name = "ciktoolStripMenuItem3";
-            this.ciktoolStripMenuItem3.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.ciktoolStripMenuItem3.Size = new System.Drawing.Size(243, 22);
-            this.ciktoolStripMenuItem3.Text = "Çık";
-            this.ciktoolStripMenuItem3.Click += new System.EventHandler(this.ciktoolStripMenuItem3_Click);
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.üstteGösterToolStripMenuItem,
-            this.tamEkranToolStripMenuItem,
-            this.tumselKontrolleriAcToolStripMenuItem,
-            this.bütünPencereleriKöşesizYapToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = global::mCTerminal.Properties.Resources.window;
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(78, 25);
-            this.toolStripDropDownButton1.Text = "Pencere";
-            // 
-            // üstteGösterToolStripMenuItem
-            // 
-            this.üstteGösterToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.üstteGösterToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.üstteGösterToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.eye;
-            this.üstteGösterToolStripMenuItem.Name = "üstteGösterToolStripMenuItem";
-            this.üstteGösterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F1)));
-            this.üstteGösterToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
-            this.üstteGösterToolStripMenuItem.Text = "Üstte Göster";
-            this.üstteGösterToolStripMenuItem.Click += new System.EventHandler(this.üstteGösterToolStripMenuItem_Click);
-            // 
-            // tamEkranToolStripMenuItem
-            // 
-            this.tamEkranToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.tamEkranToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tamEkranToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.fullscreen;
-            this.tamEkranToolStripMenuItem.Name = "tamEkranToolStripMenuItem";
-            this.tamEkranToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F2)));
-            this.tamEkranToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
-            this.tamEkranToolStripMenuItem.Text = "Tam Ekran";
-            this.tamEkranToolStripMenuItem.Click += new System.EventHandler(this.tamEkranToolStripMenuItem_Click);
-            // 
-            // tumselKontrolleriAcToolStripMenuItem
-            // 
-            this.tumselKontrolleriAcToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.tumselKontrolleriAcToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tumselKontrolleriAcToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.select_all;
-            this.tumselKontrolleriAcToolStripMenuItem.Name = "tumselKontrolleriAcToolStripMenuItem";
-            this.tumselKontrolleriAcToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F3)));
-            this.tumselKontrolleriAcToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
-            this.tumselKontrolleriAcToolStripMenuItem.Text = "Tümsel Kontrolleri Aç";
-            this.tumselKontrolleriAcToolStripMenuItem.Click += new System.EventHandler(this.tumselKontrolleriAcToolStripMenuItem_Click);
-            // 
-            // bütünPencereleriKöşesizYapToolStripMenuItem
-            // 
-            this.bütünPencereleriKöşesizYapToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.coding2;
-            this.bütünPencereleriKöşesizYapToolStripMenuItem.Name = "bütünPencereleriKöşesizYapToolStripMenuItem";
-            this.bütünPencereleriKöşesizYapToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F4)));
-            this.bütünPencereleriKöşesizYapToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
-            this.bütünPencereleriKöşesizYapToolStripMenuItem.Text = "Bütün Pencereleri Köşesiz Yap";
-            this.bütünPencereleriKöşesizYapToolStripMenuItem.Click += new System.EventHandler(this.bütünPencereleriKöşesizYapToolStripMenuItem_Click);
-            // 
-            // toolStripDropDownButton4
-            // 
-            this.toolStripDropDownButton4.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripDropDownButton4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.haritayıGösterToolStripMenuItem,
-            this.uzakGörüntüyüGösterToolStripMenuItem,
-            this.uzakSesToolStripMenuItem,
-            this.roketŞemasıToolStripMenuItem,
-            this.hamVeriyiGösterToolStripMenuItem});
-            this.toolStripDropDownButton4.Image = global::mCTerminal.Properties.Resources.toolbox;
-            this.toolStripDropDownButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton4.Name = "toolStripDropDownButton4";
-            this.toolStripDropDownButton4.Size = new System.Drawing.Size(73, 25);
-            this.toolStripDropDownButton4.Text = "Araçlar";
-            // 
-            // haritayıGösterToolStripMenuItem
-            // 
-            this.haritayıGösterToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.haritayıGösterToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.haritayıGösterToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.map;
-            this.haritayıGösterToolStripMenuItem.Name = "haritayıGösterToolStripMenuItem";
-            this.haritayıGösterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
-            this.haritayıGösterToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.haritayıGösterToolStripMenuItem.Text = "Harita";
-            this.haritayıGösterToolStripMenuItem.Click += new System.EventHandler(this.haritayıGösterToolStripMenuItem_Click);
-            // 
-            // uzakGörüntüyüGösterToolStripMenuItem
-            // 
-            this.uzakGörüntüyüGösterToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.uzakGörüntüyüGösterToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.uzakGörüntüyüGösterToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.cctv;
-            this.uzakGörüntüyüGösterToolStripMenuItem.Name = "uzakGörüntüyüGösterToolStripMenuItem";
-            this.uzakGörüntüyüGösterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.uzakGörüntüyüGösterToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.uzakGörüntüyüGösterToolStripMenuItem.Text = "Uzak Görüntü";
-            this.uzakGörüntüyüGösterToolStripMenuItem.Click += new System.EventHandler(this.uzakGörüntüyüGösterToolStripMenuItem_Click);
-            // 
-            // uzakSesToolStripMenuItem
-            // 
-            this.uzakSesToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.headphones;
-            this.uzakSesToolStripMenuItem.Name = "uzakSesToolStripMenuItem";
-            this.uzakSesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.uzakSesToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.uzakSesToolStripMenuItem.Text = "Uzak Ses";
-            this.uzakSesToolStripMenuItem.Click += new System.EventHandler(this.uzakSesToolStripMenuItem_Click);
-            // 
-            // roketŞemasıToolStripMenuItem
-            // 
-            this.roketŞemasıToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.roketŞemasıToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.roketŞemasıToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.rgb;
-            this.roketŞemasıToolStripMenuItem.Name = "roketŞemasıToolStripMenuItem";
-            this.roketŞemasıToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.roketŞemasıToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.roketŞemasıToolStripMenuItem.Text = "Roket Şeması";
-            this.roketŞemasıToolStripMenuItem.Click += new System.EventHandler(this.roketŞemasıToolStripMenuItem_Click);
-            // 
-            // hamVeriyiGösterToolStripMenuItem
-            // 
-            this.hamVeriyiGösterToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.hamVeriyiGösterToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.hamVeriyiGösterToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.binary;
-            this.hamVeriyiGösterToolStripMenuItem.Name = "hamVeriyiGösterToolStripMenuItem";
-            this.hamVeriyiGösterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.hamVeriyiGösterToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.hamVeriyiGösterToolStripMenuItem.Text = "Ham Veri";
-            this.hamVeriyiGösterToolStripMenuItem.Click += new System.EventHandler(this.hamVeriyiGösterToolStripMenuItem_Click);
-            // 
-            // toolStripDropDownButton5
-            // 
-            this.toolStripDropDownButton5.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripDropDownButton5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ayarlarToolStripMenuItem,
-            this.hataGidermeToolStripMenuItem,
-            this.güncelleştirmeleriKontrolEtToolStripMenuItem});
-            this.toolStripDropDownButton5.Image = global::mCTerminal.Properties.Resources.setting;
-            this.toolStripDropDownButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton5.Name = "toolStripDropDownButton5";
-            this.toolStripDropDownButton5.Size = new System.Drawing.Size(92, 25);
-            this.toolStripDropDownButton5.Text = "Seçenekler";
-            // 
-            // ayarlarToolStripMenuItem
-            // 
-            this.ayarlarToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.ayarlarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ayarlarToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.setting;
-            this.ayarlarToolStripMenuItem.Name = "ayarlarToolStripMenuItem";
-            this.ayarlarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.ayarlarToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
-            this.ayarlarToolStripMenuItem.Text = "Ayarlar";
-            this.ayarlarToolStripMenuItem.Click += new System.EventHandler(this.ayarlarToolStripMenuItem_Click);
-            // 
-            // hataGidermeToolStripMenuItem
-            // 
-            this.hataGidermeToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.hataGidermeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.hataGidermeToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.bug;
-            this.hataGidermeToolStripMenuItem.Name = "hataGidermeToolStripMenuItem";
-            this.hataGidermeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F6)));
-            this.hataGidermeToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
-            this.hataGidermeToolStripMenuItem.Text = "Hata Giderme";
-            this.hataGidermeToolStripMenuItem.Click += new System.EventHandler(this.hataGidermeToolStripMenuItem_Click);
-            // 
-            // güncelleştirmeleriKontrolEtToolStripMenuItem
-            // 
-            this.güncelleştirmeleriKontrolEtToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.güncelleştirmeleriKontrolEtToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.güncelleştirmeleriKontrolEtToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.update;
-            this.güncelleştirmeleriKontrolEtToolStripMenuItem.Name = "güncelleştirmeleriKontrolEtToolStripMenuItem";
-            this.güncelleştirmeleriKontrolEtToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F5)));
-            this.güncelleştirmeleriKontrolEtToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
-            this.güncelleştirmeleriKontrolEtToolStripMenuItem.Text = "Güncelleştirmeleri Kontrol Et";
-            this.güncelleştirmeleriKontrolEtToolStripMenuItem.Click += new System.EventHandler(this.güncelleştirmeleriKontrolEtToolStripMenuItem_Click);
-            // 
-            // toolStripDropDownButton6
-            // 
-            this.toolStripDropDownButton6.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripDropDownButton6.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem});
-            this.toolStripDropDownButton6.Image = global::mCTerminal.Properties.Resources.puzzle;
-            this.toolStripDropDownButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton6.Name = "toolStripDropDownButton6";
-            this.toolStripDropDownButton6.Size = new System.Drawing.Size(84, 25);
-            this.toolStripDropDownButton6.Text = "Eklentiler";
-            // 
-            // kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem
-            // 
-            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.ebook;
-            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Name = "kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem";
-            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
-            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Text = "mCTerminal Okuyucu | mct-rd.exe";
-            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Click += new System.EventHandler(this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem_Click);
-            // 
-            // toolStripDropDownButton3
-            // 
-            this.toolStripDropDownButton3.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.destekSayfasınaGitToolStripMenuItem,
-            this.hakkındaToolStripMenuItem});
-            this.toolStripDropDownButton3.Image = global::mCTerminal.Properties.Resources.lifebuoy;
-            this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
-            this.toolStripDropDownButton3.Size = new System.Drawing.Size(73, 25);
-            this.toolStripDropDownButton3.Text = "Yardım";
-            // 
-            // destekSayfasınaGitToolStripMenuItem
-            // 
-            this.destekSayfasınaGitToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.destekSayfasınaGitToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.destekSayfasınaGitToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.internet;
-            this.destekSayfasınaGitToolStripMenuItem.Name = "destekSayfasınaGitToolStripMenuItem";
-            this.destekSayfasınaGitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F12)));
-            this.destekSayfasınaGitToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
-            this.destekSayfasınaGitToolStripMenuItem.Text = "Destek Sayfasına Git";
-            this.destekSayfasınaGitToolStripMenuItem.Click += new System.EventHandler(this.destekSayfasınaGitToolStripMenuItem_Click_1);
-            // 
-            // hakkındaToolStripMenuItem
-            // 
-            this.hakkındaToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.hakkındaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.hakkındaToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.info;
-            this.hakkındaToolStripMenuItem.Name = "hakkındaToolStripMenuItem";
-            this.hakkındaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
-            this.hakkındaToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
-            this.hakkındaToolStripMenuItem.Text = "Hakkında";
-            this.hakkındaToolStripMenuItem.Click += new System.EventHandler(this.hakkındaToolStripMenuItem_Click);
-            // 
-            // baglantiListeYenileButton
-            // 
-            this.baglantiListeYenileButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.baglantiListeYenileButton.AutoToolTip = false;
-            this.baglantiListeYenileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.baglantiListeYenileButton.Image = global::mCTerminal.Properties.Resources.reload;
-            this.baglantiListeYenileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.baglantiListeYenileButton.Margin = new System.Windows.Forms.Padding(0, 1, 3, 2);
-            this.baglantiListeYenileButton.Name = "baglantiListeYenileButton";
-            this.baglantiListeYenileButton.Size = new System.Drawing.Size(23, 25);
-            this.baglantiListeYenileButton.Text = "Bağlantıları Yeniden Listele";
-            this.baglantiListeYenileButton.ToolTipText = "Bağlantıları Yeniden Listele";
-            this.baglantiListeYenileButton.Click += new System.EventHandler(this.baglantiListeYenileButton_Click);
             // 
             // COMPortList
             // 
@@ -496,7 +194,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.hamVeriTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.hamVeriTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.hamVeriTextBox1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.hamVeriTextBox1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.hamVeriTextBox1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.hamVeriTextBox1.Location = new System.Drawing.Point(0, 235);
             this.hamVeriTextBox1.Multiline = true;
@@ -831,110 +529,6 @@
             // 
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Bilgilendirme!";
-            // 
-            // kayitdurumPictureBox
-            // 
-            this.kayitdurumPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.kayitdurumPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.kayitdurumPictureBox.Image = global::mCTerminal.Properties.Resources.pen_drive_kirmizi;
-            this.kayitdurumPictureBox.Location = new System.Drawing.Point(40, 206);
-            this.kayitdurumPictureBox.Name = "kayitdurumPictureBox";
-            this.kayitdurumPictureBox.Size = new System.Drawing.Size(22, 22);
-            this.kayitdurumPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.kayitdurumPictureBox.TabIndex = 13;
-            this.kayitdurumPictureBox.TabStop = false;
-            this.toolTip1.SetToolTip(this.kayitdurumPictureBox, "Veri kaydı yapılmıyor!");
-            // 
-            // kameraDurumPictureBox
-            // 
-            this.kameraDurumPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.kameraDurumPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.kameraDurumPictureBox.Image = global::mCTerminal.Properties.Resources.film;
-            this.kameraDurumPictureBox.Location = new System.Drawing.Point(208, 206);
-            this.kameraDurumPictureBox.Name = "kameraDurumPictureBox";
-            this.kameraDurumPictureBox.Size = new System.Drawing.Size(22, 22);
-            this.kameraDurumPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.kameraDurumPictureBox.TabIndex = 23;
-            this.kameraDurumPictureBox.TabStop = false;
-            this.toolTip2.SetToolTip(this.kameraDurumPictureBox, "Video yayını durumu");
-            // 
-            // ortaGovdeDurumPictureBox
-            // 
-            this.ortaGovdeDurumPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.ortaGovdeDurumPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ortaGovdeDurumPictureBox.Image = global::mCTerminal.Properties.Resources.split;
-            this.ortaGovdeDurumPictureBox.Location = new System.Drawing.Point(180, 206);
-            this.ortaGovdeDurumPictureBox.Name = "ortaGovdeDurumPictureBox";
-            this.ortaGovdeDurumPictureBox.Size = new System.Drawing.Size(22, 22);
-            this.ortaGovdeDurumPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ortaGovdeDurumPictureBox.TabIndex = 22;
-            this.ortaGovdeDurumPictureBox.TabStop = false;
-            this.toolTip2.SetToolTip(this.ortaGovdeDurumPictureBox, "Orta Gövde durumu");
-            // 
-            // koniDurumPictureBox
-            // 
-            this.koniDurumPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.koniDurumPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.koniDurumPictureBox.Image = global::mCTerminal.Properties.Resources.cone;
-            this.koniDurumPictureBox.Location = new System.Drawing.Point(152, 206);
-            this.koniDurumPictureBox.Name = "koniDurumPictureBox";
-            this.koniDurumPictureBox.Size = new System.Drawing.Size(22, 22);
-            this.koniDurumPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.koniDurumPictureBox.TabIndex = 21;
-            this.koniDurumPictureBox.TabStop = false;
-            this.toolTip2.SetToolTip(this.koniDurumPictureBox, "Burun Konisi durumu");
-            // 
-            // bellekTemizlemeDurumPictureBox
-            // 
-            this.bellekTemizlemeDurumPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.bellekTemizlemeDurumPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bellekTemizlemeDurumPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("bellekTemizlemeDurumPictureBox.Image")));
-            this.bellekTemizlemeDurumPictureBox.Location = new System.Drawing.Point(68, 206);
-            this.bellekTemizlemeDurumPictureBox.Name = "bellekTemizlemeDurumPictureBox";
-            this.bellekTemizlemeDurumPictureBox.Size = new System.Drawing.Size(22, 22);
-            this.bellekTemizlemeDurumPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bellekTemizlemeDurumPictureBox.TabIndex = 20;
-            this.bellekTemizlemeDurumPictureBox.TabStop = false;
-            this.toolTip2.SetToolTip(this.bellekTemizlemeDurumPictureBox, "Bellek temizleme durumu");
-            // 
-            // baglantiDurumPictureBox
-            // 
-            this.baglantiDurumPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.baglantiDurumPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.baglantiDurumPictureBox.Image = global::mCTerminal.Properties.Resources.dot;
-            this.baglantiDurumPictureBox.Location = new System.Drawing.Point(12, 206);
-            this.baglantiDurumPictureBox.Name = "baglantiDurumPictureBox";
-            this.baglantiDurumPictureBox.Size = new System.Drawing.Size(22, 22);
-            this.baglantiDurumPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.baglantiDurumPictureBox.TabIndex = 17;
-            this.baglantiDurumPictureBox.TabStop = false;
-            this.toolTip2.SetToolTip(this.baglantiDurumPictureBox, "Program durumu");
-            // 
-            // uyduPictureBox
-            // 
-            this.uyduPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.uyduPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uyduPictureBox.Image = global::mCTerminal.Properties.Resources.uydu;
-            this.uyduPictureBox.Location = new System.Drawing.Point(96, 206);
-            this.uyduPictureBox.Name = "uyduPictureBox";
-            this.uyduPictureBox.Size = new System.Drawing.Size(22, 22);
-            this.uyduPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.uyduPictureBox.TabIndex = 16;
-            this.uyduPictureBox.TabStop = false;
-            this.toolTip2.SetToolTip(this.uyduPictureBox, "Bağlanılan uydu sayısı");
-            // 
-            // hdopPictureBox
-            // 
-            this.hdopPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.hdopPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.hdopPictureBox.Image = global::mCTerminal.Properties.Resources.snr_seviye;
-            this.hdopPictureBox.Location = new System.Drawing.Point(124, 206);
-            this.hdopPictureBox.Name = "hdopPictureBox";
-            this.hdopPictureBox.Size = new System.Drawing.Size(22, 22);
-            this.hdopPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.hdopPictureBox.TabIndex = 14;
-            this.hdopPictureBox.TabStop = false;
-            this.toolTip2.SetToolTip(this.hdopPictureBox, "HDOP değeri");
             // 
             // gKuvvetGauge
             // 
@@ -1340,12 +934,434 @@
             this.hamVeriYazmayaDevamKontrolTimer.Interval = 2500;
             this.hamVeriYazmayaDevamKontrolTimer.Tick += new System.EventHandler(this.hamVeriYazmayaDevamKontrolTimer_Tick);
             // 
+            // gurultuDurumPictureBox
+            // 
+            this.gurultuDurumPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.gurultuDurumPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gurultuDurumPictureBox.Image = global::mCTerminal.Properties.Resources.noise;
+            this.gurultuDurumPictureBox.Location = new System.Drawing.Point(236, 206);
+            this.gurultuDurumPictureBox.Name = "gurultuDurumPictureBox";
+            this.gurultuDurumPictureBox.Size = new System.Drawing.Size(22, 22);
+            this.gurultuDurumPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gurultuDurumPictureBox.TabIndex = 24;
+            this.gurultuDurumPictureBox.TabStop = false;
+            this.toolTip2.SetToolTip(this.gurultuDurumPictureBox, "Gürültü durumu");
+            // 
+            // kameraDurumPictureBox
+            // 
+            this.kameraDurumPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.kameraDurumPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.kameraDurumPictureBox.Image = global::mCTerminal.Properties.Resources.film;
+            this.kameraDurumPictureBox.Location = new System.Drawing.Point(208, 206);
+            this.kameraDurumPictureBox.Name = "kameraDurumPictureBox";
+            this.kameraDurumPictureBox.Size = new System.Drawing.Size(22, 22);
+            this.kameraDurumPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.kameraDurumPictureBox.TabIndex = 23;
+            this.kameraDurumPictureBox.TabStop = false;
+            this.toolTip2.SetToolTip(this.kameraDurumPictureBox, "Video yayını durumu");
+            // 
+            // ortaGovdeDurumPictureBox
+            // 
+            this.ortaGovdeDurumPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.ortaGovdeDurumPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ortaGovdeDurumPictureBox.Image = global::mCTerminal.Properties.Resources.split;
+            this.ortaGovdeDurumPictureBox.Location = new System.Drawing.Point(180, 206);
+            this.ortaGovdeDurumPictureBox.Name = "ortaGovdeDurumPictureBox";
+            this.ortaGovdeDurumPictureBox.Size = new System.Drawing.Size(22, 22);
+            this.ortaGovdeDurumPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ortaGovdeDurumPictureBox.TabIndex = 22;
+            this.ortaGovdeDurumPictureBox.TabStop = false;
+            this.toolTip2.SetToolTip(this.ortaGovdeDurumPictureBox, "Orta Gövde durumu");
+            // 
+            // koniDurumPictureBox
+            // 
+            this.koniDurumPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.koniDurumPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.koniDurumPictureBox.Image = global::mCTerminal.Properties.Resources.cone;
+            this.koniDurumPictureBox.Location = new System.Drawing.Point(152, 206);
+            this.koniDurumPictureBox.Name = "koniDurumPictureBox";
+            this.koniDurumPictureBox.Size = new System.Drawing.Size(22, 22);
+            this.koniDurumPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.koniDurumPictureBox.TabIndex = 21;
+            this.koniDurumPictureBox.TabStop = false;
+            this.toolTip2.SetToolTip(this.koniDurumPictureBox, "Burun Konisi durumu");
+            // 
+            // bellekTemizlemeDurumPictureBox
+            // 
+            this.bellekTemizlemeDurumPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.bellekTemizlemeDurumPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bellekTemizlemeDurumPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("bellekTemizlemeDurumPictureBox.Image")));
+            this.bellekTemizlemeDurumPictureBox.Location = new System.Drawing.Point(68, 206);
+            this.bellekTemizlemeDurumPictureBox.Name = "bellekTemizlemeDurumPictureBox";
+            this.bellekTemizlemeDurumPictureBox.Size = new System.Drawing.Size(22, 22);
+            this.bellekTemizlemeDurumPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bellekTemizlemeDurumPictureBox.TabIndex = 20;
+            this.bellekTemizlemeDurumPictureBox.TabStop = false;
+            this.toolTip2.SetToolTip(this.bellekTemizlemeDurumPictureBox, "Bellek temizleme durumu");
+            // 
+            // baglantiDurumPictureBox
+            // 
+            this.baglantiDurumPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.baglantiDurumPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.baglantiDurumPictureBox.Image = global::mCTerminal.Properties.Resources.dot;
+            this.baglantiDurumPictureBox.Location = new System.Drawing.Point(12, 206);
+            this.baglantiDurumPictureBox.Name = "baglantiDurumPictureBox";
+            this.baglantiDurumPictureBox.Size = new System.Drawing.Size(22, 22);
+            this.baglantiDurumPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.baglantiDurumPictureBox.TabIndex = 17;
+            this.baglantiDurumPictureBox.TabStop = false;
+            this.toolTip2.SetToolTip(this.baglantiDurumPictureBox, "Program durumu");
+            // 
+            // kayitdurumPictureBox
+            // 
+            this.kayitdurumPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.kayitdurumPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.kayitdurumPictureBox.Image = global::mCTerminal.Properties.Resources.pen_drive_kirmizi;
+            this.kayitdurumPictureBox.Location = new System.Drawing.Point(40, 206);
+            this.kayitdurumPictureBox.Name = "kayitdurumPictureBox";
+            this.kayitdurumPictureBox.Size = new System.Drawing.Size(22, 22);
+            this.kayitdurumPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.kayitdurumPictureBox.TabIndex = 13;
+            this.kayitdurumPictureBox.TabStop = false;
+            this.toolTip1.SetToolTip(this.kayitdurumPictureBox, "Veri kaydı yapılmıyor!");
+            // 
+            // uyduPictureBox
+            // 
+            this.uyduPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.uyduPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uyduPictureBox.Image = global::mCTerminal.Properties.Resources.uydu;
+            this.uyduPictureBox.Location = new System.Drawing.Point(96, 206);
+            this.uyduPictureBox.Name = "uyduPictureBox";
+            this.uyduPictureBox.Size = new System.Drawing.Size(22, 22);
+            this.uyduPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.uyduPictureBox.TabIndex = 16;
+            this.uyduPictureBox.TabStop = false;
+            this.toolTip2.SetToolTip(this.uyduPictureBox, "Bağlanılan uydu sayısı");
+            // 
+            // hdopPictureBox
+            // 
+            this.hdopPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.hdopPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.hdopPictureBox.Image = global::mCTerminal.Properties.Resources.snr_seviye;
+            this.hdopPictureBox.Location = new System.Drawing.Point(124, 206);
+            this.hdopPictureBox.Name = "hdopPictureBox";
+            this.hdopPictureBox.Size = new System.Drawing.Size(22, 22);
+            this.hdopPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.hdopPictureBox.TabIndex = 14;
+            this.hdopPictureBox.TabStop = false;
+            this.toolTip2.SetToolTip(this.hdopPictureBox, "HDOP değeri");
+            // 
+            // toolStripDropDownButton2
+            // 
+            this.toolStripDropDownButton2.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bağlantıyıBaşlatToolStripMenuItem,
+            this.verikaydetToolStripMenuItem,
+            this.programiyenidenbaslatStripMenuItem2,
+            this.toolStripSeparator1,
+            this.ciktoolStripMenuItem3});
+            this.toolStripDropDownButton2.Image = global::mCTerminal.Properties.Resources.folder;
+            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton2.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
+            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(68, 25);
+            this.toolStripDropDownButton2.Text = "Dosya";
+            // 
+            // bağlantıyıBaşlatToolStripMenuItem
+            // 
+            this.bağlantıyıBaşlatToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.bağlantıyıBaşlatToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bağlantıyıBaşlatToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.connect;
+            this.bağlantıyıBaşlatToolStripMenuItem.Name = "bağlantıyıBaşlatToolStripMenuItem";
+            this.bağlantıyıBaşlatToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
+            this.bağlantıyıBaşlatToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Başlat";
+            this.bağlantıyıBaşlatToolStripMenuItem.Click += new System.EventHandler(this.bağlantıyıBaşlatToolStripMenuItem_Click);
+            // 
+            // verikaydetToolStripMenuItem
+            // 
+            this.verikaydetToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.verikaydetToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.verikaydetToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.save;
+            this.verikaydetToolStripMenuItem.Name = "verikaydetToolStripMenuItem";
+            this.verikaydetToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.verikaydetToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.verikaydetToolStripMenuItem.Text = "Veri Çıktısını Kaydet";
+            this.verikaydetToolStripMenuItem.Click += new System.EventHandler(this.verikaydetToolStripMenuItem_Click);
+            // 
+            // programiyenidenbaslatStripMenuItem2
+            // 
+            this.programiyenidenbaslatStripMenuItem2.BackColor = System.Drawing.SystemColors.Control;
+            this.programiyenidenbaslatStripMenuItem2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.programiyenidenbaslatStripMenuItem2.Image = global::mCTerminal.Properties.Resources.refresh;
+            this.programiyenidenbaslatStripMenuItem2.Name = "programiyenidenbaslatStripMenuItem2";
+            this.programiyenidenbaslatStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.programiyenidenbaslatStripMenuItem2.Size = new System.Drawing.Size(243, 22);
+            this.programiyenidenbaslatStripMenuItem2.Text = "Programı Yeniden Başlat";
+            this.programiyenidenbaslatStripMenuItem2.Click += new System.EventHandler(this.programiyenidenbaslatStripMenuItem2_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(240, 6);
+            // 
+            // ciktoolStripMenuItem3
+            // 
+            this.ciktoolStripMenuItem3.BackColor = System.Drawing.SystemColors.Control;
+            this.ciktoolStripMenuItem3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ciktoolStripMenuItem3.Image = global::mCTerminal.Properties.Resources.exit;
+            this.ciktoolStripMenuItem3.Name = "ciktoolStripMenuItem3";
+            this.ciktoolStripMenuItem3.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.ciktoolStripMenuItem3.Size = new System.Drawing.Size(243, 22);
+            this.ciktoolStripMenuItem3.Text = "Çık";
+            this.ciktoolStripMenuItem3.Click += new System.EventHandler(this.ciktoolStripMenuItem3_Click);
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.üstteGösterToolStripMenuItem,
+            this.tamEkranToolStripMenuItem,
+            this.tumselKontrolleriAcToolStripMenuItem,
+            this.bütünPencereleriKöşesizYapToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = global::mCTerminal.Properties.Resources.window;
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(78, 25);
+            this.toolStripDropDownButton1.Text = "Pencere";
+            // 
+            // üstteGösterToolStripMenuItem
+            // 
+            this.üstteGösterToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.üstteGösterToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.üstteGösterToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.eye;
+            this.üstteGösterToolStripMenuItem.Name = "üstteGösterToolStripMenuItem";
+            this.üstteGösterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F1)));
+            this.üstteGösterToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.üstteGösterToolStripMenuItem.Text = "Üstte Göster";
+            this.üstteGösterToolStripMenuItem.Click += new System.EventHandler(this.üstteGösterToolStripMenuItem_Click);
+            // 
+            // tamEkranToolStripMenuItem
+            // 
+            this.tamEkranToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.tamEkranToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tamEkranToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.fullscreen;
+            this.tamEkranToolStripMenuItem.Name = "tamEkranToolStripMenuItem";
+            this.tamEkranToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F2)));
+            this.tamEkranToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.tamEkranToolStripMenuItem.Text = "Tam Ekran";
+            this.tamEkranToolStripMenuItem.Click += new System.EventHandler(this.tamEkranToolStripMenuItem_Click);
+            // 
+            // tumselKontrolleriAcToolStripMenuItem
+            // 
+            this.tumselKontrolleriAcToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.tumselKontrolleriAcToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tumselKontrolleriAcToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.select_all;
+            this.tumselKontrolleriAcToolStripMenuItem.Name = "tumselKontrolleriAcToolStripMenuItem";
+            this.tumselKontrolleriAcToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F3)));
+            this.tumselKontrolleriAcToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.tumselKontrolleriAcToolStripMenuItem.Text = "Tümsel Kontrolleri Aç";
+            this.tumselKontrolleriAcToolStripMenuItem.Click += new System.EventHandler(this.tumselKontrolleriAcToolStripMenuItem_Click);
+            // 
+            // bütünPencereleriKöşesizYapToolStripMenuItem
+            // 
+            this.bütünPencereleriKöşesizYapToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.coding2;
+            this.bütünPencereleriKöşesizYapToolStripMenuItem.Name = "bütünPencereleriKöşesizYapToolStripMenuItem";
+            this.bütünPencereleriKöşesizYapToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F4)));
+            this.bütünPencereleriKöşesizYapToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.bütünPencereleriKöşesizYapToolStripMenuItem.Text = "Bütün Pencereleri Köşesiz Yap";
+            this.bütünPencereleriKöşesizYapToolStripMenuItem.Click += new System.EventHandler(this.bütünPencereleriKöşesizYapToolStripMenuItem_Click);
+            // 
+            // toolStripDropDownButton4
+            // 
+            this.toolStripDropDownButton4.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripDropDownButton4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.haritayıGösterToolStripMenuItem,
+            this.uzakGörüntüyüGösterToolStripMenuItem,
+            this.uzakSesToolStripMenuItem,
+            this.roketŞemasıToolStripMenuItem,
+            this.hamVeriyiGösterToolStripMenuItem});
+            this.toolStripDropDownButton4.Image = global::mCTerminal.Properties.Resources.toolbox;
+            this.toolStripDropDownButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton4.Name = "toolStripDropDownButton4";
+            this.toolStripDropDownButton4.Size = new System.Drawing.Size(73, 25);
+            this.toolStripDropDownButton4.Text = "Araçlar";
+            // 
+            // haritayıGösterToolStripMenuItem
+            // 
+            this.haritayıGösterToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.haritayıGösterToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.haritayıGösterToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.map;
+            this.haritayıGösterToolStripMenuItem.Name = "haritayıGösterToolStripMenuItem";
+            this.haritayıGösterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
+            this.haritayıGösterToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.haritayıGösterToolStripMenuItem.Text = "Harita";
+            this.haritayıGösterToolStripMenuItem.Click += new System.EventHandler(this.haritayıGösterToolStripMenuItem_Click);
+            // 
+            // uzakGörüntüyüGösterToolStripMenuItem
+            // 
+            this.uzakGörüntüyüGösterToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.uzakGörüntüyüGösterToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.uzakGörüntüyüGösterToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.cctv;
+            this.uzakGörüntüyüGösterToolStripMenuItem.Name = "uzakGörüntüyüGösterToolStripMenuItem";
+            this.uzakGörüntüyüGösterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.uzakGörüntüyüGösterToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.uzakGörüntüyüGösterToolStripMenuItem.Text = "Uzak Görüntü";
+            this.uzakGörüntüyüGösterToolStripMenuItem.Click += new System.EventHandler(this.uzakGörüntüyüGösterToolStripMenuItem_Click);
+            // 
+            // uzakSesToolStripMenuItem
+            // 
+            this.uzakSesToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.headphones;
+            this.uzakSesToolStripMenuItem.Name = "uzakSesToolStripMenuItem";
+            this.uzakSesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.uzakSesToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.uzakSesToolStripMenuItem.Text = "Uzak Ses";
+            this.uzakSesToolStripMenuItem.Click += new System.EventHandler(this.uzakSesToolStripMenuItem_Click);
+            // 
+            // roketŞemasıToolStripMenuItem
+            // 
+            this.roketŞemasıToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.roketŞemasıToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.roketŞemasıToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.rgb;
+            this.roketŞemasıToolStripMenuItem.Name = "roketŞemasıToolStripMenuItem";
+            this.roketŞemasıToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.roketŞemasıToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.roketŞemasıToolStripMenuItem.Text = "Roket Şeması";
+            this.roketŞemasıToolStripMenuItem.Click += new System.EventHandler(this.roketŞemasıToolStripMenuItem_Click);
+            // 
+            // hamVeriyiGösterToolStripMenuItem
+            // 
+            this.hamVeriyiGösterToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.hamVeriyiGösterToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.hamVeriyiGösterToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.binary;
+            this.hamVeriyiGösterToolStripMenuItem.Name = "hamVeriyiGösterToolStripMenuItem";
+            this.hamVeriyiGösterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.hamVeriyiGösterToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.hamVeriyiGösterToolStripMenuItem.Text = "Ham Veri";
+            this.hamVeriyiGösterToolStripMenuItem.Click += new System.EventHandler(this.hamVeriyiGösterToolStripMenuItem_Click);
+            // 
+            // toolStripDropDownButton5
+            // 
+            this.toolStripDropDownButton5.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripDropDownButton5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ayarlarToolStripMenuItem,
+            this.hataGidermeToolStripMenuItem,
+            this.güncelleştirmeleriKontrolEtToolStripMenuItem});
+            this.toolStripDropDownButton5.Image = global::mCTerminal.Properties.Resources.setting;
+            this.toolStripDropDownButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton5.Name = "toolStripDropDownButton5";
+            this.toolStripDropDownButton5.Size = new System.Drawing.Size(92, 25);
+            this.toolStripDropDownButton5.Text = "Seçenekler";
+            // 
+            // ayarlarToolStripMenuItem
+            // 
+            this.ayarlarToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.ayarlarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ayarlarToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.setting;
+            this.ayarlarToolStripMenuItem.Name = "ayarlarToolStripMenuItem";
+            this.ayarlarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+            this.ayarlarToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.ayarlarToolStripMenuItem.Text = "Ayarlar";
+            this.ayarlarToolStripMenuItem.Click += new System.EventHandler(this.ayarlarToolStripMenuItem_Click);
+            // 
+            // hataGidermeToolStripMenuItem
+            // 
+            this.hataGidermeToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.hataGidermeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.hataGidermeToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.bug;
+            this.hataGidermeToolStripMenuItem.Name = "hataGidermeToolStripMenuItem";
+            this.hataGidermeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F6)));
+            this.hataGidermeToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.hataGidermeToolStripMenuItem.Text = "Hata Giderme";
+            this.hataGidermeToolStripMenuItem.Click += new System.EventHandler(this.hataGidermeToolStripMenuItem_Click);
+            // 
+            // güncelleştirmeleriKontrolEtToolStripMenuItem
+            // 
+            this.güncelleştirmeleriKontrolEtToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.güncelleştirmeleriKontrolEtToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.güncelleştirmeleriKontrolEtToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.update;
+            this.güncelleştirmeleriKontrolEtToolStripMenuItem.Name = "güncelleştirmeleriKontrolEtToolStripMenuItem";
+            this.güncelleştirmeleriKontrolEtToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F5)));
+            this.güncelleştirmeleriKontrolEtToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.güncelleştirmeleriKontrolEtToolStripMenuItem.Text = "Güncelleştirmeleri Kontrol Et";
+            this.güncelleştirmeleriKontrolEtToolStripMenuItem.Click += new System.EventHandler(this.güncelleştirmeleriKontrolEtToolStripMenuItem_Click);
+            // 
+            // toolStripDropDownButton6
+            // 
+            this.toolStripDropDownButton6.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripDropDownButton6.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem});
+            this.toolStripDropDownButton6.Image = global::mCTerminal.Properties.Resources.puzzle;
+            this.toolStripDropDownButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton6.Name = "toolStripDropDownButton6";
+            this.toolStripDropDownButton6.Size = new System.Drawing.Size(84, 25);
+            this.toolStripDropDownButton6.Text = "Eklentiler";
+            // 
+            // kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem
+            // 
+            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.ebook;
+            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Name = "kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem";
+            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Text = "mCTerminal Okuyucu | mct-rd.exe";
+            this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem.Click += new System.EventHandler(this.kayıtlıVeriOkuyucuMctrdexeToolStripMenuItem_Click);
+            // 
+            // toolStripDropDownButton3
+            // 
+            this.toolStripDropDownButton3.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.destekSayfasınaGitToolStripMenuItem,
+            this.hakkındaToolStripMenuItem});
+            this.toolStripDropDownButton3.Image = global::mCTerminal.Properties.Resources.lifebuoy;
+            this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
+            this.toolStripDropDownButton3.Size = new System.Drawing.Size(73, 25);
+            this.toolStripDropDownButton3.Text = "Yardım";
+            // 
+            // destekSayfasınaGitToolStripMenuItem
+            // 
+            this.destekSayfasınaGitToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.destekSayfasınaGitToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.destekSayfasınaGitToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.internet;
+            this.destekSayfasınaGitToolStripMenuItem.Name = "destekSayfasınaGitToolStripMenuItem";
+            this.destekSayfasınaGitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F12)));
+            this.destekSayfasınaGitToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.destekSayfasınaGitToolStripMenuItem.Text = "Destek Sayfasına Git";
+            this.destekSayfasınaGitToolStripMenuItem.Click += new System.EventHandler(this.destekSayfasınaGitToolStripMenuItem_Click_1);
+            // 
+            // hakkındaToolStripMenuItem
+            // 
+            this.hakkındaToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.hakkındaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.hakkındaToolStripMenuItem.Image = global::mCTerminal.Properties.Resources.info;
+            this.hakkındaToolStripMenuItem.Name = "hakkındaToolStripMenuItem";
+            this.hakkındaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
+            this.hakkındaToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.hakkındaToolStripMenuItem.Text = "Hakkında";
+            this.hakkındaToolStripMenuItem.Click += new System.EventHandler(this.hakkındaToolStripMenuItem_Click);
+            // 
+            // baglantiListeYenileButton
+            // 
+            this.baglantiListeYenileButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.baglantiListeYenileButton.AutoToolTip = false;
+            this.baglantiListeYenileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.baglantiListeYenileButton.Image = global::mCTerminal.Properties.Resources.reload;
+            this.baglantiListeYenileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.baglantiListeYenileButton.Margin = new System.Windows.Forms.Padding(0, 1, 3, 2);
+            this.baglantiListeYenileButton.Name = "baglantiListeYenileButton";
+            this.baglantiListeYenileButton.Size = new System.Drawing.Size(23, 25);
+            this.baglantiListeYenileButton.Text = "Bağlantıları Yeniden Listele";
+            this.baglantiListeYenileButton.ToolTipText = "Bağlantıları Yeniden Listele";
+            this.baglantiListeYenileButton.Click += new System.EventHandler(this.baglantiListeYenileButton_Click);
+            // 
             // anaEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(613, 376);
+            this.Controls.Add(this.gurultuDurumPictureBox);
             this.Controls.Add(this.kameraDurumPictureBox);
             this.Controls.Add(this.ortaGovdeDurumPictureBox);
             this.Controls.Add(this.koniDurumPictureBox);
@@ -1378,15 +1394,16 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.bilesenGrup.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kayitdurumPictureBox)).EndInit();
+            this.gostergeGrup.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gurultuDurumPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kameraDurumPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ortaGovdeDurumPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.koniDurumPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bellekTemizlemeDurumPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.baglantiDurumPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kayitdurumPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uyduPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hdopPictureBox)).EndInit();
-            this.gostergeGrup.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1480,5 +1497,6 @@
         private System.Windows.Forms.Timer hamVeriYazmayaDevamKontrolTimer;
         private System.Windows.Forms.ToolStripMenuItem bütünPencereleriKöşesizYapToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uzakSesToolStripMenuItem;
+        private System.Windows.Forms.PictureBox gurultuDurumPictureBox;
     }
 }

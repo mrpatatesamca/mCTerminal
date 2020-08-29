@@ -165,7 +165,8 @@ namespace mCTerminal
             }
             catch
             {
-                MessageBox.Show("Görüntü İşleyici bir hata ile karşılaştı!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Görüntü İşleyici bir hata ile karşılaştı!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine("Görüntü İşleyici bir hata ile karşılaştı!");
             }
         }
 

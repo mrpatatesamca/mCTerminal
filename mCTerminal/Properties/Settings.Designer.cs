@@ -166,5 +166,17 @@ namespace mCTerminal.Properties {
                 this["hata_data"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int gurultudurum {
+            get {
+                return ((int)(this["gurultudurum"]));
+            }
+            set {
+                this["gurultudurum"] = value;
+            }
+        }
     }
 }

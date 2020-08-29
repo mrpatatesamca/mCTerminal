@@ -26,13 +26,11 @@ namespace mCTerminal
         {
             InitializeComponent();
 
-
-            var enumerator = new MMDeviceEnumerator();
-            //cycle through all audio devices
-            for (int i = 0; i < WaveIn.DeviceCount; i++)
-                sesCihazComboBox.Items.Add(enumerator.EnumerateAudioEndPoints(DataFlow.Capture, DeviceState.Active)[i]);
-            //clean up
-            enumerator.Dispose();
+            for (int n = 0; n < WaveIn.DeviceCount; n++)
+            {
+                
+                sesCihazComboBox.Items.Add(WaveIn.GetCapabilities(n).ProductName);
+            }
 
             sesCihazComboBox.SelectedIndex = 0;
 
@@ -56,7 +54,7 @@ namespace mCTerminal
                     sesSiddetProgressBar.Value = ses_siddet;
                     sesSiddetGauge.Value = ses_siddet;
                     sesSiddetLabel.Text = "%" + ses_siddet.ToString();
-                    
+                    Properties.Settings.Default.gurultudurum = ses_siddet;
                 }
             }
             catch

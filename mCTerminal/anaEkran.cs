@@ -414,7 +414,7 @@ namespace mCTerminal
 
                 Properties.Settings.Default.konidurum = splitted_data[13]; //global değişken koni durumu
                 Properties.Settings.Default.ortagovdedurum = splitted_data[14]; //global değişken orta gövde durumu
-                Properties.Settings.Default.ortagovdedurum = splitted_data[7]; //global değişken kamera durumu
+                Properties.Settings.Default.kameradurum = splitted_data[7]; //global değişken kamera durumu
 
 
                 //----------bağlantı durumunu gösteren simgenin ayarlanması--------
@@ -930,6 +930,30 @@ namespace mCTerminal
             string sadece_saat = DateTime.Now.ToString("HH:mm:ss");
             try
             {
+                int gurultu_durum = Properties.Settings.Default.gurultudurum;
+                //-----gürültü durumu-----
+                if (gurultu_durum <= 1)
+                {
+                    gurultuDurumPictureBox.Image = Properties.Resources.noise_sari;
+                }
+                if (gurultu_durum > 1 && gurultu_durum <= 98)
+                {
+                    gurultuDurumPictureBox.Image = Properties.Resources.noise_yesil;
+                }
+                if (gurultu_durum >= 99)
+                {
+                    gurultuDurumPictureBox.Image = Properties.Resources.noise_kirmizi;
+                }
+                //---gürültü durumu son---
+            }
+            catch
+            {
+                hamVeriTextBox1.AppendText(sadece_saat + " --> Hata! Durum Simgeleri (Bağlanılan Uydu Sayısı) bir hata ile karşılaştı. Yok sayılıp devam ediliyor..." + Environment.NewLine);
+                Properties.Settings.Default.hata_data = sadece_saat + " --> Hata! Durum Simgeleri (Bağlanılan Uydu Sayısı) bir hata ile karşılaştı. Yok sayılıp devam ediliyor..." + Environment.NewLine;
+            }
+
+            try
+            {
                 int hdop_durum_sayi = Convert.ToInt32(splitted_data[1].Split('.')[0]);
                 //-----hdop durumu-----
                 if (hdop_durum_sayi <= 2)
@@ -1002,8 +1026,8 @@ namespace mCTerminal
             }
             catch
             {
-                hamVeriTextBox1.AppendText(sadece_saat + " --> Hata! İbre Kutuları bir hata ile karşılaştı. Yok sayılıp devam ediliyor..." + Environment.NewLine);
-                Properties.Settings.Default.hata_data = sadece_saat + " --> Hata! İbre Kutuları bir hata ile karşılaştı. Yok sayılıp devam ediliyor..." + Environment.NewLine;
+                //hamVeriTextBox1.AppendText(sadece_saat + " --> Hata! İbre Kutuları bir hata ile karşılaştı. Yok sayılıp devam ediliyor..." + Environment.NewLine);
+                //Properties.Settings.Default.hata_data = sadece_saat + " --> Hata! İbre Kutuları bir hata ile karşılaştı. Yok sayılıp devam ediliyor..." + Environment.NewLine;
             }
         }
 
