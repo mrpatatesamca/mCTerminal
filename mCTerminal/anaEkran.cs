@@ -40,11 +40,36 @@ namespace mCTerminal
         public string programSurum;
         static string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
 
+        public string veri_uydu_sayi;
+        public string veri_hdop;
+        public string veri_enlem;
+        public string veri_boylam;
+        public string veri_base_gps_irtifa;
+        public string veri_gps_irtifa;
+        public string veri_maksimum_gps_irtifa;
+        public string veri_suruklenme_hiz;
+        public string veri_kamera_durum;
+        public string veri_aciX;
+        public string veri_aciY;
+        public string veri_gKuvvet;
+        public string veri_maksimum_gKuvvet;
+        public string veri_base_barometrik_irtifa;
+        public string veri_barometrik_irtifa;
+        public string veri_maksimum_barometrik_irtifa;
+        public string veri_orta_govde_base_gps_irtifa;
+        public string veri_orta_govde_gps_irtifa;
+        public string veri_orta_govde_maksimum_gps_irtifa;
+        public string veri_orta_govde_hdop;
+        public string veri_orta_govde_enlem;
+        public string veri_orta_govde_boylam;
+        public string veri_faz1_durum;
+        public string veri_faz2_durum;
+
 
         public anaEkran()
         {
             InitializeComponent();
-            
+
 
             string[] portlar = SerialPort.GetPortNames(); //portlar listesine COM portları alındı.
             serialPort1.BaudRate = 9600; //baudrate ayarlama (daha sonra arayüz üzerinden değiştirilebilir)
@@ -235,7 +260,7 @@ namespace mCTerminal
                 toolStripDropDownButton6.ForeColor = Color.WhiteSmoke;
                 ortagovdeDurumLabel.ForeColor = Color.WhiteSmoke;
                 irtifaMaxLabel.ForeColor = Color.WhiteSmoke;
-                irtifaAnlıkLabel.ForeColor = Color.WhiteSmoke;
+                baseGpsİrtifaLabel.ForeColor = Color.WhiteSmoke;
                 hdopLabel.ForeColor = Color.WhiteSmoke;
                 gecenSureLabel.BackColor = toolStrip1.BackColor;
                 saatLabel.BackColor = toolStrip1.BackColor;
@@ -258,7 +283,7 @@ namespace mCTerminal
                 toolStripDropDownButton6.ForeColor = Color.LimeGreen;
                 ortagovdeDurumLabel.ForeColor = Color.DarkOliveGreen;
                 irtifaMaxLabel.ForeColor = Color.DarkOliveGreen;
-                irtifaAnlıkLabel.ForeColor = Color.DarkOliveGreen;
+                baseGpsİrtifaLabel.ForeColor = Color.DarkOliveGreen;
                 hdopLabel.ForeColor = Color.DarkOliveGreen;
                 gecenSureLabel.BackColor = toolStrip1.BackColor;
                 saatLabel.BackColor = toolStrip1.BackColor;
@@ -272,7 +297,7 @@ namespace mCTerminal
                 this.ForeColor = Color.IndianRed;
                 hamVeriTextBox1.BackColor = Color.LightSlateGray;
                 hamVeriTextBox1.ForeColor = Color.NavajoWhite;
-                irtifaAnlıkLabel.ForeColor = Color.IndianRed;
+                baseGpsİrtifaLabel.ForeColor = Color.IndianRed;
                 irtifaMaxLabel.ForeColor = Color.IndianRed;
                 hdopLabel.ForeColor = Color.IndianRed;
                 ortagovdeDurumLabel.ForeColor = Color.IndianRed;
@@ -297,7 +322,7 @@ namespace mCTerminal
                 hamVeriTextBox1.ForeColor = Color.BurlyWood;
                 ortagovdeDurumLabel.ForeColor = Color.FromArgb(245, 228, 183);
                 irtifaMaxLabel.ForeColor = Color.FromArgb(245, 228, 183);
-                irtifaAnlıkLabel.ForeColor = Color.FromArgb(245, 228, 183);
+                baseGpsİrtifaLabel.ForeColor = Color.FromArgb(245, 228, 183);
                 hdopLabel.ForeColor = Color.FromArgb(245, 228, 183);
                 toolStrip1.BackColor = Color.FromArgb(11, 75, 183);
                 toolStripDropDownButton1.ForeColor = Color.FromArgb(245, 228, 183);
@@ -328,7 +353,7 @@ namespace mCTerminal
                 ortagovdeDurumLabel.ForeColor = Color.FromArgb(251, 235, 235);
                 hdopLabel.ForeColor = Color.FromArgb(251, 235, 235);
                 irtifaMaxLabel.ForeColor = Color.FromArgb(251, 235, 235);
-                irtifaAnlıkLabel.ForeColor = Color.FromArgb(251, 235, 235);
+                baseGpsİrtifaLabel.ForeColor = Color.FromArgb(251, 235, 235);
                 gecenSureLabel.BackColor = toolStrip1.BackColor;
                 saatLabel.BackColor = toolStrip1.BackColor;
                 gecenSureLabel.ForeColor = Color.WhiteSmoke;
@@ -346,7 +371,7 @@ namespace mCTerminal
             gkuvvetLabel.ForeColor = this.ForeColor;
             irtifaLabel.ForeColor = this.ForeColor;
             barometrikİrtifaMaksLabel.ForeColor = this.ForeColor;
-            yatayHizLabel.ForeColor = this.ForeColor;
+            suruklenmeHizLabel.ForeColor = this.ForeColor;
             koniDurumLabel.ForeColor = this.ForeColor;
             kameraDurumLabel.ForeColor = this.ForeColor;
             groupBox1.ForeColor = toolStripDropDownButton1.ForeColor;
@@ -393,51 +418,240 @@ namespace mCTerminal
                 Properties.Settings.Default.data = data;
                 Properties.Settings.Default.hamveriyazmayadevam = true;
 
-                uyduSayiLabel.Text = "Bağlanılan Uydu Sayısı " + splitted_data[0]; //gps uydu sayısı
-                hdopLabel.Text = "HDOP: " + splitted_data[1]; //hdop sapması
-                enlemLabel.Text = "Enlem: " + splitted_data[2] + "°"; //enlem
-                Properties.Settings.Default.enlem = splitted_data[2]; //global değişkene de yaz enlemi
-                boylamLabel.Text = "Boylam: " + splitted_data[3] + "°"; //boylam
-                Properties.Settings.Default.boylam = splitted_data[3]; //global değikene de yaz boylamı
-                irtifaLabel.Text = "İrtifa: " + splitted_data[4] + "m"; //gps irtifa
-                irtifaMaxLabel.Text = "Maksimum İrtifa: " + splitted_data[5] + "m"; //gps maks irtifa
-                yatayHizLabel.Text = "Yatay Hız: " + splitted_data[6] + "km/s"; //yatay hız
-                AciXLabel.Text = "X Açısı: " + splitted_data[8] + "°"; //x açısı
-                Properties.Settings.Default.aciX = splitted_data[8]; // global değişkene de yaz x açısını
-                aciYLabel.Text = "Y Açısı: " + splitted_data[9] + "°"; //y açısı
-                Properties.Settings.Default.aciY = splitted_data[9]; // global değişkene de yaz y açısını
-                gkuvvetLabel.Text = "G Kuvveti: " + splitted_data[10] + "g"; //g kuvveti
-                Properties.Settings.Default.gkuvvet = splitted_data[10]; //global değişkene de yaz g kuvvetini
-                barometrikİrtifaMaksLabel.Text = "Maksimum İrtifa: " + splitted_data[11] + "m"; //baro irtifa maks
-                irtifaAnlıkLabel.Text = "Coğrafi İrtifa: " + splitted_data[12] + "m"; //anlık irtifa
-
-
-                Properties.Settings.Default.konidurum = splitted_data[13]; //global değişken koni durumu
-                Properties.Settings.Default.ortagovdedurum = splitted_data[14]; //global değişken orta gövde durumu
-                Properties.Settings.Default.kameradurum = splitted_data[7]; //global değişken kamera durumu
-
-
-                //----------bağlantı durumunu gösteren simgenin ayarlanması--------
-                baglantiDurumPictureBox.Image = Properties.Resources.dot_yesil;
-                //-----------------------------------------------------------------
-
-
-                //Gelen veriyi formun altında gözüken siyah yere (TextBox) yazıyorum.
-                hamVeriTextBox1.AppendText(sadece_saat + " --> " + data + Environment.NewLine);
-
-                int line = hamVeriTextBox1.GetLineFromCharIndex(hamVeriTextBox1.SelectionStart); //otomatik en aşağı kaydırması için
-                int column = hamVeriTextBox1.SelectionStart - hamVeriTextBox1.GetFirstCharIndexFromLine(line); //otomatik en aşağı kaydırması için
-                //---------------------------------------------------------------------------------------------------
+                veri_uydu_sayi = splitted_data[0];
+                veri_hdop = splitted_data[1];
+                veri_enlem = splitted_data[2];
+                veri_boylam = splitted_data[3];
+                veri_base_gps_irtifa = splitted_data[4];
+                veri_gps_irtifa = splitted_data[5];
+                veri_maksimum_gps_irtifa = splitted_data[6];
+                veri_suruklenme_hiz = splitted_data[7];
+                veri_kamera_durum = splitted_data[8];
+                veri_aciX = splitted_data[9];
+                veri_aciY = splitted_data[10];
+                veri_gKuvvet = splitted_data[11];
+                veri_maksimum_gKuvvet = splitted_data[12];
+                veri_base_barometrik_irtifa = splitted_data[13];
+                veri_barometrik_irtifa = splitted_data[14];
+                veri_maksimum_barometrik_irtifa = splitted_data[15];
+                veri_orta_govde_base_gps_irtifa = splitted_data[16];
+                veri_orta_govde_gps_irtifa = splitted_data[17];
+                veri_orta_govde_maksimum_gps_irtifa = splitted_data[18];
+                veri_orta_govde_hdop = splitted_data[19];
+                veri_orta_govde_enlem = splitted_data[20];
+                veri_orta_govde_boylam = splitted_data[21];
+                veri_faz1_durum = splitted_data[22];
+                veri_faz2_durum = splitted_data[23];
             }
             catch
             {
 
             }
-            editorDurumSimgeAyarla();
-            editorGrafikKutuAyarla();
-            editorİbreKutuAyarla();
-            editorDurumYaziAyarla();
-            editorVeriKaydetMotor();   
+            finally
+            {
+                editorDurumSimgeAyarla();
+                editorGrafikKutuAyarla();
+                editorİbreKutuAyarla();
+                editorDurumYaziAyarla();
+                editorVeriKaydetMotor();
+            }
+            //------------------------------------------------------------------------------------------
+            try
+            {
+                uyduSayiLabel.Text = "Bağlanılan Uydu Sayısı " + veri_uydu_sayi; //gps uydu sayısı
+            }
+            catch
+            {
+
+            }
+            //--------------------------------------------------------------------
+            try
+            {
+                hdopLabel.Text = "HDOP: " + veri_hdop; //hdop sapması
+            }
+            catch
+            {
+
+            }
+            //--------------------------------------------------------------------
+            try
+            {
+                enlemLabel.Text = "Enlem: " + veri_enlem + "°"; //enlem
+                Properties.Settings.Default.enlem = veri_enlem; //global değişkene de yaz enlemi
+            }
+            catch
+            {
+
+            }
+            //--------------------------------------------------------------------
+            try
+            {
+                boylamLabel.Text = "Boylam: " + veri_boylam + "°"; //boylam
+                Properties.Settings.Default.boylam = veri_boylam; //global değikene de yaz boylamı
+            }
+            catch
+            {
+
+            }
+            //--------------------------------------------------------------------
+            try
+            {
+                baseGpsİrtifaLabel.Text = "Baz İrtifa: " + veri_base_gps_irtifa + "m"; //base gps irtifa
+            }
+            catch
+            {
+
+            }
+            //--------------------------------------------------------------------
+            try
+            {
+                irtifaLabel.Text = "İrtifa: " + veri_gps_irtifa + "m"; //gps irtifa
+                irtifaMaxLabel.Text = "Maksimum İrtifa: " + veri_maksimum_gps_irtifa + "m"; //gps maks irtifa
+            }
+            catch
+            {
+
+            }
+            //--------------------------------------------------------------------
+            try
+            {
+                suruklenmeHizLabel.Text = "Sürüklenme Hızı: " + veri_suruklenme_hiz + "km/s"; //sürüklenme hız
+            }
+            catch
+            {
+
+            }
+            //--------------------------------------------------------------------
+            try
+            {
+                AciXLabel.Text = "X Açısı: " + veri_aciX + "°"; //x açısı
+                Properties.Settings.Default.aciX = veri_aciX; // global değişkene de yaz x açısını
+            }
+            catch
+            {
+
+            }
+            //--------------------------------------------------------------------
+            try
+            {
+                aciYLabel.Text = "Y Açısı: " + veri_aciY + "°"; //y açısı
+                Properties.Settings.Default.aciY = veri_aciY; // global değişkene de yaz y açısını
+            }
+            catch
+            {
+
+            }
+            //--------------------------------------------------------------------
+            try
+            {
+                gkuvvetLabel.Text = "G Kuvveti: " + veri_gKuvvet + "g"; //g kuvveti
+                Properties.Settings.Default.gkuvvet = veri_gKuvvet; //global değişkene de yaz g kuvvetini
+            }
+            catch
+            {
+
+            }
+            //--------------------------------------------------------------------
+            try
+            {
+                maksGKuvvetLabel.Text = "G Maks: " + veri_maksimum_gKuvvet + "g"; //maks g kuvveti
+            }
+            catch
+            {
+
+            }
+            //--------------------------------------------------------------------
+            try
+            {
+                baseBarometrikİrtifaLabel.Text = "Baz İrtifa: " + veri_base_barometrik_irtifa + "m"; //base barometrik irtifa
+                barometrikİrtifaLabel.Text = "İrtifa: " + veri_barometrik_irtifa + "m"; //barometrik irtifa
+                barometrikİrtifaMaksLabel.Text = "Maksimum İrtifa: " + veri_maksimum_barometrik_irtifa + "m"; //baro irtifa maks
+            }
+            catch
+            {
+
+            }
+            //-----------------------------------------------------------------------
+
+
+
+
+
+
+            //--------------------------------ORTA GÖVDE ANA EKRAN BİLGİLERİ------------------------------------
+            try
+            {
+                ortaGovdeBaseGpsİrtifaLabel.Text = "Baz İrtifa: " + veri_orta_govde_base_gps_irtifa + "m";
+            }
+            catch
+            {
+
+            }
+            //--------------------------------------------------------------------
+            try
+            {
+                ortaGovdeGpsİrtifaLabel.Text = "İrtifa: " + veri_orta_govde_gps_irtifa + "m";
+            }
+            catch
+            {
+
+            }
+            //--------------------------------------------------------------------
+            try
+            {
+                ortaGovdeGpsMaksimumİrtifaLabel.Text = "Maksimum İrtifa: " + veri_orta_govde_maksimum_gps_irtifa + "m";
+            }
+            catch
+            {
+
+            }
+            //--------------------------------------------------------------------
+            try
+            {
+                ortaGovdeHdopLabel.Text = "HDOP: " + veri_orta_govde_hdop;
+            }
+            catch
+            {
+
+            }
+            //--------------------------------------------------------------------
+            try
+            {
+                ortaGovdeEnlemLabel.Text = "Enlem: " + veri_orta_govde_enlem + "°";
+            }
+            catch
+            {
+
+            }
+            //--------------------------------------------------------------------
+            try
+            {
+                ortaGovdeBoylamLabel.Text = "Boylam: " + veri_orta_govde_boylam + "°";
+            }
+            catch
+            {
+
+            }
+            //--------------------------------------------------------------------
+
+            Properties.Settings.Default.konidurum = veri_faz1_durum; //global değişken koni durumu
+            Properties.Settings.Default.ortagovdedurum = veri_faz2_durum; //global değişken orta gövde durumu
+            Properties.Settings.Default.kameradurum = veri_kamera_durum; //global değişken kamera durumu
+
+
+            //----------bağlantı durumunu gösteren simgenin ayarlanması--------
+            baglantiDurumPictureBox.Image = Properties.Resources.dot_yesil;
+            //-----------------------------------------------------------------
+
+
+            //Gelen veriyi formun altında gözüken siyah yere (TextBox) yazıyorum.
+            hamVeriTextBox1.AppendText(sadece_saat + " --> " + data + Environment.NewLine);
+
+            int line = hamVeriTextBox1.GetLineFromCharIndex(hamVeriTextBox1.SelectionStart); //otomatik en aşağı kaydırması için
+            int column = hamVeriTextBox1.SelectionStart - hamVeriTextBox1.GetFirstCharIndexFromLine(line); //otomatik en aşağı kaydırması için
+
+            
+
         }
 
         private void bağlantıyıBaşlatToolStripMenuItem_Click(object sender, EventArgs e)
@@ -884,7 +1098,7 @@ namespace mCTerminal
         {
             try
             {
-                if (splitted_data[7] == "1") //kamera durumu 1 ise
+                if (veri_kamera_durum == "1") //kamera durumu 1 ise
                 {
                     kameraDurumLabel.Text = "Video Yayını: Aktif!";
                     kameraDurumPictureBox.Image = Properties.Resources.film_yesil;
@@ -895,7 +1109,7 @@ namespace mCTerminal
                     kameraDurumPictureBox.Image = Properties.Resources.film_kirmizi;
                 }
 
-                if (splitted_data[13] == "1") //koni ayrılmış ise
+                if (veri_faz1_durum == "1") //koni ayrılmış ise
                 {
                     koniDurumLabel.Text = "Koni: Ayrıldı!";
                     koniDurumPictureBox.Image = Properties.Resources.cone_yesil;
@@ -906,7 +1120,7 @@ namespace mCTerminal
                     koniDurumPictureBox.Image = Properties.Resources.cone_kirmizi;
                 }
 
-                if (splitted_data[14] == "1") //orta göve ayrılmış ise
+                if (veri_faz2_durum == "1") //orta göve ayrılmış ise
                 {
                     ortagovdeDurumLabel.Text = "Orta Gövde: Ayrıldı!";
                     ortaGovdeDurumPictureBox.Image = Properties.Resources.split_yesil;
@@ -954,7 +1168,7 @@ namespace mCTerminal
 
             try
             {
-                int hdop_durum_sayi = Convert.ToInt32(splitted_data[1].Split('.')[0]);
+                int hdop_durum_sayi = Convert.ToInt32(veri_hdop.Split('.')[0]);
                 //-----hdop durumu-----
                 if (hdop_durum_sayi <= 2)
                 {
@@ -978,7 +1192,7 @@ namespace mCTerminal
 
             try
             {
-                int baglanilan_uydu_sayisi_durum_sayi = Convert.ToInt32(splitted_data[0]);
+                int baglanilan_uydu_sayisi_durum_sayi = Convert.ToInt32(veri_uydu_sayi);
                 //-----gps uydu durumu-----
                 if (baglanilan_uydu_sayisi_durum_sayi <= 4)
                 {
@@ -1004,7 +1218,7 @@ namespace mCTerminal
 
         public void editorGrafikKutuAyarla()
         {
-            
+
         }
 
         public void editorİbreKutuAyarla()
@@ -1012,17 +1226,19 @@ namespace mCTerminal
             string sadece_saat = DateTime.Now.ToString("HH:mm:ss");
             try
             {
-                string gps_irtifa_bolunmus = splitted_data[4].Split('.')[0];
-                string yatay_hiz_bolunmus = splitted_data[6].Split('.')[0];
-                string g_kuvvet_bolunmus = splitted_data[10].Split('.')[0];
-                //--------------------------İBRE KUTULARI--------------------------------
-                gKuvvetGauge.Value = Convert.ToInt32(g_kuvvet_bolunmus); //gkuvvet
-                yatayHizGauge.Value = Convert.ToInt32(yatay_hiz_bolunmus); //yatay hız
-                maksİrtifaGauge.Value = Convert.ToInt32(splitted_data[5]); //gps maks irtifa
-                irtifaGauge.Value = Convert.ToInt32(gps_irtifa_bolunmus); //gps irtifa
-                AciXGauge.Value = Convert.ToInt32(splitted_data[8]); //x açısı
-                AciYGauge.Value = Convert.ToInt32(splitted_data[9]); //y açısı
-                //-------------------------İBRE KUTULARI SON-------------------------------
+                if (veri_gps_irtifa != null && veri_suruklenme_hiz != null && veri_gKuvvet != null)
+                {
+                    string gps_irtifa_bolunmus = veri_gps_irtifa.Split('.')[0];
+                    string yatay_hiz_bolunmus = veri_suruklenme_hiz.Split('.')[0];
+                    string g_kuvvet_bolunmus = veri_gKuvvet.Split('.')[0];
+                    //--------------------------İBRE KUTULARI--------------------------------
+                    yatayHizGauge.Value = Convert.ToInt32(yatay_hiz_bolunmus); //yatay hız
+                    irtifaGauge.Value = Convert.ToInt32(gps_irtifa_bolunmus); //gps irtifa
+                    AciXGauge.Value = Convert.ToInt32(veri_aciX); //x açısı
+                    AciYGauge.Value = Convert.ToInt32(veri_aciY); //y açısı
+                    //-------------------------İBRE KUTULARI SON-------------------------------
+                }
+
             }
             catch
             {
@@ -1067,12 +1283,12 @@ namespace mCTerminal
 
         private void serialPortKontrolTimer_Tick(object sender, EventArgs e)
         {
-            
+
         }
 
         private void bütünPencereleriKöşesizYapToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
 
             if (bütünPencereleriKöşesizYapToolStripMenuItem.Text == "Bütün Pencereleri Köşesiz Yap")
             {

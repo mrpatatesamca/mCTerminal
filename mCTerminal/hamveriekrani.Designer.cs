@@ -50,7 +50,7 @@
             this.hamveritextbox.Name = "hamveritextbox";
             this.hamveritextbox.ReadOnly = true;
             this.hamveritextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.hamveritextbox.Size = new System.Drawing.Size(634, 142);
+            this.hamveritextbox.Size = new System.Drawing.Size(1134, 142);
             this.hamveritextbox.TabIndex = 0;
             // 
             // textboxYaziEsitleTimer
@@ -75,7 +75,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(634, 141);
+            this.ClientSize = new System.Drawing.Size(1134, 141);
             this.Controls.Add(this.hamveritextbox);
             this.ForeColor = System.Drawing.Color.Lime;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
