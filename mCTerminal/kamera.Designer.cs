@@ -156,7 +156,7 @@
             this.x1080ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.x1080ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.x1080ToolStripMenuItem.Name = "x1080ToolStripMenuItem";
-            this.x1080ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.x1080ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.x1080ToolStripMenuItem.Text = "1920x1080";
             // 
             // x720ToolStripMenuItem
@@ -164,7 +164,7 @@
             this.x720ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.x720ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.x720ToolStripMenuItem.Name = "x720ToolStripMenuItem";
-            this.x720ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.x720ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.x720ToolStripMenuItem.Text = "1280x720";
             // 
             // x576ToolStripMenuItem
@@ -172,7 +172,7 @@
             this.x576ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.x576ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.x576ToolStripMenuItem.Name = "x576ToolStripMenuItem";
-            this.x576ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.x576ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.x576ToolStripMenuItem.Text = "720x576";
             this.x576ToolStripMenuItem.Click += new System.EventHandler(this.x576ToolStripMenuItem_Click);
             // 
@@ -183,7 +183,7 @@
             this.x480ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.x480ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.x480ToolStripMenuItem.Name = "x480ToolStripMenuItem";
-            this.x480ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.x480ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.x480ToolStripMenuItem.Text = "720x480";
             this.x480ToolStripMenuItem.Click += new System.EventHandler(this.x480ToolStripMenuItem_Click);
             // 
@@ -192,7 +192,7 @@
             this.x480ToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.x480ToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.x480ToolStripMenuItem1.Name = "x480ToolStripMenuItem1";
-            this.x480ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.x480ToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.x480ToolStripMenuItem1.Text = "640x480";
             this.x480ToolStripMenuItem1.Click += new System.EventHandler(this.x480ToolStripMenuItem1_Click);
             // 
@@ -201,7 +201,7 @@
             this.x240ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.x240ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.x240ToolStripMenuItem.Name = "x240ToolStripMenuItem";
-            this.x240ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.x240ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.x240ToolStripMenuItem.Text = "320x240";
             this.x240ToolStripMenuItem.Click += new System.EventHandler(this.x240ToolStripMenuItem_Click);
             // 
@@ -210,7 +210,7 @@
             this.x120ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.x120ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.x120ToolStripMenuItem.Name = "x120ToolStripMenuItem";
-            this.x120ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.x120ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.x120ToolStripMenuItem.Text = "160x120";
             this.x120ToolStripMenuItem.Click += new System.EventHandler(this.x120ToolStripMenuItem_Click);
             // 
@@ -234,7 +234,7 @@
             this.videoCaptureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.videoCaptureBox.Location = new System.Drawing.Point(-1, 26);
             this.videoCaptureBox.Name = "videoCaptureBox";
-            this.videoCaptureBox.Size = new System.Drawing.Size(352, 210);
+            this.videoCaptureBox.Size = new System.Drawing.Size(352, 185);
             this.videoCaptureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.videoCaptureBox.TabIndex = 0;
             this.videoCaptureBox.TabStop = false;
@@ -244,11 +244,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.ClientSize = new System.Drawing.Size(349, 236);
+            this.ClientSize = new System.Drawing.Size(349, 211);
             this.Controls.Add(this.kameraAracMenu);
             this.Controls.Add(this.videoCaptureBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(365, 275);
+            this.MinimumSize = new System.Drawing.Size(365, 250);
             this.Name = "kamera";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mCTerminal Uzak Görüntü | (DIRECTSHOW_AYGIT)";

@@ -611,7 +611,7 @@
             this.AciXLabel.ForeColor = System.Drawing.Color.Transparent;
             this.AciXLabel.Location = new System.Drawing.Point(6, 220);
             this.AciXLabel.Name = "AciXLabel";
-            this.AciXLabel.Size = new System.Drawing.Size(145, 14);
+            this.AciXLabel.Size = new System.Drawing.Size(139, 14);
             this.AciXLabel.TabIndex = 6;
             this.AciXLabel.Text = "X Açısı: 0°";
             this.AciXLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -625,7 +625,7 @@
             this.aciYLabel.ForeColor = System.Drawing.Color.Transparent;
             this.aciYLabel.Location = new System.Drawing.Point(6, 234);
             this.aciYLabel.Name = "aciYLabel";
-            this.aciYLabel.Size = new System.Drawing.Size(145, 14);
+            this.aciYLabel.Size = new System.Drawing.Size(139, 14);
             this.aciYLabel.TabIndex = 7;
             this.aciYLabel.Text = "Y Açısı: 0°";
             this.aciYLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -645,7 +645,7 @@
             this.fizikselGrup.ForeColor = System.Drawing.Color.Transparent;
             this.fizikselGrup.Location = new System.Drawing.Point(294, 29);
             this.fizikselGrup.Name = "fizikselGrup";
-            this.fizikselGrup.Size = new System.Drawing.Size(338, 259);
+            this.fizikselGrup.Size = new System.Drawing.Size(332, 259);
             this.fizikselGrup.TabIndex = 11;
             this.fizikselGrup.TabStop = false;
             // 
@@ -658,7 +658,7 @@
             this.maksGKuvvetLabel.ForeColor = System.Drawing.Color.Transparent;
             this.maksGKuvvetLabel.Location = new System.Drawing.Point(157, 234);
             this.maksGKuvvetLabel.Name = "maksGKuvvetLabel";
-            this.maksGKuvvetLabel.Size = new System.Drawing.Size(175, 14);
+            this.maksGKuvvetLabel.Size = new System.Drawing.Size(169, 14);
             this.maksGKuvvetLabel.TabIndex = 18;
             this.maksGKuvvetLabel.Text = "G Maks: 0g";
             this.maksGKuvvetLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -671,7 +671,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox2.Location = new System.Drawing.Point(6, 124);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(326, 69);
+            this.groupBox2.Size = new System.Drawing.Size(320, 69);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "BAROMETRİK";
@@ -684,7 +684,7 @@
             this.barometrikİrtifaLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.barometrikİrtifaLabel.Location = new System.Drawing.Point(6, 16);
             this.barometrikİrtifaLabel.Name = "barometrikİrtifaLabel";
-            this.barometrikİrtifaLabel.Size = new System.Drawing.Size(314, 14);
+            this.barometrikİrtifaLabel.Size = new System.Drawing.Size(308, 14);
             this.barometrikİrtifaLabel.TabIndex = 15;
             this.barometrikİrtifaLabel.Text = "İrtifa: 0m";
             this.barometrikİrtifaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -697,7 +697,7 @@
             this.baseBarometrikİrtifaLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.baseBarometrikİrtifaLabel.Location = new System.Drawing.Point(6, 44);
             this.baseBarometrikİrtifaLabel.Name = "baseBarometrikİrtifaLabel";
-            this.baseBarometrikİrtifaLabel.Size = new System.Drawing.Size(314, 14);
+            this.baseBarometrikİrtifaLabel.Size = new System.Drawing.Size(308, 14);
             this.baseBarometrikİrtifaLabel.TabIndex = 14;
             this.baseBarometrikİrtifaLabel.Text = "Baz İrtifa: 0m";
             this.baseBarometrikİrtifaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -710,7 +710,7 @@
             this.barometrikİrtifaMaksLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.barometrikİrtifaMaksLabel.Location = new System.Drawing.Point(6, 30);
             this.barometrikİrtifaMaksLabel.Name = "barometrikİrtifaMaksLabel";
-            this.barometrikİrtifaMaksLabel.Size = new System.Drawing.Size(314, 14);
+            this.barometrikİrtifaMaksLabel.Size = new System.Drawing.Size(308, 14);
             this.barometrikİrtifaMaksLabel.TabIndex = 13;
             this.barometrikİrtifaMaksLabel.Text = "Maksimum İrtifa: 0m";
             this.barometrikİrtifaMaksLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -723,7 +723,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox1.Location = new System.Drawing.Point(6, 49);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(326, 69);
+            this.groupBox1.Size = new System.Drawing.Size(320, 69);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "GPS";
@@ -737,7 +737,7 @@
             this.baseGpsİrtifaLabel.ForeColor = System.Drawing.Color.Transparent;
             this.baseGpsİrtifaLabel.Location = new System.Drawing.Point(6, 44);
             this.baseGpsİrtifaLabel.Name = "baseGpsİrtifaLabel";
-            this.baseGpsİrtifaLabel.Size = new System.Drawing.Size(314, 14);
+            this.baseGpsİrtifaLabel.Size = new System.Drawing.Size(308, 14);
             this.baseGpsİrtifaLabel.TabIndex = 15;
             this.baseGpsİrtifaLabel.Text = "Baz İrtifa: 0m";
             this.baseGpsİrtifaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -751,7 +751,7 @@
             this.irtifaMaxLabel.ForeColor = System.Drawing.Color.Transparent;
             this.irtifaMaxLabel.Location = new System.Drawing.Point(6, 30);
             this.irtifaMaxLabel.Name = "irtifaMaxLabel";
-            this.irtifaMaxLabel.Size = new System.Drawing.Size(314, 14);
+            this.irtifaMaxLabel.Size = new System.Drawing.Size(308, 14);
             this.irtifaMaxLabel.TabIndex = 16;
             this.irtifaMaxLabel.Text = "Maksimum İrtifa: 0m";
             this.irtifaMaxLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -765,7 +765,7 @@
             this.irtifaLabel.ForeColor = System.Drawing.Color.Transparent;
             this.irtifaLabel.Location = new System.Drawing.Point(6, 16);
             this.irtifaLabel.Name = "irtifaLabel";
-            this.irtifaLabel.Size = new System.Drawing.Size(314, 14);
+            this.irtifaLabel.Size = new System.Drawing.Size(308, 14);
             this.irtifaLabel.TabIndex = 15;
             this.irtifaLabel.Text = "İrtifa: 0m";
             this.irtifaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -779,7 +779,7 @@
             this.suruklenmeHizLabel.ForeColor = System.Drawing.Color.Transparent;
             this.suruklenmeHizLabel.Location = new System.Drawing.Point(6, 199);
             this.suruklenmeHizLabel.Name = "suruklenmeHizLabel";
-            this.suruklenmeHizLabel.Size = new System.Drawing.Size(326, 14);
+            this.suruklenmeHizLabel.Size = new System.Drawing.Size(320, 14);
             this.suruklenmeHizLabel.TabIndex = 8;
             this.suruklenmeHizLabel.Text = "Sürüklenme Hızı: 0km/s";
             this.suruklenmeHizLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -793,7 +793,7 @@
             this.gkuvvetLabel.ForeColor = System.Drawing.Color.Transparent;
             this.gkuvvetLabel.Location = new System.Drawing.Point(157, 220);
             this.gkuvvetLabel.Name = "gkuvvetLabel";
-            this.gkuvvetLabel.Size = new System.Drawing.Size(175, 14);
+            this.gkuvvetLabel.Size = new System.Drawing.Size(169, 14);
             this.gkuvvetLabel.TabIndex = 12;
             this.gkuvvetLabel.Text = "G Kuvveti: 0g";
             this.gkuvvetLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -807,7 +807,7 @@
             this.enlemLabel.ForeColor = System.Drawing.Color.Transparent;
             this.enlemLabel.Location = new System.Drawing.Point(6, 15);
             this.enlemLabel.Name = "enlemLabel";
-            this.enlemLabel.Size = new System.Drawing.Size(326, 14);
+            this.enlemLabel.Size = new System.Drawing.Size(320, 14);
             this.enlemLabel.TabIndex = 6;
             this.enlemLabel.Text = "Enlem: 0°";
             this.enlemLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -821,7 +821,7 @@
             this.boylamLabel.ForeColor = System.Drawing.Color.Transparent;
             this.boylamLabel.Location = new System.Drawing.Point(6, 29);
             this.boylamLabel.Name = "boylamLabel";
-            this.boylamLabel.Size = new System.Drawing.Size(326, 14);
+            this.boylamLabel.Size = new System.Drawing.Size(320, 14);
             this.boylamLabel.TabIndex = 7;
             this.boylamLabel.Text = "Boylam: 0°";
             this.boylamLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1121,7 +1121,7 @@
             this.gostergeGrup.Controls.Add(this.yatayHizGaugeBaslikLabel);
             this.gostergeGrup.Controls.Add(this.yatayHizGauge);
             this.gostergeGrup.ForeColor = System.Drawing.Color.Transparent;
-            this.gostergeGrup.Location = new System.Drawing.Point(893, 29);
+            this.gostergeGrup.Location = new System.Drawing.Point(876, 29);
             this.gostergeGrup.Name = "gostergeGrup";
             this.gostergeGrup.Size = new System.Drawing.Size(443, 132);
             this.gostergeGrup.TabIndex = 16;
@@ -1305,9 +1305,9 @@
             this.ortaGovdeAviyonikBilgiGrup.Controls.Add(this.ortaGovdeEnlemLabel);
             this.ortaGovdeAviyonikBilgiGrup.Controls.Add(this.ortaGovdeHdopLabel);
             this.ortaGovdeAviyonikBilgiGrup.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.ortaGovdeAviyonikBilgiGrup.Location = new System.Drawing.Point(638, 29);
+            this.ortaGovdeAviyonikBilgiGrup.Location = new System.Drawing.Point(632, 29);
             this.ortaGovdeAviyonikBilgiGrup.Name = "ortaGovdeAviyonikBilgiGrup";
-            this.ortaGovdeAviyonikBilgiGrup.Size = new System.Drawing.Size(249, 144);
+            this.ortaGovdeAviyonikBilgiGrup.Size = new System.Drawing.Size(238, 144);
             this.ortaGovdeAviyonikBilgiGrup.TabIndex = 25;
             this.ortaGovdeAviyonikBilgiGrup.TabStop = false;
             this.ortaGovdeAviyonikBilgiGrup.Text = "ORTA GÖVDE SİSTEM";
@@ -1320,7 +1320,7 @@
             this.groupBox3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox3.Location = new System.Drawing.Point(6, 49);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(237, 69);
+            this.groupBox3.Size = new System.Drawing.Size(226, 69);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "GPS";
@@ -1333,7 +1333,7 @@
             this.ortaGovdeGpsİrtifaLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ortaGovdeGpsİrtifaLabel.Location = new System.Drawing.Point(6, 16);
             this.ortaGovdeGpsİrtifaLabel.Name = "ortaGovdeGpsİrtifaLabel";
-            this.ortaGovdeGpsİrtifaLabel.Size = new System.Drawing.Size(225, 14);
+            this.ortaGovdeGpsİrtifaLabel.Size = new System.Drawing.Size(214, 14);
             this.ortaGovdeGpsİrtifaLabel.TabIndex = 17;
             this.ortaGovdeGpsİrtifaLabel.Text = "İrtifa: 0m";
             this.ortaGovdeGpsİrtifaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1346,7 +1346,7 @@
             this.ortaGovdeGpsMaksimumİrtifaLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ortaGovdeGpsMaksimumİrtifaLabel.Location = new System.Drawing.Point(6, 30);
             this.ortaGovdeGpsMaksimumİrtifaLabel.Name = "ortaGovdeGpsMaksimumİrtifaLabel";
-            this.ortaGovdeGpsMaksimumİrtifaLabel.Size = new System.Drawing.Size(225, 14);
+            this.ortaGovdeGpsMaksimumİrtifaLabel.Size = new System.Drawing.Size(214, 14);
             this.ortaGovdeGpsMaksimumİrtifaLabel.TabIndex = 18;
             this.ortaGovdeGpsMaksimumİrtifaLabel.Text = "Maksimum İrtifa: 0m";
             this.ortaGovdeGpsMaksimumİrtifaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1359,7 +1359,7 @@
             this.ortaGovdeBaseGpsİrtifaLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ortaGovdeBaseGpsİrtifaLabel.Location = new System.Drawing.Point(6, 44);
             this.ortaGovdeBaseGpsİrtifaLabel.Name = "ortaGovdeBaseGpsİrtifaLabel";
-            this.ortaGovdeBaseGpsİrtifaLabel.Size = new System.Drawing.Size(225, 14);
+            this.ortaGovdeBaseGpsİrtifaLabel.Size = new System.Drawing.Size(214, 14);
             this.ortaGovdeBaseGpsİrtifaLabel.TabIndex = 16;
             this.ortaGovdeBaseGpsİrtifaLabel.Text = "Baz İrtifa: 0m";
             this.ortaGovdeBaseGpsİrtifaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1372,7 +1372,7 @@
             this.ortaGovdeBoylamLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ortaGovdeBoylamLabel.Location = new System.Drawing.Point(6, 29);
             this.ortaGovdeBoylamLabel.Name = "ortaGovdeBoylamLabel";
-            this.ortaGovdeBoylamLabel.Size = new System.Drawing.Size(237, 14);
+            this.ortaGovdeBoylamLabel.Size = new System.Drawing.Size(226, 14);
             this.ortaGovdeBoylamLabel.TabIndex = 21;
             this.ortaGovdeBoylamLabel.Text = "Boylam: 0°";
             this.ortaGovdeBoylamLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1385,7 +1385,7 @@
             this.ortaGovdeEnlemLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ortaGovdeEnlemLabel.Location = new System.Drawing.Point(6, 15);
             this.ortaGovdeEnlemLabel.Name = "ortaGovdeEnlemLabel";
-            this.ortaGovdeEnlemLabel.Size = new System.Drawing.Size(237, 14);
+            this.ortaGovdeEnlemLabel.Size = new System.Drawing.Size(226, 14);
             this.ortaGovdeEnlemLabel.TabIndex = 20;
             this.ortaGovdeEnlemLabel.Text = "Enlem: 0°";
             this.ortaGovdeEnlemLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1398,7 +1398,7 @@
             this.ortaGovdeHdopLabel.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ortaGovdeHdopLabel.Location = new System.Drawing.Point(6, 121);
             this.ortaGovdeHdopLabel.Name = "ortaGovdeHdopLabel";
-            this.ortaGovdeHdopLabel.Size = new System.Drawing.Size(237, 14);
+            this.ortaGovdeHdopLabel.Size = new System.Drawing.Size(226, 14);
             this.ortaGovdeHdopLabel.TabIndex = 19;
             this.ortaGovdeHdopLabel.Text = "HDOP: 0";
             this.ortaGovdeHdopLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

@@ -400,8 +400,15 @@ namespace mCTerminal
             editorTemaYukle();
             beklemeEkranıAcTimer.Start();
 
-            //Form adını ayarlar
-            this.Text = "mCTerminal " + programSurum + " | [@" + Environment.MachineName + "] - (" + COMPortList.SelectedItem.ToString() + ")";
+            if (COMPortList.SelectedItem != null)
+            {
+                //Form adını ayarlar
+                this.Text = "mCTerminal " + programSurum + " | [@" + Environment.MachineName + "] - (" + COMPortList.SelectedItem.ToString() + ")";
+            }
+            else
+            {
+                this.Text = "mCTerminal " + programSurum + " | [@" + Environment.MachineName + "] - (COMXX)";
+            }
 
             //Ham veri'nin yazıldığı textbox'ın düzgün gözükmesi için
             hamVeriTextBox1.SelectionStart = hamVeriTextBox1.Text.Length;
@@ -709,23 +716,25 @@ namespace mCTerminal
             hamveriekrani hamveriekranifrm = new hamveriekrani();
             harita haritafrm = new harita();
             roketsema roketsemafrm = new roketsema();
+            uzaktanses uzaktansesfrm = new uzaktanses();
 
             hamveriekranifrm.Show();
-            hamveriekranifrm.Height = 225;
-            hamveriekranifrm.Width += 190;
-            hamveriekranifrm.Location = new Point(0, Screen.PrimaryScreen.Bounds.Height - kamerafrm.Height + 90);
+            hamveriekranifrm.Height = 200;
+            hamveriekranifrm.Width = Screen.PrimaryScreen.Bounds.Width + 16;
+            hamveriekranifrm.Location = new Point(0, Screen.PrimaryScreen.Bounds.Height - hamveriekranifrm.Height + 20);
 
             kamerafrm.Show();
-            kamerafrm.Location = new Point(kamerafrm.Width - 115, Screen.PrimaryScreen.Bounds.Height - kamerafrm.Height * 2);
+            kamerafrm.Width += 50;
+            kamerafrm.Location = new Point(kamerafrm.Width + 32, Screen.PrimaryScreen.Bounds.Height - kamerafrm.Height - 180);
+            
 
             haritafrm.Show();
-            haritafrm.Height = 680;
             haritafrm.Width = 520;
-            haritafrm.Location = new Point(Screen.PrimaryScreen.Bounds.Width - haritafrm.Width, Screen.PrimaryScreen.Bounds.Height - haritafrm.Height + 40);
+            haritafrm.Height += 80;
+            haritafrm.Location = new Point(Screen.PrimaryScreen.Bounds.Width - haritafrm.Width, Screen.PrimaryScreen.Bounds.Height - haritafrm.Height - 141);
 
             roketsemafrm.Show();
-            roketsemafrm.Width = 800;
-            roketsemafrm.Location = new Point(0, Screen.PrimaryScreen.Bounds.Height - hamveriekranifrm.Height - 95);
+            roketsemafrm.Location = new Point(0, Screen.PrimaryScreen.Bounds.Height - hamveriekranifrm.Height - 102);
 
 
             if (this.FormBorderStyle == FormBorderStyle.Sizable)
@@ -798,6 +807,7 @@ namespace mCTerminal
         private void baglantiListeYenileButton_Click(object sender, EventArgs e)
         {
             editorBaglantiKesForBaglantiYenile();
+            editorBaglantiYenile();
             baglantiYenileİkonDuzeltTimer.Start();
         }
 
