@@ -266,6 +266,7 @@ namespace mCTerminal
                 saatLabel.BackColor = toolStrip1.BackColor;
                 gecenSureLabel.ForeColor = Color.WhiteSmoke;
                 saatLabel.ForeColor = Color.WhiteSmoke;
+                
             }
             //---------------------
             if (programTema == "tema_matrix")
@@ -301,13 +302,13 @@ namespace mCTerminal
                 irtifaMaxLabel.ForeColor = Color.IndianRed;
                 hdopLabel.ForeColor = Color.IndianRed;
                 ortagovdeDurumLabel.ForeColor = Color.IndianRed;
-                toolStrip1.BackColor = Color.DarkSlateGray;
-                toolStripDropDownButton1.ForeColor = Color.FromArgb(255, 230, 230);
-                toolStripDropDownButton2.ForeColor = Color.FromArgb(255, 230, 230);
-                toolStripDropDownButton3.ForeColor = Color.FromArgb(255, 230, 230);
-                toolStripDropDownButton4.ForeColor = Color.FromArgb(255, 230, 230);
-                toolStripDropDownButton5.ForeColor = Color.FromArgb(255, 230, 230);
-                toolStripDropDownButton6.ForeColor = Color.FromArgb(255, 230, 230);
+                toolStrip1.BackColor = Color.FromArgb(149, 161, 173);
+                toolStripDropDownButton1.ForeColor = Color.FromArgb(160, 88, 116);
+                toolStripDropDownButton2.ForeColor = Color.FromArgb(160, 88, 116);
+                toolStripDropDownButton3.ForeColor = Color.FromArgb(160, 88, 116);
+                toolStripDropDownButton4.ForeColor = Color.FromArgb(160, 88, 116);
+                toolStripDropDownButton5.ForeColor = Color.FromArgb(160, 88, 116);
+                toolStripDropDownButton6.ForeColor = Color.FromArgb(160, 88, 116);
                 gecenSureLabel.BackColor = toolStrip1.BackColor;
                 saatLabel.BackColor = toolStrip1.BackColor;
                 gecenSureLabel.ForeColor = Color.FromArgb(255, 230, 230);
@@ -371,11 +372,23 @@ namespace mCTerminal
             gkuvvetLabel.ForeColor = this.ForeColor;
             irtifaLabel.ForeColor = this.ForeColor;
             barometrikİrtifaMaksLabel.ForeColor = this.ForeColor;
+            barometrikİrtifaLabel.ForeColor = this.ForeColor;
+            baseBarometrikİrtifaLabel.ForeColor = this.ForeColor;
+            maksGKuvvetLabel.ForeColor = this.ForeColor;
+            ortaGovdeEnlemLabel.ForeColor = this.ForeColor;
+            ortaGovdeBoylamLabel.ForeColor = this.ForeColor;
+            ortaGovdeGpsİrtifaLabel.ForeColor = this.ForeColor;
+            ortaGovdeGpsMaksimumİrtifaLabel.ForeColor = this.ForeColor;
+            ortaGovdeBaseGpsİrtifaLabel.ForeColor = this.ForeColor;
+            ortaGovdeHdopLabel.ForeColor = this.ForeColor;
             suruklenmeHizLabel.ForeColor = this.ForeColor;
             koniDurumLabel.ForeColor = this.ForeColor;
             kameraDurumLabel.ForeColor = this.ForeColor;
             groupBox1.ForeColor = toolStripDropDownButton1.ForeColor;
             groupBox2.ForeColor = toolStripDropDownButton1.ForeColor;
+            groupBox3.ForeColor = toolStripDropDownButton1.ForeColor;
+            ortaGovdeAviyonikBilgiGrup.ForeColor = toolStripDropDownButton1.ForeColor;
+            
 
             //-----------------------------------------------------------
         }
@@ -388,20 +401,11 @@ namespace mCTerminal
             beklemeEkranıAcTimer.Start();
 
             //Form adını ayarlar
-            this.Text = "mCTerminal " + programSurum + " | [@" + Environment.MachineName + "]";
+            this.Text = "mCTerminal " + programSurum + " | [@" + Environment.MachineName + "] - (" + COMPortList.SelectedItem.ToString() + ")";
 
             //Ham veri'nin yazıldığı textbox'ın düzgün gözükmesi için
             hamVeriTextBox1.SelectionStart = hamVeriTextBox1.Text.Length;
 
-            //Eski güncelleme aracını kaldırır. (mCTerminal-updater2.exe yeni sürüm, kaldırılacak sürüm: mCTerminal-updater.exe)
-            try
-            {
-                File.Delete("mCTerminal-updater.exe");
-            }
-            catch
-            {
-                //bir şey olmamış gibi devam :D
-            }
 
             baudRatePortList.Visible = false;
 
@@ -455,6 +459,7 @@ namespace mCTerminal
                 editorDurumYaziAyarla();
                 editorVeriKaydetMotor();
             }
+
             //------------------------------------------------------------------------------------------
             try
             {
@@ -741,6 +746,7 @@ namespace mCTerminal
         private void COMPortList_SelectedIndexChanged(object sender, EventArgs e)
         {
             baglantiNoktasi_label.Text = "Bağlantı Noktası: " + COMPortList.SelectedItem.ToString();
+            this.Text = "mCTerminal " + programSurum + " | [@" + Environment.MachineName + "] - (" + COMPortList.SelectedItem.ToString() + ")";
             serialPort1.PortName = COMPortList.Text;
         }
 
@@ -791,7 +797,7 @@ namespace mCTerminal
 
         private void baglantiListeYenileButton_Click(object sender, EventArgs e)
         {
-            editorBaglantiYenile();
+            editorBaglantiKesForBaglantiYenile();
             baglantiYenileİkonDuzeltTimer.Start();
         }
 
@@ -904,6 +910,16 @@ namespace mCTerminal
                     file.WriteLine("----------------------------------------------------------------------------------------------------------------------" + Environment.NewLine);
                 }
             }
+        }
+
+        public void editorBaglantiKesForBaglantiYenile()
+        {
+            serialPort1.Close();
+            Properties.Settings.Default.serialportdurum = false;
+            gecenSureGuncelleTimer.Stop();
+            BellekBosaltTimer.Stop(); //bellek boşaltmayı durdur.
+            baglantiDurumPictureBox.Image = Properties.Resources.dot_kirmizi;
+            bağlantıyıBaşlatToolStripMenuItem.Text = "Bağlantıyı Kur";
         }
 
         public void editorBaglantiYenile()

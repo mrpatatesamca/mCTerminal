@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace mCTerminal
 {
@@ -20,6 +21,13 @@ namespace mCTerminal
 
         private NAudio.Wave.WaveIn sourceStream = null;
         private NAudio.Wave.DirectSoundOut waveOut = null;
+        XmlTextReader xtr = new XmlTextReader(programyolu + @"res\settings.xml"); //XML dosyasını okumak için hazırlık yap
+        string xmlAyarIsim;
+        string xmlAyarDeger;
+        public string programTema;
+        public string programVeriFormat;
+        public string programSurum;
+        static string programyolu = System.AppDomain.CurrentDomain.BaseDirectory;
 
 
         public uzaktanses()
@@ -39,7 +47,80 @@ namespace mCTerminal
 
         private void uzaktanses_Load(object sender, EventArgs e)
         {
+            editorAyarYukle();
+            //temalar için ayrılmış bölüm
 
+            if (programTema == "tema_varsayilan")
+            {
+                this.BackColor = Color.FromArgb(30, 30, 30);
+                this.ForeColor = Color.WhiteSmoke;
+                sesSiddetGauge.BackColor = this.BackColor;
+            }
+
+            if (programTema == "tema_matrix")
+            {
+                this.BackColor = Color.Black;
+                this.ForeColor = Color.DarkOliveGreen;
+                sesSiddetGauge.BackColor = this.BackColor;
+            }
+
+            if (programTema == "tema_dondurma")
+            {
+                this.BackColor = Color.FromArgb(220, 229, 225);
+                this.ForeColor = Color.IndianRed;
+                sesSiddetGauge.BackColor = this.BackColor;
+            }
+
+            if (programTema == "tema_cosmos")
+            {
+                this.BackColor = Color.FromArgb(26, 16, 122);
+                this.ForeColor = Color.FromArgb(245, 228, 183);
+                sesSiddetGauge.BackColor = this.BackColor;
+            }
+
+            if (programTema == "tema_material")
+            {
+                this.BackColor = Color.FromArgb(47, 79, 79);
+                this.ForeColor = Color.FromArgb(251, 235, 235);
+                sesSiddetGauge.BackColor = this.BackColor;
+            }
+            //-----------------------------------------------------------
+        }
+
+        public void editorAyarYukle()
+        {
+            try
+            {
+                while (xtr.Read())
+                {
+                    if (xtr.NodeType == XmlNodeType.Element && xtr.Name == "name") //xml içindeki name elementini al
+                    {
+                        xmlAyarIsim += xtr.ReadElementContentAsString() + "*";
+                    }
+                    if (xtr.NodeType == XmlNodeType.Element && xtr.Name == "value") //xml içindeki value elementini al
+                    {
+                        xmlAyarDeger += xtr.ReadElementContentAsString() + "*";
+                    }
+                }
+                string data1;
+                string data2;
+                string[] splitted_data1;
+                string[] splitted_data2;
+                data1 = xmlAyarIsim;
+                data2 = xmlAyarDeger;
+                splitted_data1 = data1.Split('*');
+                splitted_data2 = data2.Split('*');
+                //değerleri gerekli değişkenlere ata.
+                programTema = splitted_data2[0];
+                programSurum = splitted_data2[1];
+                programVeriFormat = splitted_data2[2];
+                xtr.Close();
+            }
+            catch
+            {
+                MessageBox.Show(@"Ayarlar diskten okunamadı! Lütfen programı yeniden indirin! (res\settings.xml dosyası bozuk veya değiştirilmiş!)", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void sesCihaziBilgiGuncellemeTimer_Tick(object sender, EventArgs e)

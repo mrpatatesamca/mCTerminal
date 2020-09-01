@@ -51,7 +51,7 @@
             // sesSiddetGauge
             // 
             this.sesSiddetGauge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.sesSiddetGauge.BackColor = System.Drawing.Color.Maroon;
+            this.sesSiddetGauge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.sesSiddetGauge.BaseArcColor = System.Drawing.Color.Gray;
             this.sesSiddetGauge.BaseArcRadius = 15;
             this.sesSiddetGauge.BaseArcStart = 135;
@@ -143,7 +143,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Maroon;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(334, 104);
             this.Controls.Add(this.onbellekSayiLabel);
             this.Controls.Add(this.sesDinlemeButton);

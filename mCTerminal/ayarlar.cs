@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using ByteSizeLib;
 
 namespace mCTerminal
 {
@@ -22,11 +23,11 @@ namespace mCTerminal
         public string programTema;
         public string programVeriFormat;
         public string programSurum;
-        public string harita_veri_boyut;
-        static FileInfo fi = new FileInfo(programyolu + @"map_datab\TileDBv5\en\Data.gmdb");
+        static DirectoryInfo di2 = new DirectoryInfo(programyolu + @"map_datab");
         static DirectoryInfo di = new DirectoryInfo(programyolu + @"logs");
         public string programHaritaEkranGoruntuKonum;
 
+        
 
         public ayarlar()
         {
@@ -241,26 +242,7 @@ namespace mCTerminal
             }
         }
 
-        static long GetDirectorySize(string p)
-        {
-            // 1.
-            // Get array of all file names.
-            string[] a = Directory.GetFiles(p, "*.*");
-
-            // 2.
-            // Calculate total bytes of all files in a loop.
-            long b = 0;
-            foreach (string name in a)
-            {
-                // 3.
-                // Use FileInfo to get length of each file.
-                FileInfo info = new FileInfo(name);
-                b += info.Length;
-            }
-            // 4.
-            // Return total size
-            return b;
-        }
+        
 
         private void ayarlar_Load(object sender, EventArgs e)
         {
@@ -268,17 +250,31 @@ namespace mCTerminal
 
             try
             {
-                long harita_veri_boyut_byte = fi.Length;
-                long ham_veri_kayit_boyut_byte = GetDirectorySize(programyolu + "logs");
+                long sizeHaritaVeri = 0;
+                DirectoryInfo dir = new DirectoryInfo(programyolu + "map_datab");
+                foreach (FileInfo fi in dir.GetFiles("*.*", SearchOption.AllDirectories))
+                {
+                    sizeHaritaVeri += fi.Length;
+                }
 
-                hamVeriBoyutuLabel.Text = "Ham Veri Boyutu: " + ham_veri_kayit_boyut_byte + "bayt";
-                haritaVeriBoyutuLabel.Text = "Harita Verisi Boyutu: " + harita_veri_boyut_byte + " bayt";
+                long sizeHamVeri = 0;
+                DirectoryInfo dir2 = new DirectoryInfo(programyolu + "logs");
+                foreach (FileInfo fi2 in dir2.GetFiles("*.*", SearchOption.AllDirectories))
+                {
+                    sizeHamVeri += fi2.Length;
+                }
+
+                hamVeriBoyutuLabel.Text = "Ham Veri Boyutu: " + ByteSize.FromBytes(sizeHamVeri).ToString();
+                haritaVeriBoyutuLabel.Text = "Harita Verisi Boyutu: " + ByteSize.FromBytes(sizeHaritaVeri).ToString();
+                
             }
             catch
             {
 
             }
         }
+
+
 
         private void kaydetButton_Click(object sender, EventArgs e)
         {
@@ -306,12 +302,15 @@ namespace mCTerminal
             {
                 try
                 {
-                    Directory.Delete(programyolu + @"map_datab\TileDBv5");
-                    haritaVeriSilTimer.Start();
+                    Directory.Delete(programyolu + @"map_datab", true);
                 }
                 catch
                 {
-                    MessageBox.Show("Harita verileri silinemedi! Lütfen " + programyolu + @"map_datab\TileDBv5 dizininin şu anda kullanımda olmadığından emin olun.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Harita verileri silinemedi! Lütfen " + programyolu + @"map_datab dizininin şu anda kullanımda olmadığından emin olun.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    haritaVeriSilTimer.Start();
                 }
             }
             else
@@ -323,8 +322,9 @@ namespace mCTerminal
         private void haritaverisilTimer_Tick(object sender, EventArgs e)
         {
             haritaVeriSilTimer.Stop();
+            Directory.CreateDirectory(programyolu + @"map_datab");
             MessageBox.Show("Harita verileri başarıyla temizlendi!", "Harita Verileri Silindi!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            haritaVeriBoyutuLabel.Text = "Harita Verisi Boyutu: 0 bayt";
+            haritaVeriBoyutuLabel.Text = "Harita Verisi Boyutu: 0 MB";
         }
 
         private void haritaEkranGoruntusuKonumDegistirButton_Click(object sender, EventArgs e)
@@ -352,11 +352,14 @@ namespace mCTerminal
                 try
                 {
                     Directory.Delete(programyolu + @"logs", true);
-                    hamVeriSilTimer.Start();
                 }
                 catch
                 {
                     MessageBox.Show("Ham Veri Kayıtları silinemedi! Lütfen " + programyolu + @"logs dizininin şu anda kullanımda olmadığından emin olun.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    hamVeriSilTimer.Start();
                 }
             }
             else
@@ -370,7 +373,7 @@ namespace mCTerminal
             hamVeriSilTimer.Stop();
             Directory.CreateDirectory(programyolu + @"logs");
             MessageBox.Show("Ham Veri Kayıtları başarıyla temizlendi!", "Ham Veri Kayıtları Silindi!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            hamVeriBoyutuLabel.Text = "Ham Veri Boyutu: 0 bayt";
+            hamVeriBoyutuLabel.Text = "Ham Veri Boyutu: 0 MB";
         }
     }
 }

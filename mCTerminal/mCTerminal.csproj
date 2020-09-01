@@ -151,6 +151,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\AudioManager.cs" />
+    <Compile Include="Properties\BinaryByteSize.cs" />
+    <Compile Include="Properties\ByteSize.cs" />
+    <Compile Include="Properties\DecimalByteSize.cs" />
     <Compile Include="roketsema.cs">
       <SubType>Form</SubType>
     </Compile>
